@@ -637,6 +637,11 @@ html.a-enfeites .ajuda-fixa,html.a-parar .ajuda-fixa{display:flex!important}
 .acess .voce-sabia{font-family:var(--font-mao);font-size:clamp(30px,3.4vw,42px);color:var(--caramelo);margin:0 0 4px;transform:rotate(-3deg);transform-origin:left}
 .acess .fonte-acess{font-size:14px;opacity:.85;margin-top:4px}
 html.a-fonte .acess .voce-sabia{font-family:var(--font-sans)!important;transform:none}
+.mais-info{display:grid;grid-template-columns:1fr 1fr;gap:28px 32px;margin:var(--espaco-10) 0 0}
+.info-grupo h3.nota{position:static;display:block;font-family:var(--font-mao);font-weight:400;font-size:26px;margin:0 0 10px;color:var(--bordo);transform:rotate(-2deg)}
+.info-grupo .fitas li{font-size:14px;padding:6px 14px}
+@media (max-width:760px){.mais-info{grid-template-columns:1fr}}
+html.a-fonte .info-grupo h3.nota{font-family:var(--font-sans)!important;transform:none}
 @media (prefers-reduced-motion:reduce){html.js .desenhar .rabisco{clip-path:none;transition:none}}
 </style>
 </head>
@@ -824,40 +829,6 @@ html.a-fonte .acess .voce-sabia{font-family:var(--font-sans)!important;transform
   </div>
 </section>
 
-<section class="formacao" id="formacao" aria-labelledby="t-form">
-  <div class="wrap">
-    <div class="cabeca"><h2 id="t-form">Por que fazer comigo</h2><span class="nota">não é só um site bonito</span><div class="desenhar cab-rabisco"><svg class="doodle rabisco r-florzinha" viewBox="0 0 73 64" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-florzinha"/></svg><span class="enfeitinhos v3" aria-hidden="true"><svg class="mini" viewBox="0 0 54 51" focusable="false"><use href="img/rabiscos.svg#r-coracao"/></svg></span></div></div>
-    <div class="carrossel" role="region" aria-roledescription="carrossel" aria-label="Formação, ensino, projetos, experiência e eventos"><div class="carrossel-trilho" tabindex="0">
-      <article class="form-card"><h3 class="selo-oval azul">Formação</h3><ul>
-        <li><strong>Sistemas de Informação</strong> · Unisul, no último semestre</li>
-        <li><strong>Técnico em Desenvolvimento de Sistemas</strong> · SENAI/SC</li>
-        <li><strong>Técnico em Programação Back-end</strong> · SENAI/SC</li></ul></article>
-      <article class="form-card"><h3 class="selo-oval rosa">Eu ensino</h3><ul>
-        <li>Cursos de capacitação para servidores públicos sobre <strong>criação de sites institucionais</strong>: planejamento, organização das informações, construção e manutenção</li>
-        <li><strong>Ferramentas digitais</strong>, inteligência artificial e <strong>design acessível</strong> de materiais</li>
-        <li><strong>Atendimento ao público</strong></li></ul></article>
-      <article class="form-card"><h3 class="selo-oval caramelo">Projetos</h3><ul>
-        <li><strong>XR EduTech</strong> · realidade estendida no ensino superior (Ânima Hub, Unisul): pesquisa e extensão, 120 h</li>
-        <li><strong>Acessibilidade</strong> · projeto de biblioteca acessível financiado pela FINEP e projeto de totens acessíveis</li>
-        <li><strong>Expandindo Fronteiras Digitais</strong> · inclusão digital em comunidade (extensão, 2024)</li></ul></article>
-      <article class="form-card"><h3 class="selo-oval azul">Experiência</h3><ul>
-        <li>Tecnologia na <strong>Intelbras</strong></li>
-        <li>Documentação técnica e treinamento de novos integrantes em projeto de pesquisa</li>
-        <li>Comissões e bancas de processos seletivos</li></ul></article>
-      <article class="form-card"><h3 class="selo-oval rosa">Eventos</h3><ul>
-        <li><strong>ExpoArqTech 2026</strong> · apresentação de trabalho de análise de dados</li>
-        <li><strong>Hackathon Sinthetica</strong> · projeto de realidade aumentada no ensino superior</li></ul></article>
-</div><div class="carrossel-ctrl"><button type="button" class="car-ant" aria-label="Ver anterior">←</button><button type="button" class="car-prox" aria-label="Ver próximo">→</button></div></div>
-    <h3 class="sub-h">O que isso muda para o seu negócio</h3>
-    <ul class="ganhos">
-      <li><span class="g-de">Formação técnica em sistemas</span><span class="g-seta" aria-hidden="true">→</span><span class="g-para">Site leve, rápido e seguro, feito do jeito certo.</span></li>
-      <li><span class="g-de">Pesquisa em acessibilidade</span><span class="g-seta" aria-hidden="true">→</span><span class="g-para">Site que todo mundo consegue usar e que segue a lei.</span></li>
-      <li><span class="g-de">Experiência ensinando a criar sites</span><span class="g-seta" aria-hidden="true">→</span><span class="g-para">Tudo explicado em linguagem simples, sem "tecniquês".</span></li>
-      <li><span class="g-de">Documentação técnica</span><span class="g-seta" aria-hidden="true">→</span><span class="g-para">Você recebe um guia claro de como cuidar do seu site.</span></li>
-    </ul>
-  </div>
-</section>
-
 <section class="toolkit" id="ferramentas" aria-labelledby="t-tool"><div class="ponte fita-3" aria-hidden="true"><svg viewBox="0 0 600 170" focusable="false"><use href="#fita"/></svg></div><div class="ponte grande-espiral" aria-hidden="true"><svg viewBox="0 0 79 99" focusable="false"><use href="img/rabiscos.svg#r-espiral" fill="currentColor"/></svg></div>
   <div class="wrap">
     <div class="cabeca"><h2 id="t-tool">Caixa de ferramentas</h2><span class="nota">o que eu uso no dia a dia</span><div class="desenhar cab-rabisco"><svg class="doodle rabisco r-estrela-pontos" viewBox="0 0 324 136" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-estrela-pontos"/></svg><span class="enfeitinhos " aria-hidden="true"><svg class="mini" viewBox="0 0 73 64" focusable="false"><use href="img/rabiscos.svg#r-florzinha"/></svg></span></div></div>
@@ -908,6 +879,7 @@ html.a-fonte .acess .voce-sabia{font-family:var(--font-sans)!important;transform
         <li><strong>Pesquisa</strong><span>Acessibilidade digital e realidade estendida no ensino superior.</span></li>
         <li><strong>Hoje</strong><span>Criando sites acessíveis para pequenos negócios de todo o Brasil.</span></li>
       </ol></div>
+      <div class="mais-info"><div class="info-grupo"><h3 class="nota">eu ensino, para servidores públicos</h3><ul class="fitas"><li>criação de sites institucionais</li><li>design acessível</li><li>ferramentas digitais e IA</li><li>atendimento ao público</li></ul></div><div class="info-grupo"><h3 class="nota">projetos</h3><ul class="fitas"><li>XR EduTech · realidade estendida, 120 h</li><li>biblioteca acessível (FINEP)</li><li>totens acessíveis</li><li>Expandindo Fronteiras Digitais</li></ul></div><div class="info-grupo"><h3 class="nota">experiência</h3><ul class="fitas"><li>Intelbras</li><li>documentação técnica</li><li>bancas de processos seletivos</li></ul></div><div class="info-grupo"><h3 class="nota">eventos</h3><ul class="fitas"><li>ExpoArqTech 2026</li><li>Hackathon Sinthetica</li></ul></div></div>
       <div class="anjos">
         <p>E no caminho todo, eu tive companhia. Esses três já não estão aqui, mas fizeram parte da minha história.</p>
         <ul class="anjos-lista">
