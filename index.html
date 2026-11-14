@@ -560,6 +560,7 @@ footer .liza-sono{width:110px}
 .anjo-real{position:relative;display:block;width:120px;margin:22px auto 6px}
 .anjo-real img{position:relative;z-index:1;width:100%;height:auto;display:block}
 .anjo-real .asas{position:absolute;z-index:0;left:-48%;width:196%;top:22%;overflow:visible}
+.anjo-real.alto .aureola{top:-6%}
 .anjo-real .aureola{position:absolute;z-index:2;left:14%;width:72%;top:-16%;overflow:visible}
 
 /* Como funciona: passos clicáveis */
@@ -661,6 +662,18 @@ footer::before{display:none!important}
 footer{padding-top:var(--espaco-6)!important}
 .contato{padding-top:96px!important}
 @media (min-width:861px){.sobre .wrap{grid-template-rows:auto 1fr}.sobre .wrap>div:first-child{grid-column:1;grid-row:1}.sobre .wrap>div:nth-child(2){grid-column:2;grid-row:1/3}.sobre .wrap>.anjos{grid-column:1;grid-row:2;align-self:end;margin-top:0}}
+.anjo-real img{width:auto!important;height:130px;max-width:100%;margin:0 auto}
+.anjo-real{width:auto;display:flex;justify-content:center}
+.anjo-real .aureola{left:50%;width:84px;margin-left:-42px;top:-14px}
+.toolkit .wrap,.mvv .wrap{position:relative}
+.liza-extra{position:absolute;z-index:3;display:flex;flex-direction:column;align-items:center;gap:2px;pointer-events:none}
+.liza-extra .nota{position:static;transform:rotate(-5deg);font-size:24px}
+.liza-inverno{right:-10px;top:-96px;width:160px}
+.liza-inverno img{width:100%;height:auto;transform:rotate(4deg)}
+.liza-lanche{right:-10px;top:-110px;width:190px}
+.liza-lanche img{width:100%;height:auto}
+@media (max-width:860px){.liza-extra{position:relative;right:auto;top:auto;margin:0 0 16px auto}.liza-inverno{width:130px}.liza-lanche{width:160px}}
+html.a-enfeites .liza-extra{display:none!important}
 @media (prefers-reduced-motion:reduce){html.js .desenhar .rabisco{clip-path:none;transition:none}}
 </style>
 </head>
@@ -858,6 +871,7 @@ footer{padding-top:var(--espaco-6)!important}
 
 <section class="toolkit" id="ferramentas" aria-labelledby="t-tool"><div class="ponte fita-3" aria-hidden="true"><svg viewBox="0 0 600 170" focusable="false"><use href="#fita"/></svg></div><div class="ponte grande-espiral" aria-hidden="true"><svg viewBox="0 0 79 99" focusable="false"><use href="img/rabiscos.svg#r-espiral" fill="currentColor"/></svg></div>
   <div class="wrap">
+    <div class="liza-extra liza-inverno" aria-hidden="true"><img class="foto-liza" src="img/liza-foto-coelho.webp" alt="" width="300" height="361" loading="lazy" decoding="async"><span class="nota">a Liza no inverno</span></div>
     <div class="cabeca"><h2 id="t-tool">Caixa de ferramentas</h2><span class="nota">o que eu uso no dia a dia</span><div class="desenhar cab-rabisco"><svg class="doodle rabisco r-estrela-pontos" viewBox="0 0 324 136" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-estrela-pontos"/></svg><span class="enfeitinhos " aria-hidden="true"><svg class="mini" viewBox="0 0 73 64" focusable="false"><use href="img/rabiscos.svg#r-florzinha"/></svg></span></div></div>
     <div class="tool-grade">
       <div class="tool-grupo"><h3>Desenvolvimento</h3><ul class="fitas"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Git e GitHub</li><li>Validador W3C</li></ul></div>
@@ -904,17 +918,18 @@ footer{padding-top:var(--espaco-6)!important}
     <div class="anjos">
         <p>E no caminho todo, eu tive companhia. Esses três já não estão aqui, mas fizeram parte da minha história.</p>
         <ul class="anjos-lista">
-          <li><img class="cao-svg liza-adesivo" src="img/anjo-princess.webp" alt="" width="260" height="266" loading="lazy" decoding="async"><span class="nota">Princess</span><span class="raca">labradora caramelo</span></li>
+          <li><span class="anjo-real"><img class="foto-liza" src="img/princess-rosto.webp" alt="" width="240" height="277" loading="lazy" decoding="async"><svg class="aureola" viewBox="0 0 100 30" aria-hidden="true" focusable="false"><ellipse cx="50" cy="15" rx="40" ry="9" fill="none" stroke="var(--caramelo)" stroke-width="6" filter="url(#lapis-fita)"/><ellipse cx="50" cy="15" rx="40" ry="9" fill="none" stroke="var(--bordo)" stroke-width="1.6" filter="url(#lapis-fita)"/></svg></span><span class="nota">Princess</span><span class="raca">labradora caramelo</span></li>
           <li><span class="anjo-real"><img class="foto-liza" src="img/scooby-rosto.webp" alt="" width="240" height="269" loading="lazy" decoding="async"><svg class="aureola" viewBox="0 0 100 30" aria-hidden="true" focusable="false"><ellipse cx="50" cy="15" rx="40" ry="9" fill="none" stroke="var(--caramelo)" stroke-width="6" filter="url(#lapis-fita)"/><ellipse cx="50" cy="15" rx="40" ry="9" fill="none" stroke="var(--bordo)" stroke-width="1.6" filter="url(#lapis-fita)"/></svg></span><span class="nota">Scooby</span><span class="raca">labrador chocolate</span></li>
-          <li><img class="cao-svg liza-adesivo" src="img/anjo-fiona.webp" alt="" width="260" height="266" loading="lazy" decoding="async"><span class="nota">Fiona</span><span class="raca">pastora alemã</span></li>
+          <li><span class="anjo-real"><img class="foto-liza" src="img/fiona-rosto.webp" alt="" width="240" height="399" loading="lazy" decoding="async"><svg class="aureola" viewBox="0 0 100 30" aria-hidden="true" focusable="false"><ellipse cx="50" cy="15" rx="40" ry="9" fill="none" stroke="var(--caramelo)" stroke-width="6" filter="url(#lapis-fita)"/><ellipse cx="50" cy="15" rx="40" ry="9" fill="none" stroke="var(--bordo)" stroke-width="1.6" filter="url(#lapis-fita)"/></svg></span><span class="nota">Fiona</span><span class="raca">pastora alemã</span></li>
         </ul>
-        <div class="liza-segue" aria-hidden="true"><img class="foto-liza" src="img/liza-foto-dormindo.webp" alt="" width="360" height="145" loading="lazy" decoding="async"><span class="nota">e a Liza segue aqui comigo</span></div>
+        <div class="liza-segue" aria-hidden="true"><img class="foto-liza" src="img/liza-foto-cama.webp" alt="" width="300" height="300" loading="lazy" decoding="async"><span class="nota">e a Liza segue aqui comigo</span></div>
       </div>
   </div>
 </section>
 
 <section class="mvv" id="proposito" aria-labelledby="t-mvv">
   <div class="wrap">
+    <div class="liza-extra liza-lanche" aria-hidden="true"><img class="foto-liza" src="img/liza-foto-lambendo.webp" alt="" width="340" height="250" loading="lazy" decoding="async"><span class="nota">hora do lanche?</span></div>
     <div class="cabeca"><h2 id="t-mvv">O que me move</h2><span class="nota">missão, visão e valores</span><div class="desenhar cab-rabisco"><svg class="doodle rabisco r-flor" viewBox="0 0 141 130" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-flor"/></svg><span class="enfeitinhos " aria-hidden="true"><svg class="mini" viewBox="0 0 83 77" focusable="false"><use href="img/rabiscos.svg#r-estrelinha"/></svg></span></div></div>
     <div class="mvv-grade">
       <article class="mvv-card"><h3 class="selo-oval azul">Missão</h3><p>Ajudar pequenos negócios de todo o Brasil a serem encontrados e entendidos na internet, com sites simples, bonitos e que qualquer pessoa consegue usar.</p></article>
@@ -944,7 +959,7 @@ footer{padding-top:var(--espaco-6)!important}
 
 <footer>
   <div class="wrap">
-    <img class="liza-sono foto-liza" src="img/liza-foto-dormindo.webp" alt="" width="360" height="145" loading="lazy" decoding="async"><span>Feito à mão por Letícia Beatriz, com supervisão da Liza. De Palhoça (SC) para todo o Brasil.</span>
+    <img class="liza-sono foto-liza" src="img/liza-foto-enrolada.webp" alt="" width="340" height="166" loading="lazy" decoding="async"><span>Feito à mão por Letícia Beatriz, com supervisão da Liza. De Palhoça (SC) para todo o Brasil.</span>
     <span>Este site segue as diretrizes de acessibilidade WCAG 2.2.</span>
   </div>
 </footer>
