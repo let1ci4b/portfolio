@@ -563,6 +563,38 @@ footer .liza-sono{width:110px}
 .anjo-real img{position:relative;z-index:1;width:100%;height:auto;display:block}
 .anjo-real .asas{position:absolute;z-index:0;left:-48%;width:196%;top:22%;overflow:visible}
 .anjo-real .aureola{position:absolute;z-index:2;left:14%;width:72%;top:-16%;overflow:visible}
+
+/* Como funciona: passos clicáveis */
+.passos-lista{display:flex;width:max-content;max-width:100%;gap:clamp(12px,3vw,40px);position:relative;margin-bottom:var(--espaco-6);flex-wrap:wrap}
+.passos-lista::before{content:"";position:absolute;left:30px;right:30px;top:31px;border-top:3px dotted rgba(107,30,46,.35);z-index:0}
+.passos-lista button{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:8px;background:none;border:0;padding:0;cursor:pointer;color:var(--cereja);font:inherit;min-width:64px}
+.passo-num{width:62px;height:62px;border-radius:50%;display:grid;place-items:center;font-family:var(--font-display);font-size:30px;font-weight:600;background:var(--creme);border:3px solid var(--cereja);transition:transform .2s,background .2s}
+.passos-lista button:nth-child(odd) .passo-num{background:var(--azul)}.passos-lista button:nth-child(even) .passo-num{background:var(--rosa)}
+.passos-lista button[aria-selected="true"] .passo-num{background:var(--bordo);color:var(--creme);transform:scale(1.14) rotate(-4deg)}
+.passos-lista button:hover .passo-num{transform:rotate(-4deg)}
+.passo-nome{font-weight:700;font-size:16px}
+.passos-lista button[aria-selected="true"] .passo-nome{text-decoration:underline wavy var(--morango) 2px;text-underline-offset:6px}
+.passos-lista button:focus-visible{outline:3px solid var(--cereja);outline-offset:6px;border-radius:12px}
+.passo-painel{display:grid;grid-template-columns:120px 1fr;gap:var(--espaco-6);align-items:center;max-width:760px}
+.passo-painel[hidden]{display:none}
+.passo-painel:focus-visible{outline:3px solid var(--cereja);outline-offset:8px;border-radius:12px}
+.passo-desenho .doodle{width:100%;height:110px;color:var(--vinho)}
+.passo-painel h3{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:clamp(34px,4vw,52px);line-height:1;margin:0 0 12px;color:var(--bordo)}
+.passo-texto{font-size:20px;margin:0 0 8px}
+.passo-extra{margin:0;color:var(--texto-suave)}
+@media (max-width:600px){.passo-painel{grid-template-columns:72px 1fr}.passo-desenho .doodle{height:70px}.passos-lista{justify-content:space-between}.passo-nome{font-size:14px}}
+html.js .passo-painel.anima{animation:passo-entra .35s ease}
+@keyframes passo-entra{from{opacity:0;transform:translateY(8px)}}
+/* Por que fazer comigo: carrossel */
+.carrossel{position:relative;margin-top:var(--espaco-6)}
+.carrossel-trilho{display:flex;gap:56px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:30px 4px 18px;scrollbar-width:thin;scrollbar-color:var(--morango) transparent}
+.carrossel-trilho:focus-visible{outline:3px solid var(--cereja);outline-offset:4px;border-radius:12px}
+.carrossel-trilho .form-card{flex:0 0 min(330px,82%);scroll-snap-align:start}
+.carrossel-ctrl{display:flex;gap:12px;justify-content:flex-end;margin-top:8px}
+.carrossel-ctrl button{width:52px;height:52px;border-radius:50%;border:3px solid var(--cereja);background:var(--creme);color:var(--cereja);font-size:22px;cursor:pointer;box-shadow:var(--sombra-adesivo)}
+.carrossel-ctrl button:hover{background:var(--rosa)}
+.carrossel-ctrl button:focus-visible{outline:3px solid var(--cereja);outline-offset:4px}
+.carrossel-ctrl button:disabled{opacity:.35;cursor:default}
 @media (prefers-reduced-motion:reduce){html.js .desenhar .rabisco{clip-path:none;transition:none}}
 </style>
 </head>
@@ -750,7 +782,7 @@ footer .liza-sono{width:110px}
 <section class="formacao" id="formacao" aria-labelledby="t-form">
   <div class="wrap">
     <div class="cabeca"><h2 id="t-form">Por que fazer comigo</h2><span class="nota">não é só um site bonito</span><div class="desenhar cab-rabisco"><svg class="doodle rabisco r-florzinha" viewBox="0 0 73 64" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-florzinha"/></svg><span class="enfeitinhos v3" aria-hidden="true"><svg class="mini" viewBox="0 0 54 51" focusable="false"><use href="img/rabiscos.svg#r-coracao"/></svg></span></div></div>
-    <div class="form-grade">
+    <div class="carrossel" role="region" aria-roledescription="carrossel" aria-label="Formação, ensino, projetos, experiência e eventos"><div class="carrossel-trilho" tabindex="0">
       <article class="form-card"><h3 class="selo-oval azul">Formação</h3><ul>
         <li><strong>Sistemas de Informação</strong> · Unisul, no último semestre</li>
         <li><strong>Técnico em Desenvolvimento de Sistemas</strong> · SENAI/SC</li>
@@ -770,7 +802,7 @@ footer .liza-sono{width:110px}
       <article class="form-card"><h3 class="selo-oval rosa">Eventos</h3><ul>
         <li><strong>ExpoArqTech 2026</strong> · apresentação de trabalho de análise de dados</li>
         <li><strong>Hackathon Sinthetica</strong> · projeto de realidade aumentada no ensino superior</li></ul></article>
-    </div>
+</div><div class="carrossel-ctrl"><button type="button" class="car-ant" aria-label="Ver anterior">←</button><button type="button" class="car-prox" aria-label="Ver próximo">→</button></div></div>
     <h3 class="sub-h">O que isso muda para o seu negócio</h3>
     <ul class="ganhos">
       <li><span class="g-de">Formação técnica em sistemas</span><span class="g-seta" aria-hidden="true">→</span><span class="g-para">Site leve, rápido e seguro, feito do jeito certo.</span></li>
@@ -796,12 +828,7 @@ footer .liza-sono{width:110px}
 <section class="passos-sec" aria-labelledby="t-passos">
   <div class="wrap">
     <div class="cabeca"><h2 id="t-passos">Como funciona</h2><div class="desenhar" style="width:120px"><svg class="doodle rabisco r-onda-zig" viewBox="0 0 311 58" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-onda-zig"/></svg></div></div>
-    <ol class="passos">
-      <li><h3>Conversa</h3><p>Você me conta sobre o seu negócio pelo WhatsApp. Atendo à distância, de qualquer cidade.</p></li>
-      <li><h3>Proposta</h3><p>Mando o pacote, o preço e o prazo, tudo por escrito.</p></li>
-      <li><h3>Criação</h3><p>Em até 10 dias úteis depois de receber seus materiais.</p></li>
-      <li><h3>No ar</h3><p>Site publicado, testado e com o seu domínio.</p></li>
-    </ol>
+    <div class="passos-abas"><div class="passos-lista" role="tablist" aria-label="Etapas"><button type="button" role="tab" id="passo-tab-1" aria-controls="passo-1" aria-selected="true" tabindex="0"><span class="passo-num">1</span><span class="passo-nome">Conversa</span></button><button type="button" role="tab" id="passo-tab-2" aria-controls="passo-2" aria-selected="false" tabindex="-1"><span class="passo-num">2</span><span class="passo-nome">Proposta</span></button><button type="button" role="tab" id="passo-tab-3" aria-controls="passo-3" aria-selected="false" tabindex="-1"><span class="passo-num">3</span><span class="passo-nome">Criação</span></button><button type="button" role="tab" id="passo-tab-4" aria-controls="passo-4" aria-selected="false" tabindex="-1"><span class="passo-num">4</span><span class="passo-nome">No ar</span></button></div><div class="passo-painel" role="tabpanel" id="passo-1" aria-labelledby="passo-tab-1" tabindex="0"><div class="passo-desenho"><svg class="doodle rabisco r-coracao" viewBox="0 0 54 51" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-coracao"/></svg></div><div><h3>Conversa</h3><p class="passo-texto">Você me conta sobre o seu negócio pelo WhatsApp. Atendo à distância, de qualquer cidade.</p><p class="passo-extra">Respondo em até um dia útil, sem compromisso.</p></div></div><div class="passo-painel" role="tabpanel" id="passo-2" aria-labelledby="passo-tab-2" tabindex="0"><div class="passo-desenho"><svg class="doodle rabisco r-brilho-a" viewBox="0 0 143 196" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-brilho-a"/></svg></div><div><h3>Proposta</h3><p class="passo-texto">Mando o pacote, o preço e o prazo, tudo por escrito.</p><p class="passo-extra">Você lê com calma e só decide depois.</p></div></div><div class="passo-painel" role="tabpanel" id="passo-3" aria-labelledby="passo-tab-3" tabindex="0"><div class="passo-desenho"><svg class="doodle rabisco r-raio" viewBox="0 0 76 154" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-raio"/></svg></div><div><h3>Criação</h3><p class="passo-texto">Em até 10 dias úteis depois de receber seus materiais.</p><p class="passo-extra">Materiais são os textos, as fotos e a logo, se você tiver.</p></div></div><div class="passo-painel" role="tabpanel" id="passo-4" aria-labelledby="passo-tab-4" tabindex="0"><div class="passo-desenho"><svg class="doodle rabisco r-estrela-cadente" viewBox="0 0 326 306" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-estrela-cadente"/></svg></div><div><h3>No ar</h3><p class="passo-texto">Site publicado, testado e com o seu domínio.</p><p class="passo-extra">Você também recebe um guia claro de como cuidar do seu site.</p></div></div></div>
     <div class="liza-feliz" aria-hidden="true"><img class="foto-liza" src="img/liza-foto-lingua.webp" alt="" width="340" height="288" loading="lazy" decoding="async"><span class="nota">site no ar, Liza feliz</span></div>
   </div>
 </section>
@@ -932,6 +959,25 @@ footer .liza-sono{width:110px}
     var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visto'); io.unobserve(e.target);} }); },{threshold:.3});
     alvos.forEach(function(el){ io.observe(el); });
   }
+
+  // Como funciona: abas
+  (function(){
+    var tabs=[].slice.call(document.querySelectorAll('.passos-lista [role=tab]')); if(!tabs.length) return;
+    var pans=tabs.map(function(t){return document.getElementById(t.getAttribute('aria-controls'));});
+    function ativa(i,foco){ tabs.forEach(function(t,k){ var on=k===i; t.setAttribute('aria-selected',on); t.tabIndex=on?0:-1; pans[k].hidden=!on; if(on&&!reduz){pans[k].classList.remove('anima'); void pans[k].offsetWidth; pans[k].classList.add('anima');} }); if(foco) tabs[i].focus(); }
+    tabs.forEach(function(t,i){ t.addEventListener('click',function(){ativa(i);}); t.addEventListener('keydown',function(e){ var n=null; if(e.key==='ArrowRight')n=(i+1)%tabs.length; if(e.key==='ArrowLeft')n=(i-1+tabs.length)%tabs.length; if(e.key==='Home')n=0; if(e.key==='End')n=tabs.length-1; if(n!==null){e.preventDefault(); ativa(n,true);} }); });
+    ativa(0);
+  })();
+  // carrossel
+  (function(){
+    var tr=document.querySelector('.carrossel-trilho'); if(!tr) return;
+    var a=document.querySelector('.car-ant'), p=document.querySelector('.car-prox');
+    function passo(){ var c=tr.querySelector('.form-card'); return c ? c.getBoundingClientRect().width+56 : 300; }
+    function estado(){ a.disabled = tr.scrollLeft<4; p.disabled = tr.scrollLeft+tr.clientWidth >= tr.scrollWidth-4; }
+    a.addEventListener('click',function(){ tr.scrollBy({left:-passo(),behavior:reduz?'auto':'smooth'}); });
+    p.addEventListener('click',function(){ tr.scrollBy({left:passo(),behavior:reduz?'auto':'smooth'}); });
+    tr.addEventListener('scroll',estado,{passive:true}); addEventListener('resize',estado); estado();
+  })();
   // linha do tempo
   var itens = document.querySelectorAll('#caminho li');
   if (reduz || !('IntersectionObserver' in window)) { itens.forEach(function(li){li.classList.add('on');}); }
