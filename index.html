@@ -463,6 +463,18 @@ footer::before{top:-1px;background:var(--bordo);transform:scaleY(-1);-webkit-mas
 .escuro .enfeitinhos,.acess .enfeitinhos{color:var(--caramelo)}
 html.a-enfeites .enfeitinhos{display:none}
 html.a-contraste .enfeitinhos{color:#000}
+/* Liza andando na vertical, ao lado da página */
+.passeio{left:auto;right:22px;top:0;bottom:auto;width:84px;pointer-events:auto;display:block;text-decoration:none;border-radius:16px}
+.passeio:focus-visible{outline:3px solid var(--cereja);outline-offset:4px}
+.passeio .ajuda{position:absolute;right:calc(100% + 8px);top:8px;white-space:nowrap;background:var(--creme);color:var(--cereja);border:3px solid var(--cereja);border-radius:var(--raio-blob);box-shadow:var(--sombra-adesivo);padding:2px 14px;font-family:var(--font-mao);font-size:24px;opacity:0;transform:scale(.85) rotate(-3deg);transform-origin:right center;transition:opacity .2s,transform .2s;pointer-events:none}
+.passeio:hover .ajuda,.passeio:focus-visible .ajuda{opacity:1;transform:rotate(-3deg)}
+@media (max-width:1279px){.passeio{display:none!important}}
+@media (prefers-reduced-motion:reduce){.passeio{display:none!important}}
+html.a-parar .passeio,html.a-enfeites .passeio{display:none!important}
+/* rodapé com a Liza antes das frases */
+footer .wrap{align-items:center}
+footer .liza-sono{width:64px;margin:0}
+footer .wrap > span:first-of-type{flex:1;min-width:220px}
 @media (prefers-reduced-motion:reduce){html.js .desenhar .rabisco{clip-path:none;transition:none}}
 </style>
 </head>
@@ -681,7 +693,7 @@ html.a-contraste .enfeitinhos{color:#000}
   </div>
 </section>
 
-<section style="padding-top:0" aria-labelledby="t-passos">
+<section class="passos-sec" aria-labelledby="t-passos">
   <div class="wrap">
     <div class="cabeca"><h2 id="t-passos">Como funciona</h2><div class="desenhar" style="width:120px"><svg class="doodle rabisco r-onda-zig" viewBox="0 0 311 58" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-onda-zig"/></svg></div></div>
     <ol class="passos">
@@ -781,7 +793,7 @@ html.a-contraste .enfeitinhos{color:#000}
 
 <footer>
   <div class="wrap">
-    <span><img class="liza-sono" src="img/liza-dormindo.webp" alt="" width="180" height="110" loading="lazy" decoding="async">Feito à mão por Letícia Beatriz, com supervisão da Liza. De Palhoça (SC) para todo o Brasil.</span>
+    <img class="liza-sono" src="img/liza-dormindo.webp" alt="" width="180" height="110" loading="lazy" decoding="async"><span>Feito à mão por Letícia Beatriz, com supervisão da Liza. De Palhoça (SC) para todo o Brasil.</span>
     <span>Este site segue as diretrizes de acessibilidade WCAG 2.2.</span>
   </div>
 </footer>
@@ -804,7 +816,7 @@ html.a-contraste .enfeitinhos{color:#000}
   <div class="a11y-rodape"><button type="button" id="a11y-reset">Restaurar o padrão</button><button type="button" id="a11y-fechar">Fechar</button></div>
 </div>
 <div class="guia-leitura" id="guia" aria-hidden="true"></div>
-<div class="passeio" id="passeio" aria-hidden="true"><span class="trote"><img class="cao-svg liza-adesivo" src="img/liza-moletom.webp" alt="" width="200" height="160"></span></div>
+<a class="passeio" id="passeio" href="#contato" aria-label="Precisa de ajuda? Ir para o contato"><span class="ajuda" aria-hidden="true">precisa de ajuda?</span><span class="trote"><img class="cao-svg" src="img/liza-moletom.webp" alt="" width="200" height="160"></span></a>
 <script>
 (function(){
   var reduz = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -858,7 +870,7 @@ html.a-contraste .enfeitinhos{color:#000}
   var pas = document.getElementById('passeio'), ult = window.scrollY, parar;
   function passo(){
     var max = document.documentElement.scrollHeight - innerHeight, p = max > 0 ? scrollY / max : 0;
-    pas.style.transform = 'translateX(' + (p * (innerWidth - pas.offsetWidth - 8)) + 'px)';
+    var topo = 96, fundo = innerHeight - pas.offsetHeight - 110; pas.style.transform = 'translateY(' + (topo + p * Math.max(0, fundo - topo)) + 'px)';
   }
   if(!reduz){
     passo();
