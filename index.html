@@ -634,6 +634,9 @@ html.liza-andando .ajuda-fixa{display:none}
 .faq input:focus-visible,.faq textarea:focus-visible,.faq button:focus-visible,.faq a:focus-visible{outline:3px solid var(--cereja);outline-offset:2px}
 html.a-enfeites .trilha-liza,html.a-parar .trilha-liza,html.a-parar.liza-andando .passeio,html.a-enfeites.liza-andando .passeio{display:none!important}
 html.a-enfeites .ajuda-fixa,html.a-parar .ajuda-fixa{display:flex!important}
+.acess .voce-sabia{font-family:var(--font-mao);font-size:clamp(30px,3.4vw,42px);color:var(--caramelo);margin:0 0 4px;transform:rotate(-3deg);transform-origin:left}
+.acess .fonte-acess{font-size:14px;opacity:.85;margin-top:4px}
+html.a-fonte .acess .voce-sabia{font-family:var(--font-sans)!important;transform:none}
 @media (prefers-reduced-motion:reduce){html.js .desenhar .rabisco{clip-path:none;transition:none}}
 </style>
 </head>
@@ -811,9 +814,12 @@ html.a-enfeites .ajuda-fixa,html.a-parar .ajuda-fixa{display:flex!important}
   <div class="wrap">
     <div class="desenhar"><svg class="doodle " viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob)"><circle cx="100" cy="100" r="72"/><circle cx="100" cy="58" r="10" fill="currentColor" stroke="none"/><path d="M60 80 C80 88 120 88 140 80 M100 88 V122 M100 122 L82 154 M100 122 L118 154" stroke-width="6"/></g></svg></div>
     <div>
+      <p class="voce-sabia">Você sabia?</p>
       <p class="grande">18,6 milhões</p>
       <h2 id="t-acess">de brasileiros têm alguma deficiência. Quase metade deles tem 60 anos ou mais.</h2>
-      <p>São dados do <a href="https://agenciadenoticias.ibge.gov.br/pt/agencia-noticias/37317-pessoas-com-deficiencia-tem-menor-acesso-a-educacao-ao-trabalho-e-a-renda.html">IBGE (PNAD Contínua 2022)</a>. Se o seu site não funciona para essas pessoas, você perde clientes. E a Lei Brasileira de Inclusão exige acessibilidade nos sites de empresas. Por isso, todo site que eu entrego já sai com contraste certo, navegação por teclado e texto alternativo nas imagens. Este site também: experimente o botão de acessibilidade no canto da tela.</p>
+      <p>Para muitas dessas pessoas, procurar um negócio na internet é difícil: letra miúda, pouco contraste, botões pequenos e sites que não funcionam com leitor de tela. Quem facilita esse caminho sai na frente e conquista um público que a concorrência deixa de fora. E a Lei Brasileira de Inclusão exige acessibilidade nos sites de empresas.</p>
+      <p>Por isso, todo site que eu entrego já sai com contraste certo, navegação por teclado e texto alternativo nas imagens. Este site também: experimente o botão de acessibilidade no canto da tela.</p>
+      <p class="fonte-acess">Fonte: <a href="https://agenciadenoticias.ibge.gov.br/pt/agencia-noticias/37317-pessoas-com-deficiencia-tem-menor-acesso-a-educacao-ao-trabalho-e-a-renda.html">IBGE (PNAD Contínua 2022)</a>.</p>
     </div>
   </div>
 </section>
