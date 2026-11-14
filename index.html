@@ -430,6 +430,10 @@ html.a-enfeites .liza-segue{display:none!important}
 .cadeira-mesa svg{display:block;width:100%;height:auto;overflow:visible}
 .cadeira-mesa .vasinho{color:var(--bordo)}
 html.a-contraste .cadeira-mesa{color:#000}
+.nota-numeros{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;gap:6px;margin:10px 0 0}
+.nota-numeros .nota{position:static;display:block;font-size:30px;transform:rotate(-4deg)}
+.seta-baixo{display:block;width:46px;transform:rotate(-38deg);margin-top:18px;color:var(--bordo)}
+.seta-baixo .rabisco{width:100%;height:auto;display:block}
 @media (prefers-reduced-motion:reduce){html.js .desenhar .rabisco{clip-path:none;transition:none}}
 </style>
 </head>
@@ -518,7 +522,7 @@ html.a-contraste .cadeira-mesa{color:#000}
 <path d="M-8 54.2 C-7.8 55.8 -1.6 57.4 6 57.4 C13.6 57.4 19.8 55.8 20 54.2" stroke-width=".75"/>
 <path d="M4.4 57.4 C4.2 70 3.8 84 2.8 96.4 C1.8 99.2 -1.8 100.8 -5.2 101.2 M7.6 57.4 C7.8 70 8.2 84 9.2 96.4 C10.2 99.2 13.8 100.8 17.2 101.2"/>
 <path d="M2.6 98 C4.2 99.2 7.8 99.2 9.4 98" stroke-width=".7"/>
-</g><svg class="vasinho" x="-2.0" y="39.13" width="16" height="15.67" viewBox="0 0 196 192"><use href="img/rabiscos.svg#r-vaso" fill="currentColor" stroke="none"/></svg></svg></div><img class="recorte" loading="lazy" decoding="async" src="img/eu-bracos-recorte.webp" srcset="img/eu-bracos-recorte-680.webp 680w, img/eu-bracos-recorte.webp 980w" sizes="(max-width: 768px) 340px, 430px" alt="Letícia sentada numa cadeirinha, ao lado de uma mesinha com um vaso de flores, sorrindo com os braços abertos como quem apresenta algo." width="980" height="1000"><span class="nota" aria-hidden="true">olha esses números!</span></div>
+</g><svg class="vasinho" x="-2.0" y="39.13" width="16" height="15.67" viewBox="0 0 196 192"><use href="img/rabiscos.svg#r-vaso" fill="currentColor" stroke="none"/></svg></svg></div><img class="recorte" loading="lazy" decoding="async" src="img/eu-bracos-recorte.webp" srcset="img/eu-bracos-recorte-680.webp 680w, img/eu-bracos-recorte.webp 980w" sizes="(max-width: 768px) 340px, 430px" alt="Letícia sentada numa cadeirinha, ao lado de uma mesinha com um vaso de flores, sorrindo com os braços abertos como quem apresenta algo." width="980" height="1000"><p class="nota-numeros" aria-hidden="true"><span class="nota">olha esses números!</span><span class="desenhar seta-baixo"><svg class="doodle rabisco r-seta" viewBox="0 0 102 121" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-seta"/></svg></span></p></div>
     </div>
     <ul class="numeros">
       <li class="num azul"><span class="valor">73%</span><span class="desc">das buscas por negócios locais começam no celular. Por isso eu faço o site pensando primeiro no celular.</span><span class="fonte">BrightLocal, 2026 (EUA)</span></li>
@@ -648,7 +652,7 @@ html.a-contraste .cadeira-mesa{color:#000}
   <div class="wrap">
     <div class="cabeca"><h2 id="t-tool">Caixa de ferramentas</h2><span class="nota">o que eu uso no dia a dia</span><div class="desenhar cab-rabisco"><svg class="doodle rabisco r-estrela-pontos" viewBox="0 0 324 136" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-estrela-pontos"/></svg></div></div>
     <div class="tool-grade">
-      <div class="tool-grupo"><h3>Desenvolvimento</h3><ul class="fitas"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Java</li><li>Kotlin</li><li>Git e GitHub</li></ul></div>
+      <div class="tool-grupo"><h3>Desenvolvimento</h3><ul class="fitas"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Git e GitHub</li><li>Validador W3C</li></ul></div>
       <div class="tool-grupo"><h3>Acessibilidade</h3><ul class="fitas"><li>WCAG 2.2</li><li>ABNT NBR 17225</li><li>Leitores de tela (NVDA e TalkBack)</li><li>WAVE</li><li>Lei Brasileira de Inclusão</li></ul></div>
       <div class="tool-grupo"><h3>Publicação e Google</h3><ul class="fitas"><li>Cloudflare</li><li>Registro.br</li><li>Perfil de Empresa no Google</li><li>PageSpeed Insights</li></ul></div>
       <div class="tool-grupo"><h3>Design</h3><ul class="fitas"><li>Figma</li><li>Canva</li><li>Identidade visual</li></ul></div>
