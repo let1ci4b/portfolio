@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Letícia Beatriz — sites simples e acessíveis</title>
+<meta name="description" content="Sites simples, rápidos e acessíveis para pequenos negócios de todo o Brasil.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Atkinson+Hyperlegible+Next:wght@400;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cereja:#4a1420;--bordo:#6b1e2e;--vinho:#8c2f39;--morango:#d9727f;--rosa:#f6dcdd;--creme:#fff6ee;
+  --caramelo:#c98b4e;--chocolate:#5a3426;--azul:#c7dfec;--texto-suave:#7a4a50;
+  --font-display:"Fraunces",Georgia,serif;--font-sans:"Atkinson Hyperlegible Next","Atkinson Hyperlegible",system-ui,sans-serif;--font-mao:"Caveat","Segoe Print",cursive;
+  --espaco-2:8px;--espaco-4:16px;--espaco-6:24px;--espaco-10:40px;--raio-sm:8px;--raio-blob:24px;--raio-pilula:999px;
+  --sombra-adesivo:4px 4px 0 #4a1420;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{margin:0;background:var(--creme);color:var(--cereja);font-family:var(--font-sans);font-size:18px;line-height:28px;overflow-x:hidden}
+img,svg{display:block}
+a{color:var(--vinho);text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--vinho);outline-offset:3px;border-radius:4px}
+.escuro :focus-visible{outline-color:var(--creme)}
+.pular{position:absolute;left:var(--espaco-4);top:-80px;background:var(--bordo);color:var(--creme);padding:12px 20px;border-radius:var(--raio-pilula);z-index:100;font-weight:700}
+.pular:focus{top:var(--espaco-4)}
+.wrap{max-width:1160px;margin:0 auto;padding:0 var(--espaco-6)}
+h1,h2,h3{font-family:var(--font-display);font-weight:600;margin:0}
+h2{font-size:clamp(34px,5vw,44px);line-height:1.1;letter-spacing:-.5px}
+h3{font-size:26px;line-height:32px}
+.nota{font-family:var(--font-mao);font-weight:600;font-size:28px;line-height:30px;color:var(--bordo)}
+.doodle{width:100%;height:auto;color:var(--bordo);overflow:visible}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:12px 26px;border-radius:var(--raio-pilula);font-weight:700;font-size:17px;text-decoration:none;border:3px solid var(--cereja);box-shadow:var(--sombra-adesivo);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--cereja)}
+.btn:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--cereja)}
+.btn-principal{background:var(--vinho);color:var(--creme)}
+.btn-secundario{background:var(--creme);color:var(--cereja)}
+
+/* topo */
+header.topo{position:sticky;top:0;z-index:50;background:rgba(255,246,238,.92);backdrop-filter:blur(6px);border-bottom:2px dashed rgba(107,30,46,.25)}
+.topo .wrap{display:flex;align-items:center;justify-content:space-between;min-height:68px;gap:var(--espaco-4)}
+.marca{font-family:var(--font-display);font-size:24px;font-weight:600;color:var(--cereja);text-decoration:none;display:flex;align-items:center;gap:8px}
+.marca .doodle{width:34px}
+nav ul{display:flex;gap:var(--espaco-2);list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav a{display:inline-block;padding:10px 14px;min-height:44px;color:var(--cereja);text-decoration:none;font-weight:700;border-radius:var(--raio-pilula)}
+nav a:hover{background:var(--rosa)}
+@media (max-width:760px){nav .opcional{display:none}}
+
+/* hero */
+.hero{position:relative;padding:var(--espaco-10) 0 110px}
+
+.ola{font-family:var(--font-mao);font-size:34px;color:var(--vinho);margin:0 0 4px;transform:rotate(-3deg);display:inline-block}
+.hero h1{font-size:clamp(52px,8.5vw,96px);line-height:.95;letter-spacing:-2px}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--bordo);position:relative;white-space:nowrap}
+.sublinha{position:absolute;left:-4%;right:-4%;bottom:-18px;height:40px;width:108%;color:var(--morango)}
+.hero p.lead{font-size:21px;line-height:32px;max-width:560px;margin:var(--espaco-6) 0 var(--espaco-6)}
+.acoes{display:flex;flex-wrap:wrap;gap:var(--espaco-4)}
+.colagem{position:relative;aspect-ratio:1/1.05;max-width:440px;justify-self:center;width:100%}
+.foto{position:absolute;inset:4% 14% 16% 6%;background:var(--rosa);border:3px solid var(--cereja);border-radius:var(--raio-blob);box-shadow:var(--sombra-adesivo);transform:rotate(-3deg);overflow:hidden}
+.foto img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.colagem .cao{position:absolute;width:46%;right:-4%;bottom:-6%;background:none;border:0;padding:0;transform:rotate(7deg);cursor:pointer}
+.colagem .cao .polaroid{padding:8px 8px 6px}.colagem .cao figcaption{font-size:20px;line-height:22px;margin-top:4px}
+.colagem .cao:focus-visible{outline-offset:6px}
+.colagem .seta-nota{position:absolute;left:0;bottom:-15%;width:52%}
+.colagem .seta-nota .nota{display:block;transform:rotate(-6deg);margin-left:8%}
+.colagem .seta-nota .doodle{width:34%;margin:-6px 0 0 62%;transform:rotate(-20deg)}
+.colagem .brilho{position:absolute;width:20%;top:-4%;right:4%;color:var(--caramelo)}
+.balao{position:absolute;right:30%;bottom:46%;background:var(--creme);border:3px solid var(--cereja);border-radius:var(--raio-blob);padding:6px 14px;font-family:var(--font-mao);font-size:26px;opacity:0;transform:scale(.6);transition:.25s;pointer-events:none}
+.balao.on{opacity:1;transform:scale(1) rotate(-4deg)}
+
+
+/* faixa */
+.faixa{background:var(--bordo);color:var(--creme);border-block:3px solid var(--cereja);overflow:hidden;position:relative;transform:rotate(-1.2deg);margin:0 -20px}
+.faixa-trilho{display:flex;width:max-content;animation:rolar 32s linear infinite}
+.faixa.pausada .faixa-trilho{animation-play-state:paused}
+.faixa ul{display:flex;list-style:none;margin:0;padding:14px 0;gap:0}
+.faixa li{display:flex;align-items:center;gap:22px;padding-right:22px;font-family:var(--font-display);font-size:24px;font-style:italic;white-space:nowrap}
+.faixa li .doodle{width:26px;color:var(--caramelo)}
+.faixa button{position:absolute;right:14px;top:50%;transform:translateY(-50%);min-width:44px;min-height:44px;border-radius:var(--raio-pilula);border:2px solid var(--creme);background:var(--cereja);color:var(--creme);font:700 14px var(--font-sans);padding:0 14px;cursor:pointer}
+@keyframes rolar{to{transform:translateX(-50%)}}
+
+section{padding:96px 0}
+.cabeca{display:flex;align-items:flex-end;gap:var(--espaco-6);margin-bottom:var(--espaco-10);flex-wrap:wrap}
+.cabeca .nota{transform:rotate(-4deg)}
+.cabeca .doodle{width:70px}
+
+/* sobre / linha do tempo */
+.sobre .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:start}
+.sobre p{margin:0 0 var(--espaco-4)}
+.polaroid{background:#fff;border:3px solid var(--cereja);padding:12px 12px 14px;box-shadow:var(--sombra-adesivo);border-radius:6px;margin:0}
+.polaroid img{width:100%;height:auto;aspect-ratio:var(--ar,4/5);object-fit:cover;border-radius:3px;background:var(--rosa)}
+.polaroid figcaption{font-family:var(--font-mao);font-weight:600;font-size:24px;line-height:26px;color:var(--bordo);text-align:center;margin-top:8px}
+.fita{position:absolute;width:86px;height:26px;background:rgba(199,223,236,.85);border:1.5px solid rgba(74,20,32,.25);top:-12px;left:50%;transform:translateX(-50%) rotate(-4deg);z-index:2}
+.fita.rosa{background:rgba(217,114,127,.7)}
+.infancia{position:relative;max-width:440px;margin:0 auto;padding-bottom:20px}
+.pc{position:relative;transform:rotate(-3deg);z-index:2}
+.pc .nota-foto{position:absolute;top:30px;left:18px;font-family:var(--font-mao);font-weight:600;font-size:26px;color:var(--cereja);background:var(--creme);padding:2px 12px;border:2px solid var(--cereja);border-radius:var(--raio-pilula);transform:rotate(-6deg)}
+.crianca{position:relative;width:58%;transform:rotate(4deg);margin:-30px 0 0 auto}
+.crianca .nota-lado{position:absolute;right:-56px;bottom:-56px;width:150px;transform:rotate(6deg);text-align:center}
+.crianca .nota-lado .doodle{width:60px;margin:0 auto;transform:rotate(200deg)}
+.caminho{position:relative;list-style:none;margin:var(--espaco-6) 0 0;padding:0 0 0 64px}
+.caminho-box{position:relative}
+.caminho-box svg.trilha{position:absolute;left:14px;top:32px;width:36px;height:calc(100% - 16px);overflow:visible;color:var(--morango)}
+.caminho li{position:relative;margin-bottom:28px;transition:.5s ease}
+.js .caminho li{opacity:0;transform:translateX(18px)}
+.js .caminho li.on{opacity:1;transform:none}
+.caminho li::before{content:"";position:absolute;left:-58px;top:4px;width:24px;height:24px;border-radius:50%;background:var(--creme);border:3px solid var(--bordo)}
+.caminho li:last-child::before{background:var(--bordo)}
+.caminho strong{font-family:var(--font-display);font-size:22px;line-height:28px;display:block;font-weight:600}
+.caminho span{color:var(--texto-suave)}
+@media (max-width:900px){.sobre .wrap{grid-template-columns:1fr}.crianca .nota-lado{right:-20px}}
+
+/* mural */
+.mural-sec{background:var(--rosa);border-block:3px solid var(--cereja)}
+.mural{position:relative;height:1120px;margin-top:var(--espaco-6);border:3px dashed rgba(107,30,46,.35);border-radius:var(--raio-blob);background-image:radial-gradient(rgba(107,30,46,.18) 1.6px,transparent 1.6px);background-size:26px 26px;background-color:var(--creme);overflow:hidden;list-style:none;padding:0}
+.peca{position:absolute;margin:0;touch-action:auto;user-select:none;-webkit-user-select:none;transition:transform .7s cubic-bezier(.2,1.4,.4,1),opacity .5s}
+.mural.pronto .peca{cursor:grab}
+.peca.arrastando{cursor:grabbing;transition:none;z-index:40!important}
+.peca.fora{opacity:0}
+.peca .polaroid{width:var(--w,220px);position:relative}
+.postit{width:200px;min-height:170px;padding:22px 18px 18px;background:var(--azul);border:3px solid var(--cereja);box-shadow:var(--sombra-adesivo);font-family:var(--font-mao);font-weight:600;font-size:26px;line-height:28px;color:var(--cereja);position:relative;border-radius:4px}
+.postit.r{background:#f2c7cb}.postit.c{background:#f3dcc0}
+.postit .doodle{width:54px;position:absolute;right:-18px;bottom:-22px;background:var(--creme);border:3px solid var(--cereja);border-radius:50%;padding:6px}
+.adesivo{width:96px;background:var(--creme);border:3px solid var(--cereja);border-radius:50%;padding:14px;box-shadow:var(--sombra-adesivo)}
+.mural-acoes{display:flex;gap:var(--espaco-4);align-items:center;flex-wrap:wrap;margin-top:var(--espaco-6)}
+.mural-acoes .dica{margin:0}
+@media (max-width:860px){
+  .mural{height:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 16px;padding:28px 16px}
+  .peca{position:static;transform:rotate(var(--r,0deg))!important}
+  .peca{min-width:0}.peca .polaroid,.peca .postit{width:100%;min-width:0}.postit{font-size:21px;line-height:23px;padding:16px 12px;min-height:150px}.postit .doodle{width:42px;right:-8px}.mural .polaroid figcaption{font-size:19px;line-height:21px;overflow-wrap:anywhere}
+  .adesivo{width:84px;margin:0 auto}
+  .mural-acoes button{display:none}
+}
+
+/* servicos */
+.planos{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--espaco-6);align-items:stretch}
+.plano{border:3px solid var(--cereja);border-radius:var(--raio-blob);padding:var(--espaco-6);background:var(--creme);box-shadow:var(--sombra-adesivo);display:flex;flex-direction:column;gap:var(--espaco-2);position:relative}
+.plano.destaque{background:var(--bordo);color:var(--creme)}
+.plano.destaque a.btn{background:var(--creme);color:var(--cereja)}
+.plano .preco{font-family:var(--font-display);font-size:40px;line-height:44px;font-weight:600}
+.plano .preco small{font-family:var(--font-sans);font-size:15px;font-weight:400;display:block;line-height:20px}
+.plano ul{padding-left:22px;margin:var(--espaco-2) 0 var(--espaco-4);flex:1}
+.plano li{margin-bottom:6px}
+.selo{position:absolute;top:-22px;right:18px;background:var(--azul);color:var(--cereja);border:3px solid var(--cereja);border-radius:var(--raio-pilula);padding:2px 14px;font-family:var(--font-mao);font-size:24px;transform:rotate(4deg)}
+.extras{margin-top:var(--espaco-10);display:flex;flex-wrap:wrap;gap:10px}
+.extras span{border:2px solid var(--cereja);border-radius:var(--raio-pilula);padding:6px 14px;background:var(--creme);font-size:16px}
+.extras span:nth-child(3n){background:var(--azul)}.extras span:nth-child(3n+1){background:var(--rosa)}
+@media (max-width:960px){.planos{grid-template-columns:1fr}}
+
+/* acessibilidade */
+.acess{background:var(--chocolate);color:var(--creme)}
+.acess .wrap{display:grid;grid-template-columns:220px 1fr;gap:var(--espaco-10);align-items:center}
+.acess .doodle{color:var(--creme);width:220px}
+.acess h2{color:var(--creme)}
+.acess .grande{margin:0 0 8px;font-family:var(--font-display);font-size:clamp(56px,9vw,96px);line-height:1;color:var(--azul)}
+.acess a{color:var(--azul)}
+@media (max-width:760px){.acess .wrap{grid-template-columns:1fr}.acess .doodle{width:140px}}
+
+/* portfolio */
+.trabalhos{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--espaco-6)}
+.trabalho{border:3px dashed var(--bordo);border-radius:var(--raio-blob);min-height:260px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:var(--espaco-6);gap:var(--espaco-2)}
+.trabalho .doodle{width:90px}
+@media (max-width:860px){.trabalhos{grid-template-columns:1fr}}
+
+/* passos */
+.passos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:var(--espaco-6);counter-reset:p}
+.passos li{counter-increment:p;position:relative;padding-top:70px}
+.passos li::before{content:counter(p);position:absolute;top:0;left:0;width:56px;height:56px;border-radius:50%;background:var(--azul);border:3px solid var(--cereja);display:grid;place-items:center;font-family:var(--font-display);font-size:28px;font-weight:600}
+.passos li:nth-child(even)::before{background:var(--rosa)}
+@media (max-width:860px){.passos{grid-template-columns:1fr 1fr}}
+
+/* contato */
+.contato{background:var(--bordo);color:var(--creme);text-align:center;position:relative;overflow:hidden}
+.contato h2{color:var(--creme);font-size:clamp(40px,7vw,72px)}
+.contato p{max-width:560px;margin:var(--espaco-4) auto var(--espaco-6)}
+.contato .acoes{justify-content:center}
+.contato .btn-secundario{border-color:var(--creme)}
+.contato .doodle{color:var(--creme)}
+.contato .flutua{position:absolute;width:110px;opacity:.9}
+.contato .f1{left:auto;right:42%;top:8%;width:70px}.contato .f3{display:none}.contato .f4{right:4%;top:10%;bottom:auto;width:70px}
+.contatos-texto{font-size:16px;margin-top:var(--espaco-6)}
+@media (max-width:760px){.contato .flutua{width:64px;opacity:.5}}
+footer{padding:var(--espaco-6) 0;font-size:15px;color:var(--texto-suave)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:var(--espaco-4)}
+
+/* hero com recorte */
+.hero{padding:var(--espaco-6) 0 64px}
+.palco{position:relative;height:clamp(440px,52vw,640px);border-bottom:3px solid var(--cereja);overflow:hidden}
+.palavra{position:absolute;left:50%;top:2%;transform:translateX(-50%);margin:0;font-family:var(--font-display);font-weight:600;font-size:clamp(92px,18.5vw,236px);line-height:.85;letter-spacing:-.04em;color:var(--bordo);white-space:nowrap;z-index:1}
+.recorte,.eu-recorte,.cao-recorte img,.crianca-recorte img{filter:drop-shadow(3px 0 0 var(--creme)) drop-shadow(-3px 0 0 var(--creme)) drop-shadow(0 3px 0 var(--creme)) drop-shadow(0 -3px 0 var(--creme)) drop-shadow(6px 6px 0 var(--cereja))}
+.eu-recorte{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:96%;width:auto;z-index:2}
+.cao-recorte{position:absolute;right:3%;bottom:0;height:46%;z-index:3;background:none;border:0;padding:0;cursor:pointer}
+.cao-recorte img{height:100%;width:auto;display:block}
+.cao-recorte:focus-visible{outline-offset:6px}
+.croissant-hero{position:absolute;left:4%;bottom:0;width:clamp(120px,18%,210px);z-index:3}
+.seta-nota{position:absolute;right:3%;bottom:48%;width:min(250px,26%);z-index:3;text-align:right}
+.seta-nota .nota{display:block;transform:rotate(-4deg);font-size:26px;line-height:26px}
+.seta-nota .doodle{width:70px;margin:0 0 0 auto;transform:rotate(110deg)}
+.n-ola{position:absolute;left:24%;top:44%;z-index:3;transform:rotate(-8deg);font-size:34px}
+.palco .brilho{position:absolute;width:70px;top:38%;right:30%;z-index:3;color:var(--caramelo)}
+.pilula{position:absolute;z-index:3;background:var(--azul);border:3px solid var(--cereja);border-radius:var(--raio-pilula);padding:6px 16px;font-weight:700;font-size:16px;box-shadow:var(--sombra-adesivo);animation:flutuar 6s ease-in-out infinite}
+.p1{left:6%;top:52%;transform:rotate(-6deg)}
+.p2{right:24%;top:62%;background:var(--rosa);animation-delay:-2s}
+.p3{left:16%;top:70%;background:#f3dcc0;animation-delay:-4s}
+.balao{right:6%;bottom:44%;z-index:4}
+.hero-texto{display:grid;grid-template-columns:1.2fr .8fr;gap:var(--espaco-10);align-items:end;margin-top:var(--espaco-10)}
+.hero-texto h1{font-size:clamp(40px,5.4vw,66px);line-height:1;letter-spacing:-1px}
+.hero-texto h1 em{font-style:italic;font-weight:500;color:var(--bordo);position:relative;white-space:nowrap}
+.hero-texto .lead{font-size:20px;line-height:30px;margin:0 0 var(--espaco-6)}
+@media (max-width:860px){
+  .palco{height:480px}.palavra{font-size:25vw;top:4%}.eu-recorte{height:88%}
+  .cao-recorte{height:30%;right:0}.croissant-hero{width:110px;left:0}
+  .seta-nota{display:none}.p2,.p3{display:none}.p1{left:2%;top:40%;font-size:14px}
+  .n-ola{left:4%;top:28%;font-size:26px}.palco .brilho{right:6%;top:34%;width:46px}
+  .hero-texto{grid-template-columns:1fr;gap:var(--espaco-4)}
+}
+.crianca-recorte{position:relative;width:60%;margin:-50px 0 0 auto;z-index:1}
+.crianca-recorte img{width:100%;height:auto;display:block}
+.crianca-recorte .nota{position:absolute;left:-58%;bottom:14%;width:150px;transform:rotate(-6deg);font-size:26px;line-height:28px}
+.estrela-c{position:absolute;width:56px;right:-6%;top:6%;color:var(--caramelo)}
+
+/* missao visao valores */
+.mvv-grade{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--espaco-6)}
+.mvv-card{background:var(--creme);border:3px solid var(--cereja);border-radius:var(--raio-blob);padding:56px var(--espaco-6) var(--espaco-6);position:relative;box-shadow:var(--sombra-adesivo)}
+.mvv-card:nth-child(2){transform:rotate(1deg)}.mvv-card:nth-child(1){transform:rotate(-1deg)}
+.selo-oval{position:absolute;top:-26px;left:20px;padding:8px 26px;border:3px solid var(--cereja);border-radius:50%;font-size:26px;box-shadow:inset 0 0 0 4px rgba(255,246,238,.9),var(--sombra-adesivo);transform:rotate(-4deg)}
+.selo-oval.azul{background:var(--azul)}.selo-oval.rosa{background:var(--rosa)}.selo-oval.caramelo{background:#f3dcc0}
+.mvv-card p{margin:0}
+.valores{margin:0;padding-left:22px}.valores li{margin-bottom:6px}
+@media (max-width:860px){.mvv-grade{grid-template-columns:1fr;gap:48px}}
+
+/* toolkit */
+.toolkit{background:var(--azul);border-block:3px solid var(--cereja)}
+.tool-grade{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--espaco-10) var(--espaco-6)}
+.tool-grupo h3{font-size:24px;margin-bottom:var(--espaco-4)}
+.fitas{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:14px 10px}
+.fitas li{padding:8px 18px;font-weight:700;font-size:16px;background:var(--creme);color:var(--cereja);box-shadow:3px 3px 0 var(--cereja);clip-path:polygon(0 8%,4% 0,9% 6%,14% 0,20% 5%,27% 0,34% 6%,41% 1%,48% 6%,55% 0,62% 5%,70% 0,77% 6%,84% 0,91% 5%,96% 0,100% 7%,98% 50%,100% 93%,96% 100%,90% 94%,83% 100%,76% 95%,69% 100%,62% 94%,55% 100%,48% 95%,41% 100%,34% 94%,27% 100%,20% 95%,13% 100%,7% 94%,2% 100%,0 92%,2% 50%);border-block:2px solid rgba(74,20,32,.3)}
+.fitas li:nth-child(4n+1){background:var(--rosa);transform:rotate(-2deg)}
+.fitas li:nth-child(4n+2){background:#f3dcc0;transform:rotate(1.5deg)}
+.fitas li:nth-child(4n+3){background:var(--creme);transform:rotate(-1deg)}
+.fitas li:nth-child(4n){background:#f2c7cb;transform:rotate(2deg)}
+@media (max-width:860px){.tool-grade{grid-template-columns:1fr}}
+
+/* menu de acessibilidade */
+.a11y-botao{position:fixed;right:16px;bottom:96px;z-index:70;width:60px;height:60px;border-radius:50%;background:var(--vinho);color:var(--creme);border:3px solid var(--cereja);box-shadow:var(--sombra-adesivo);display:grid;place-items:center;cursor:pointer;padding:0}
+.a11y-botao svg{width:34px;height:34px}
+.a11y-painel{position:fixed;right:16px;bottom:168px;z-index:71;width:min(360px,calc(100vw - 32px));max-height:calc(100vh - 190px);overflow:auto;background:var(--creme);border:3px solid var(--cereja);border-radius:var(--raio-blob);box-shadow:6px 6px 0 var(--cereja);padding:var(--espaco-6)}
+.a11y-painel[hidden]{display:none}
+.a11y-painel h2{font-size:26px;line-height:30px;margin-bottom:4px}
+.a11y-painel .sub{font-size:15px;line-height:21px;color:var(--texto-suave);margin:0 0 var(--espaco-4)}
+.a11y-tam{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:var(--espaco-4);font-weight:700}
+.a11y-tam div{display:flex;gap:8px;align-items:center}
+.a11y-tam output{min-width:52px;text-align:center}
+.a11y-grade{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.a11y-op{min-height:64px;border:2px solid var(--cereja);border-radius:16px;background:var(--creme);color:var(--cereja);font:700 15px/19px var(--font-sans);padding:10px;cursor:pointer;text-align:left}
+.a11y-op[aria-pressed="true"]{background:var(--bordo);color:var(--creme)}
+.a11y-op[aria-pressed="true"]::after{content:" ✓"}
+.a11y-mini{min-width:44px;min-height:44px;border-radius:50%;border:2px solid var(--cereja);background:var(--azul);color:var(--cereja);font:700 18px var(--font-sans);cursor:pointer}
+.a11y-rodape{display:flex;justify-content:space-between;align-items:center;margin-top:var(--espaco-4);gap:10px;flex-wrap:wrap}
+.a11y-rodape button{background:none;border:0;color:var(--vinho);font:700 15px var(--font-sans);text-decoration:underline;cursor:pointer;min-height:44px}
+.guia-leitura{position:fixed;left:0;right:0;height:48px;pointer-events:none;z-index:69;background:rgba(242,210,122,.28);border-block:2px solid var(--cereja);display:none}
+html.a-guia .guia-leitura{display:block}
+/* efeitos */
+html.a-contraste{--cereja:#000;--bordo:#000;--vinho:#000;--chocolate:#000;--texto-suave:#1a1a1a;--rosa:#fff;--azul:#fff;--creme:#fff;--morango:#000;--caramelo:#000;--sombra-adesivo:4px 4px 0 #000}
+html.a-contraste .postit,html.a-contraste .fitas li,html.a-contraste .selo-oval,html.a-contraste .pilula{background:#fff!important}
+html.a-contraste .acess .grande{color:#fff}
+html.a-contraste .doodle{color:#000}
+html.a-fonte .nota,html.a-fonte .postit,html.a-fonte .polaroid figcaption,html.a-fonte h1,html.a-fonte h2,html.a-fonte h3,html.a-fonte .faixa li,html.a-fonte .palavra,html.a-fonte .preco,html.a-fonte .caminho strong,html.a-fonte .balao,html.a-fonte .marca{font-family:var(--font-sans)!important;font-style:normal!important}
+html.a-espaco body,html.a-espaco p,html.a-espaco li{line-height:2!important;letter-spacing:.12em!important;word-spacing:.16em!important}
+html.a-links a{text-decoration:underline!important;text-decoration-thickness:3px!important;outline:2px dashed currentColor;outline-offset:2px}
+html.a-cursor,html.a-cursor *{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M6 4 L6 40 L16 30 L24 46 L31 43 L23 27 L38 27 Z' fill='%23fff6ee' stroke='%234a1420' stroke-width='3' stroke-linejoin='round'/%3E%3C/svg%3E") 6 4,auto!important}
+html.a-enfeites .doodle,html.a-enfeites .cao-svg,html.a-enfeites .pilula,html.a-enfeites .n-ola,html.a-enfeites .seta-nota,html.a-enfeites .passeio,html.a-enfeites .flutua,html.a-enfeites .fita{display:none!important}
+html.a-parar *,html.a-parar *::before,html.a-parar *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+html.a-parar .passeio{display:none}
+html.a-parar .desenhar path,html.a-parar .desenhar ellipse,html.a-parar .desenhar circle,html.a-parar .desenhar rect{stroke-dasharray:none!important;stroke-dashoffset:0!important}
+html.a-parar .desenhar [fill]{opacity:1!important}
+html.a-parar .js .caminho li,html.a-parar.js .caminho li{opacity:1;transform:none}
+main,header.topo,footer{zoom:var(--zoom,1)}
+
+/* beneficios */
+.beneficios{background:var(--creme)}
+.benef-topo{display:grid;grid-template-columns:1.2fr .8fr;gap:var(--espaco-10);align-items:center}
+.lead-sec{font-size:21px;line-height:31px;margin:0 0 var(--espaco-6);max-width:620px}
+.vantagens{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.vantagens li{position:relative;padding-left:40px}
+.vantagens li::before{content:"";position:absolute;left:0;top:2px;width:26px;height:26px;border-radius:50%;background:var(--azul);border:3px solid var(--cereja)}
+.vantagens li::after{content:"";position:absolute;left:8px;top:8px;width:10px;height:6px;border-left:3px solid var(--cereja);border-bottom:3px solid var(--cereja);transform:rotate(-45deg)}
+.apresenta{position:relative}
+.apresenta img{width:100%;height:auto;display:block}
+.apresenta .nota{position:absolute;right:0;top:-6%;transform:rotate(6deg);font-size:30px}
+.numeros{list-style:none;margin:56px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:var(--espaco-6)}
+.num{border:3px solid var(--cereja);border-radius:var(--raio-blob);padding:var(--espaco-6);box-shadow:var(--sombra-adesivo);display:flex;flex-direction:column;gap:6px}
+.num:nth-child(odd){transform:rotate(-1deg)}.num:nth-child(even){transform:rotate(1deg)}
+.num.azul{background:var(--azul)}.num.rosa{background:var(--rosa)}.num.creme{background:#fff}.num.caramelo{background:#f3dcc0}
+.num .valor{font-family:var(--font-display);font-weight:600;font-size:58px;line-height:1;color:var(--bordo)}
+.num .desc{font-size:17px;line-height:25px}
+.num .fonte{font-size:14px;line-height:18px;color:var(--texto-suave);margin-top:auto}
+.calc{margin-top:64px;display:grid;grid-template-columns:1fr 1fr;gap:var(--espaco-10);background:var(--bordo);color:var(--creme);border:3px solid var(--cereja);border-radius:var(--raio-blob);padding:var(--espaco-10);box-shadow:6px 6px 0 var(--cereja)}
+.calc h3{font-size:32px;line-height:38px}
+.calc p{margin:8px 0}
+.campos{display:grid;gap:8px;margin-top:var(--espaco-4)}
+.campos label{font-weight:700}
+.campos input,.campos select{font:400 18px var(--font-sans);padding:10px 14px;min-height:48px;border-radius:12px;border:3px solid var(--cereja);background:var(--creme);color:var(--cereja);margin-bottom:8px}
+.campos input:focus-visible,.campos select:focus-visible{outline:3px solid var(--creme);outline-offset:3px}
+.resultado{background:var(--creme);color:var(--cereja);border-radius:var(--raio-blob);padding:var(--espaco-6);border:3px solid var(--cereja);align-self:center}
+.grande-num{font-family:var(--font-display);font-weight:600;font-size:64px;line-height:1;margin:0;color:var(--bordo)}
+.grande-num span:last-child{font-size:28px}
+.resultado .mes{font-size:16px;color:var(--texto-suave)}
+.fontes-dados{font-size:14px;line-height:20px;color:var(--texto-suave);margin-top:var(--espaco-6)}
+.fontes-dados a{color:var(--texto-suave)}
+@media (max-width:860px){.benef-topo,.calc{grid-template-columns:1fr}.numeros{grid-template-columns:1fr}.apresenta{max-width:340px;margin:0 auto}.calc{padding:var(--espaco-6)}}
+
+/* formacao */
+.form-grade{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--espaco-6);margin-top:var(--espaco-6)}
+.form-card{background:var(--creme);border:3px solid var(--cereja);border-radius:var(--raio-blob);padding:56px var(--espaco-6) var(--espaco-6);position:relative;box-shadow:var(--sombra-adesivo)}
+.form-card ul{margin:0;padding-left:20px}.form-card li{margin-bottom:8px}
+.sub-h{margin:64px 0 var(--espaco-6);font-size:30px;line-height:36px}
+.ganhos{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.ganhos li{display:grid;grid-template-columns:1fr 40px 1.4fr;align-items:center;gap:12px;background:var(--rosa);border:3px solid var(--cereja);border-radius:var(--raio-pilula);padding:12px 24px}
+.g-de{font-weight:700}.g-seta{font-family:var(--font-display);font-size:30px;text-align:center;color:var(--bordo)}
+@media (max-width:860px){.form-grade{grid-template-columns:1fr;gap:48px}.ganhos li{grid-template-columns:1fr;border-radius:var(--raio-blob)}.g-seta{display:none}}
+
+/* estatico */
+.estatico{background:var(--rosa);border-block:3px solid var(--cereja)}
+.estat-grade{display:grid;grid-template-columns:1.2fr 1fr;gap:var(--espaco-6);margin-top:var(--espaco-6)}
+.estat-card{background:var(--creme);border:3px solid var(--cereja);border-radius:var(--raio-blob);padding:var(--espaco-6);box-shadow:var(--sombra-adesivo)}
+.estat-card h3{font-size:24px;margin-bottom:8px}.estat-card .mt{margin-top:var(--espaco-4)}
+.estat-card ul{margin:0;padding-left:20px}.estat-card li{margin-bottom:8px}
+@media (max-width:860px){.estat-grade{grid-template-columns:1fr}}
+.form-grade{grid-template-columns:repeat(3,1fr)!important;row-gap:56px!important}
+.anjos-lista .raca{display:block;font-size:15px;color:var(--texto-suave)}
+/* mais de mim */
+.mais-mim{background:var(--azul);border-block:3px solid var(--cereja)}
+.postits{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:var(--espaco-6);align-items:center}
+.postits li:nth-child(odd){transform:rotate(-3deg)}.postits li:nth-child(even){transform:rotate(3deg)}
+.postits .postit{width:auto}
+.postits .liza{text-align:center}.postits .liza .sticker-cao{margin:0 auto}
+.postits .liza .nota{display:block;margin-top:8px}
+@media (max-width:960px){.postits{grid-template-columns:repeat(2,1fr)}}
+/* contato com recorte */
+.contato-grade{display:grid;grid-template-columns:1.3fr .7fr;gap:var(--espaco-10);align-items:end;text-align:left}
+.contato-grade .acoes{justify-content:flex-start}
+.contato .contato-grade p{margin-left:0}
+.paz{position:relative;margin-bottom:-96px}
+.paz img{width:100%;height:auto;display:block;filter:drop-shadow(3px 0 0 var(--creme)) drop-shadow(-3px 0 0 var(--creme)) drop-shadow(0 -3px 0 var(--creme)) drop-shadow(6px 6px 0 var(--cereja))}
+.paz .nota{position:absolute;left:-30%;top:12%;color:var(--creme);transform:rotate(-8deg);font-size:32px}
+@media (max-width:860px){.contato-grade{grid-template-columns:1fr;text-align:center}.contato-grade .acoes{justify-content:center}.paz{max-width:260px;margin:0 auto -96px}.paz .nota{left:-20%}}
+
+/* cachorros */
+.cao-svg{display:block;width:100%;height:auto;overflow:visible}
+.anjos{margin-top:var(--espaco-10);padding:var(--espaco-6);border:3px dashed rgba(107,30,46,.35);border-radius:var(--raio-blob);background:var(--creme)}
+.anjos-lista{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--espaco-4);list-style:none;margin:var(--espaco-4) 0 0;padding:0}
+.anjos-lista li{text-align:center}
+.anjos-lista .cao-svg{max-width:150px;margin:0 auto;animation:flutuar 4s ease-in-out infinite}
+.anjos-lista li:nth-child(2) .cao-svg{animation-delay:-1.3s}.anjos-lista li:nth-child(3) .cao-svg{animation-delay:-2.6s}
+.anjos p{margin:0}
+.anjos .nota{display:block;font-size:24px;margin-top:4px}
+.sticker-cao{width:150px;background:var(--creme);border:3px solid var(--cereja);border-radius:var(--raio-blob);padding:12px;box-shadow:var(--sombra-adesivo)}
+
+.passeio{position:fixed;left:0;bottom:6px;width:92px;z-index:45;pointer-events:none;will-change:transform}
+.passeio .cao-svg{filter:drop-shadow(0 4px 0 rgba(74,20,32,.15))}
+.passeio.volta .cao-svg{transform:scaleX(-1)}
+.passeio .perna-a,.passeio .perna-b{transform-box:fill-box;transform-origin:50% 0}
+.passeio .rabo{transform-box:fill-box;transform-origin:100% 100%}
+.passeio .risco{opacity:0;transition:opacity .2s}
+.passeio.andando .perna-a{animation:pa .32s ease-in-out infinite alternate}
+.passeio.andando .perna-b{animation:pa .32s ease-in-out infinite alternate-reverse}
+.passeio.andando .rabo{animation:rabo .25s ease-in-out infinite alternate}
+.passeio.andando .risco{opacity:1}
+@keyframes pa{from{transform:rotate(-16deg)}to{transform:rotate(16deg)}}
+@keyframes rabo{from{transform:rotate(-12deg)}to{transform:rotate(14deg)}}
+@media (max-width:760px){.passeio{width:70px}.anjos-lista .cao-svg{max-width:100px}}
+
+/* animacoes */
+.desenhar path,.desenhar ellipse,.desenhar circle:not([fill]),.desenhar rect{stroke-dasharray:var(--len);stroke-dashoffset:var(--len);transition:stroke-dashoffset 1.6s ease}
+.desenhar [fill]:not([fill="none"]){opacity:0;transition:opacity .4s 1.2s}
+.desenhar.visto path,.desenhar.visto ellipse,.desenhar.visto circle,.desenhar.visto rect{stroke-dashoffset:0}
+.desenhar.visto [fill]{opacity:1}
+.flutua{animation:flutuar 5s ease-in-out infinite}
+.f2,.f4{animation-delay:-2.5s}
+@keyframes flutuar{50%{transform:translateY(-12px) rotate(4deg)}}
+.pata{position:fixed;width:22px;height:22px;pointer-events:none;color:var(--morango);opacity:.9;z-index:60;animation:sumir 1.4s forwards}
+@keyframes sumir{to{opacity:0;transform:scale(.6)}}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .desenhar path,.desenhar ellipse,.desenhar circle,.desenhar rect{stroke-dasharray:none!important;stroke-dashoffset:0!important}
+  .desenhar [fill]{opacity:1!important}
+  .faixa button{display:none}
+  .passeio{display:none}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><filter id="wob" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="5"/><feDisplacementMap in="SourceGraphic" scale="2.6"/></filter><filter id="wob2" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="3"/><feDisplacementMap in="SourceGraphic" scale="2.2"/></filter></defs></svg>
+<script>document.documentElement.classList.add("js")</script>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="topo">
+  <div class="wrap">
+    <a class="marca" href="#inicio"><svg class="doodle " viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob)"><path d="M68 132 C66 110 84 100 100 100 C116 100 134 110 132 132 C130 150 112 152 100 146 C88 152 70 150 68 132Z"/><ellipse cx="56" cy="86" rx="12" ry="16"/><ellipse cx="82" cy="60" rx="12" ry="16"/><ellipse cx="118" cy="60" rx="12" ry="16"/><ellipse cx="144" cy="86" rx="12" ry="16"/></g></svg>Letícia Beatriz</a>
+    <nav aria-label="Principal">
+      <ul>
+        <li class="opcional"><a href="#beneficios">Por que ter um site</a></li>
+        <li class="opcional"><a href="#servicos">Pacotes</a></li>
+        <li class="opcional"><a href="#sobre">Sobre mim</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo">
+
+<section class="hero" id="inicio" aria-labelledby="t-hero">
+  <div class="wrap">
+    <div class="palco">
+      <p class="palavra" aria-hidden="true">portfólio</p>
+      <span class="pilula p1" aria-hidden="true">acessibilidade</span>
+      <span class="pilula p2" aria-hidden="true">sites simples</span>
+      <span class="pilula p3" aria-hidden="true">atendo todo o Brasil</span>
+      <span class="nota n-ola" aria-hidden="true">oi, prazer!</span>
+      <div class="brilho desenhar"><svg class="doodle " viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob)"><path d="M100 30 C104 80 120 96 170 100 C120 104 104 120 100 170 C96 120 80 104 30 100 C80 96 96 80 100 30Z"/><path d="M160 30 l2 8 l8 2 l-8 2 l-2 8 l-2 -8 l-8 -2 l8 -2Z M40 150 l2 8 l8 2 l-8 2 l-2 8 l-2 -8 l-8 -2 l8 -2Z" stroke-width="3"/></g></svg></div>
+      <img class="eu-recorte" src="img/eu-blazer-recorte.webp" alt="Letícia, de cabelo preto curto com franja e blazer preto, sorrindo de lado." width="857" height="1300">
+      <div class="croissant-hero"><svg class="cao-svg " viewBox="20 0 220 186" stroke="#4A1420" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob2)"><path d="M60 112 C52 64 96 40 142 44 C196 50 222 92 210 132 C200 162 156 172 116 168 C84 164 64 146 60 112Z" fill="#E3B57A"/><path d="M128 48 C142 84 142 128 130 166 M168 54 C182 88 182 130 168 162 M200 80 C208 104 206 130 196 148" fill="none" stroke-width="4"/><path d="M208 130 C222 160 186 182 150 172" fill="none" stroke-width="6"/><ellipse cx="84" cy="118" rx="48" ry="38" fill="#E3B57A"/><path d="M104 88 C126 90 132 118 122 136 C116 144 104 138 104 128Z" fill="#C98B4E"/><ellipse cx="62" cy="130" rx="32" ry="23" fill="#FFF6EE" stroke="none"/><path d="M70 106 q9 6 18 0" fill="none" stroke-width="4.5"/><ellipse cx="44" cy="124" rx="14" ry="10.5" fill="#4A1420"/><path d="M52 140 q8 5 16 0" fill="none" stroke-width="4"/><ellipse cx="74" cy="158" rx="15" ry="9" fill="#FFF6EE"/><ellipse cx="104" cy="160" rx="15" ry="9" fill="#FFF6EE"/><path d="M196 24 h14 l-14 14 h14 M218 6 h10 l-10 10 h10" fill="none" stroke-width="4"/></g></svg></div>
+      <div class="seta-nota" aria-hidden="true"><span class="nota">a Liza, gerente de qualidade, 15 anos de casa</span><div class="desenhar"><svg class="doodle " viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob)"><path d="M24 150 C50 60 120 40 168 78"/><path d="M146 58 L170 80 L140 92"/></g></svg></div></div>
+      <button class="cao-recorte" type="button" id="cao-hero" aria-label="Fazer carinho na Liza, minha labradora"><img src="img/cao-moletom-recorte.webp" alt="" width="655" height="797"></button>
+      <div class="balao" id="balao" aria-live="polite"></div>
+    </div>
+    <div class="hero-texto">
+      <h1 id="t-hero">Eu sou a <em>Letícia<svg class="sublinha" viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"><path d="M4 24 C40 10 80 32 120 18 C150 8 176 26 196 14"/></svg></em> e faço sites que todo mundo consegue usar.</h1>
+      <div>
+        <p class="lead">Crio sites simples, rápidos e acessíveis para pequenos negócios de qualquer lugar do Brasil. Seu cliente encontra você no Google, chama no WhatsApp e pronto.</p>
+        <div class="acoes">
+          <a class="btn btn-principal" href="#contato">Pedir orçamento</a>
+          <a class="btn btn-secundario" href="#servicos">Ver pacotes</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="faixa" id="faixa">
+  <div class="faixa-trilho" aria-hidden="true">
+    <ul><li>sites acessíveis <svg class="doodle " viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob)"><path d="M100 30 C104 80 120 96 170 100 C120 104 104 120 100 170 C96 120 80 104 30 100 C80 96 96 80 100 30Z"/><path d="M160 30 l2 8 l8 2 l-8 2 l-2 8 l-2 -8 l-8 -2 l8 -2Z M40 150 l2 8 l8 2 l-8 2 l-2 8 l-2 -8 l-8 -2 l8 -2Z" stroke-width="3"/></g></svg></li><li>feitos para o celular <svg class="doodle " viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob)"><path d="M100 164 C40 120 28 88 40 64 C54 38 88 40 100 68 C112 40 146 38 160 64 C172 88 160 120 100 164Z"/><path d="M58 70 c4 -8 12 -12 20 -10" stroke-width="3"/></g></svg></li><li>sem mensalidade obrigatória <svg class="doodle " viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob)"><path d="M100 26 L118 82 L176 82 L130 116 L148 172 L100 138 L52 172 L70 116 L24 82 L82 82Z"/><path d="M168 30 l12 -12 M178 46 l16 -2" stroke-width="3"/></g></svg></li><li>botão de WhatsApp <svg class="doodle " viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob)"><path d="M68 132 C66 110 84 100 100 100 C116 100 134 110 132 132 C130 150 112 152 100 146 C88 152 70 150 68 132Z"/><ellipse cx="56" cy="86" rx="12" ry="16"/><ellipse cx="82" cy="60" rx="12" ry="16"/><ellipse cx="118" cy="60" rx="12" ry="16"/><ellipse cx="144" cy="86" rx="12" ry="16"/></g></svg></li><li>aparece no Google <svg class="doodle " viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob)"><path d="M100 30 C104 80 120 96 170 100 C120 104 104 120 100 170 C96 120 80 104 30 100 C80 96 96 80 100 30Z"/><path d="M160 30 l2 8 l8 2 l-8 2 l-2 8 l-2 -8 l-8 -2 l8 -2Z M40 150 l2 8 l8 2 l-8 2 l-2 8 l-2 -8 l-8 -2 l8 -2Z" stroke-width="3"/></g></svg></li><li>preço justo <svg class="doodle " viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob)"><path d="M100 164 C40 120 28 88 40 64 C54 38 88 40 100 68 C112 40 146 38 160 64 C172 88 160 120 100 164Z"/><path d="M58 70 c4 -8 12 -12 20 -10" stroke-width="3"/></g></svg></li></ul>
+    <ul><li>sites acessíveis <svg class="doodle " viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob)"><path d="M100 30 C104 80 120 96 170 100 C120 104 104 120 100 170 C96 120 80 104 30 100 C80 96 96 80 100 30Z"/><path d="M160 30 l2 8 l8 2 l-8 2 l-2 8 l-2 -8 l-8 -2 l8 -2Z M40 150 l2 8 l8 2 l-8 2 l-2 8 l-2 -8 l-8 -2 l8 -2Z" stroke-width="3"/></g></svg></li><li>feitos para o celular <svg class="doodle " viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob)"><path d="M100 164 C40 120 28 88 40 64 C54 38 88 40 100 68 C112 40 146 38 160 64 C172 88 160 120 100 164Z"/><path d="M58 70 c4 -8 12 -12 20 -10" stroke-width="3"/></g></svg></li><li>sem mensalidade obrigatória <svg class="doodle " viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob)"><path d="M100 26 L118 82 L176 82 L130 116 L148 172 L100 138 L52 172 L70 116 L24 82 L82 82Z"/><path d="M168 30 l12 -12 M178 46 l16 -2" stroke-width="3"/></g></svg></li><li>botão de WhatsApp <svg class="doodle " viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob)"><path d="M68 132 C66 110 84 100 100 100 C116 100 134 110 132 132 C130 150 112 152 100 146 C88 152 70 150 68 132Z"/><ellipse cx="56" cy="86" rx="12" ry="16"/><ellipse cx="82" cy="60" rx="12" ry="16"/><ellipse cx="118" cy="60" rx="12" ry="16"/><ellipse cx="144" cy="86" rx="12" ry="16"/></g></svg></li><li>aparece no Google <svg class="doodle " viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob)"><path d="M100 30 C104 80 120 96 170 100 C120 104 104 120 100 170 C96 120 80 104 30 100 C80 96 96 80 100 30Z"/><path d="M160 30 l2 8 l8 2 l-8 2 l-2 8 l-2 -8 l-8 -2 l8 -2Z M40 150 l2 8 l8 2 l-8 2 l-2 8 l-2 -8 l-8 -2 l8 -2Z" stroke-width="3"/></g></svg></li><li>preço justo <svg class="doodle " viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob)"><path d="M100 164 C40 120 28 88 40 64 C54 38 88 40 100 68 C112 40 146 38 160 64 C172 88 160 120 100 164Z"/><path d="M58 70 c4 -8 12 -12 20 -10" stroke-width="3"/></g></svg></li></ul>
+  </div>
+  <p class="sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Sites acessíveis, feitos para o celular, sem mensalidade obrigatória, com botão de WhatsApp, que aparecem no Google e com preço justo.</p>
+  <button type="button" id="pausar" aria-pressed="false">Pausar</button>
+</div>
+
+<section class="beneficios" id="beneficios" aria-labelledby="t-benef">
+  <div class="wrap">
+    <div class="benef-topo">
+      <div>
+        <div class="cabeca"><h2 id="t-benef">Um site não é gasto. É investimento.</h2></div>
+        <p class="lead-sec">Seu cliente já está procurando você no celular. A pergunta é: ele encontra o seu negócio ou o do concorrente?</p>
+        <ul class="vantagens">
+          <li><strong>Aparece no Google e no Maps</strong> quando alguém procura o que você faz.</li>
+          <li><strong>Passa confiança</strong> antes mesmo do primeiro contato.</li>
+          <li><strong>Leva direto pro seu WhatsApp</strong> com um toque.</li>
+          <li><strong>Trabalha 24 horas</strong>, inclusive quando você está fechado.</li>
+          <li><strong>Atende todo mundo</strong>, inclusive clientes com deficiência e idosos.</li>
+          <li><strong>Sem mensalidade obrigatória</strong>: você paga uma vez e o site é seu.</li>
+        </ul>
+      </div>
+      <div class="apresenta"><img class="recorte" src="img/eu-bracos-recorte.webp" alt="Letícia sentada numa rocha, sorrindo, com os braços abertos como quem apresenta algo." width="980" height="1000"><span class="nota" aria-hidden="true">olha esses números!</span></div>
+    </div>
+    <ul class="numeros">
+      <li class="num azul"><span class="valor">73%</span><span class="desc">das buscas por negócios locais começam no celular. Por isso eu faço o site pensando primeiro no celular.</span><span class="fonte">BrightLocal, 2026 (EUA)</span></li>
+      <li class="num rosa"><span class="valor">72%</span><span class="desc">das pessoas olham 3 negócios ou menos antes de escolher. Quem não aparece, nem entra na lista.</span><span class="fonte">BrightLocal, 2026 (EUA)</span></li>
+      <li class="num creme"><span class="valor">2,7x</span><span class="desc">mais chances de o cliente achar seu negócio confiável com o Perfil de Empresa completo no Google.</span><span class="fonte">Google</span></li>
+      <li class="num caramelo"><span class="valor">82%</span><span class="desc">dos usuários de WhatsApp no Brasil já falaram com empresas pelo app.</span><span class="fonte">Opinion Box</span></li>
+      <li class="num azul"><span class="valor">+8,4%</span><span class="desc">de conversões em lojas quando o site no celular fica só 0,1 segundo mais rápido. Velocidade é o ponto forte do site estático.</span><span class="fonte">Deloitte e Google</span></li>
+      <li class="num rosa"><span class="valor">58%</span><span class="desc">das fontes que o ChatGPT usa para indicar negócios locais são sites de empresas. A inteligência artificial também lê o seu site.</span><span class="fonte">BrightLocal (EUA)</span></li>
+    </ul>
+    <div class="calc" aria-labelledby="t-calc">
+      <div>
+        <h3 id="t-calc">Em quantos clientes o site se paga?</h3>
+        <p>Faça a conta com o seu negócio.</p>
+        <div class="campos">
+          <label for="ticket">Quanto um cliente gasta, em média, com você (R$)</label>
+          <input id="ticket" type="number" inputmode="decimal" min="1" step="1" value="80">
+          <label for="pacote">Pacote</label>
+          <select id="pacote"><option value="690">Essencial (R$ 690)</option><option value="990" selected>Presença (R$ 990)</option><option value="1690">Marca Completa (R$ 1.690)</option></select>
+        </div>
+      </div>
+      <div class="resultado" aria-live="polite">
+        <p class="grande-num"><span id="clientes">13</span> <span>clientes novos</span></p>
+        <p>pagam o site inteiro. Depois disso, é lucro.</p>
+        <p class="mes">Em 3 anos, contando o domínio, sai por cerca de <strong id="mes">R$ 31</strong> por mês.</p>
+      </div>
+    </div>
+    <p class="fontes-dados">Fontes: <a href="https://www.brightlocal.com/resources/local-seo-statistics/">BrightLocal, estatísticas de busca local 2026</a> · <a href="https://www.shopify.com/br/blog/perfil-da-empresa-no-google">Google, citado pela Shopify</a> · <a href="https://canaltech.com.br/apps/o-que-os-brasileiros-mais-fazem-no-whatsapp-segundo-pesquisa/">Opinion Box, via Canaltech</a> · <a href="https://web.dev/case-studies/milliseconds-make-millions">Deloitte e Google, Milliseconds Make Millions</a>. Os dados da BrightLocal são de consumidores dos EUA.</p>
+  </div>
+</section>
+
+<section class="estatico" id="estatico" aria-labelledby="t-estat">
+  <div class="wrap">
+    <div class="cabeca"><h2 id="t-estat">Que tipo de site eu faço?</h2><span class="nota">explicado sem tecniquês</span></div>
+    <p class="lead-sec">Eu faço <strong>sites estáticos</strong>. Pense num folheto bem feito, só que na internet: as páginas já ficam prontas e chegam inteiras no celular de quem abre. Não tem sistema rodando por trás, nem banco de dados, nem senha para invadir.</p>
+    <div class="estat-grade">
+      <div class="estat-card sim"><h3>Por isso ele é</h3><ul>
+        <li><strong>Muito rápido.</strong> Abre na hora, até no 4G. Lembra dos +8,4% de conversões com 0,1 segundo a menos? É aqui que o estático ganha.</li>
+        <li><strong>Seguro.</strong> Sem login e sem banco de dados, quase não há por onde ser invadido.</li>
+        <li><strong>Barato de manter.</strong> A hospedagem pode ser gratuita. Você só paga o domínio, cerca de R$ 40 por ano.</li>
+        <li><strong>Sem dor de cabeça.</strong> Não precisa de atualização de plugin nem de sistema.</li></ul></div>
+      <div class="estat-card nao"><h3>Ele é ideal para</h3><ul>
+        <li>Apresentar seu negócio, serviços, preços e fotos</li>
+        <li>Mostrar endereço, mapa e horário</li>
+        <li>Levar o cliente para o WhatsApp, o Instagram ou um link de agendamento</li></ul>
+        <h3 class="mt">Não é para</h3><ul>
+        <li>Loja virtual com pagamento (aí eu indico uma plataforma pronta)</li>
+        <li>Área de login para clientes</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="servicos" aria-labelledby="t-servicos">
+  <div class="wrap">
+    <div class="cabeca"><h2 id="t-servicos">O que eu faço por você</h2><div class="desenhar" style="width:70px"><svg class="doodle " viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob)"><path d="M24 150 C50 60 120 40 168 78"/><path d="M146 58 L170 80 L140 92"/></g></svg></div></div>
+    <div class="planos">
+      <article class="plano">
+        <h3>Essencial</h3>
+        <p class="preco">R$ 690<small>pagamento único</small></p>
+        <ul><li>Site de uma página</li><li>Funciona bem no celular</li><li>Botão de WhatsApp e mapa</li><li>Acessibilidade essencial</li><li>Aparece no Google</li></ul>
+        <a class="btn btn-secundario" href="#contato">Quero esse</a>
+      </article>
+      <article class="plano destaque">
+        <span class="selo">o queridinho</span>
+        <h3>Presença</h3>
+        <p class="preco">R$ 990<small>pagamento único</small></p>
+        <ul><li>Tudo do Essencial</li><li>Textos escritos por mim</li><li>Perfil de Empresa no Google</li><li>Artes para divulgar o site</li></ul>
+        <a class="btn" href="#contato">Quero esse</a>
+      </article>
+      <article class="plano">
+        <h3>Marca Completa</h3>
+        <p class="preco">R$ 1.690<small>pagamento único</small></p>
+        <ul><li>Tudo do Presença</li><li>Kit visual (logo, cores, fontes)</li><li>Acessibilidade avançada com relatório</li><li>Uma página extra</li></ul>
+        <a class="btn btn-secundario" href="#contato">Quero esse</a>
+      </article>
+    </div>
+    <p class="nota" style="margin-top:var(--espaco-10)">e ainda dá para adicionar:</p>
+    <div class="extras"><span>Páginas extras</span><span>Cardápio ou catálogo</span><span>Versão em espanhol</span><span>Painel para você editar</span><span>Botão VLibras</span><span>Manutenção mensal</span></div>
+  </div>
+</section>
+
+<section class="acess escuro" aria-labelledby="t-acess">
+  <div class="wrap">
+    <div class="desenhar"><svg class="doodle " viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob)"><circle cx="100" cy="100" r="72"/><circle cx="100" cy="58" r="10" fill="currentColor" stroke="none"/><path d="M60 80 C80 88 120 88 140 80 M100 88 V122 M100 122 L82 154 M100 122 L118 154" stroke-width="6"/></g></svg></div>
+    <div>
+      <p class="grande">18,6 milhões</p>
+      <h2 id="t-acess">de brasileiros têm alguma deficiência. Quase metade deles tem 60 anos ou mais.</h2>
+      <p>São dados do <a href="https://agenciadenoticias.ibge.gov.br/pt/agencia-noticias/37317-pessoas-com-deficiencia-tem-menor-acesso-a-educacao-ao-trabalho-e-a-renda.html">IBGE (PNAD Contínua 2022)</a>. Se o seu site não funciona para essas pessoas, você perde clientes. E a Lei Brasileira de Inclusão exige acessibilidade nos sites de empresas. Por isso, todo site que eu entrego já sai com contraste certo, navegação por teclado e texto alternativo nas imagens. Este site também: experimente o botão de acessibilidade no canto da tela.</p>
+    </div>
+  </div>
+</section>
+
+<section class="formacao" id="formacao" aria-labelledby="t-form">
+  <div class="wrap">
+    <div class="cabeca"><h2 id="t-form">Por que fazer comigo</h2><span class="nota">não é só um site bonito</span></div>
+    <div class="form-grade">
+      <article class="form-card"><h3 class="selo-oval azul">Formação</h3><ul>
+        <li><strong>Sistemas de Informação</strong> · Unisul, no último semestre</li>
+        <li><strong>Técnico em Desenvolvimento de Sistemas</strong> · SENAI/SC</li>
+        <li><strong>Técnico em Programação Back-end</strong> · SENAI/SC</li></ul></article>
+      <article class="form-card"><h3 class="selo-oval rosa">Eu ensino</h3><ul>
+        <li>Cursos de capacitação para servidores públicos sobre <strong>criação de sites institucionais</strong>: planejamento, organização das informações, construção e manutenção</li>
+        <li><strong>Ferramentas digitais</strong>, inteligência artificial e <strong>design acessível</strong> de materiais</li>
+        <li><strong>Atendimento ao público</strong></li></ul></article>
+      <article class="form-card"><h3 class="selo-oval caramelo">Projetos</h3><ul>
+        <li><strong>XR EduTech</strong> · realidade estendida no ensino superior (Ânima Hub, Unisul): pesquisa e extensão, 120 h</li>
+        <li><strong>Acessibilidade</strong> · projeto de biblioteca acessível financiado pela FINEP e projeto de totens acessíveis</li>
+        <li><strong>Expandindo Fronteiras Digitais</strong> · inclusão digital em comunidade (extensão, 2024)</li></ul></article>
+      <article class="form-card"><h3 class="selo-oval azul">Experiência</h3><ul>
+        <li>Tecnologia na <strong>Intelbras</strong></li>
+        <li>Documentação técnica e treinamento de novos integrantes em projeto de pesquisa</li>
+        <li>Comissões e bancas de processos seletivos</li></ul></article>
+      <article class="form-card"><h3 class="selo-oval rosa">Eventos</h3><ul>
+        <li><strong>ExpoArqTech 2026</strong> · apresentação de trabalho de análise de dados</li>
+        <li><strong>Hackathon Sinthetica</strong> · projeto de realidade aumentada no ensino superior</li></ul></article>
+    </div>
+    <h3 class="sub-h">O que isso muda para o seu negócio</h3>
+    <ul class="ganhos">
+      <li><span class="g-de">Formação técnica em sistemas</span><span class="g-seta" aria-hidden="true">→</span><span class="g-para">Site leve, rápido e seguro, feito do jeito certo.</span></li>
+      <li><span class="g-de">Pesquisa em acessibilidade</span><span class="g-seta" aria-hidden="true">→</span><span class="g-para">Site que todo mundo consegue usar e que segue a lei.</span></li>
+      <li><span class="g-de">Experiência ensinando a criar sites</span><span class="g-seta" aria-hidden="true">→</span><span class="g-para">Tudo explicado em linguagem simples, sem "tecniquês".</span></li>
+      <li><span class="g-de">Documentação técnica</span><span class="g-seta" aria-hidden="true">→</span><span class="g-para">Você recebe um guia claro de como cuidar do seu site.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="toolkit" id="ferramentas" aria-labelledby="t-tool">
+  <div class="wrap">
+    <div class="cabeca"><h2 id="t-tool">Caixa de ferramentas</h2><span class="nota">o que eu uso no dia a dia</span></div>
+    <div class="tool-grade">
+      <div class="tool-grupo"><h3>Desenvolvimento</h3><ul class="fitas"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Java</li><li>Kotlin</li><li>Git e GitHub</li></ul></div>
+      <div class="tool-grupo"><h3>Acessibilidade</h3><ul class="fitas"><li>WCAG 2.2</li><li>ABNT NBR 17225</li><li>Leitores de tela (NVDA e TalkBack)</li><li>WAVE</li><li>Lei Brasileira de Inclusão</li></ul></div>
+      <div class="tool-grupo"><h3>Publicação e Google</h3><ul class="fitas"><li>Cloudflare</li><li>Registro.br</li><li>Perfil de Empresa no Google</li><li>PageSpeed Insights</li></ul></div>
+      <div class="tool-grupo"><h3>Design</h3><ul class="fitas"><li>Figma</li><li>Canva</li><li>Identidade visual</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0" aria-labelledby="t-passos">
+  <div class="wrap">
+    <div class="cabeca"><h2 id="t-passos">Como funciona</h2><div class="desenhar" style="width:120px"><svg class="doodle " viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob)"><path d="M14 110 C30 80 46 140 62 110 C78 80 94 140 110 110 C126 80 142 140 158 110 C170 90 180 100 188 104"/></g></svg></div></div>
+    <ol class="passos">
+      <li><h3>Conversa</h3><p>Você me conta sobre o seu negócio pelo WhatsApp. Atendo à distância, de qualquer cidade.</p></li>
+      <li><h3>Proposta</h3><p>Mando o pacote, o preço e o prazo, tudo por escrito.</p></li>
+      <li><h3>Criação</h3><p>Em até 10 dias úteis depois de receber seus materiais.</p></li>
+      <li><h3>No ar</h3><p>Site publicado, testado e com o seu domínio.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="trabalhos" aria-labelledby="t-trabalhos">
+  <div class="wrap">
+    <div class="cabeca"><h2 id="t-trabalhos">Trabalhos</h2><span class="nota">saindo do forno</span></div>
+    <div class="trabalhos">
+      <div class="trabalho"><div class="desenhar" style="width:90px"><svg class="doodle " viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob)"><path d="M100 36 C130 36 148 50 156 66 C146 68 140 78 144 88 C152 92 162 92 166 98 C168 136 140 166 100 166 C60 166 34 138 34 100 C34 62 64 36 100 36Z"/><path d="M64 72 q5 -6 10 0 q-5 6 -10 0Z" stroke-width="3"/><path d="M116 62 q5 -6 10 0 q-5 6 -10 0Z" stroke-width="3"/><path d="M52 118 q5 -6 10 0 q-5 6 -10 0Z" stroke-width="3"/><path d="M132 128 q5 -6 10 0 q-5 6 -10 0Z" stroke-width="3"/><path d="M88 146 q5 -6 10 0 q-5 6 -10 0Z" stroke-width="3"/><circle cx="84" cy="104" r="4" fill="currentColor" stroke="none"/><circle cx="112" cy="104" r="4" fill="currentColor" stroke="none"/><path d="M92 110 q6 6 12 0" stroke-width="3.5"/><path d="M64 118 l5 -7 M71 118 l5 -7 M78 118 l5 -7" stroke-width="3"/><path d="M116 118 l5 -7 M123 118 l5 -7 M130 118 l5 -7" stroke-width="3"/><path d="M154 54 l10 -10 M166 70 l12 -4" stroke-width="3"/></g></svg></div><h3>Em breve</h3><p>Primeiro projeto em construção.</p></div>
+      <div class="trabalho"><div class="desenhar" style="width:90px"><svg class="doodle " viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob)"><circle cx="100" cy="76" r="44"/><path d="M78 50 l6 4" stroke-width="3.5"/><path d="M96 42 l7 -2" stroke-width="3.5"/><path d="M116 50 l4 6" stroke-width="3.5"/><path d="M130 68 l3 7" stroke-width="3.5"/><path d="M70 70 l6 2" stroke-width="3.5"/><path d="M122 90 l6 -3" stroke-width="3.5"/><path d="M48 114 L60 168 L140 168 L152 114 L140 122 L128 114 L116 122 L104 114 L92 122 L80 114 L68 122 L56 114Z"/><path d="M76 130 l4 30 M100 130 v30 M124 130 l-4 30" stroke-width="3"/><circle cx="84" cy="82" r="4.5" fill="currentColor" stroke="none"/><circle cx="116" cy="82" r="4.5" fill="currentColor" stroke="none"/><path d="M94 88 q6 6 12 0" stroke-width="3.5"/><path d="M64 96 l5 -7 M71 96 l5 -7 M78 96 l5 -7" stroke-width="3"/><path d="M120 96 l5 -7 M127 96 l5 -7 M134 96 l5 -7" stroke-width="3"/></g></svg></div><h3>Em breve</h3><p>Segundo projeto em construção.</p></div>
+      <div class="trabalho"><div class="desenhar" style="width:90px"><svg class="doodle " viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob)"><path d="M100 30 C104 80 120 96 170 100 C120 104 104 120 100 170 C96 120 80 104 30 100 C80 96 96 80 100 30Z"/><path d="M160 30 l2 8 l8 2 l-8 2 l-2 8 l-2 -8 l-8 -2 l8 -2Z M40 150 l2 8 l8 2 l-8 2 l-2 8 l-2 -8 l-8 -2 l8 -2Z" stroke-width="3"/></g></svg></div><h3>Pode ser o seu</h3><p><a href="#contato">Vamos conversar?</a></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sobre" id="sobre" aria-labelledby="t-sobre">
+  <div class="wrap">
+    <div>
+      <div class="infancia">
+        <figure class="polaroid pc"><span class="fita" aria-hidden="true"></span><img src="img/bebe-computador.jpg" alt="Letícia bebê, sentada num andador, mexendo no teclado de um computador antigo, em 2006." style="--ar:4/3" width="900" height="670"><figcaption>com experiência desde 2006</figcaption><span class="nota-foto" aria-hidden="true">já debugando</span></figure>
+        <div class="crianca-recorte"><img src="img/crianca-recorte.webp" alt="Letícia criança, de chapéu e óculos escuros, fazendo pose com as mãos na cintura." width="406" height="900"><span class="nota" aria-hidden="true">2009: pose de quem ia longe</span><div class="estrela-c"><svg class="doodle " viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob)"><path d="M100 26 L118 82 L176 82 L130 116 L148 172 L100 138 L52 172 L70 116 L24 82 L82 82Z"/><path d="M168 30 l12 -12 M178 46 l16 -2" stroke-width="3"/></g></svg></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="cabeca"><h2 id="t-sobre">Curiosa desde pequena</h2><span class="nota">e não parei mais</span></div>
+      <p>Desde criança eu quero saber como as coisas funcionam: desmontar, perguntar, testar de novo. Essa curiosidade virou profissão, e até hoje estou sempre estudando alguma coisa nova.</p>
+      <p>Tenho 21 anos e gosto de transformar o que aprendo em algo útil para as pessoas. Foi assim que cheguei aqui: todo pequeno negócio merece um site bonito, rápido e que <strong>qualquer pessoa</strong> consiga usar, inclusive quem usa leitor de tela ou tem baixa visão.</p>
+      <div class="caminho-box"><svg class="trilha" viewBox="0 0 36 600" preserveAspectRatio="none" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 12"><path d="M18 0 C4 80 32 160 18 240 C4 320 32 400 18 480 C8 540 24 570 18 600"/></svg><ol class="caminho" id="caminho">
+        <li><strong>Técnico no SENAI/SC</strong><span>Desenvolvimento de Sistemas e Programação Back-end.</span></li>
+        <li><strong>Primeiros passos na tecnologia</strong><span>Experiência na Intelbras, hackathons e aulas voluntárias de informática para comunidades.</span></li>
+        <li><strong>Sistemas de Informação na Unisul</strong><span>No último semestre da graduação.</span></li>
+        <li><strong>Pesquisa</strong><span>Acessibilidade digital e realidade estendida no ensino superior.</span></li>
+        <li><strong>Hoje</strong><span>Criando sites acessíveis para pequenos negócios de todo o Brasil.</span></li>
+      </ol></div>
+      <div class="anjos">
+        <p>E no caminho todo, eu tive companhia. Esses três já não estão aqui, mas fizeram parte da minha história.</p>
+        <ul class="anjos-lista">
+          <li><svg class="cao-svg " viewBox="0 -10 200 210" stroke="#4A1420" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob2)"><path d="M46 96 C14 70 4 96 14 112 C2 122 10 140 26 136 C22 150 40 156 52 142Z" fill="#FFF6EE"/><path d="M154 96 C186 70 196 96 186 112 C198 122 190 140 174 136 C178 150 160 156 148 142Z" fill="#FFF6EE"/><path d="M58 52 C36 48 24 70 28 96 C30 110 46 112 52 100 Z" fill="#C98B4E"/><path d="M142 52 C164 48 176 70 172 96 C170 110 154 112 148 100 Z" fill="#C98B4E"/><path d="M52 74 C50 44 78 38 100 38 C122 38 150 44 148 74 L150 128 C150 156 128 166 100 166 C72 166 50 156 50 128Z" fill="#E3B57A"/><path d="M86 70 C88 60 112 60 114 70 L120 92 C138 98 140 130 124 142 C112 150 88 150 76 142 C60 130 62 98 80 92Z" fill="#FFF6EE" stroke="none"/><path d="M62 94 q8 -9 16 0 M122 94 q8 -9 16 0" fill="none" stroke-width="4.5"/><ellipse cx="100" cy="114" rx="24" ry="16" fill="#4A1420"/><path d="M92 136 C90 154 110 154 108 136Z" fill="#D9727F" stroke-width="4.5"/><path d="M100 139 v8" fill="none" stroke-width="3"/><path d="M88 132 q12 8 24 0" fill="none" stroke-width="4.5"/><ellipse cx="100" cy="16" rx="36" ry="9" fill="none" stroke-width="8"/><ellipse cx="100" cy="16" rx="36" ry="9" fill="none" stroke-width="3.5" stroke="#F2D27A"/><path d="M178 32 l2.5 6 l6 2.5 l-6 2.5 l-2.5 6 l-2.5 -6 l-6 -2.5 l6 -2.5Z" fill="#F2D27A" stroke-width="3"/><path d="M24 38 l2.5 6 l6 2.5 l-6 2.5 l-2.5 6 l-2.5 -6 l-6 -2.5 l6 -2.5Z" fill="#F2D27A" stroke-width="3"/></g></svg><span class="nota">Princess</span><span class="raca">labradora caramelo</span></li>
+          <li><svg class="cao-svg " viewBox="0 -10 200 210" stroke="#4A1420" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob2)"><path d="M46 96 C14 70 4 96 14 112 C2 122 10 140 26 136 C22 150 40 156 52 142Z" fill="#FFF6EE"/><path d="M154 96 C186 70 196 96 186 112 C198 122 190 140 174 136 C178 150 160 156 148 142Z" fill="#FFF6EE"/><path d="M58 52 C36 48 24 70 28 96 C30 110 46 112 52 100 Z" fill="#4E3022"/><path d="M142 52 C164 48 176 70 172 96 C170 110 154 112 148 100 Z" fill="#4E3022"/><path d="M52 74 C50 44 78 38 100 38 C122 38 150 44 148 74 L150 128 C150 156 128 166 100 166 C72 166 50 156 50 128Z" fill="#6B4430"/><path d="M86 70 C88 60 112 60 114 70 L120 92 C138 98 140 130 124 142 C112 150 88 150 76 142 C60 130 62 98 80 92Z" fill="#8A5C42" stroke="none"/><path d="M62 94 q8 -9 16 0 M122 94 q8 -9 16 0" fill="none" stroke-width="4.5"/><ellipse cx="100" cy="114" rx="24" ry="16" fill="#4A1420"/><path d="M92 136 C90 154 110 154 108 136Z" fill="#D9727F" stroke-width="4.5"/><path d="M100 139 v8" fill="none" stroke-width="3"/><path d="M88 132 q12 8 24 0" fill="none" stroke-width="4.5"/><ellipse cx="100" cy="16" rx="36" ry="9" fill="none" stroke-width="8"/><ellipse cx="100" cy="16" rx="36" ry="9" fill="none" stroke-width="3.5" stroke="#F2D27A"/><path d="M178 32 l2.5 6 l6 2.5 l-6 2.5 l-2.5 6 l-2.5 -6 l-6 -2.5 l6 -2.5Z" fill="#F2D27A" stroke-width="3"/><path d="M24 38 l2.5 6 l6 2.5 l-6 2.5 l-2.5 6 l-2.5 -6 l-6 -2.5 l6 -2.5Z" fill="#F2D27A" stroke-width="3"/></g></svg><span class="nota">Scooby</span><span class="raca">labrador chocolate</span></li>
+          <li><svg class="cao-svg " viewBox="0 -10 200 210" stroke="#4A1420" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob2)"><path d="M46 96 C14 70 4 96 14 112 C2 122 10 140 26 136 C22 150 40 156 52 142Z" fill="#FFF6EE"/><path d="M154 96 C186 70 196 96 186 112 C198 122 190 140 174 136 C178 150 160 156 148 142Z" fill="#FFF6EE"/><path d="M58 70 L50 14 L92 42Z" fill="#3A2A24"/><path d="M142 70 L150 14 L108 42Z" fill="#3A2A24"/><path d="M62 56 L58 30 L80 44Z" fill="#C98B4E" stroke="none"/><path d="M138 56 L142 30 L120 44Z" fill="#C98B4E" stroke="none"/><path d="M52 76 C50 46 78 40 100 40 C122 40 150 46 148 76 L150 128 C150 156 128 166 100 166 C72 166 50 156 50 128Z" fill="#C98B4E"/><path d="M52 80 C54 52 80 44 100 44 C120 44 146 52 148 80 C136 96 118 92 100 100 C82 92 64 96 52 80Z" fill="#3A2A24" stroke="none"/><path d="M52 80 C54 52 80 44 100 44 C120 44 146 52 148 80" fill="none" stroke="none"/><path d="M74 104 C80 94 120 94 126 104 C136 120 132 146 100 150 C68 146 64 120 74 104Z" fill="#EAC48E" stroke="none"/><path d="M62 80 q8 -9 16 0 M122 80 q8 -9 16 0" fill="none" stroke-width="4.5" stroke="#F6E6CF"/><ellipse cx="100" cy="112" rx="22" ry="15" fill="#4A1420"/><path d="M92 136 C90 152 110 152 108 136Z" fill="#D9727F" stroke-width="4.5"/><path d="M88 130 q12 8 24 0" fill="none" stroke-width="4.5"/><path d="M52 76 C50 46 78 40 100 40 C122 40 150 46 148 76 L150 128 C150 156 128 166 100 166 C72 166 50 156 50 128Z" fill="none"/><ellipse cx="100" cy="16" rx="36" ry="9" fill="none" stroke-width="8"/><ellipse cx="100" cy="16" rx="36" ry="9" fill="none" stroke-width="3.5" stroke="#F2D27A"/><path d="M178 32 l2.5 6 l6 2.5 l-6 2.5 l-2.5 6 l-2.5 -6 l-6 -2.5 l6 -2.5Z" fill="#F2D27A" stroke-width="3"/><path d="M24 38 l2.5 6 l6 2.5 l-6 2.5 l-2.5 6 l-2.5 -6 l-6 -2.5 l6 -2.5Z" fill="#F2D27A" stroke-width="3"/></g></svg><span class="nota">Fiona</span><span class="raca">pastora alemã</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mvv" id="proposito" aria-labelledby="t-mvv">
+  <div class="wrap">
+    <div class="cabeca"><h2 id="t-mvv">O que me move</h2><span class="nota">missão, visão e valores</span></div>
+    <div class="mvv-grade">
+      <article class="mvv-card"><h3 class="selo-oval azul">Missão</h3><p>Ajudar pequenos negócios de todo o Brasil a serem encontrados e entendidos na internet, com sites simples, bonitos e que qualquer pessoa consegue usar.</p></article>
+      <article class="mvv-card"><h3 class="selo-oval rosa">Visão</h3><p>Ser referência em sites acessíveis para pequenos negócios, mostrando que acessibilidade e bom design andam juntos, e não são luxo de empresa grande.</p></article>
+      <article class="mvv-card"><h3 class="selo-oval caramelo">Valores</h3>
+        <ul class="valores"><li>Acessibilidade de verdade</li><li>Preço e prazo claros, por escrito</li><li>Simplicidade</li><li>Cuidado com cada detalhe</li><li>Aprender sempre</li></ul></article>
+    </div>
+  </div>
+</section>
+
+<section class="mais-mim" id="mais" aria-labelledby="t-mais">
+  <div class="wrap">
+    <div class="cabeca"><h2 id="t-mais">Um pouco mais de mim</h2><span class="nota">fora do computador</span></div>
+    <ul class="postits">
+      <li><div class="postit">não tomo café. é energético ou coca zero, sempre.<svg class="doodle " viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob)"><path d="M62 52 V160 C62 170 70 174 100 174 C130 174 138 170 138 160 V52"/><ellipse cx="100" cy="48" rx="38" ry="10"/><path d="M92 46 h16" stroke-width="3"/><path d="M108 72 L86 106 L100 106 L92 136 L116 98 L102 98Z"/><circle cx="88" cy="152" r="3.5" fill="currentColor" stroke="none"/><circle cx="112" cy="152" r="3.5" fill="currentColor" stroke="none"/><path d="M94 158 q6 6 12 0" stroke-width="3.5"/><path d="M152 52 l12 -8 M156 72 h14 M146 34 l6 -12" stroke-width="3"/></g></svg></div></li>
+      <li><div class="postit r">academia é sagrada. é onde eu desligo a cabeça.<svg class="doodle " viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob)"><path d="M58 94 H142 M58 106 H142"/><rect x="34" y="62" width="24" height="76" rx="9"/><rect x="142" y="62" width="24" height="76" rx="9"/><rect x="16" y="78" width="18" height="44" rx="7"/><rect x="166" y="78" width="18" height="44" rx="7"/><path d="M70 48 l-6 -14 M100 42 v-16 M130 48 l6 -14" stroke-width="3.5"/></g></svg></div></li>
+      <li><div class="postit c">brigadeiro e cookie: combustível oficial dos projetos.<svg class="doodle " viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob)"><circle cx="100" cy="76" r="44"/><path d="M78 50 l6 4" stroke-width="3.5"/><path d="M96 42 l7 -2" stroke-width="3.5"/><path d="M116 50 l4 6" stroke-width="3.5"/><path d="M130 68 l3 7" stroke-width="3.5"/><path d="M70 70 l6 2" stroke-width="3.5"/><path d="M122 90 l6 -3" stroke-width="3.5"/><path d="M48 114 L60 168 L140 168 L152 114 L140 122 L128 114 L116 122 L104 114 L92 122 L80 114 L68 122 L56 114Z"/><path d="M76 130 l4 30 M100 130 v30 M124 130 l-4 30" stroke-width="3"/><circle cx="84" cy="82" r="4.5" fill="currentColor" stroke="none"/><circle cx="116" cy="82" r="4.5" fill="currentColor" stroke="none"/><path d="M94 88 q6 6 12 0" stroke-width="3.5"/><path d="M64 96 l5 -7 M71 96 l5 -7 M78 96 l5 -7" stroke-width="3"/><path d="M120 96 l5 -7 M127 96 l5 -7 M134 96 l5 -7" stroke-width="3"/></g></svg></div></li>
+      <li><div class="postit">sempre estudando alguma coisa nova (e anotando tudo).<svg class="doodle " viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob)"><path d="M100 60 C82 48 52 48 30 56 V152 C52 144 82 144 100 156 C118 144 148 144 170 152 V56 C148 48 118 48 100 60 V156"/><path d="M46 80 h36 M46 98 h36 M46 116 h28 M118 80 h36 M118 98 h30" stroke-width="3"/><path d="M140 150 L178 112 L190 124 L152 162 L136 166Z M172 118 L184 130" stroke-width="4"/><path d="M128 30 l-4 -12 M146 34 l8 -10" stroke-width="3"/></g></svg></div></li>
+      <li class="liza"><div class="sticker-cao"><svg class="cao-svg " viewBox="0 -30 200 230" stroke="#4A1420" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob2)"><path d="M40 154 C60 178 140 178 160 154 L168 196 L32 196Z" fill="#CDBDE8"/><circle cx="70" cy="182" r="3.5" fill="#4A1420" stroke="none"/><circle cx="100" cy="188" r="3.5" fill="#4A1420" stroke="none"/><circle cx="130" cy="182" r="3.5" fill="#4A1420" stroke="none"/><path d="M58 52 C36 48 24 70 28 96 C30 110 46 112 52 100 Z" fill="#C98B4E"/><path d="M142 52 C164 48 176 70 172 96 C170 110 154 112 148 100 Z" fill="#C98B4E"/><path d="M52 74 C50 44 78 38 100 38 C122 38 150 44 148 74 L150 128 C150 156 128 166 100 166 C72 166 50 156 50 128Z" fill="#E3B57A"/><path d="M86 70 C88 60 112 60 114 70 L120 92 C138 98 140 130 124 142 C112 150 88 150 76 142 C60 130 62 98 80 92Z" fill="#FFF6EE" stroke="none"/><path d="M62 92 q8 5 16 0 M122 92 q8 5 16 0" fill="none" stroke-width="4.5"/><ellipse cx="100" cy="114" rx="24" ry="16" fill="#4A1420"/><path d="M92 136 C90 154 110 154 108 136Z" fill="#D9727F" stroke-width="4.5"/><path d="M100 139 v8" fill="none" stroke-width="3"/><path d="M88 132 q12 8 24 0" fill="none" stroke-width="4.5"/><path d="M62 38 C50 0 58 -24 74 -20 C88 -16 92 10 86 36Z" fill="#CDBDE8"/><path d="M66 28 C62 6 66 -8 74 -6 C80 -4 82 12 80 28Z" fill="#D9727F" stroke="none"/><path d="M138 38 C150 0 142 -24 126 -20 C112 -16 108 10 114 36Z" fill="#CDBDE8"/><path d="M134 28 C138 6 134 -8 126 -6 C120 -4 118 12 120 28Z" fill="#D9727F" stroke="none"/><path d="M28 124 C18 64 50 26 100 26 C150 26 182 64 172 124 C170 144 160 154 152 154 L150 76 C148 48 124 42 100 42 C76 42 52 48 50 76 L48 154 C40 154 30 144 28 124Z" fill="#CDBDE8"/><path d="M16 30 l4 10 l10 4 l-10 4 l-4 10 l-4 -10 l-10 -4 l10 -4Z" fill="#F2D27A" stroke-width="3.5"/></g></svg></div><span class="nota">a Liza no inverno</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="contato escuro" id="contato" aria-labelledby="t-contato">
+  <div class="flutua f1"><svg class="doodle " viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob)"><path d="M100 164 C40 120 28 88 40 64 C54 38 88 40 100 68 C112 40 146 38 160 64 C172 88 160 120 100 164Z"/><path d="M58 70 c4 -8 12 -12 20 -10" stroke-width="3"/></g></svg></div><div class="flutua f3"><svg class="doodle " viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob)"><path d="M100 26 L118 82 L176 82 L130 116 L148 172 L100 138 L52 172 L70 116 L24 82 L82 82Z"/><path d="M168 30 l12 -12 M178 46 l16 -2" stroke-width="3"/></g></svg></div><div class="flutua f4"><svg class="doodle " viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob)"><path d="M100 30 C104 80 120 96 170 100 C120 104 104 120 100 170 C96 120 80 104 30 100 C80 96 96 80 100 30Z"/><path d="M160 30 l2 8 l8 2 l-8 2 l-2 8 l-2 -8 l-8 -2 l8 -2Z M40 150 l2 8 l8 2 l-8 2 l-2 8 l-2 -8 l-8 -2 l8 -2Z" stroke-width="3"/></g></svg></div>
+  <div class="wrap contato-grade">
+    <div>
+      <h2 id="t-contato">Bora tirar seu site do papel?</h2>
+      <p>Me chama para um orçamento sem compromisso. Respondo em até um dia útil.</p>
+      <div class="acoes">
+        <a class="btn btn-secundario" href="https://wa.me/5548996862073?text=Oi%2C%20Let%C3%ADcia!%20Quero%20um%20or%C3%A7amento%20de%20site.">Chamar no WhatsApp</a>
+        <a class="btn btn-secundario" href="mailto:leticiabeasouza@gmail.com">Mandar e-mail</a>
+      </div>
+      <p class="contatos-texto">WhatsApp: (48) 99686-2073 · E-mail: leticiabeasouza@gmail.com</p>
+    </div>
+    <div class="paz"><img src="img/eu-paz-recorte.webp" alt="Letícia de óculos escuros, sorrindo e fazendo sinal de paz." width="511" height="626"><span class="nota" aria-hidden="true">te espero!</span></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Feito à mão por Letícia Beatriz, com supervisão da Liza. De Palhoça (SC) para todo o Brasil.</span>
+    <span>Este site segue as diretrizes de acessibilidade WCAG 2.2.</span>
+  </div>
+</footer>
+
+<button class="a11y-botao" type="button" id="a11y-abrir" aria-expanded="false" aria-controls="a11y-painel"><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Menu de acessibilidade</span><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"><circle cx="24" cy="10" r="4" fill="currentColor" stroke="none"/><path d="M10 18 C18 21 30 21 38 18 M24 21 V30 M24 30 L17 42 M24 30 L31 42"/></svg></button>
+<div class="a11y-painel" id="a11y-painel" role="dialog" aria-labelledby="a11y-titulo" hidden>
+  <h2 id="a11y-titulo">Acessibilidade</h2>
+  <p class="sub">Ajuste o site do seu jeito. Suas escolhas ficam salvas neste navegador.</p>
+  <div class="a11y-tam"><span id="tam-rotulo">Tamanho do texto</span><div role="group" aria-labelledby="tam-rotulo"><button class="a11y-mini" type="button" data-zoom="-1" aria-label="Diminuir texto">A−</button><output id="tam-valor" aria-live="polite">100%</output><button class="a11y-mini" type="button" data-zoom="1" aria-label="Aumentar texto">A+</button></div></div>
+  <div class="a11y-grade">
+    <button class="a11y-op" type="button" data-op="contraste" aria-pressed="false">Alto contraste</button>
+    <button class="a11y-op" type="button" data-op="fonte" aria-pressed="false">Fonte mais simples</button>
+    <button class="a11y-op" type="button" data-op="espaco" aria-pressed="false">Mais espaço no texto</button>
+    <button class="a11y-op" type="button" data-op="links" aria-pressed="false">Destacar links</button>
+    <button class="a11y-op" type="button" data-op="parar" aria-pressed="false">Parar animações</button>
+    <button class="a11y-op" type="button" data-op="cursor" aria-pressed="false">Cursor grande</button>
+    <button class="a11y-op" type="button" data-op="guia" aria-pressed="false">Guia de leitura</button>
+    <button class="a11y-op" type="button" data-op="enfeites" aria-pressed="false">Esconder enfeites</button>
+  </div>
+  <div class="a11y-rodape"><button type="button" id="a11y-reset">Restaurar o padrão</button><button type="button" id="a11y-fechar">Fechar</button></div>
+</div>
+<div class="guia-leitura" id="guia" aria-hidden="true"></div>
+<div class="passeio" id="passeio" aria-hidden="true"><svg class="cao-svg " viewBox="0 0 256 150" stroke="#4A1420" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob2)"><path d="M54 72 C38 58 40 38 52 34" fill="none" stroke-width="6" class="rabo"/><g class="perna-b"><path d="M64 100 V132 C64 142 84 142 84 132 V100Z" fill="#E3B57A"/></g><g class="perna-a"><path d="M92 100 V132 C92 142 112 142 112 132 V100Z" fill="#E3B57A"/></g><g class="perna-a"><path d="M134 100 V132 C134 142 154 142 154 132 V100Z" fill="#E3B57A"/></g><g class="perna-b"><path d="M160 100 V132 C160 142 180 142 180 132 V100Z" fill="#E3B57A"/></g><path d="M50 84 C48 56 72 46 104 46 L150 46 C178 46 192 62 190 84 L188 100 C186 116 172 120 154 120 L80 120 C60 120 50 112 50 98Z" fill="#F2B8C0"/><path d="M96 54 v12" fill="none" stroke-width="3.5"/><path d="M164 38 C164 14 186 6 206 8 C232 10 246 30 244 56 C242 80 224 92 204 92 C180 92 162 78 162 58Z" fill="#E3B57A"/><path d="M198 54 C202 42 232 42 240 54 C246 70 238 86 218 88 C198 88 192 70 198 54Z" fill="#FFF6EE" stroke="none"/><ellipse cx="232" cy="54" rx="13" ry="10" fill="#4A1420"/><circle cx="204" cy="38" r="5" fill="#4A1420" stroke="none"/><path d="M182 18 C164 20 160 44 168 58 C172 62 182 58 182 50Z" fill="#C98B4E"/><path d="M212 76 C212 88 226 88 226 76Z" fill="#D9727F" stroke-width="4"/><path d="M36 46 l-12 -4 M34 60 l-14 2 M38 74 l-12 6" fill="none" stroke-width="4" class="risco"/></g></svg></div>
+<script>
+(function(){
+  var reduz = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // doodles se desenhando
+  var alvos = document.querySelectorAll('.desenhar');
+  alvos.forEach(function(el){
+    el.querySelectorAll('path,ellipse,circle,rect').forEach(function(p){
+      try{ var l = Math.ceil(p.getTotalLength()) + 2; p.style.setProperty('--len', l); }catch(e){}
+    });
+  });
+  if (reduz || !('IntersectionObserver' in window)) { alvos.forEach(function(el){el.classList.add('visto');}); }
+  else {
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visto'); io.unobserve(e.target);} }); },{threshold:.3});
+    alvos.forEach(function(el){ io.observe(el); });
+  }
+  // faixa: pausar
+  var faixa = document.getElementById('faixa'), bp = document.getElementById('pausar');
+  bp.addEventListener('click', function(){
+    var p = faixa.classList.toggle('pausada');
+    bp.textContent = p ? 'Continuar' : 'Pausar'; bp.setAttribute('aria-pressed', p);
+  });
+  // linha do tempo
+  var itens = document.querySelectorAll('#caminho li');
+  if (reduz || !('IntersectionObserver' in window)) { itens.forEach(function(li){li.classList.add('on');}); }
+  else {
+    var io2 = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ var li=e.target; setTimeout(function(){li.classList.add('on');}, 120*[].indexOf.call(itens,li)); io2.unobserve(li);} }); },{threshold:.6});
+    itens.forEach(function(li){ io2.observe(li); });
+  }
+  // menu de acessibilidade
+  var root=document.documentElement, ab=document.getElementById('a11y-abrir'), painel=document.getElementById('a11y-painel');
+  var estado={zoom:0,ops:{}}; try{ estado=JSON.parse(localStorage.getItem('lb-a11y'))||estado; }catch(e){}
+  var zooms=[1,1.15,1.3,1.5], valor=document.getElementById('tam-valor');
+  function salvar(){ try{ localStorage.setItem('lb-a11y',JSON.stringify(estado)); }catch(e){} }
+  function aplicar(){
+    root.style.setProperty('--zoom', zooms[estado.zoom]); valor.textContent=Math.round(zooms[estado.zoom]*100)+'%';
+    document.querySelectorAll('.a11y-op').forEach(function(b){ var o=b.dataset.op, on=!!estado.ops[o]; root.classList.toggle('a-'+o,on); b.setAttribute('aria-pressed',on); });
+    reduz = window.matchMedia('(prefers-reduced-motion: reduce)').matches || !!estado.ops.parar;
+    if(reduz){ document.querySelectorAll('.desenhar').forEach(function(el){el.classList.add('visto');}); document.querySelectorAll('#caminho li').forEach(function(li){li.classList.add('on');}); faixa.classList.add('pausada'); }
+  }
+  function abrir(on){ painel.hidden=!on; ab.setAttribute('aria-expanded',on); if(on){ painel.querySelector('button').focus(); } else { ab.focus(); } }
+  ab.addEventListener('click', function(){ abrir(painel.hidden); });
+  document.getElementById('a11y-fechar').addEventListener('click', function(){ abrir(false); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape' && !painel.hidden) abrir(false); });
+  painel.querySelectorAll('[data-zoom]').forEach(function(b){ b.addEventListener('click', function(){ estado.zoom=Math.max(0,Math.min(zooms.length-1,estado.zoom+(+b.dataset.zoom))); aplicar(); salvar(); }); });
+  painel.querySelectorAll('.a11y-op').forEach(function(b){ b.addEventListener('click', function(){ var o=b.dataset.op; estado.ops[o]=!estado.ops[o]; aplicar(); salvar(); }); });
+  document.getElementById('a11y-reset').addEventListener('click', function(){ estado={zoom:0,ops:{}}; aplicar(); salvar(); faixa.classList.remove('pausada'); });
+  var guia=document.getElementById('guia');
+  document.addEventListener('pointermove', function(e){ if(root.classList.contains('a-guia')) guia.style.top=(e.clientY-24)+'px'; });
+  aplicar();
+  // calculadora
+  var tk=document.getElementById('ticket'), pc=document.getElementById('pacote');
+  function calc(){ var v=parseFloat(tk.value), p=+pc.value; if(!(v>0)) { document.getElementById('clientes').textContent='–'; return; }
+    document.getElementById('clientes').textContent=Math.ceil(p/v);
+    document.getElementById('mes').textContent='R$ '+Math.round((p+40*3)/36); }
+  tk.addEventListener('input',calc); pc.addEventListener('change',calc); calc();
+  // passeio da labradora (acompanha a rolagem)
+  var pas = document.getElementById('passeio'), ult = window.scrollY, parar;
+  function passo(){
+    var max = document.documentElement.scrollHeight - innerHeight, p = max > 0 ? scrollY / max : 0;
+    pas.style.transform = 'translateX(' + (p * (innerWidth - pas.offsetWidth - 8)) + 'px)';
+  }
+  if(!reduz){
+    passo();
+    addEventListener('scroll', function(){
+      var y = scrollY; pas.classList.toggle('volta', y < ult); ult = y;
+      pas.classList.add('andando'); passo();
+      clearTimeout(parar); parar = setTimeout(function(){ pas.classList.remove('andando'); }, 180);
+    }, {passive:true});
+    addEventListener('resize', passo);
+  }
+  // carinho na labradora
+  var falas = ['au!','a Liza aprova','mais carinho?','biscoito?','au au!'], i = 0;
+  var cao = document.getElementById('cao-hero'), balao = document.getElementById('balao'), t;
+  cao.addEventListener('click', function(){
+    balao.textContent = falas[i++ % falas.length]; balao.classList.add('on');
+    if(!reduz){ cao.animate([{transform:'rotate(6deg)'},{transform:'rotate(-4deg) scale(1.05)'},{transform:'rotate(10deg)'},{transform:'rotate(6deg)'}],{duration:500}); }
+    clearTimeout(t); t = setTimeout(function(){ balao.classList.remove('on'); }, 1800);
+  });
+  // trilha de patinhas ao clicar
+  if(!reduz){
+    var pata = document.querySelector('.marca svg').outerHTML;
+    document.addEventListener('pointerdown', function(e){
+      if(e.target.closest('a,button,.mural')) return;
+      var d = document.createElement('div'); d.className='pata'; d.setAttribute('aria-hidden','true');
+      d.innerHTML = pata; d.style.left=(e.clientX-11)+'px'; d.style.top=(e.clientY-11)+'px';
+      d.style.transform='rotate('+(Math.random()*60-30)+'deg)';
+      document.body.appendChild(d); setTimeout(function(){ d.remove(); }, 1400);
+    });
+  }
+})();
+</script>
+</body>
+</html>
