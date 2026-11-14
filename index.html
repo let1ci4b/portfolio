@@ -486,14 +486,6 @@ html.a-contraste .cadeira-mesa{color:#000}
   </div>
 </section>
 
-<div class="faixa" id="faixa">
-  <div class="faixa-trilho" aria-hidden="true">
-    <ul><li>sites acessíveis <svg class="doodle rabisco r-brilho-b" viewBox="0 0 155 203" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-brilho-b"/></svg></li><li>feitos para o celular <svg class="doodle rabisco r-coracao" viewBox="0 0 54 51" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-coracao"/></svg></li><li>sem mensalidade obrigatória <svg class="doodle rabisco r-estrela" viewBox="0 0 307 240" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-estrela"/></svg></li><li>botão de WhatsApp <svg class="doodle rabisco r-pata" viewBox="0 0 140 139" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-pata"/></svg></li><li>aparece no Google <svg class="doodle rabisco r-brilho-b" viewBox="0 0 155 203" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-brilho-b"/></svg></li><li>preço justo <svg class="doodle rabisco r-coracao" viewBox="0 0 54 51" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-coracao"/></svg></li></ul>
-    <ul><li>sites acessíveis <svg class="doodle rabisco r-brilho-b" viewBox="0 0 155 203" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-brilho-b"/></svg></li><li>feitos para o celular <svg class="doodle rabisco r-coracao" viewBox="0 0 54 51" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-coracao"/></svg></li><li>sem mensalidade obrigatória <svg class="doodle rabisco r-estrela" viewBox="0 0 307 240" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-estrela"/></svg></li><li>botão de WhatsApp <svg class="doodle rabisco r-pata" viewBox="0 0 140 139" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-pata"/></svg></li><li>aparece no Google <svg class="doodle rabisco r-brilho-b" viewBox="0 0 155 203" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-brilho-b"/></svg></li><li>preço justo <svg class="doodle rabisco r-coracao" viewBox="0 0 54 51" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-coracao"/></svg></li></ul>
-  </div>
-  <p class="sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Sites acessíveis, feitos para o celular, sem mensalidade obrigatória, com botão de WhatsApp, que aparecem no Google e com preço justo.</p>
-  <button type="button" id="pausar" aria-pressed="false">Pausar</button>
-</div>
 
 <section class="beneficios" id="beneficios" aria-labelledby="t-benef">
   <div class="wrap">
@@ -799,12 +791,6 @@ html.a-contraste .cadeira-mesa{color:#000}
     var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visto'); io.unobserve(e.target);} }); },{threshold:.3});
     alvos.forEach(function(el){ io.observe(el); });
   }
-  // faixa: pausar
-  var faixa = document.getElementById('faixa'), bp = document.getElementById('pausar');
-  bp.addEventListener('click', function(){
-    var p = faixa.classList.toggle('pausada');
-    bp.textContent = p ? 'Continuar' : 'Pausar'; bp.setAttribute('aria-pressed', p);
-  });
   // linha do tempo
   var itens = document.querySelectorAll('#caminho li');
   if (reduz || !('IntersectionObserver' in window)) { itens.forEach(function(li){li.classList.add('on');}); }
@@ -821,7 +807,7 @@ html.a-contraste .cadeira-mesa{color:#000}
     root.style.setProperty('--zoom', zooms[estado.zoom]); valor.textContent=Math.round(zooms[estado.zoom]*100)+'%';
     document.querySelectorAll('.a11y-op').forEach(function(b){ var o=b.dataset.op, on=!!estado.ops[o]; root.classList.toggle('a-'+o,on); b.setAttribute('aria-pressed',on); });
     reduz = window.matchMedia('(prefers-reduced-motion: reduce)').matches || !!estado.ops.parar;
-    if(reduz){ document.querySelectorAll('.desenhar').forEach(function(el){el.classList.add('visto');}); document.querySelectorAll('#caminho li').forEach(function(li){li.classList.add('on');}); faixa.classList.add('pausada'); }
+    if(reduz){ document.querySelectorAll('.desenhar').forEach(function(el){el.classList.add('visto');}); document.querySelectorAll('#caminho li').forEach(function(li){li.classList.add('on');}); }
   }
   function abrir(on){ painel.hidden=!on; ab.setAttribute('aria-expanded',on); if(on){ painel.querySelector('button').focus(); } else { ab.focus(); } }
   ab.addEventListener('click', function(){ abrir(painel.hidden); });
@@ -829,7 +815,7 @@ html.a-contraste .cadeira-mesa{color:#000}
   document.addEventListener('keydown', function(e){ if(e.key==='Escape' && !painel.hidden) abrir(false); });
   painel.querySelectorAll('[data-zoom]').forEach(function(b){ b.addEventListener('click', function(){ estado.zoom=Math.max(0,Math.min(zooms.length-1,estado.zoom+(+b.dataset.zoom))); aplicar(); salvar(); }); });
   painel.querySelectorAll('.a11y-op').forEach(function(b){ b.addEventListener('click', function(){ var o=b.dataset.op; estado.ops[o]=!estado.ops[o]; aplicar(); salvar(); }); });
-  document.getElementById('a11y-reset').addEventListener('click', function(){ estado={zoom:0,ops:{}}; aplicar(); salvar(); faixa.classList.remove('pausada'); });
+  document.getElementById('a11y-reset').addEventListener('click', function(){ estado={zoom:0,ops:{}}; aplicar(); salvar(); });
   var guia=document.getElementById('guia');
   document.addEventListener('pointermove', function(e){ if(root.classList.contains('a-guia')) guia.style.top=(e.clientY-24)+'px'; });
   aplicar();
