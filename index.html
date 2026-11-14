@@ -425,6 +425,11 @@ html.a-parar .passeio .trote{animation:none}
 .liza-segue img{width:170px;height:auto}
 .liza-segue .nota{transform:rotate(-4deg)}
 html.a-enfeites .liza-segue{display:none!important}
+.apresenta .recorte{position:relative;z-index:1}
+.cadeira-mesa{position:absolute;left:-30%;top:0;width:150%;z-index:0;color:var(--cereja);pointer-events:none}
+.cadeira-mesa svg{display:block;width:100%;height:auto;overflow:visible}
+.cadeira-mesa .vasinho{color:var(--bordo)}
+html.a-contraste .cadeira-mesa{color:#000}
 @media (prefers-reduced-motion:reduce){html.js .desenhar .rabisco{clip-path:none;transition:none}}
 </style>
 </head>
@@ -501,7 +506,19 @@ html.a-enfeites .liza-segue{display:none!important}
           <li><strong>Sem mensalidade obrigatória</strong>: você paga uma vez e o site é seu.</li>
         </ul>
       </div>
-      <div class="apresenta"><img class="recorte" loading="lazy" decoding="async" src="img/eu-bracos-recorte.webp" srcset="img/eu-bracos-recorte-680.webp 680w, img/eu-bracos-recorte.webp 980w" sizes="(max-width: 768px) 340px, 430px" alt="Letícia sentada numa rocha, sorrindo, com os braços abertos como quem apresenta algo." width="980" height="1000"><span class="nota" aria-hidden="true">olha esses números!</span></div>
+      <div class="apresenta"><div class="desenhar cadeira-mesa" aria-hidden="true"><svg viewBox="-30 0 150 115" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" focusable="false"><defs><filter id="lapis" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".18" numOctaves="2" seed="7" result="t"/><feDisplacementMap in="SourceGraphic" in2="t" scale=".35"/></filter></defs><g filter="url(#lapis)">
+<path d="M46 57 C46.6 46 47.2 36 48 26.5 M78 56 C78.6 45 79.3 35 80 25"/>
+<path d="M47.6 27 C54 22.6 72 21.4 80.2 25.4 M47.3 32.6 C54 28.4 72 27.2 79.8 31"/>
+<path d="M63.6 23.6 C63.4 35 63.3 46 63.2 56"/>
+<path d="M32 64 L64.5 62.8 L78.3 55.8 L45.8 57 Z"/>
+<path d="M35.5 62.3 L68 61 M39 60.6 L71.4 59.3 M42.4 58.8 L74.8 57.6" stroke-width=".7"/>
+<path d="M32.2 64.6 C31.6 77 31 89 30.2 101.4 M64.6 63.4 C65.1 76 65.6 89 66.2 101.4 M46.2 57.6 C46.9 70 47.6 83 48.3 95.6 M78.4 56.4 C79.2 69 80 82 80.8 95.6"/>
+<path d="M30.9 86 L65.7 85.6 L80.2 80.6 L47.6 81 Z" stroke-width=".75"/>
+<ellipse cx="6" cy="54" rx="14" ry="3.6"/>
+<path d="M-8 54.2 C-7.8 55.8 -1.6 57.4 6 57.4 C13.6 57.4 19.8 55.8 20 54.2" stroke-width=".75"/>
+<path d="M4.4 57.4 C4.2 70 3.8 84 2.8 96.4 C1.8 99.2 -1.8 100.8 -5.2 101.2 M7.6 57.4 C7.8 70 8.2 84 9.2 96.4 C10.2 99.2 13.8 100.8 17.2 101.2"/>
+<path d="M2.6 98 C4.2 99.2 7.8 99.2 9.4 98" stroke-width=".7"/>
+</g><svg class="vasinho" x="-2.0" y="39.13" width="16" height="15.67" viewBox="0 0 196 192"><use href="img/rabiscos.svg#r-vaso" fill="currentColor" stroke="none"/></svg></svg></div><img class="recorte" loading="lazy" decoding="async" src="img/eu-bracos-recorte.webp" srcset="img/eu-bracos-recorte-680.webp 680w, img/eu-bracos-recorte.webp 980w" sizes="(max-width: 768px) 340px, 430px" alt="Letícia sentada numa cadeirinha, ao lado de uma mesinha com um vaso de flores, sorrindo com os braços abertos como quem apresenta algo." width="980" height="1000"><span class="nota" aria-hidden="true">olha esses números!</span></div>
     </div>
     <ul class="numeros">
       <li class="num azul"><span class="valor">73%</span><span class="desc">das buscas por negócios locais começam no celular. Por isso eu faço o site pensando primeiro no celular.</span><span class="fonte">BrightLocal, 2026 (EUA)</span></li>
