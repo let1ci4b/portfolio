@@ -404,6 +404,23 @@ html.a-parar .desenhar .rabisco{clip-path:none!important;transition:none!importa
 .cab-rabisco .rabisco{width:auto;height:52px;display:block}
 .cab-rabisco .r-estrela-pontos,.cab-rabisco .r-espiral{height:44px}
 .contato .f2{left:5%;right:auto;bottom:6%;top:auto;width:72px;animation-delay:-1.2s}
+
+/* Liza em adesivos */
+.liza-adesivo,.liza-feliz img,.liza-espera,.liza-sono{filter:drop-shadow(4px 4px 0 var(--cereja))}
+.anjos-lista .cao-svg{height:auto}
+.postits .liza .sticker-cao{background:none;border:0;box-shadow:none;padding:0;width:170px}
+.passeio .trote{display:block}
+.passeio.andando .trote{animation:trote .3s ease-in-out infinite alternate}
+@keyframes trote{to{transform:translateY(-4px) rotate(-2deg)}}
+.passeio .cao-svg{filter:drop-shadow(3px 3px 0 var(--cereja))}
+.liza-feliz{display:flex;align-items:flex-end;justify-content:flex-end;gap:8px;margin-top:var(--espaco-6)}
+.liza-feliz img{width:200px;height:auto}
+.liza-feliz .nota{transform:rotate(-6deg);margin-bottom:24px}
+.paz .liza-espera{position:absolute;left:-46%;bottom:6%;width:46%;height:auto;z-index:2}
+footer .liza-sono{width:72px;height:auto;vertical-align:middle;margin-right:10px}
+@media (max-width:760px){.paz .liza-espera{left:-4%;bottom:2%;width:38%}.contato .f2{top:3%;bottom:auto}.liza-feliz{justify-content:center}.liza-feliz img{width:160px}}
+html.a-enfeites .liza-feliz,html.a-enfeites .liza-espera,html.a-enfeites .liza-sono{display:none!important}
+html.a-parar .passeio .trote{animation:none}
 @media (prefers-reduced-motion:reduce){html.js .desenhar .rabisco{clip-path:none;transition:none}}
 </style>
 </head>
@@ -627,6 +644,7 @@ html.a-parar .desenhar .rabisco{clip-path:none!important;transition:none!importa
       <li><h3>Criação</h3><p>Em até 10 dias úteis depois de receber seus materiais.</p></li>
       <li><h3>No ar</h3><p>Site publicado, testado e com o seu domínio.</p></li>
     </ol>
+    <div class="liza-feliz" aria-hidden="true"><img src="img/liza-sorrindo.webp" alt="" width="340" height="213" loading="lazy" decoding="async"><span class="nota">site no ar, Liza feliz</span></div>
   </div>
 </section>
 
@@ -663,9 +681,9 @@ html.a-parar .desenhar .rabisco{clip-path:none!important;transition:none!importa
       <div class="anjos">
         <p>E no caminho todo, eu tive companhia. Esses três já não estão aqui, mas fizeram parte da minha história.</p>
         <ul class="anjos-lista">
-          <li><svg class="cao-svg " viewBox="0 -10 200 210" stroke="#4A1420" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob2)"><path d="M46 96 C14 70 4 96 14 112 C2 122 10 140 26 136 C22 150 40 156 52 142Z" fill="#FFF6EE"/><path d="M154 96 C186 70 196 96 186 112 C198 122 190 140 174 136 C178 150 160 156 148 142Z" fill="#FFF6EE"/><path d="M58 52 C36 48 24 70 28 96 C30 110 46 112 52 100 Z" fill="#C98B4E"/><path d="M142 52 C164 48 176 70 172 96 C170 110 154 112 148 100 Z" fill="#C98B4E"/><path d="M52 74 C50 44 78 38 100 38 C122 38 150 44 148 74 L150 128 C150 156 128 166 100 166 C72 166 50 156 50 128Z" fill="#E3B57A"/><path d="M86 70 C88 60 112 60 114 70 L120 92 C138 98 140 130 124 142 C112 150 88 150 76 142 C60 130 62 98 80 92Z" fill="#FFF6EE" stroke="none"/><path d="M62 94 q8 -9 16 0 M122 94 q8 -9 16 0" fill="none" stroke-width="4.5"/><ellipse cx="100" cy="114" rx="24" ry="16" fill="#4A1420"/><path d="M92 136 C90 154 110 154 108 136Z" fill="#D9727F" stroke-width="4.5"/><path d="M100 139 v8" fill="none" stroke-width="3"/><path d="M88 132 q12 8 24 0" fill="none" stroke-width="4.5"/><ellipse cx="100" cy="16" rx="36" ry="9" fill="none" stroke-width="8"/><ellipse cx="100" cy="16" rx="36" ry="9" fill="none" stroke-width="3.5" stroke="#F2D27A"/><path d="M178 32 l2.5 6 l6 2.5 l-6 2.5 l-2.5 6 l-2.5 -6 l-6 -2.5 l6 -2.5Z" fill="#F2D27A" stroke-width="3"/><path d="M24 38 l2.5 6 l6 2.5 l-6 2.5 l-2.5 6 l-2.5 -6 l-6 -2.5 l6 -2.5Z" fill="#F2D27A" stroke-width="3"/></g></svg><span class="nota">Princess</span><span class="raca">labradora caramelo</span></li>
-          <li><svg class="cao-svg " viewBox="0 -10 200 210" stroke="#4A1420" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob2)"><path d="M46 96 C14 70 4 96 14 112 C2 122 10 140 26 136 C22 150 40 156 52 142Z" fill="#FFF6EE"/><path d="M154 96 C186 70 196 96 186 112 C198 122 190 140 174 136 C178 150 160 156 148 142Z" fill="#FFF6EE"/><path d="M58 52 C36 48 24 70 28 96 C30 110 46 112 52 100 Z" fill="#4E3022"/><path d="M142 52 C164 48 176 70 172 96 C170 110 154 112 148 100 Z" fill="#4E3022"/><path d="M52 74 C50 44 78 38 100 38 C122 38 150 44 148 74 L150 128 C150 156 128 166 100 166 C72 166 50 156 50 128Z" fill="#6B4430"/><path d="M86 70 C88 60 112 60 114 70 L120 92 C138 98 140 130 124 142 C112 150 88 150 76 142 C60 130 62 98 80 92Z" fill="#8A5C42" stroke="none"/><path d="M62 94 q8 -9 16 0 M122 94 q8 -9 16 0" fill="none" stroke-width="4.5"/><ellipse cx="100" cy="114" rx="24" ry="16" fill="#4A1420"/><path d="M92 136 C90 154 110 154 108 136Z" fill="#D9727F" stroke-width="4.5"/><path d="M100 139 v8" fill="none" stroke-width="3"/><path d="M88 132 q12 8 24 0" fill="none" stroke-width="4.5"/><ellipse cx="100" cy="16" rx="36" ry="9" fill="none" stroke-width="8"/><ellipse cx="100" cy="16" rx="36" ry="9" fill="none" stroke-width="3.5" stroke="#F2D27A"/><path d="M178 32 l2.5 6 l6 2.5 l-6 2.5 l-2.5 6 l-2.5 -6 l-6 -2.5 l6 -2.5Z" fill="#F2D27A" stroke-width="3"/><path d="M24 38 l2.5 6 l6 2.5 l-6 2.5 l-2.5 6 l-2.5 -6 l-6 -2.5 l6 -2.5Z" fill="#F2D27A" stroke-width="3"/></g></svg><span class="nota">Scooby</span><span class="raca">labrador chocolate</span></li>
-          <li><svg class="cao-svg " viewBox="0 -10 200 210" stroke="#4A1420" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob2)"><path d="M46 96 C14 70 4 96 14 112 C2 122 10 140 26 136 C22 150 40 156 52 142Z" fill="#FFF6EE"/><path d="M154 96 C186 70 196 96 186 112 C198 122 190 140 174 136 C178 150 160 156 148 142Z" fill="#FFF6EE"/><path d="M58 70 L50 14 L92 42Z" fill="#3A2A24"/><path d="M142 70 L150 14 L108 42Z" fill="#3A2A24"/><path d="M62 56 L58 30 L80 44Z" fill="#C98B4E" stroke="none"/><path d="M138 56 L142 30 L120 44Z" fill="#C98B4E" stroke="none"/><path d="M52 76 C50 46 78 40 100 40 C122 40 150 46 148 76 L150 128 C150 156 128 166 100 166 C72 166 50 156 50 128Z" fill="#C98B4E"/><path d="M52 80 C54 52 80 44 100 44 C120 44 146 52 148 80 C136 96 118 92 100 100 C82 92 64 96 52 80Z" fill="#3A2A24" stroke="none"/><path d="M52 80 C54 52 80 44 100 44 C120 44 146 52 148 80" fill="none" stroke="none"/><path d="M74 104 C80 94 120 94 126 104 C136 120 132 146 100 150 C68 146 64 120 74 104Z" fill="#EAC48E" stroke="none"/><path d="M62 80 q8 -9 16 0 M122 80 q8 -9 16 0" fill="none" stroke-width="4.5" stroke="#F6E6CF"/><ellipse cx="100" cy="112" rx="22" ry="15" fill="#4A1420"/><path d="M92 136 C90 152 110 152 108 136Z" fill="#D9727F" stroke-width="4.5"/><path d="M88 130 q12 8 24 0" fill="none" stroke-width="4.5"/><path d="M52 76 C50 46 78 40 100 40 C122 40 150 46 148 76 L150 128 C150 156 128 166 100 166 C72 166 50 156 50 128Z" fill="none"/><ellipse cx="100" cy="16" rx="36" ry="9" fill="none" stroke-width="8"/><ellipse cx="100" cy="16" rx="36" ry="9" fill="none" stroke-width="3.5" stroke="#F2D27A"/><path d="M178 32 l2.5 6 l6 2.5 l-6 2.5 l-2.5 6 l-2.5 -6 l-6 -2.5 l6 -2.5Z" fill="#F2D27A" stroke-width="3"/><path d="M24 38 l2.5 6 l6 2.5 l-6 2.5 l-2.5 6 l-2.5 -6 l-6 -2.5 l6 -2.5Z" fill="#F2D27A" stroke-width="3"/></g></svg><span class="nota">Fiona</span><span class="raca">pastora alemã</span></li>
+          <li><img class="cao-svg liza-adesivo" src="img/anjo-princess.webp" alt="" width="260" height="266" loading="lazy" decoding="async"><span class="nota">Princess</span><span class="raca">labradora caramelo</span></li>
+          <li><img class="cao-svg liza-adesivo" src="img/anjo-scooby.webp" alt="" width="260" height="266" loading="lazy" decoding="async"><span class="nota">Scooby</span><span class="raca">labrador chocolate</span></li>
+          <li><img class="cao-svg liza-adesivo" src="img/anjo-fiona.webp" alt="" width="260" height="266" loading="lazy" decoding="async"><span class="nota">Fiona</span><span class="raca">pastora alemã</span></li>
         </ul>
       </div>
     </div>
@@ -692,7 +710,7 @@ html.a-parar .desenhar .rabisco{clip-path:none!important;transition:none!importa
       <li><div class="postit r">academia é sagrada. é onde eu desligo a cabeça.<svg class="doodle rabisco r-raio" viewBox="0 0 76 154" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-raio"/></svg></div></li>
       <li><div class="postit c">brigadeiro e cookie: combustível oficial dos projetos.<svg class="doodle rabisco r-cookie" viewBox="0 0 309 308" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-cookie"/></svg></div></li>
       <li><div class="postit">sempre estudando alguma coisa nova (e anotando tudo).<svg class="doodle rabisco r-brilho-a" viewBox="0 0 143 196" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-brilho-a"/></svg></div></li>
-      <li class="liza"><div class="sticker-cao"><svg class="cao-svg " viewBox="0 -30 200 230" stroke="#4A1420" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob2)"><path d="M40 154 C60 178 140 178 160 154 L168 196 L32 196Z" fill="#CDBDE8"/><circle cx="70" cy="182" r="3.5" fill="#4A1420" stroke="none"/><circle cx="100" cy="188" r="3.5" fill="#4A1420" stroke="none"/><circle cx="130" cy="182" r="3.5" fill="#4A1420" stroke="none"/><path d="M58 52 C36 48 24 70 28 96 C30 110 46 112 52 100 Z" fill="#C98B4E"/><path d="M142 52 C164 48 176 70 172 96 C170 110 154 112 148 100 Z" fill="#C98B4E"/><path d="M52 74 C50 44 78 38 100 38 C122 38 150 44 148 74 L150 128 C150 156 128 166 100 166 C72 166 50 156 50 128Z" fill="#E3B57A"/><path d="M86 70 C88 60 112 60 114 70 L120 92 C138 98 140 130 124 142 C112 150 88 150 76 142 C60 130 62 98 80 92Z" fill="#FFF6EE" stroke="none"/><path d="M62 92 q8 5 16 0 M122 92 q8 5 16 0" fill="none" stroke-width="4.5"/><ellipse cx="100" cy="114" rx="24" ry="16" fill="#4A1420"/><path d="M92 136 C90 154 110 154 108 136Z" fill="#D9727F" stroke-width="4.5"/><path d="M100 139 v8" fill="none" stroke-width="3"/><path d="M88 132 q12 8 24 0" fill="none" stroke-width="4.5"/><path d="M62 38 C50 0 58 -24 74 -20 C88 -16 92 10 86 36Z" fill="#CDBDE8"/><path d="M66 28 C62 6 66 -8 74 -6 C80 -4 82 12 80 28Z" fill="#D9727F" stroke="none"/><path d="M138 38 C150 0 142 -24 126 -20 C112 -16 108 10 114 36Z" fill="#CDBDE8"/><path d="M134 28 C138 6 134 -8 126 -6 C120 -4 118 12 120 28Z" fill="#D9727F" stroke="none"/><path d="M28 124 C18 64 50 26 100 26 C150 26 182 64 172 124 C170 144 160 154 152 154 L150 76 C148 48 124 42 100 42 C76 42 52 48 50 76 L48 154 C40 154 30 144 28 124Z" fill="#CDBDE8"/><path d="M16 30 l4 10 l10 4 l-10 4 l-4 10 l-4 -10 l-10 -4 l10 -4Z" fill="#F2D27A" stroke-width="3.5"/></g></svg></div><span class="nota">a Liza no inverno</span></li>
+      <li class="liza"><div class="sticker-cao"><img class="cao-svg liza-adesivo" src="img/liza-nanar.webp" alt="" width="320" height="164" loading="lazy" decoding="async"></div><span class="nota">a Liza no inverno</span></li>
     </ul>
   </div>
 </section>
@@ -709,14 +727,14 @@ html.a-parar .desenhar .rabisco{clip-path:none!important;transition:none!importa
       </div>
       <p class="contatos-texto">WhatsApp: (48) 99686-2073 · E-mail: leticiabeasouza@gmail.com</p>
     </div>
-    <div class="paz"><img loading="lazy" decoding="async" src="img/eu-paz-recorte.webp" alt="Letícia de óculos escuros, sorrindo e fazendo sinal de paz." width="511" height="626"><span class="nota" aria-hidden="true">te espero!</span></div>
+    <div class="paz"><img loading="lazy" decoding="async" src="img/eu-paz-recorte.webp" alt="Letícia de óculos escuros, sorrindo e fazendo sinal de paz." width="511" height="626"><span class="nota" aria-hidden="true">te espero!</span><img class="liza-espera" src="img/liza-olhando.webp" alt="" width="300" height="180" loading="lazy" decoding="async"></div>
   </div>
 </section>
 </main>
 
 <footer>
   <div class="wrap">
-    <span>Feito à mão por Letícia Beatriz, com supervisão da Liza. De Palhoça (SC) para todo o Brasil.</span>
+    <span><img class="liza-sono" src="img/liza-dormindo.webp" alt="" width="180" height="110" loading="lazy" decoding="async">Feito à mão por Letícia Beatriz, com supervisão da Liza. De Palhoça (SC) para todo o Brasil.</span>
     <span>Este site segue as diretrizes de acessibilidade WCAG 2.2.</span>
   </div>
 </footer>
@@ -739,7 +757,7 @@ html.a-parar .desenhar .rabisco{clip-path:none!important;transition:none!importa
   <div class="a11y-rodape"><button type="button" id="a11y-reset">Restaurar o padrão</button><button type="button" id="a11y-fechar">Fechar</button></div>
 </div>
 <div class="guia-leitura" id="guia" aria-hidden="true"></div>
-<div class="passeio" id="passeio" aria-hidden="true"><svg class="cao-svg " viewBox="0 0 256 150" stroke="#4A1420" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob2)"><path d="M54 72 C38 58 40 38 52 34" fill="none" stroke-width="6" class="rabo"/><g class="perna-b"><path d="M64 100 V132 C64 142 84 142 84 132 V100Z" fill="#E3B57A"/></g><g class="perna-a"><path d="M92 100 V132 C92 142 112 142 112 132 V100Z" fill="#E3B57A"/></g><g class="perna-a"><path d="M134 100 V132 C134 142 154 142 154 132 V100Z" fill="#E3B57A"/></g><g class="perna-b"><path d="M160 100 V132 C160 142 180 142 180 132 V100Z" fill="#E3B57A"/></g><path d="M50 84 C48 56 72 46 104 46 L150 46 C178 46 192 62 190 84 L188 100 C186 116 172 120 154 120 L80 120 C60 120 50 112 50 98Z" fill="#F2B8C0"/><path d="M96 54 v12" fill="none" stroke-width="3.5"/><path d="M164 38 C164 14 186 6 206 8 C232 10 246 30 244 56 C242 80 224 92 204 92 C180 92 162 78 162 58Z" fill="#E3B57A"/><path d="M198 54 C202 42 232 42 240 54 C246 70 238 86 218 88 C198 88 192 70 198 54Z" fill="#FFF6EE" stroke="none"/><ellipse cx="232" cy="54" rx="13" ry="10" fill="#4A1420"/><circle cx="204" cy="38" r="5" fill="#4A1420" stroke="none"/><path d="M182 18 C164 20 160 44 168 58 C172 62 182 58 182 50Z" fill="#C98B4E"/><path d="M212 76 C212 88 226 88 226 76Z" fill="#D9727F" stroke-width="4"/><path d="M36 46 l-12 -4 M34 60 l-14 2 M38 74 l-12 6" fill="none" stroke-width="4" class="risco"/></g></svg></div>
+<div class="passeio" id="passeio" aria-hidden="true"><span class="trote"><img class="cao-svg liza-adesivo" src="img/liza-moletom.webp" alt="" width="200" height="160"></span></div>
 <script>
 (function(){
   var reduz = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
