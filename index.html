@@ -553,6 +553,16 @@ html.a-enfeites .simbolo-hero,html.a-enfeites .doces-extra{display:none!importan
 @media (max-width:860px){.estat-topo{grid-template-columns:1fr}.qualidades{grid-template-columns:1fr 1fr;gap:36px 24px;margin-top:56px}.bilhete{transform:rotate(1deg)}}
 @media (max-width:480px){.qualidades{grid-template-columns:1fr}.qualidades li:nth-child(2n){margin-top:0}}
 html.a-fonte .frase-grande,html.a-fonte .qualidades strong,html.a-fonte .bilhete h3{font-family:var(--font-sans)!important;font-style:normal!important}
+
+/* fotos reais da Liza e do Scooby, recortadas como colagem */
+.foto-liza,.passeio .foto-liza{filter:drop-shadow(3px 0 0 var(--creme)) drop-shadow(-3px 0 0 var(--creme)) drop-shadow(0 3px 0 var(--creme)) drop-shadow(0 -3px 0 var(--creme)) drop-shadow(5px 5px 0 var(--cereja))}
+footer .liza-sono{width:110px}
+.liza-feliz img{width:220px}
+.liza-segue img{width:200px}
+.anjo-real{position:relative;display:block;width:120px;margin:22px auto 6px}
+.anjo-real img{position:relative;z-index:1;width:100%;height:auto;display:block}
+.anjo-real .asas{position:absolute;z-index:0;left:-48%;width:196%;top:22%;overflow:visible}
+.anjo-real .aureola{position:absolute;z-index:2;left:14%;width:72%;top:-16%;overflow:visible}
 @media (prefers-reduced-motion:reduce){html.js .desenhar .rabisco{clip-path:none;transition:none}}
 </style>
 </head>
@@ -722,7 +732,7 @@ html.a-fonte .frase-grande,html.a-fonte .qualidades strong,html.a-fonte .bilhete
       </article>
     </div>
     <p class="nota" style="margin-top:var(--espaco-10)">e ainda dá para adicionar:</p>
-    <div class="extras"><span>Páginas extras</span><span>Cardápio ou catálogo</span><span>Versão em espanhol</span><span>Painel para você editar</span><span>Botão VLibras</span><span>Manutenção mensal</span></div>
+    <div class="extras"><span>Páginas extras</span><span>Cardápio ou catálogo</span><span>Versão em outro idioma</span><span>Painel para você editar</span><span>Botão VLibras</span><span>Manutenção mensal</span></div>
   </div>
 </section>
 
@@ -792,7 +802,7 @@ html.a-fonte .frase-grande,html.a-fonte .qualidades strong,html.a-fonte .bilhete
       <li><h3>Criação</h3><p>Em até 10 dias úteis depois de receber seus materiais.</p></li>
       <li><h3>No ar</h3><p>Site publicado, testado e com o seu domínio.</p></li>
     </ol>
-    <div class="liza-feliz" aria-hidden="true"><img src="img/liza-sorrindo.webp" alt="" width="340" height="213" loading="lazy" decoding="async"><span class="nota">site no ar, Liza feliz</span></div>
+    <div class="liza-feliz" aria-hidden="true"><img class="foto-liza" src="img/liza-foto-lingua.webp" alt="" width="340" height="288" loading="lazy" decoding="async"><span class="nota">site no ar, Liza feliz</span></div>
   </div>
 </section>
 
@@ -830,10 +840,10 @@ html.a-fonte .frase-grande,html.a-fonte .qualidades strong,html.a-fonte .bilhete
         <p>E no caminho todo, eu tive companhia. Esses três já não estão aqui, mas fizeram parte da minha história.</p>
         <ul class="anjos-lista">
           <li><img class="cao-svg liza-adesivo" src="img/anjo-princess.webp" alt="" width="260" height="266" loading="lazy" decoding="async"><span class="nota">Princess</span><span class="raca">labradora caramelo</span></li>
-          <li><img class="cao-svg liza-adesivo" src="img/anjo-scooby.webp" alt="" width="260" height="266" loading="lazy" decoding="async"><span class="nota">Scooby</span><span class="raca">labrador chocolate</span></li>
+          <li><span class="anjo-real"><svg class="asas" viewBox="0 0 200 110" aria-hidden="true" focusable="false"><g fill="var(--creme)" stroke="var(--bordo)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" filter="url(#lapis-fita)"><path d="M70 52C54 28 30 18 8 24C16 30 15 36 6 42C18 45 19 52 10 59C22 60 24 67 17 74C34 76 56 70 72 62Z"/><path d="M130 52C146 28 170 18 192 24C184 30 185 36 194 42C182 45 181 52 190 59C178 60 176 67 183 74C166 76 144 70 128 62Z"/><path d="M58 44C44 38 30 38 20 42M60 54C46 52 32 55 22 60M150 44C164 38 178 38 188 42M148 54C162 52 176 55 186 60" fill="none" stroke-width="2"/></g></svg><img class="foto-liza" src="img/scooby-rosto.webp" alt="" width="240" height="269" loading="lazy" decoding="async"><svg class="aureola" viewBox="0 0 100 30" aria-hidden="true" focusable="false"><ellipse cx="50" cy="15" rx="40" ry="9" fill="none" stroke="var(--caramelo)" stroke-width="6" filter="url(#lapis-fita)"/><ellipse cx="50" cy="15" rx="40" ry="9" fill="none" stroke="var(--bordo)" stroke-width="1.6" filter="url(#lapis-fita)"/></svg></span><span class="nota">Scooby</span><span class="raca">labrador chocolate</span></li>
           <li><img class="cao-svg liza-adesivo" src="img/anjo-fiona.webp" alt="" width="260" height="266" loading="lazy" decoding="async"><span class="nota">Fiona</span><span class="raca">pastora alemã</span></li>
         </ul>
-        <div class="liza-segue" aria-hidden="true"><img class="liza-adesivo" src="img/liza-nanar.webp" alt="" width="320" height="164" loading="lazy" decoding="async"><span class="nota">e a Liza segue aqui comigo</span></div>
+        <div class="liza-segue" aria-hidden="true"><img class="foto-liza" src="img/liza-foto-dormindo.webp" alt="" width="360" height="145" loading="lazy" decoding="async"><span class="nota">e a Liza segue aqui comigo</span></div>
       </div>
     </div>
   </div>
@@ -859,7 +869,7 @@ html.a-fonte .frase-grande,html.a-fonte .qualidades strong,html.a-fonte .bilhete
       <li><div class="postit r">academia é sagrada. é onde eu desligo a cabeça.<svg class="doodle rabisco r-raio" viewBox="0 0 76 154" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-raio"/></svg></div></li>
       <li class="doces"><span class="doces-extra" aria-hidden="true"><svg class="rabisco r-croissant" viewBox="0 0 210 139" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-croissant"/></svg><svg class="rabisco mini-coracao r-coracao-cheio" viewBox="0 0 61 65" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-coracao-cheio"/></svg></span><div class="postit c">brigadeiro e cookie: combustível oficial dos projetos.<svg class="doodle rabisco r-cookie" viewBox="0 0 309 308" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-cookie"/></svg></div></li>
       <li><div class="postit">sempre estudando alguma coisa nova (e anotando tudo).<svg class="doodle rabisco r-brilho-a" viewBox="0 0 143 196" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-brilho-a"/></svg></div></li>
-      <li class="liza"><div class="sticker-cao"><img class="cao-svg liza-adesivo" src="img/liza-coelho.webp" alt="" width="320" height="313" loading="lazy" decoding="async"></div><span class="nota">a Liza no inverno</span></li>
+      <li class="liza"><div class="sticker-cao"><img class="cao-svg foto-liza" src="img/liza-foto-coberta.webp" alt="" width="320" height="318" loading="lazy" decoding="async"></div><span class="nota">a Liza no inverno</span></li>
     </ul>
   </div>
 </section>
@@ -876,14 +886,14 @@ html.a-fonte .frase-grande,html.a-fonte .qualidades strong,html.a-fonte .bilhete
       </div>
       <p class="contatos-texto">WhatsApp: (48) 99686-2073 · E-mail: leticiabeasouza@gmail.com</p>
     </div>
-    <div class="paz"><img loading="lazy" decoding="async" src="img/eu-paz-recorte.webp" alt="Letícia de óculos escuros, sorrindo e fazendo sinal de paz." width="511" height="626"><span class="nota" aria-hidden="true">te espero!</span><img class="liza-espera" src="img/liza-olhando.webp" alt="" width="300" height="180" loading="lazy" decoding="async"></div>
+    <div class="paz"><img loading="lazy" decoding="async" src="img/eu-paz-recorte.webp" alt="Letícia de óculos escuros, sorrindo e fazendo sinal de paz." width="511" height="626"><span class="nota" aria-hidden="true">te espero!</span><img class="liza-espera foto-liza" src="img/liza-foto-rosto.webp" alt="" width="260" height="304" loading="lazy" decoding="async"></div>
   </div>
 </section>
 </main>
 
 <footer>
   <div class="wrap">
-    <img class="liza-sono" src="img/liza-dormindo.webp" alt="" width="180" height="110" loading="lazy" decoding="async"><span>Feito à mão por Letícia Beatriz, com supervisão da Liza. De Palhoça (SC) para todo o Brasil.</span>
+    <img class="liza-sono foto-liza" src="img/liza-foto-dormindo.webp" alt="" width="360" height="145" loading="lazy" decoding="async"><span>Feito à mão por Letícia Beatriz, com supervisão da Liza. De Palhoça (SC) para todo o Brasil.</span>
     <span>Este site segue as diretrizes de acessibilidade WCAG 2.2.</span>
   </div>
 </footer>
@@ -906,7 +916,7 @@ html.a-fonte .frase-grande,html.a-fonte .qualidades strong,html.a-fonte .bilhete
   <div class="a11y-rodape"><button type="button" id="a11y-reset">Restaurar o padrão</button><button type="button" id="a11y-fechar">Fechar</button></div>
 </div>
 <div class="guia-leitura" id="guia" aria-hidden="true"></div>
-<aside aria-label="Atalho para o contato"><a class="passeio" id="passeio" href="#contato" aria-label="Precisa de ajuda? Ir para o contato"><span class="ajuda" aria-hidden="true">precisa de ajuda?</span><span class="trote"><img class="cao-svg" src="img/liza-moletom.webp" alt="" width="200" height="160"></span></a></aside>
+<aside aria-label="Atalho para o contato"><a class="passeio" id="passeio" href="#contato" aria-label="Precisa de ajuda? Ir para o contato"><span class="ajuda" aria-hidden="true">precisa de ajuda?</span><span class="trote"><img class="cao-svg foto-liza" src="img/liza-foto-moletom.webp" alt="" width="220" height="267"></span></a></aside>
 <script>
 (function(){
   var reduz = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
