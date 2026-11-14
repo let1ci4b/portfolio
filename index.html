@@ -475,10 +475,52 @@ html.a-parar .passeio,html.a-enfeites .passeio{display:none!important}
 footer .wrap{align-items:center}
 footer .liza-sono{width:64px;margin:0}
 footer .wrap > span:first-of-type{flex:1;min-width:220px}
+
+/* ===== versão fluida: menos caixas, mais colagem ===== */
+.num,.plano,.estat-card,.form-card,.mvv-card,.resultado,.anjos,.calc{border:0!important;box-shadow:none!important}
+.num{border-radius:58% 42% 55% 45%/48% 56% 44% 52%;padding:34px 30px 30px}
+.num:nth-child(2n){border-radius:44% 56% 40% 60%/58% 42% 58% 42%}
+.num:nth-child(3n){border-radius:52% 48% 62% 38%/42% 60% 40% 58%}
+.num:not(.azul):not(.rosa){background:#fff}
+.numeros{gap:var(--espaco-6) var(--espaco-10)}
+.num:nth-child(3n+2){margin-top:34px}
+.num .valor{font-size:clamp(46px,5vw,64px)}
+.calc{border-radius:46px 30px 52px 34px/34px 50px 30px 46px;transform:rotate(-.6deg)}
+.estat-card,.form-card,.mvv-card{background:none!important;padding-left:0;padding-right:0}
+.form-card,.mvv-card{padding-top:52px}
+.form-card .selo-oval,.mvv-card .selo-oval{left:0}
+.plano{background:none}
+.plano.destaque{background:var(--bordo);border-radius:38px 30px 44px 28px/30px 42px 28px 40px;transform:rotate(-1.2deg);box-shadow:none}
+.plano:not(.destaque){padding-left:var(--espaco-4);padding-right:var(--espaco-4)}
+.ganhos li{background:none!important;border:0!important;box-shadow:none!important;border-radius:0;padding:6px 0;border-bottom:2px dotted rgba(107,30,46,.25)!important}
+.anjos{padding-left:0;padding-right:0}
+.trabalho{border:0!important;background:#fff;border-radius:4px;box-shadow:0 10px 24px rgba(74,20,32,.12);position:relative;padding-top:44px}
+.trabalho:nth-child(1){transform:rotate(-2.5deg)}.trabalho:nth-child(2){transform:rotate(1.8deg) translateY(16px)}.trabalho:nth-child(3){transform:rotate(-1deg)}
+.trabalho::before{content:"";position:absolute;top:-14px;left:50%;width:96px;height:28px;margin-left:-48px;background:rgba(199,223,236,.85);transform:rotate(-4deg)}
+.trabalho:nth-child(2)::before{background:rgba(246,220,221,.9);transform:rotate(3deg)}
+.polaroid{border:0!important;box-shadow:0 10px 24px rgba(74,20,32,.14)!important}
+.postit{border:0!important;box-shadow:0 10px 22px rgba(74,20,32,.13)!important}
+.postit .doodle{border:0!important;background:none!important}
+/* elementos que atravessam as seções */
+.beneficios,.estatico,.acess,.toolkit,.mais-mim{position:relative}
+.ponte{position:absolute;z-index:3;pointer-events:none;color:var(--morango)}
+.ponte svg{display:block;width:100%;height:auto;overflow:visible}
+.ponte.fita-1{top:-70px;right:-60px;width:min(520px,60vw);transform:rotate(-8deg)}
+.ponte.fita-2{bottom:-80px;left:-70px;width:min(460px,70vw);transform:rotate(9deg) scaleX(-1)}
+.ponte.fita-3{top:-86px;right:3%;width:min(400px,55vw);transform:rotate(-4deg)}
+.ponte.fita-4{bottom:-70px;right:-40px;width:min(440px,60vw);transform:rotate(6deg);color:var(--rosa)}
+.ponte.grande-estrela{top:-64px;left:5%;width:clamp(70px,9vw,120px);color:var(--caramelo)}
+.ponte.grande-brilho{top:-58px;right:9%;width:clamp(56px,6vw,84px);color:var(--bordo)}
+.ponte.grande-espiral{bottom:-50px;left:7%;width:clamp(50px,5vw,72px);color:var(--bordo)}
+.liza-feliz{position:relative;z-index:3;margin-bottom:-110px}
+html.a-enfeites .ponte{display:none!important}
+html.a-contraste .ponte{color:#000}
+@media (max-width:760px){.form-grade,.mvv-grade{grid-template-columns:1fr!important;gap:var(--espaco-10)}.num:nth-child(3n+2){margin-top:0}.ponte.fita-1{right:-120px}.liza-feliz{margin-bottom:-60px}}
 @media (prefers-reduced-motion:reduce){html.js .desenhar .rabisco{clip-path:none;transition:none}}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><filter id="lapis-fita" x="-5%" y="-10%" width="110%" height="120%"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="2" seed="11" result="t"/><feDisplacementMap in="SourceGraphic" in2="t" scale="3"/></filter><symbol id="fita" viewBox="0 0 600 170"><path filter="url(#lapis-fita)" fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" d="M-6 128C52 58 132 34 172 82C200 118 162 156 128 122C96 90 150 40 226 58C300 76 318 132 390 114C442 100 456 52 424 44C390 36 392 98 452 110C522 124 566 72 610 36"/></symbol></defs></svg>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><filter id="wob" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="5" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.6"/></filter><filter id="wob2" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="3" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.2"/></filter></defs></svg>
 <script>document.documentElement.classList.add("js")</script>
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
@@ -528,7 +570,7 @@ footer .wrap > span:first-of-type{flex:1;min-width:220px}
 </section>
 
 
-<section class="beneficios" id="beneficios" aria-labelledby="t-benef">
+<section class="beneficios" id="beneficios" aria-labelledby="t-benef"><div class="ponte fita-1" aria-hidden="true"><svg viewBox="0 0 600 170" focusable="false"><use href="#fita"/></svg></div>
   <div class="wrap">
     <div class="benef-topo">
       <div>
@@ -586,7 +628,7 @@ footer .wrap > span:first-of-type{flex:1;min-width:220px}
   </div>
 </section>
 
-<section class="estatico" id="estatico" aria-labelledby="t-estat">
+<section class="estatico" id="estatico" aria-labelledby="t-estat"><div class="ponte fita-2" aria-hidden="true"><svg viewBox="0 0 600 170" focusable="false"><use href="#fita"/></svg></div><div class="ponte grande-brilho" aria-hidden="true"><svg viewBox="0 0 143 196" focusable="false"><use href="img/rabiscos.svg#r-brilho-a" fill="currentColor"/></svg></div>
   <div class="wrap">
     <div class="cabeca"><h2 id="t-estat">Que tipo de site eu faço?</h2><span class="nota">explicado sem tecniquês</span><div class="desenhar cab-rabisco"><svg class="doodle rabisco r-espiral" viewBox="0 0 79 99" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-espiral"/></svg><span class="enfeitinhos v2" aria-hidden="true"><svg class="mini" viewBox="0 0 83 77" focusable="false"><use href="img/rabiscos.svg#r-estrelinha"/></svg></span></div></div>
     <p class="lead-sec">Eu faço <strong>sites estáticos</strong>. Pense num folheto bem feito, só que na internet: as páginas já ficam prontas e chegam inteiras no celular de quem abre. Não tem sistema rodando por trás, nem banco de dados, nem senha para invadir.</p>
@@ -636,7 +678,7 @@ footer .wrap > span:first-of-type{flex:1;min-width:220px}
   </div>
 </section>
 
-<section class="acess escuro" aria-labelledby="t-acess">
+<section class="acess escuro" aria-labelledby="t-acess"><div class="ponte grande-estrela" aria-hidden="true"><svg viewBox="0 0 307 240" focusable="false"><use href="img/rabiscos.svg#r-estrela" fill="currentColor"/></svg></div>
   <div class="wrap">
     <div class="desenhar"><svg class="doodle " viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g filter="url(#wob)"><circle cx="100" cy="100" r="72"/><circle cx="100" cy="58" r="10" fill="currentColor" stroke="none"/><path d="M60 80 C80 88 120 88 140 80 M100 88 V122 M100 122 L82 154 M100 122 L118 154" stroke-width="6"/></g></svg></div>
     <div>
@@ -681,7 +723,7 @@ footer .wrap > span:first-of-type{flex:1;min-width:220px}
   </div>
 </section>
 
-<section class="toolkit" id="ferramentas" aria-labelledby="t-tool">
+<section class="toolkit" id="ferramentas" aria-labelledby="t-tool"><div class="ponte fita-3" aria-hidden="true"><svg viewBox="0 0 600 170" focusable="false"><use href="#fita"/></svg></div><div class="ponte grande-espiral" aria-hidden="true"><svg viewBox="0 0 79 99" focusable="false"><use href="img/rabiscos.svg#r-espiral" fill="currentColor"/></svg></div>
   <div class="wrap">
     <div class="cabeca"><h2 id="t-tool">Caixa de ferramentas</h2><span class="nota">o que eu uso no dia a dia</span><div class="desenhar cab-rabisco"><svg class="doodle rabisco r-estrela-pontos" viewBox="0 0 324 136" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-estrela-pontos"/></svg><span class="enfeitinhos " aria-hidden="true"><svg class="mini" viewBox="0 0 73 64" focusable="false"><use href="img/rabiscos.svg#r-florzinha"/></svg></span></div></div>
     <div class="tool-grade">
@@ -761,7 +803,7 @@ footer .wrap > span:first-of-type{flex:1;min-width:220px}
   </div>
 </section>
 
-<section class="mais-mim" id="mais" aria-labelledby="t-mais">
+<section class="mais-mim" id="mais" aria-labelledby="t-mais"><div class="ponte fita-4" aria-hidden="true"><svg viewBox="0 0 600 170" focusable="false"><use href="#fita"/></svg></div>
   <div class="wrap">
     <div class="cabeca"><h2 id="t-mais">Um pouco mais de mim</h2><span class="nota">fora do computador</span><div class="desenhar cab-rabisco"><svg class="doodle rabisco r-notas" viewBox="0 0 90 74" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-notas"/></svg><span class="enfeitinhos v2" aria-hidden="true"><svg class="mini" viewBox="0 0 54 51" focusable="false"><use href="img/rabiscos.svg#r-coracao"/></svg></span></div></div>
     <ul class="postits">
