@@ -436,7 +436,7 @@ html.a-contraste .cadeira-mesa{color:#000}
 .seta-baixo .rabisco{width:100%;height:auto;display:block}
 
 /* ondas entre as seções (no lugar das linhas retas) */
-:root{--onda-1:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 40' preserveAspectRatio='none'%3E%3Cpath d='M0 40V24C120 8 260 2 420 14S700 38 880 24S1220 2 1440 18V40Z'/%3E%3C/svg%3E");--onda-2:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 40' preserveAspectRatio='none'%3E%3Cpath d='M0 40V16C160 2 330 6 500 22S820 40 1010 26S1300 6 1440 22V40Z'/%3E%3C/svg%3E")}
+:root{--rasgado:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0 0H100V73.2L98.5 73.5L96.8 72.4L94.4 74.6L90.8 73.7L89.0 72.9L86.9 71.6L85.4 71.6L81.4 72.9L77.8 72.6L76.0 71.1L72.9 72.1L69.2 72.5L67.7 71.7L64.5 71.5L62.8 71.4L61.3 72.8L57.5 71.9L55.4 73.1L52.5 73.3L48.7 72.7L46.3 73.2L43.8 72.2L41.7 74.3L40.4 72.3L37.3 73.2L34.5 74.0L32.3 75.7L30.5 74.1L28.7 74.8L26.6 74.1L23.2 74.1L20.3 75.7L18.8 73.3L16.9 75.2L13.9 73.6L11.7 73.3L9.1 72.7L5.8 74.7L1.7 73.9L0.0 73.5Z'/%3E%3C/svg%3E");--onda-1:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 40' preserveAspectRatio='none'%3E%3Cpath d='M0 40V24C120 8 260 2 420 14S700 38 880 24S1220 2 1440 18V40Z'/%3E%3C/svg%3E");--onda-2:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 40' preserveAspectRatio='none'%3E%3Cpath d='M0 40V16C160 2 330 6 500 22S820 40 1010 26S1300 6 1440 22V40Z'/%3E%3C/svg%3E")}
 .estatico,.toolkit,.mais-mim{border-block:0!important}
 .estatico,.acess,.toolkit,.mais-mim{position:relative}
 .estatico,.acess,.toolkit,.mais-mim{margin-block:clamp(22px,3vw,44px)}
@@ -516,6 +516,18 @@ footer .wrap > span:first-of-type{flex:1;min-width:220px}
 html.a-enfeites .ponte{display:none!important}
 html.a-contraste .ponte{color:#000}
 @media (max-width:760px){.form-grade,.mvv-grade{grid-template-columns:1fr!important;gap:var(--espaco-10)}.num:nth-child(3n+2){margin-top:0}.ponte.fita-1{right:-120px}.liza-feliz{margin-bottom:-60px}}
+
+/* topo: recorte com borda de papel rasgado, sem a linha de baixo */
+.palco{border-bottom:0!important}
+.eu-recorte{height:112%;bottom:-13%;-webkit-mask:var(--rasgado) 0 0/100% 100% no-repeat;mask:var(--rasgado) 0 0/100% 100% no-repeat}
+.simbolo-hero{position:absolute;left:5%;bottom:10%;width:clamp(96px,13%,160px);z-index:3;color:var(--morango);transform:rotate(-8deg)}
+.simbolo-hero .doodle{width:100%;height:auto}
+.doces{position:relative}
+.doces-extra{position:absolute;z-index:2;top:-58px;right:-26px;width:96px;pointer-events:none;color:var(--bordo);transform:rotate(10deg)}
+.doces-extra .r-croissant{width:100%;height:auto;display:block}
+.doces-extra .mini-coracao{position:absolute;width:24px;height:24px;left:-14px;top:-6px;color:var(--morango)}
+@media (max-width:760px){.eu-recorte{height:104%;bottom:-10%}.pilula.p1{top:auto;bottom:8%;left:2%}.simbolo-hero{left:auto;right:4%;bottom:auto;top:12%;width:62px}.doces-extra{width:70px;top:-44px;right:-10px}}
+html.a-enfeites .simbolo-hero,html.a-enfeites .doces-extra{display:none!important}
 @media (prefers-reduced-motion:reduce){html.js .desenhar .rabisco{clip-path:none;transition:none}}
 </style>
 </head>
@@ -551,7 +563,7 @@ html.a-contraste .ponte{color:#000}
       <span class="nota n-ola" aria-hidden="true">oi, prazer!</span>
       <div class="brilho desenhar"><svg class="doodle rabisco r-brilho-a" viewBox="0 0 143 196" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-brilho-a"/></svg></div>
       <img class="eu-recorte" fetchpriority="high" src="img/eu-blazer-recorte.webp" srcset="img/eu-blazer-recorte-560.webp 560w, img/eu-blazer-recorte.webp 857w" sizes="(max-width: 768px) 280px, 410px" alt="Letícia, de cabelo preto curto com franja e blazer preto, sorrindo de lado." width="857" height="1300">
-      <div class="croissant-hero"><svg class="doodle rabisco r-croissant" viewBox="0 0 210 139" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-croissant"/></svg></div>
+      <div class="simbolo-hero desenhar" aria-hidden="true"><svg class="doodle rabisco r-estrela-pontos" viewBox="0 0 324 136" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-estrela-pontos"/></svg></div>
       <div class="seta-nota" aria-hidden="true"><span class="nota">a Liza, gerente de qualidade, 15 anos de casa</span><div class="desenhar"><svg class="doodle rabisco r-seta" viewBox="0 0 102 121" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-seta"/></svg></div></div>
       <button class="cao-recorte" type="button" id="cao-hero" aria-label="Fazer carinho na Liza, minha labradora"><img loading="lazy" decoding="async" src="img/cao-moletom-recorte.webp" srcset="img/cao-moletom-recorte-480.webp 480w, img/cao-moletom-recorte.webp 655w" sizes="(max-width: 768px) 120px, 245px" alt="" width="655" height="797"></button>
       <div class="balao" id="balao" aria-live="polite"></div>
@@ -809,7 +821,7 @@ html.a-contraste .ponte{color:#000}
     <ul class="postits">
       <li><div class="postit">não tomo café. é energético ou coca zero, sempre.<svg class="doodle rabisco r-copo" viewBox="0 0 113 191" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-copo"/></svg></div></li>
       <li><div class="postit r">academia é sagrada. é onde eu desligo a cabeça.<svg class="doodle rabisco r-raio" viewBox="0 0 76 154" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-raio"/></svg></div></li>
-      <li><div class="postit c">brigadeiro e cookie: combustível oficial dos projetos.<svg class="doodle rabisco r-cookie" viewBox="0 0 309 308" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-cookie"/></svg></div></li>
+      <li class="doces"><span class="doces-extra" aria-hidden="true"><svg class="rabisco r-croissant" viewBox="0 0 210 139" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-croissant"/></svg><svg class="rabisco mini-coracao r-coracao-cheio" viewBox="0 0 61 65" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-coracao-cheio"/></svg></span><div class="postit c">brigadeiro e cookie: combustível oficial dos projetos.<svg class="doodle rabisco r-cookie" viewBox="0 0 309 308" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-cookie"/></svg></div></li>
       <li><div class="postit">sempre estudando alguma coisa nova (e anotando tudo).<svg class="doodle rabisco r-brilho-a" viewBox="0 0 143 196" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-brilho-a"/></svg></div></li>
       <li class="liza"><div class="sticker-cao"><img class="cao-svg liza-adesivo" src="img/liza-coelho.webp" alt="" width="320" height="313" loading="lazy" decoding="async"></div><span class="nota">a Liza no inverno</span></li>
     </ul>
