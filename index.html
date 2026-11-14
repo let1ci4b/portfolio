@@ -656,6 +656,8 @@ html.a-fonte .info-grupo h3.nota{font-family:var(--font-sans)!important;transfor
 .toolkit::before,.toolkit::after{display:none!important}
 .toolkit{margin-block:0!important}
 @media (max-width:760px){.trabalhos{gap:40px!important}.trabalho:nth-child(2){transform:rotate(1.8deg)!important}}
+.onda-topo{position:absolute;left:0;right:0;top:-1px;height:clamp(22px,3vw,44px);background:var(--creme);-webkit-mask:var(--onda-1) 0 0/100% 100% no-repeat;mask:var(--onda-1) 0 0/100% 100% no-repeat;transform:scaleY(-1);pointer-events:none;z-index:1}
+.contato{padding-top:calc(96px + 20px)}
 @media (prefers-reduced-motion:reduce){html.js .desenhar .rabisco{clip-path:none;transition:none}}
 </style>
 </head>
@@ -919,20 +921,7 @@ html.a-fonte .info-grupo h3.nota{font-family:var(--font-sans)!important;transfor
   </div>
 </section>
 
-<section class="mais-mim" id="mais" aria-labelledby="t-mais"><div class="ponte fita-4" aria-hidden="true"><svg viewBox="0 0 600 170" focusable="false"><use href="#fita"/></svg></div>
-  <div class="wrap">
-    <div class="cabeca"><h2 id="t-mais">Um pouco mais de mim</h2><span class="nota">fora do computador</span><div class="desenhar cab-rabisco"><svg class="doodle rabisco r-notas" viewBox="0 0 90 74" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-notas"/></svg><span class="enfeitinhos v2" aria-hidden="true"><svg class="mini" viewBox="0 0 54 51" focusable="false"><use href="img/rabiscos.svg#r-coracao"/></svg></span></div></div>
-    <ul class="postits">
-      <li><div class="postit">não tomo café. é energético ou coca zero, sempre.<svg class="doodle rabisco r-copo" viewBox="0 0 113 191" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-copo"/></svg></div></li>
-      <li><div class="postit r">academia é sagrada. é onde eu desligo a cabeça.<svg class="doodle rabisco r-raio" viewBox="0 0 76 154" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-raio"/></svg></div></li>
-      <li class="doces"><span class="doces-extra" aria-hidden="true"><svg class="rabisco r-croissant" viewBox="0 0 210 139" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-croissant"/></svg><svg class="rabisco mini-coracao r-coracao-cheio" viewBox="0 0 61 65" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-coracao-cheio"/></svg></span><div class="postit c">brigadeiro e cookie: combustível oficial dos projetos.<svg class="doodle rabisco r-cookie" viewBox="0 0 309 308" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-cookie"/></svg></div></li>
-      <li><div class="postit">sempre estudando alguma coisa nova (e anotando tudo).<svg class="doodle rabisco r-brilho-a" viewBox="0 0 143 196" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-brilho-a"/></svg></div></li>
-      <li class="liza"><div class="sticker-cao"><img class="cao-svg foto-liza" src="img/liza-foto-coberta.webp" alt="" width="320" height="318" loading="lazy" decoding="async"></div><span class="nota">a Liza no inverno</span></li>
-    </ul>
-  </div>
-</section>
-
-<section class="contato escuro" id="contato" aria-labelledby="t-contato">
+<section class="contato escuro" id="contato" aria-labelledby="t-contato"><div class="onda-topo" aria-hidden="true"></div>
   <div class="flutua f1"><svg class="doodle rabisco r-coracao" viewBox="0 0 54 51" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-coracao"/></svg></div><div class="flutua f2"><svg class="doodle rabisco r-chocolate" viewBox="0 0 132 165" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-chocolate"/></svg></div><div class="flutua f3"><svg class="doodle rabisco r-estrela" viewBox="0 0 307 240" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-estrela"/></svg></div><div class="flutua f4"><svg class="doodle rabisco r-brilho-a" viewBox="0 0 143 196" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-brilho-a"/></svg></div>
   <div class="wrap contato-grade">
     <div>
