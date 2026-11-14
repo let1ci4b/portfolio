@@ -45,6 +45,7 @@ header.topo{position:sticky;top:0;z-index:50;background:rgba(255,246,238,.92);ba
 .topo .wrap{display:flex;align-items:center;justify-content:space-between;min-height:68px;gap:var(--espaco-4)}
 .marca{font-family:var(--font-display);font-size:24px;font-weight:600;color:var(--cereja);text-decoration:none;display:flex;align-items:center;gap:8px}
 .marca .doodle{width:34px}
+.marca .logo-codigo{width:40px;height:auto;color:var(--bordo);overflow:visible}
 nav ul{display:flex;gap:var(--espaco-2);list-style:none;margin:0;padding:0;flex-wrap:wrap}
 nav a{display:inline-block;padding:10px 14px;min-height:44px;color:var(--cereja);text-decoration:none;font-weight:400;border-radius:var(--raio-pilula)}
 nav a:hover{background:var(--rosa)}
@@ -528,6 +529,30 @@ html.a-contraste .ponte{color:#000}
 .doces-extra .mini-coracao{position:absolute;width:24px;height:24px;left:-14px;top:-6px;color:var(--morango)}
 @media (max-width:760px){.eu-recorte{height:104%;bottom:-10%}.pilula.p1{top:auto;bottom:8%;left:2%}.simbolo-hero{left:auto;right:4%;bottom:auto;top:12%;width:62px}.doces-extra{width:70px;top:-44px;right:-10px}}
 html.a-enfeites .simbolo-hero,html.a-enfeites .doces-extra{display:none!important}
+
+/* seção "Que tipo de site eu faço?" em colagem */
+.sr-only{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.estat-topo{display:grid;grid-template-columns:1.25fr 1fr;gap:var(--espaco-10);align-items:center}
+.frase-grande{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:clamp(34px,4.4vw,58px);line-height:1.05;color:var(--bordo);margin:0 0 20px;max-width:16ch}
+.frase-explica{font-size:19px;max-width:46ch;margin:0}
+.bilhete{position:relative;background:var(--creme);padding:42px 30px 26px;transform:rotate(2deg);box-shadow:0 12px 26px rgba(74,20,32,.14);border-radius:3px 6px 4px 8px}
+.bilhete::before{content:"";position:absolute;top:-15px;left:40%;width:110px;height:30px;background:rgba(199,223,236,.9);transform:rotate(-5deg)}
+.bilhete h3{font-family:var(--font-mao);font-weight:400;font-size:30px;margin:0 0 6px;color:var(--bordo)}
+.bilhete ul{list-style:none;margin:0 0 18px;padding:0}
+.bilhete li{position:relative;padding-left:34px;margin-bottom:8px}
+.bilhete li svg{position:absolute;left:0;top:2px;width:24px;height:24px}
+.lista-ok svg{color:#2f7a4e}
+.lista-nao svg{color:var(--vinho)}
+.lista-nao li span{color:var(--texto-suave)}
+.qualidades{list-style:none;margin:72px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:var(--espaco-6)}
+.qualidades li{position:relative;display:flex;flex-direction:column;gap:8px}
+.qualidades li:nth-child(2n){margin-top:44px}
+.qualidades .doodle{width:auto;height:46px;align-self:flex-start;color:var(--vinho)}
+.qualidades strong{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:clamp(28px,2.6vw,38px);line-height:1;color:var(--bordo)}
+.qualidades span{font-size:16px}
+@media (max-width:860px){.estat-topo{grid-template-columns:1fr}.qualidades{grid-template-columns:1fr 1fr;gap:36px 24px;margin-top:56px}.bilhete{transform:rotate(1deg)}}
+@media (max-width:480px){.qualidades{grid-template-columns:1fr}.qualidades li:nth-child(2n){margin-top:0}}
+html.a-fonte .frase-grande,html.a-fonte .qualidades strong,html.a-fonte .bilhete h3{font-family:var(--font-sans)!important;font-style:normal!important}
 @media (prefers-reduced-motion:reduce){html.js .desenhar .rabisco{clip-path:none;transition:none}}
 </style>
 </head>
@@ -539,7 +564,7 @@ html.a-enfeites .simbolo-hero,html.a-enfeites .doces-extra{display:none!importan
 
 <header class="topo">
   <div class="wrap">
-    <a class="marca" href="#inicio"><svg class="doodle rabisco r-pata" viewBox="0 0 140 139" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-pata"/></svg>Letícia Beatriz</a>
+    <a class="marca" href="#inicio"><svg class="logo-codigo" viewBox="0 0 64 44" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#lapis-fita)"><path d="M17 9.5 4.5 22.4 17.6 34.8"/><path d="M47 9 59.4 22 46.4 35.2"/><path d="M36.8 4.2 27.4 40"/></g><circle cx="58" cy="6" r="2.6" fill="var(--morango)"/><circle cx="52.5" cy="3.2" r="1.6" fill="var(--morango)"/></svg>Letícia Beatriz</a>
     <nav aria-label="Principal">
       <ul>
         <li class="opcional"><a href="#beneficios">Por que ter um site</a></li>
@@ -643,21 +668,32 @@ html.a-enfeites .simbolo-hero,html.a-enfeites .doces-extra{display:none!importan
 <section class="estatico" id="estatico" aria-labelledby="t-estat"><div class="ponte fita-2" aria-hidden="true"><svg viewBox="0 0 600 170" focusable="false"><use href="#fita"/></svg></div><div class="ponte grande-brilho" aria-hidden="true"><svg viewBox="0 0 143 196" focusable="false"><use href="img/rabiscos.svg#r-brilho-a" fill="currentColor"/></svg></div>
   <div class="wrap">
     <div class="cabeca"><h2 id="t-estat">Que tipo de site eu faço?</h2><span class="nota">explicado sem tecniquês</span><div class="desenhar cab-rabisco"><svg class="doodle rabisco r-espiral" viewBox="0 0 79 99" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-espiral"/></svg><span class="enfeitinhos v2" aria-hidden="true"><svg class="mini" viewBox="0 0 83 77" focusable="false"><use href="img/rabiscos.svg#r-estrelinha"/></svg></span></div></div>
-    <p class="lead-sec">Eu faço <strong>sites estáticos</strong>. Pense num folheto bem feito, só que na internet: as páginas já ficam prontas e chegam inteiras no celular de quem abre. Não tem sistema rodando por trás, nem banco de dados, nem senha para invadir.</p>
-    <div class="estat-grade">
-      <div class="estat-card sim"><h3>Por isso ele é</h3><ul>
-        <li><strong>Muito rápido.</strong> Abre na hora, até no 4G. Lembra dos +8,4% de conversões com 0,1 segundo a menos? É aqui que o estático ganha.</li>
-        <li><strong>Seguro.</strong> Sem login e sem banco de dados, quase não há por onde ser invadido.</li>
-        <li><strong>Barato de manter.</strong> A hospedagem pode ser gratuita. Você só paga o domínio, cerca de R$ 40 por ano.</li>
-        <li><strong>Sem dor de cabeça.</strong> Não precisa de atualização de plugin nem de sistema.</li></ul></div>
-      <div class="estat-card nao"><h3>Ele é ideal para</h3><ul>
-        <li>Apresentar seu negócio, serviços, preços e fotos</li>
-        <li>Mostrar endereço, mapa e horário</li>
-        <li>Levar o cliente para o WhatsApp, o Instagram ou um link de agendamento</li></ul>
-        <h3 class="mt">Não é para</h3><ul>
-        <li>Loja virtual com pagamento (aí eu indico uma plataforma pronta)</li>
-        <li>Área de login para clientes</li></ul></div>
+    <div class="estat-topo">
+      <div class="estat-frase">
+        <p class="frase-grande">Pense num folheto bem feito, só que na internet.</p>
+        <p class="frase-explica">Eu faço <strong>sites estáticos</strong>: as páginas já ficam prontas e chegam inteiras no celular de quem abre. Não tem sistema rodando por trás, nem banco de dados, nem senha para invadir.</p>
+      </div>
+      <div class="bilhete">
+        <h3>Ele é ideal para</h3>
+        <ul class="lista-ok">
+          <li><svg class="marca-ok" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" filter="url(#lapis-fita)"/></svg>Apresentar seu negócio, serviços, preços e fotos</li>
+          <li><svg class="marca-ok" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" filter="url(#lapis-fita)"/></svg>Mostrar endereço, mapa e horário</li>
+          <li><svg class="marca-ok" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" filter="url(#lapis-fita)"/></svg>Levar o cliente para o WhatsApp, o Instagram ou um link de agendamento</li>
+        </ul>
+        <h3>Não é para</h3>
+        <ul class="lista-nao">
+          <li><svg class="marca-nao" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 5.4 19.2 18.8M18.6 4.8 5.6 19.4" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" filter="url(#lapis-fita)"/></svg>Loja virtual com pagamento <span>(aí eu indico uma plataforma pronta)</span></li>
+          <li><svg class="marca-nao" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 5.4 19.2 18.8M18.6 4.8 5.6 19.4" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" filter="url(#lapis-fita)"/></svg>Área de login para clientes</li>
+        </ul>
+      </div>
     </div>
+    <h3 class="sr-only">Por isso ele é</h3>
+    <ul class="qualidades">
+      <li><svg class="doodle rabisco r-raio" viewBox="0 0 76 154" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-raio"/></svg><strong>rápido</strong><span>Abre na hora, até no 4G. Lembra dos +8,4% de conversões com 0,1 segundo a menos? É aqui que o estático ganha.</span></li>
+      <li><svg class="doodle rabisco r-coracao-cheio" viewBox="0 0 61 65" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-coracao-cheio"/></svg><strong>seguro</strong><span>Sem login e sem banco de dados, quase não há por onde ser invadido.</span></li>
+      <li><svg class="doodle rabisco r-trevo" viewBox="0 0 74 68" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-trevo"/></svg><strong>barato de manter</strong><span>A hospedagem pode ser gratuita. Você só paga o domínio, cerca de R$ 40 por ano.</span></li>
+      <li><svg class="doodle rabisco r-notas" viewBox="0 0 90 74" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-notas"/></svg><strong>sem dor de cabeça</strong><span>Não precisa de atualização de plugin nem de sistema.</span></li>
+    </ul>
   </div>
 </section>
 
