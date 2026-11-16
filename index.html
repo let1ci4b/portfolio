@@ -876,6 +876,12 @@ button.btn{font-family:inherit;font-size:17px;font-weight:700;cursor:pointer}
 }
 .grande-num{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:12px;row-gap:0}
 .grande-num span:last-child{line-height:1.1}
+.sp-plano h3{line-height:1.15;padding-right:8px}
+.sp-preco{line-height:1.1}
+.sp-preco small{margin-top:6px}
+.sp-planos:not(.sp-planos-1) .sp-plano.destaque h3{padding-right:96px}
+@media (max-width:420px){.sp-planos:not(.sp-planos-1) .sp-plano.destaque h3{padding-right:0;margin-top:10px}}
+.sp-apartir{display:block;font-family:var(--font-sans);font-size:15px;font-weight:700;opacity:.85;margin-bottom:2px}
 @media (prefers-reduced-motion:reduce){html.js .desenhar .rabisco{clip-path:none;transition:none}}
 </style>
 </head>
@@ -1184,9 +1190,9 @@ button.btn{font-family:inherit;font-size:17px;font-weight:700;cursor:pointer}
     </div>
     <p class="sp-obs">O domínio (o endereço, tipo seunegocio.com.br) fica no seu nome e é pago por você direto no Registro.br: cerca de R$ 40 por ano. A hospedagem é gratuita.</p>
     <div class="sp-bloco"><h2 class="sp-h">Pacotes do site</h2><div class="sp-planos">
-<div class="sp-plano"><h3>Essencial</h3><p class="sp-preco">R$ 690<small>pagamento único</small></p><ul><li>Site de uma página</li><li>Funciona bem no celular</li><li>Botão de WhatsApp e mapa</li><li>Acessibilidade essencial</li><li>Aparece no Google</li></ul></div>
-<div class="sp-plano destaque"><h3>Presença</h3><p class="sp-preco">R$ 990<small>pagamento único</small></p><ul><li>Tudo do Essencial</li><li>Textos escritos por mim</li><li>Perfil de Empresa no Google</li><li>Artes para divulgar o site</li></ul></div>
-<div class="sp-plano"><h3>Marca Completa</h3><p class="sp-preco">R$ 1.690<small>pagamento único</small></p><ul><li>Tudo do Presença</li><li>Kit visual (logo, cores, fontes)</li><li>Acessibilidade avançada com relatório</li><li>Uma página extra</li></ul></div>
+<div class="sp-plano"><h3>Essencial</h3><p class="sp-preco">R$&nbsp;690<small>pagamento único</small></p><ul><li>Site de uma página</li><li>Funciona bem no celular</li><li>Botão de WhatsApp e mapa</li><li>Acessibilidade essencial</li><li>Aparece no Google</li></ul></div>
+<div class="sp-plano destaque"><h3>Presença</h3><p class="sp-preco">R$&nbsp;990<small>pagamento único</small></p><ul><li>Tudo do Essencial</li><li>Textos escritos por mim</li><li>Perfil de Empresa no Google</li><li>Artes para divulgar o site</li></ul></div>
+<div class="sp-plano"><h3>Marca Completa</h3><p class="sp-preco">R$&nbsp;1.690<small>pagamento único</small></p><ul><li>Tudo do Presença</li><li>Kit visual (logo, cores, fontes)</li><li>Acessibilidade avançada com relatório</li><li>Uma página extra</li></ul></div>
 </div></div>
     <div class="sp-bloco"><h2 class="sp-h">Como funciona</h2><ol class="sp-passos"><li><strong>Conversa</strong>Você me conta o que precisa pelo WhatsApp ou e-mail.</li><li><strong>Proposta</strong>Mando o que está incluído, o preço e o prazo, tudo por escrito.</li><li><strong>Você me envia</strong>Os materiais e informações que eu pedir (textos, fotos, logo ou acessos). O prazo começa a contar quando eu recebo tudo.</li><li><strong>Criação</strong>Faço o trabalho e te mostro para ajustes.</li><li><strong>Entrega</strong>Testado e pronto, com orientação de como usar.</li></ol></div>
   </div>
@@ -1206,7 +1212,7 @@ button.btn{font-family:inherit;font-size:17px;font-weight:700;cursor:pointer}
     <p class="sp-obs">Por que não usar só o catálogo do WhatsApp? Aqui o cardápio tem a sua marca, o seu endereço próprio, é acessível e não cobra taxa por pedido.</p>
     
     <div class="sp-bloco"><h2 class="sp-h">Quanto custa</h2><div class="sp-planos sp-planos-1">
-<div class="sp-plano destaque"><h3>Cardápio com pedido</h3><p class="sp-preco">R$ 890<small>pagamento único</small></p><ul><li>Tudo do site Essencial</li><li>Até 40 itens com foto e preço</li><li>Carrinho com total na hora</li><li>Pedido pronto no seu WhatsApp</li><li>QR code para imprimir</li></ul></div>
+<div class="sp-plano destaque"><h3>Cardápio com pedido</h3><p class="sp-preco">R$&nbsp;890<small>pagamento único</small></p><ul><li>Tudo do site Essencial</li><li>Até 40 itens com foto e preço</li><li>Carrinho com total na hora</li><li>Pedido pronto no seu WhatsApp</li><li>QR code para imprimir</li></ul></div>
 </div><p class="sp-nota-preco">Valores de referência. O orçamento final, por escrito, depende do tamanho do seu pedido.</p></div>
     <div class="sp-bloco"><h2 class="sp-h">Como funciona</h2><ol class="sp-passos"><li><strong>Conversa</strong>Você me conta o que precisa pelo WhatsApp ou e-mail.</li><li><strong>Proposta</strong>Mando o que está incluído, o preço e o prazo, tudo por escrito.</li><li><strong>Você me envia</strong>Os materiais e informações que eu pedir (textos, fotos, logo ou acessos). O prazo começa a contar quando eu recebo tudo.</li><li><strong>Criação</strong>Faço o trabalho e te mostro para ajustes.</li><li><strong>Entrega</strong>Testado e pronto, com orientação de como usar.</li></ol></div>
   </div>
@@ -1226,8 +1232,8 @@ button.btn{font-family:inherit;font-size:17px;font-weight:700;cursor:pointer}
     
     
     <div class="sp-bloco"><h2 class="sp-h">Quanto custa</h2><div class="sp-planos sp-planos-2">
-<div class="sp-plano"><h3>Só um dos dois</h3><p class="sp-preco">R$ 180<small>pagamento único</small></p><ul><li>WhatsApp Business ou Perfil no Google</li><li>Guia de uso com prints</li></ul></div>
-<div class="sp-plano destaque"><h3>WhatsApp e Google</h3><p class="sp-preco">R$ 290<small>pagamento único</small></p><ul><li>WhatsApp Business completo</li><li>Perfil de Empresa no Google</li><li>Guia de uso com prints</li></ul></div>
+<div class="sp-plano"><h3>Só um dos dois</h3><p class="sp-preco">R$&nbsp;180<small>pagamento único</small></p><ul><li>WhatsApp Business ou Perfil no Google</li><li>Guia de uso com prints</li></ul></div>
+<div class="sp-plano destaque"><h3>WhatsApp e Google</h3><p class="sp-preco">R$&nbsp;290<small>pagamento único</small></p><ul><li>WhatsApp Business completo</li><li>Perfil de Empresa no Google</li><li>Guia de uso com prints</li></ul></div>
 </div><p class="sp-nota-preco">Valores de referência. O orçamento final, por escrito, depende do tamanho do seu pedido.</p></div>
     <div class="sp-bloco"><h2 class="sp-h">Como funciona</h2><ol class="sp-passos"><li><strong>Conversa</strong>Você me conta o que precisa pelo WhatsApp ou e-mail.</li><li><strong>Proposta</strong>Mando o que está incluído, o preço e o prazo, tudo por escrito.</li><li><strong>Você me envia</strong>Os materiais e informações que eu pedir (textos, fotos, logo ou acessos). O prazo começa a contar quando eu recebo tudo.</li><li><strong>Criação</strong>Faço o trabalho e te mostro para ajustes.</li><li><strong>Entrega</strong>Testado e pronto, com orientação de como usar.</li></ol></div>
   </div>
@@ -1247,8 +1253,8 @@ button.btn{font-family:inherit;font-size:17px;font-weight:700;cursor:pointer}
     
     
     <div class="sp-bloco"><h2 class="sp-h">Quanto custa</h2><div class="sp-planos sp-planos-2">
-<div class="sp-plano"><h3>Cardápio ou tabela</h3><p class="sp-preco">a partir de R$ 150<small>1 ou 2 páginas</small></p><ul><li>Versão para imprimir</li><li>Versão leve para o celular</li><li>PDF acessível</li></ul></div>
-<div class="sp-plano destaque"><h3>Catálogo, manual ou apresentação</h3><p class="sp-preco">a partir de R$ 390<small>até 8 páginas</small></p><ul><li>Diagramação com a sua marca</li><li>Revisão de texto</li><li>PDF acessível</li><li>Página extra: R$ 35</li></ul></div>
+<div class="sp-plano"><h3>Cardápio ou tabela</h3><p class="sp-preco"><span class="sp-apartir">a partir de</span>R$&nbsp;150<small>1 ou 2 páginas</small></p><ul><li>Versão para imprimir</li><li>Versão leve para o celular</li><li>PDF acessível</li></ul></div>
+<div class="sp-plano destaque"><h3>Catálogo, manual ou apresentação</h3><p class="sp-preco"><span class="sp-apartir">a partir de</span>R$&nbsp;390<small>até 8 páginas</small></p><ul><li>Diagramação com a sua marca</li><li>Revisão de texto</li><li>PDF acessível</li><li>Página extra: R$ 35</li></ul></div>
 </div><p class="sp-nota-preco">Valores de referência. O orçamento final, por escrito, depende do tamanho do seu pedido.</p></div>
     <div class="sp-bloco"><h2 class="sp-h">Como funciona</h2><ol class="sp-passos"><li><strong>Conversa</strong>Você me conta o que precisa pelo WhatsApp ou e-mail.</li><li><strong>Proposta</strong>Mando o que está incluído, o preço e o prazo, tudo por escrito.</li><li><strong>Você me envia</strong>Os materiais e informações que eu pedir (textos, fotos, logo ou acessos). O prazo começa a contar quando eu recebo tudo.</li><li><strong>Criação</strong>Faço o trabalho e te mostro para ajustes.</li><li><strong>Entrega</strong>Testado e pronto, com orientação de como usar.</li></ol></div>
   </div>
@@ -1268,8 +1274,8 @@ button.btn{font-family:inherit;font-size:17px;font-weight:700;cursor:pointer}
     
     
     <div class="sp-bloco"><h2 class="sp-h">Quanto custa</h2><div class="sp-planos sp-planos-2">
-<div class="sp-plano"><h3>Uma planilha</h3><p class="sp-preco">R$ 190<small>pagamento único</small></p><ul><li>Caixa, estoque, clientes, pedidos ou preço</li><li>Aba "Como usar"</li><li>Chamada rápida de explicação</li></ul></div>
-<div class="sp-plano destaque"><h3>Kit com 3 planilhas</h3><p class="sp-preco">R$ 450<small>pagamento único</small></p><ul><li>Escolha 3 das planilhas</li><li>Tudo ligado e com o mesmo visual</li><li>Chamada de explicação</li></ul></div>
+<div class="sp-plano"><h3>Uma planilha</h3><p class="sp-preco">R$&nbsp;190<small>pagamento único</small></p><ul><li>Caixa, estoque, clientes, pedidos ou preço</li><li>Aba "Como usar"</li><li>Chamada rápida de explicação</li></ul></div>
+<div class="sp-plano destaque"><h3>Kit com 3 planilhas</h3><p class="sp-preco">R$&nbsp;450<small>pagamento único</small></p><ul><li>Escolha 3 das planilhas</li><li>Tudo ligado e com o mesmo visual</li><li>Chamada de explicação</li></ul></div>
 </div><p class="sp-nota-preco">Valores de referência. O orçamento final, por escrito, depende do tamanho do seu pedido.</p></div>
     <div class="sp-bloco"><h2 class="sp-h">Como funciona</h2><ol class="sp-passos"><li><strong>Conversa</strong>Você me conta o que precisa pelo WhatsApp ou e-mail.</li><li><strong>Proposta</strong>Mando o que está incluído, o preço e o prazo, tudo por escrito.</li><li><strong>Você me envia</strong>Os materiais e informações que eu pedir (textos, fotos, logo ou acessos). O prazo começa a contar quando eu recebo tudo.</li><li><strong>Criação</strong>Faço o trabalho e te mostro para ajustes.</li><li><strong>Entrega</strong>Testado e pronto, com orientação de como usar.</li></ol></div>
   </div>
@@ -1289,8 +1295,8 @@ button.btn{font-family:inherit;font-size:17px;font-weight:700;cursor:pointer}
     <p class="sp-obs">Só para quem fez o site ou o cardápio comigo.</p>
     
     <div class="sp-bloco"><h2 class="sp-h">Quanto custa</h2><div class="sp-planos sp-planos-2">
-<div class="sp-plano"><h3>Básica</h3><p class="sp-preco">R$ 79<small>por mês</small></p><ul><li>Até 3 alterações no mês</li><li>Verificação mensal do site</li><li>Lembrete do domínio</li></ul></div>
-<div class="sp-plano destaque"><h3>Completa</h3><p class="sp-preco">R$ 129<small>por mês</small></p><ul><li>Até 8 alterações no mês</li><li>Verificação mensal do site</li><li>Lembrete do domínio</li><li>Ajustes de acessibilidade</li></ul></div>
+<div class="sp-plano"><h3>Básica</h3><p class="sp-preco">R$&nbsp;79<small>por mês</small></p><ul><li>Até 3 alterações no mês</li><li>Verificação mensal do site</li><li>Lembrete do domínio</li></ul></div>
+<div class="sp-plano destaque"><h3>Completa</h3><p class="sp-preco">R$&nbsp;129<small>por mês</small></p><ul><li>Até 8 alterações no mês</li><li>Verificação mensal do site</li><li>Lembrete do domínio</li><li>Ajustes de acessibilidade</li></ul></div>
 </div><p class="sp-nota-preco">Valores de referência. O orçamento final, por escrito, depende do tamanho do seu pedido.</p></div>
     <div class="sp-bloco"><h2 class="sp-h">Como funciona</h2><ol class="sp-passos"><li><strong>Conversa</strong>Você me conta o que precisa pelo WhatsApp ou e-mail.</li><li><strong>Proposta</strong>Mando o que está incluído, o preço e o prazo, tudo por escrito.</li><li><strong>Você me envia</strong>Os materiais e informações que eu pedir (textos, fotos, logo ou acessos). O prazo começa a contar quando eu recebo tudo.</li><li><strong>Criação</strong>Faço o trabalho e te mostro para ajustes.</li><li><strong>Entrega</strong>Testado e pronto, com orientação de como usar.</li></ol></div>
   </div>
