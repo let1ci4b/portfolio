@@ -437,7 +437,7 @@ html.a-contraste .cadeira-mesa{color:#000}
 .seta-baixo .rabisco{width:100%;height:auto;display:block}
 
 /* ondas entre as seções (no lugar das linhas retas) */
-:root{--rasgado:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0 0H100V73.2L98.5 73.5L96.8 72.4L94.4 74.6L90.8 73.7L89.0 72.9L86.9 71.6L85.4 71.6L81.4 72.9L77.8 72.6L76.0 71.1L72.9 72.1L69.2 72.5L67.7 71.7L64.5 71.5L62.8 71.4L61.3 72.8L57.5 71.9L55.4 73.1L52.5 73.3L48.7 72.7L46.3 73.2L43.8 72.2L41.7 74.3L40.4 72.3L37.3 73.2L34.5 74.0L32.3 75.7L30.5 74.1L28.7 74.8L26.6 74.1L23.2 74.1L20.3 75.7L18.8 73.3L16.9 75.2L13.9 73.6L11.7 73.3L9.1 72.7L5.8 74.7L1.7 73.9L0.0 73.5Z'/%3E%3C/svg%3E");--onda-1:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 40' preserveAspectRatio='none'%3E%3Cpath d='M0 40V24C120 8 260 2 420 14S700 38 880 24S1220 2 1440 18V40Z'/%3E%3C/svg%3E");--onda-2:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 40' preserveAspectRatio='none'%3E%3Cpath d='M0 40V16C160 2 330 6 500 22S820 40 1010 26S1300 6 1440 22V40Z'/%3E%3C/svg%3E")}
+:root{--rasgado:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0 0H100V73.2L98.5 73.5L96.8 72.4L94.4 74.6L90.8 73.7L89.0 72.9L86.9 71.6L85.4 71.6L81.4 72.9L77.8 72.6L76.0 71.1L72.9 72.1L69.2 72.5L67.7 71.7L64.5 71.5L62.8 71.4L61.3 72.8L57.5 71.9L55.4 73.1L52.5 73.3L48.7 72.7L46.3 73.2L43.8 72.2L41.7 74.3L40.4 72.3L37.3 73.2L34.5 74.0L32.3 75.7L30.5 74.1L28.7 74.8L26.6 74.1L23.2 74.1L20.3 75.7L18.8 73.3L16.9 75.2L13.9 73.6L11.7 73.3L9.1 72.7L5.8 74.7L1.7 73.9L0.0 73.5Z'/%3E%3C/svg%3E");--onda-foto:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0 0H100V71C90 67 80 76 66 73C52 70 42 78 28 74C17 71 9 76 0 73Z'/%3E%3C/svg%3E");--onda-1:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 40' preserveAspectRatio='none'%3E%3Cpath d='M0 40V24C120 8 260 2 420 14S700 38 880 24S1220 2 1440 18V40Z'/%3E%3C/svg%3E");--onda-2:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 40' preserveAspectRatio='none'%3E%3Cpath d='M0 40V16C160 2 330 6 500 22S820 40 1010 26S1300 6 1440 22V40Z'/%3E%3C/svg%3E")}
 .estatico,.toolkit,.mais-mim{border-block:0!important}
 .estatico,.acess,.toolkit,.mais-mim{position:relative}
 .estatico,.acess,.toolkit,.mais-mim{margin-block:clamp(22px,3vw,44px)}
@@ -518,14 +518,14 @@ html.a-contraste .ponte{color:#000}
 
 /* topo: recorte com borda de papel rasgado, sem a linha de baixo */
 .palco{border-bottom:0!important}
-.eu-recorte{height:96%;bottom:-24%;-webkit-mask:var(--rasgado) 0 0/100% 100% no-repeat;mask:var(--rasgado) 0 0/100% 100% no-repeat}
+.eu-recorte{height:96%;bottom:-24%;-webkit-mask:var(--onda-foto) 0 0/100% 100% no-repeat;mask:var(--onda-foto) 0 0/100% 100% no-repeat}
 .simbolo-hero{position:absolute;left:5%;bottom:10%;width:clamp(96px,13%,160px);z-index:3;color:var(--morango);transform:rotate(-8deg)}
 .simbolo-hero .doodle{width:100%;height:auto}
 .doces{position:relative}
 .doces-extra{position:absolute;z-index:2;top:-58px;right:-26px;width:96px;pointer-events:none;color:var(--bordo);transform:rotate(10deg)}
 .doces-extra .r-croissant{width:100%;height:auto;display:block}
 .doces-extra .mini-coracao{position:absolute;width:24px;height:24px;left:-14px;top:-6px;color:var(--morango)}
-@media (max-width:760px){.eu-recorte{height:86%;bottom:-20%}.pilula.p1{top:auto;bottom:8%;left:2%}.simbolo-hero{left:auto;right:4%;bottom:auto;top:32%;width:58px}.doces-extra{width:70px;top:-44px;right:-10px}}
+@media (max-width:760px){.eu-recorte{height:86%;bottom:-20%}.pilula.p1{top:auto;bottom:8%;left:2%}.simbolo-hero{left:auto;right:4%;bottom:auto;top:32%;width:58px}.palco .brilho{display:none}.doces-extra{width:70px;top:-44px;right:-10px}}
 html.a-enfeites .simbolo-hero,html.a-enfeites .doces-extra{display:none!important}
 
 /* seção "Que tipo de site eu faço?" em colagem */
@@ -674,7 +674,7 @@ footer{padding-top:var(--espaco-6)!important}
 .liza-lanche img{width:100%;height:auto}
 @media (max-width:860px){.liza-extra{position:relative;right:auto;top:auto;margin:0 0 16px auto}.liza-inverno{width:130px}.liza-lanche{width:160px}}
 html.a-enfeites .liza-extra{display:none!important}
-.links-perfil{display:flex;flex-wrap:wrap;gap:12px;margin:36px 0 0}
+.links-perfil{display:flex;flex-wrap:wrap;gap:12px;margin:36px 0 0}#sobre p.links-perfil{margin-top:40px}
 .links-perfil a{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:8px 20px;border-radius:var(--raio-pilula);border:3px solid var(--cereja);background:var(--creme);color:var(--cereja);font-weight:700;text-decoration:none;box-shadow:var(--sombra-adesivo);transition:transform .15s}
 .links-perfil a:first-child{background:var(--vinho);color:var(--creme);border-color:var(--vinho)}
 .links-perfil a:hover{transform:translate(-1px,-2px) rotate(-1deg)}
@@ -821,6 +821,35 @@ html.a-fonte .move-frase,html.a-fonte .move-valores li{font-family:var(--font-sa
 .a11y-botao.chamando{animation:chamar 1.2s ease-in-out 3}
 @keyframes chamar{50%{transform:scale(1.15)}}
 @media (prefers-reduced-motion:reduce){.a11y-botao.chamando{animation:none}}
+.liza-mancha{position:relative;display:block;isolation:isolate}
+.liza-mancha::before{content:"";position:absolute;inset:18% -10% -2% -10%;background:var(--rosa);border-radius:58% 42% 52% 48%/46% 56% 44% 54%;z-index:-1;transform:rotate(-6deg)}
+
+/* pacotes como cartões e 5 etapas */
+.sp-passos{grid-template-columns:repeat(5,1fr)}
+@media (max-width:900px){.sp-passos{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.sp-passos{grid-template-columns:1fr}}
+.sp-planos{align-items:stretch;padding-top:22px}
+.sp-plano{background:#fff;border:3px solid var(--cereja);border-radius:30px 24px 36px 22px/24px 34px 22px 32px;box-shadow:6px 6px 0 var(--cereja);padding:28px 26px}
+.sp-plano:nth-child(1){transform:rotate(.8deg);background:var(--azul)}
+.sp-plano:nth-child(3){transform:rotate(.6deg);background:#f3dcc0}
+.sp-plano.destaque{background:var(--bordo);border-color:var(--bordo);box-shadow:6px 6px 0 var(--morango);position:relative}
+.sp-plano.destaque::after{content:"recomendado";position:absolute;top:-18px;right:18px;background:var(--rosa);color:var(--cereja);border:2px solid var(--cereja);border-radius:var(--raio-pilula);padding:3px 12px;font-family:var(--font-display);font-style:italic;font-size:17px;transform:rotate(4deg)}
+.sp-plano ul{margin-top:12px;display:grid;gap:6px}
+html.a-contraste .sp-plano{background:#fff!important;color:#000!important}
+
+/* Serviços em carrossel */
+.serv-carrossel{margin-top:36px}
+.servs.servs-trilho{display:flex;gap:28px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:16px;padding:22px 16px 28px;margin:0;scrollbar-width:thin;scrollbar-color:var(--morango) transparent}
+.servs-trilho:focus-visible{outline:3px solid var(--cereja);outline-offset:4px;border-radius:12px}
+.servs-trilho .serv{flex:0 0 min(310px,80%);scroll-snap-align:start;margin-top:0!important;background:var(--rosa);border:3px solid var(--cereja);box-shadow:6px 6px 0 var(--cereja);border-radius:34px 26px 40px 24px/26px 38px 24px 36px;padding:26px 24px 20px}
+.servs-trilho .serv:nth-child(3n+2){background:var(--azul)}
+.servs-trilho .serv:nth-child(3n){background:#f3dcc0}
+.servs-trilho .serv:nth-child(odd){transform:rotate(-1deg)}.servs-trilho .serv:nth-child(even){transform:rotate(1deg)}
+.servs-trilho .serv p{flex:1}
+.servs-trilho .serv .serv-preco{flex:0;font-family:var(--font-display);font-style:italic;font-weight:600;font-size:22px;line-height:1.1;color:var(--vinho);margin-top:4px}
+.serv-carrossel .carrossel-ctrl{justify-content:flex-start}
+html.a-contraste .servs-trilho .serv{background:#fff!important}
+@media (prefers-reduced-motion:reduce){.servs-trilho{scroll-behavior:auto}}
 @media (prefers-reduced-motion:reduce){html.js .desenhar .rabisco{clip-path:none;transition:none}}
 </style>
 </head>
@@ -956,7 +985,10 @@ html.a-fonte .move-frase,html.a-fonte .move-valores li{font-family:var(--font-sa
   <div class="wrap">
     <div class="cabeca"><h2 id="t-servicos">Serviços</h2><div class="desenhar" style="width:70px"><svg class="doodle rabisco r-seta" viewBox="0 0 102 121" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-seta"/></svg></div></div>
     <p class="lead-serv">Do site ao WhatsApp organizado: escolha o que o seu negócio precisa agora. Cada serviço tem uma página explicando tudo o que está incluído.</p>
-    <ul class="servs"><li class="serv"><div class="desenhar"><svg class="doodle rabisco serv-ic" viewBox="0 0 196 192" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-vaso"/></svg></div><h3>Site para o seu negócio</h3><p>Um site de uma página, rápido e acessível, para o seu negócio existir na internet.</p><a class="saiba" href="#servico-site-institucional">Saiba mais<span class="sr-only"> sobre site para o seu negócio</span> <span aria-hidden="true">→</span></a></li><li class="serv"><div class="desenhar"><svg class="doodle rabisco serv-ic" viewBox="0 0 309 308" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-cookie"/></svg></div><h3>Cardápio ou catálogo com pedido pelo WhatsApp</h3><p>O cliente escolhe os itens no site e o pedido chega pronto no seu WhatsApp.</p><a class="saiba" href="#servico-cardapio-whatsapp">Saiba mais<span class="sr-only"> sobre cardápio ou catálogo com pedido pelo whatsapp</span> <span aria-hidden="true">→</span></a></li><li class="serv"><div class="desenhar"><svg class="doodle rabisco serv-ic" viewBox="0 0 143 196" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-brilho-a"/></svg></div><h3>Presença digital: WhatsApp Business e Google</h3><p>Deixo o seu WhatsApp Business e o seu perfil no Google organizados e prontos para vender.</p><a class="saiba" href="#servico-presenca-digital">Saiba mais<span class="sr-only"> sobre presença digital: whatsapp business e google</span> <span aria-hidden="true">→</span></a></li><li class="serv"><div class="desenhar"><svg class="doodle rabisco serv-ic" viewBox="0 0 232 247" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-estrela-risco"/></svg></div><h3>Materiais digitais e impressos</h3><p>Cardápios, catálogos, manuais e apresentações bonitos, claros e acessíveis.</p><a class="saiba" href="#servico-materiais">Saiba mais<span class="sr-only"> sobre materiais digitais e impressos</span> <span aria-hidden="true">→</span></a></li><li class="serv"><div class="desenhar"><svg class="doodle rabisco serv-ic" viewBox="0 0 79 99" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-espiral"/></svg></div><h3>Planilhas de controle</h3><p>Planilhas prontas e simples para organizar o caixa, o estoque, os pedidos e os preços.</p><a class="saiba" href="#servico-planilhas">Saiba mais<span class="sr-only"> sobre planilhas de controle</span> <span aria-hidden="true">→</span></a></li><li class="serv"><div class="desenhar"><svg class="doodle rabisco serv-ic" viewBox="0 0 74 68" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-trevo"/></svg></div><h3>Manutenção mensal</h3><p>Para quem já tem site ou cardápio comigo e quer alguém cuidando dele todo mês.</p><a class="saiba" href="#servico-manutencao">Saiba mais<span class="sr-only"> sobre manutenção mensal</span> <span aria-hidden="true">→</span></a></li></ul>
+    <div class="serv-carrossel">
+      <ul class="servs servs-trilho" id="servs-trilho" tabindex="0" aria-label="Serviços. Role para o lado para ver todos."><li class="serv"><div class="desenhar"><svg class="doodle rabisco serv-ic" viewBox="0 0 196 192" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-vaso"/></svg></div><h3>Site para o seu negócio</h3><p>Um site de uma página, rápido e acessível, para o seu negócio existir na internet.</p><p class="serv-preco">a partir de R$ 690</p><a class="saiba" href="#servico-site-institucional">Saiba mais<span class="sr-only"> sobre site para o seu negócio</span> <span aria-hidden="true">→</span></a></li><li class="serv"><div class="desenhar"><svg class="doodle rabisco serv-ic" viewBox="0 0 309 308" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-cookie"/></svg></div><h3>Cardápio ou catálogo com pedido pelo WhatsApp</h3><p>O cliente escolhe os itens no site e o pedido chega pronto no seu WhatsApp.</p><p class="serv-preco">sob orçamento</p><a class="saiba" href="#servico-cardapio-whatsapp">Saiba mais<span class="sr-only"> sobre cardápio ou catálogo com pedido pelo whatsapp</span> <span aria-hidden="true">→</span></a></li><li class="serv"><div class="desenhar"><svg class="doodle rabisco serv-ic" viewBox="0 0 143 196" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-brilho-a"/></svg></div><h3>Presença digital: WhatsApp Business e Google</h3><p>Deixo o seu WhatsApp Business e o seu perfil no Google organizados e prontos para vender.</p><p class="serv-preco">sob orçamento</p><a class="saiba" href="#servico-presenca-digital">Saiba mais<span class="sr-only"> sobre presença digital: whatsapp business e google</span> <span aria-hidden="true">→</span></a></li><li class="serv"><div class="desenhar"><svg class="doodle rabisco serv-ic" viewBox="0 0 232 247" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-estrela-risco"/></svg></div><h3>Materiais digitais e impressos</h3><p>Cardápios, catálogos, manuais e apresentações bonitos, claros e acessíveis.</p><p class="serv-preco">sob orçamento</p><a class="saiba" href="#servico-materiais">Saiba mais<span class="sr-only"> sobre materiais digitais e impressos</span> <span aria-hidden="true">→</span></a></li><li class="serv"><div class="desenhar"><svg class="doodle rabisco serv-ic" viewBox="0 0 79 99" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-espiral"/></svg></div><h3>Planilhas de controle</h3><p>Planilhas prontas e simples para organizar o caixa, o estoque, os pedidos e os preços.</p><p class="serv-preco">sob orçamento</p><a class="saiba" href="#servico-planilhas">Saiba mais<span class="sr-only"> sobre planilhas de controle</span> <span aria-hidden="true">→</span></a></li><li class="serv"><div class="desenhar"><svg class="doodle rabisco serv-ic" viewBox="0 0 74 68" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-trevo"/></svg></div><h3>Manutenção mensal</h3><p>Para quem já tem site ou cardápio comigo e quer alguém cuidando dele todo mês.</p><p class="serv-preco">mensal, sob orçamento</p><a class="saiba" href="#servico-manutencao">Saiba mais<span class="sr-only"> sobre manutenção mensal</span> <span aria-hidden="true">→</span></a></li></ul>
+      <div class="carrossel-ctrl"><button type="button" class="sv-ant" aria-controls="servs-trilho"><span class="sr-only">Serviço anterior</span><span aria-hidden="true">←</span></button><button type="button" class="sv-prox" aria-controls="servs-trilho"><span class="sr-only">Próximo serviço</span><span aria-hidden="true">→</span></button></div>
+    </div>
     <div class="calc" role="group" aria-labelledby="t-calc">
       <div>
         <h3 id="t-calc">Em quantos clientes o site se paga?</h3>
@@ -1060,7 +1092,7 @@ html.a-fonte .move-frase,html.a-fonte .move-valores li{font-family:var(--font-sa
           <li><span class="anjo-real"><img class="foto-liza" src="img/scooby-rosto.webp" alt="" width="240" height="269" loading="lazy" decoding="async"><svg class="aureola" viewBox="0 0 100 30" aria-hidden="true" focusable="false"><ellipse cx="50" cy="15" rx="40" ry="9" fill="none" stroke="var(--caramelo)" stroke-width="6" filter="url(#lapis-fita)"/><ellipse cx="50" cy="15" rx="40" ry="9" fill="none" stroke="var(--bordo)" stroke-width="1.6" filter="url(#lapis-fita)"/></svg></span><span class="nota">Scooby</span><span class="raca">labrador chocolate</span></li>
           <li><span class="anjo-real"><img class="foto-liza" src="img/fiona-rosto.webp" alt="" width="240" height="399" loading="lazy" decoding="async"><svg class="aureola" viewBox="0 0 100 30" aria-hidden="true" focusable="false"><ellipse cx="50" cy="15" rx="40" ry="9" fill="none" stroke="var(--caramelo)" stroke-width="6" filter="url(#lapis-fita)"/><ellipse cx="50" cy="15" rx="40" ry="9" fill="none" stroke="var(--bordo)" stroke-width="1.6" filter="url(#lapis-fita)"/></svg></span><span class="nota">Fiona</span><span class="raca">pastora alemã</span></li>
         </ul>
-        <div class="liza-segue" aria-hidden="true"><img class="foto-liza" src="img/liza-foto-coelho.webp" alt="" width="300" height="361" loading="lazy" decoding="async"><span class="nota">e a Liza segue aqui comigo</span></div>
+        <div class="liza-segue" aria-hidden="true"><span class="liza-mancha"><img class="foto-liza" src="img/liza-foto-coelho.webp" alt="" width="300" height="361" loading="lazy" decoding="async"></span><span class="nota">e a Liza segue aqui comigo</span></div>
       </div>
   </div>
 </section>
@@ -1115,7 +1147,7 @@ html.a-fonte .move-frase,html.a-fonte .move-valores li{font-family:var(--font-sa
 <div class="sp-plano destaque"><h3>Presença</h3><p class="sp-preco">R$ 990<small>pagamento único</small></p><ul><li>Tudo do Essencial</li><li>Textos escritos por mim</li><li>Perfil de Empresa no Google</li><li>Artes para divulgar o site</li></ul></div>
 <div class="sp-plano"><h3>Marca Completa</h3><p class="sp-preco">R$ 1.690<small>pagamento único</small></p><ul><li>Tudo do Presença</li><li>Kit visual (logo, cores, fontes)</li><li>Acessibilidade avançada com relatório</li><li>Uma página extra</li></ul></div>
 </div></div>
-    <div class="sp-bloco"><h2 class="sp-h">Como funciona</h2><ol class="sp-passos"><li><strong>Conversa</strong>Você me conta o que precisa pelo WhatsApp ou e-mail.</li><li><strong>Proposta</strong>Mando o que está incluído, o preço e o prazo, tudo por escrito.</li><li><strong>Criação</strong>Faço o trabalho e te mostro para ajustes.</li><li><strong>Entrega</strong>Testado e pronto, com orientação de como usar.</li></ol></div>
+    <div class="sp-bloco"><h2 class="sp-h">Como funciona</h2><ol class="sp-passos"><li><strong>Conversa</strong>Você me conta o que precisa pelo WhatsApp ou e-mail.</li><li><strong>Proposta</strong>Mando o que está incluído, o preço e o prazo, tudo por escrito.</li><li><strong>Você me envia</strong>Os materiais e informações que eu pedir (textos, fotos, logo ou acessos). O prazo começa a contar quando eu recebo tudo.</li><li><strong>Criação</strong>Faço o trabalho e te mostro para ajustes.</li><li><strong>Entrega</strong>Testado e pronto, com orientação de como usar.</li></ol></div>
   </div>
   <div class="sp-chamada"><div class="wrap"><h2>Quer saber o preço para o seu caso?</h2><p>Os valores dos pacotes estão acima, e o orçamento final depende dos adicionais. Respondo em até um dia útil.</p>
     <div class="sp-botoes"><a class="btn" href="https://wa.me/5548996862073?text=Oi%2C%20Let%C3%ADcia%21%20Vi%20no%20seu%20site%20e%20quero%20saber%20mais%20sobre%3A%20Site%20para%20o%20seu%20neg%C3%B3cio." target="_blank" rel="noopener">Chamar no WhatsApp<span class="sr-only"> (abre em nova aba)</span></a><a class="btn btn-secundario" href="mailto:leticiabeasouza@gmail.com?subject=Or%C3%A7amento%3A%20Site%20para%20o%20seu%20neg%C3%B3cio">Mandar e-mail</a></div>
@@ -1132,7 +1164,7 @@ html.a-fonte .move-frase,html.a-fonte .move-valores li{font-family:var(--font-sa
     </div>
     <p class="sp-obs">Por que não usar só o catálogo do WhatsApp? Aqui o cardápio tem a sua marca, o seu endereço próprio, é acessível e não cobra taxa por pedido.</p>
     
-    <div class="sp-bloco"><h2 class="sp-h">Como funciona</h2><ol class="sp-passos"><li><strong>Conversa</strong>Você me conta o que precisa pelo WhatsApp ou e-mail.</li><li><strong>Proposta</strong>Mando o que está incluído, o preço e o prazo, tudo por escrito.</li><li><strong>Criação</strong>Faço o trabalho e te mostro para ajustes.</li><li><strong>Entrega</strong>Testado e pronto, com orientação de como usar.</li></ol></div>
+    <div class="sp-bloco"><h2 class="sp-h">Como funciona</h2><ol class="sp-passos"><li><strong>Conversa</strong>Você me conta o que precisa pelo WhatsApp ou e-mail.</li><li><strong>Proposta</strong>Mando o que está incluído, o preço e o prazo, tudo por escrito.</li><li><strong>Você me envia</strong>Os materiais e informações que eu pedir (textos, fotos, logo ou acessos). O prazo começa a contar quando eu recebo tudo.</li><li><strong>Criação</strong>Faço o trabalho e te mostro para ajustes.</li><li><strong>Entrega</strong>Testado e pronto, com orientação de como usar.</li></ol></div>
   </div>
   <div class="sp-chamada"><div class="wrap"><h2>Quer saber o preço para o seu caso?</h2><p>O valor depende do tamanho do trabalho. Me conta o que você precisa e eu mando uma proposta sem compromisso. Respondo em até um dia útil.</p>
     <div class="sp-botoes"><a class="btn" href="https://wa.me/5548996862073?text=Oi%2C%20Let%C3%ADcia%21%20Vi%20no%20seu%20site%20e%20quero%20saber%20mais%20sobre%3A%20Card%C3%A1pio%20ou%20cat%C3%A1logo%20com%20pedido%20pelo%20WhatsApp." target="_blank" rel="noopener">Chamar no WhatsApp<span class="sr-only"> (abre em nova aba)</span></a><a class="btn btn-secundario" href="mailto:leticiabeasouza@gmail.com?subject=Or%C3%A7amento%3A%20Card%C3%A1pio%20ou%20cat%C3%A1logo%20com%20pedido%20pelo%20WhatsApp">Mandar e-mail</a></div>
@@ -1149,7 +1181,7 @@ html.a-fonte .move-frase,html.a-fonte .move-valores li{font-family:var(--font-sa
     </div>
     
     
-    <div class="sp-bloco"><h2 class="sp-h">Como funciona</h2><ol class="sp-passos"><li><strong>Conversa</strong>Você me conta o que precisa pelo WhatsApp ou e-mail.</li><li><strong>Proposta</strong>Mando o que está incluído, o preço e o prazo, tudo por escrito.</li><li><strong>Criação</strong>Faço o trabalho e te mostro para ajustes.</li><li><strong>Entrega</strong>Testado e pronto, com orientação de como usar.</li></ol></div>
+    <div class="sp-bloco"><h2 class="sp-h">Como funciona</h2><ol class="sp-passos"><li><strong>Conversa</strong>Você me conta o que precisa pelo WhatsApp ou e-mail.</li><li><strong>Proposta</strong>Mando o que está incluído, o preço e o prazo, tudo por escrito.</li><li><strong>Você me envia</strong>Os materiais e informações que eu pedir (textos, fotos, logo ou acessos). O prazo começa a contar quando eu recebo tudo.</li><li><strong>Criação</strong>Faço o trabalho e te mostro para ajustes.</li><li><strong>Entrega</strong>Testado e pronto, com orientação de como usar.</li></ol></div>
   </div>
   <div class="sp-chamada"><div class="wrap"><h2>Quer saber o preço para o seu caso?</h2><p>O valor depende do tamanho do trabalho. Me conta o que você precisa e eu mando uma proposta sem compromisso. Respondo em até um dia útil.</p>
     <div class="sp-botoes"><a class="btn" href="https://wa.me/5548996862073?text=Oi%2C%20Let%C3%ADcia%21%20Vi%20no%20seu%20site%20e%20quero%20saber%20mais%20sobre%3A%20Presen%C3%A7a%20digital%3A%20WhatsApp%20Business%20e%20Google." target="_blank" rel="noopener">Chamar no WhatsApp<span class="sr-only"> (abre em nova aba)</span></a><a class="btn btn-secundario" href="mailto:leticiabeasouza@gmail.com?subject=Or%C3%A7amento%3A%20Presen%C3%A7a%20digital%3A%20WhatsApp%20Business%20e%20Google">Mandar e-mail</a></div>
@@ -1166,7 +1198,7 @@ html.a-fonte .move-frase,html.a-fonte .move-valores li{font-family:var(--font-sa
     </div>
     
     
-    <div class="sp-bloco"><h2 class="sp-h">Como funciona</h2><ol class="sp-passos"><li><strong>Conversa</strong>Você me conta o que precisa pelo WhatsApp ou e-mail.</li><li><strong>Proposta</strong>Mando o que está incluído, o preço e o prazo, tudo por escrito.</li><li><strong>Criação</strong>Faço o trabalho e te mostro para ajustes.</li><li><strong>Entrega</strong>Testado e pronto, com orientação de como usar.</li></ol></div>
+    <div class="sp-bloco"><h2 class="sp-h">Como funciona</h2><ol class="sp-passos"><li><strong>Conversa</strong>Você me conta o que precisa pelo WhatsApp ou e-mail.</li><li><strong>Proposta</strong>Mando o que está incluído, o preço e o prazo, tudo por escrito.</li><li><strong>Você me envia</strong>Os materiais e informações que eu pedir (textos, fotos, logo ou acessos). O prazo começa a contar quando eu recebo tudo.</li><li><strong>Criação</strong>Faço o trabalho e te mostro para ajustes.</li><li><strong>Entrega</strong>Testado e pronto, com orientação de como usar.</li></ol></div>
   </div>
   <div class="sp-chamada"><div class="wrap"><h2>Quer saber o preço para o seu caso?</h2><p>O valor depende do tamanho do trabalho. Me conta o que você precisa e eu mando uma proposta sem compromisso. Respondo em até um dia útil.</p>
     <div class="sp-botoes"><a class="btn" href="https://wa.me/5548996862073?text=Oi%2C%20Let%C3%ADcia%21%20Vi%20no%20seu%20site%20e%20quero%20saber%20mais%20sobre%3A%20Materiais%20digitais%20e%20impressos." target="_blank" rel="noopener">Chamar no WhatsApp<span class="sr-only"> (abre em nova aba)</span></a><a class="btn btn-secundario" href="mailto:leticiabeasouza@gmail.com?subject=Or%C3%A7amento%3A%20Materiais%20digitais%20e%20impressos">Mandar e-mail</a></div>
@@ -1183,7 +1215,7 @@ html.a-fonte .move-frase,html.a-fonte .move-valores li{font-family:var(--font-sa
     </div>
     
     
-    <div class="sp-bloco"><h2 class="sp-h">Como funciona</h2><ol class="sp-passos"><li><strong>Conversa</strong>Você me conta o que precisa pelo WhatsApp ou e-mail.</li><li><strong>Proposta</strong>Mando o que está incluído, o preço e o prazo, tudo por escrito.</li><li><strong>Criação</strong>Faço o trabalho e te mostro para ajustes.</li><li><strong>Entrega</strong>Testado e pronto, com orientação de como usar.</li></ol></div>
+    <div class="sp-bloco"><h2 class="sp-h">Como funciona</h2><ol class="sp-passos"><li><strong>Conversa</strong>Você me conta o que precisa pelo WhatsApp ou e-mail.</li><li><strong>Proposta</strong>Mando o que está incluído, o preço e o prazo, tudo por escrito.</li><li><strong>Você me envia</strong>Os materiais e informações que eu pedir (textos, fotos, logo ou acessos). O prazo começa a contar quando eu recebo tudo.</li><li><strong>Criação</strong>Faço o trabalho e te mostro para ajustes.</li><li><strong>Entrega</strong>Testado e pronto, com orientação de como usar.</li></ol></div>
   </div>
   <div class="sp-chamada"><div class="wrap"><h2>Quer saber o preço para o seu caso?</h2><p>O valor depende do tamanho do trabalho. Me conta o que você precisa e eu mando uma proposta sem compromisso. Respondo em até um dia útil.</p>
     <div class="sp-botoes"><a class="btn" href="https://wa.me/5548996862073?text=Oi%2C%20Let%C3%ADcia%21%20Vi%20no%20seu%20site%20e%20quero%20saber%20mais%20sobre%3A%20Planilhas%20de%20controle." target="_blank" rel="noopener">Chamar no WhatsApp<span class="sr-only"> (abre em nova aba)</span></a><a class="btn btn-secundario" href="mailto:leticiabeasouza@gmail.com?subject=Or%C3%A7amento%3A%20Planilhas%20de%20controle">Mandar e-mail</a></div>
@@ -1200,7 +1232,7 @@ html.a-fonte .move-frase,html.a-fonte .move-valores li{font-family:var(--font-sa
     </div>
     <p class="sp-obs">Só para quem fez o site ou o cardápio comigo.</p>
     
-    <div class="sp-bloco"><h2 class="sp-h">Como funciona</h2><ol class="sp-passos"><li><strong>Conversa</strong>Você me conta o que precisa pelo WhatsApp ou e-mail.</li><li><strong>Proposta</strong>Mando o que está incluído, o preço e o prazo, tudo por escrito.</li><li><strong>Criação</strong>Faço o trabalho e te mostro para ajustes.</li><li><strong>Entrega</strong>Testado e pronto, com orientação de como usar.</li></ol></div>
+    <div class="sp-bloco"><h2 class="sp-h">Como funciona</h2><ol class="sp-passos"><li><strong>Conversa</strong>Você me conta o que precisa pelo WhatsApp ou e-mail.</li><li><strong>Proposta</strong>Mando o que está incluído, o preço e o prazo, tudo por escrito.</li><li><strong>Você me envia</strong>Os materiais e informações que eu pedir (textos, fotos, logo ou acessos). O prazo começa a contar quando eu recebo tudo.</li><li><strong>Criação</strong>Faço o trabalho e te mostro para ajustes.</li><li><strong>Entrega</strong>Testado e pronto, com orientação de como usar.</li></ol></div>
   </div>
   <div class="sp-chamada"><div class="wrap"><h2>Quer saber o preço para o seu caso?</h2><p>O valor depende do tamanho do trabalho. Me conta o que você precisa e eu mando uma proposta sem compromisso. Respondo em até um dia útil.</p>
     <div class="sp-botoes"><a class="btn" href="https://wa.me/5548996862073?text=Oi%2C%20Let%C3%ADcia%21%20Vi%20no%20seu%20site%20e%20quero%20saber%20mais%20sobre%3A%20Manuten%C3%A7%C3%A3o%20mensal." target="_blank" rel="noopener">Chamar no WhatsApp<span class="sr-only"> (abre em nova aba)</span></a><a class="btn btn-secundario" href="mailto:leticiabeasouza@gmail.com?subject=Or%C3%A7amento%3A%20Manuten%C3%A7%C3%A3o%20mensal">Mandar e-mail</a></div>
@@ -1540,6 +1572,19 @@ html.a-fonte .move-frase,html.a-fonte .move-valores li{font-family:var(--font-sa
   document.getElementById('a11y-dica-ok').addEventListener('click',function(){ some(); ab.focus(); });
   document.getElementById('a11y-dica-ver').addEventListener('click',function(){ some(); ab.click(); });
   ab.addEventListener('click',some);
+})();
+</script>
+
+<script>
+(function(){
+  var tr=document.getElementById('servs-trilho'); if(!tr) return;
+  var a=document.querySelector('.sv-ant'), p=document.querySelector('.sv-prox');
+  var reduz=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function passo(){ var c=tr.querySelector('.serv'); return c ? c.getBoundingClientRect().width+28 : 300; }
+  function estado(){ a.disabled = tr.scrollLeft<4; p.disabled = tr.scrollLeft+tr.clientWidth >= tr.scrollWidth-4; }
+  a.addEventListener('click',function(){ tr.scrollBy({left:-passo(),behavior:reduz?'auto':'smooth'}); });
+  p.addEventListener('click',function(){ tr.scrollBy({left:passo(),behavior:reduz?'auto':'smooth'}); });
+  tr.addEventListener('scroll',estado,{passive:true}); addEventListener('resize',estado); estado();
 })();
 </script>
 </body>
