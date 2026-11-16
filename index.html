@@ -833,7 +833,7 @@ html.a-fonte .move-frase,html.a-fonte .move-valores li{font-family:var(--font-sa
 .sp-plano:nth-child(1){transform:rotate(.8deg);background:var(--azul)}
 .sp-plano:nth-child(3){transform:rotate(.6deg);background:#f3dcc0}
 .sp-plano.destaque{background:var(--bordo);border-color:var(--bordo);box-shadow:6px 6px 0 var(--morango);position:relative}
-.sp-plano.destaque::after{content:"recomendado";position:absolute;top:-18px;right:18px;background:var(--rosa);color:var(--cereja);border:2px solid var(--cereja);border-radius:var(--raio-pilula);padding:3px 12px;font-family:var(--font-display);font-style:italic;font-size:17px;transform:rotate(4deg)}
+.sp-planos:not(.sp-planos-1) .sp-plano.destaque::after{content:"recomendado";position:absolute;top:-18px;right:18px;background:var(--rosa);color:var(--cereja);border:2px solid var(--cereja);border-radius:var(--raio-pilula);padding:3px 12px;font-family:var(--font-display);font-style:italic;font-size:17px;transform:rotate(4deg)}
 .sp-plano ul{margin-top:12px;display:grid;gap:6px}
 html.a-contraste .sp-plano{background:#fff!important;color:#000!important}
 
@@ -850,6 +850,11 @@ html.a-contraste .sp-plano{background:#fff!important;color:#000!important}
 .serv-carrossel .carrossel-ctrl{justify-content:flex-start}
 html.a-contraste .servs-trilho .serv{background:#fff!important}
 @media (prefers-reduced-motion:reduce){.servs-trilho{scroll-behavior:auto}}
+
+.sp-planos-1{grid-template-columns:minmax(0,420px)}
+.sp-planos-2{grid-template-columns:repeat(2,minmax(0,1fr));max-width:820px}
+@media (max-width:760px){.sp-planos-1,.sp-planos-2{grid-template-columns:1fr}}
+.sp-nota-preco{font-size:16px;color:var(--texto-suave);margin-top:20px}
 @media (prefers-reduced-motion:reduce){html.js .desenhar .rabisco{clip-path:none;transition:none}}
 </style>
 </head>
@@ -986,24 +991,38 @@ html.a-contraste .servs-trilho .serv{background:#fff!important}
     <div class="cabeca"><h2 id="t-servicos">Serviços</h2><div class="desenhar" style="width:70px"><svg class="doodle rabisco r-seta" viewBox="0 0 102 121" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-seta"/></svg></div></div>
     <p class="lead-serv">Do site ao WhatsApp organizado: escolha o que o seu negócio precisa agora. Cada serviço tem uma página explicando tudo o que está incluído.</p>
     <div class="serv-carrossel">
-      <ul class="servs servs-trilho" id="servs-trilho" tabindex="0" aria-label="Serviços. Role para o lado para ver todos."><li class="serv"><div class="desenhar"><svg class="doodle rabisco serv-ic" viewBox="0 0 196 192" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-vaso"/></svg></div><h3>Site para o seu negócio</h3><p>Um site de uma página, rápido e acessível, para o seu negócio existir na internet.</p><p class="serv-preco">a partir de R$ 690</p><a class="saiba" href="#servico-site-institucional">Saiba mais<span class="sr-only"> sobre site para o seu negócio</span> <span aria-hidden="true">→</span></a></li><li class="serv"><div class="desenhar"><svg class="doodle rabisco serv-ic" viewBox="0 0 309 308" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-cookie"/></svg></div><h3>Cardápio ou catálogo com pedido pelo WhatsApp</h3><p>O cliente escolhe os itens no site e o pedido chega pronto no seu WhatsApp.</p><p class="serv-preco">sob orçamento</p><a class="saiba" href="#servico-cardapio-whatsapp">Saiba mais<span class="sr-only"> sobre cardápio ou catálogo com pedido pelo whatsapp</span> <span aria-hidden="true">→</span></a></li><li class="serv"><div class="desenhar"><svg class="doodle rabisco serv-ic" viewBox="0 0 143 196" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-brilho-a"/></svg></div><h3>Presença digital: WhatsApp Business e Google</h3><p>Deixo o seu WhatsApp Business e o seu perfil no Google organizados e prontos para vender.</p><p class="serv-preco">sob orçamento</p><a class="saiba" href="#servico-presenca-digital">Saiba mais<span class="sr-only"> sobre presença digital: whatsapp business e google</span> <span aria-hidden="true">→</span></a></li><li class="serv"><div class="desenhar"><svg class="doodle rabisco serv-ic" viewBox="0 0 232 247" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-estrela-risco"/></svg></div><h3>Materiais digitais e impressos</h3><p>Cardápios, catálogos, manuais e apresentações bonitos, claros e acessíveis.</p><p class="serv-preco">sob orçamento</p><a class="saiba" href="#servico-materiais">Saiba mais<span class="sr-only"> sobre materiais digitais e impressos</span> <span aria-hidden="true">→</span></a></li><li class="serv"><div class="desenhar"><svg class="doodle rabisco serv-ic" viewBox="0 0 79 99" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-espiral"/></svg></div><h3>Planilhas de controle</h3><p>Planilhas prontas e simples para organizar o caixa, o estoque, os pedidos e os preços.</p><p class="serv-preco">sob orçamento</p><a class="saiba" href="#servico-planilhas">Saiba mais<span class="sr-only"> sobre planilhas de controle</span> <span aria-hidden="true">→</span></a></li><li class="serv"><div class="desenhar"><svg class="doodle rabisco serv-ic" viewBox="0 0 74 68" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-trevo"/></svg></div><h3>Manutenção mensal</h3><p>Para quem já tem site ou cardápio comigo e quer alguém cuidando dele todo mês.</p><p class="serv-preco">mensal, sob orçamento</p><a class="saiba" href="#servico-manutencao">Saiba mais<span class="sr-only"> sobre manutenção mensal</span> <span aria-hidden="true">→</span></a></li></ul>
+      <ul class="servs servs-trilho" id="servs-trilho" tabindex="0" aria-label="Serviços. Role para o lado para ver todos."><li class="serv"><div class="desenhar"><svg class="doodle rabisco serv-ic" viewBox="0 0 196 192" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-vaso"/></svg></div><h3>Site para o seu negócio</h3><p>Um site de uma página, rápido e acessível, para o seu negócio existir na internet.</p><p class="serv-preco">a partir de R$ 690</p><a class="saiba" href="#servico-site-institucional">Saiba mais<span class="sr-only"> sobre site para o seu negócio</span> <span aria-hidden="true">→</span></a></li><li class="serv"><div class="desenhar"><svg class="doodle rabisco serv-ic" viewBox="0 0 309 308" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-cookie"/></svg></div><h3>Cardápio ou catálogo com pedido pelo WhatsApp</h3><p>O cliente escolhe os itens no site e o pedido chega pronto no seu WhatsApp.</p><p class="serv-preco">R$ 890</p><a class="saiba" href="#servico-cardapio-whatsapp">Saiba mais<span class="sr-only"> sobre cardápio ou catálogo com pedido pelo whatsapp</span> <span aria-hidden="true">→</span></a></li><li class="serv"><div class="desenhar"><svg class="doodle rabisco serv-ic" viewBox="0 0 143 196" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-brilho-a"/></svg></div><h3>Presença digital: WhatsApp Business e Google</h3><p>Deixo o seu WhatsApp Business e o seu perfil no Google organizados e prontos para vender.</p><p class="serv-preco">R$ 290</p><a class="saiba" href="#servico-presenca-digital">Saiba mais<span class="sr-only"> sobre presença digital: whatsapp business e google</span> <span aria-hidden="true">→</span></a></li><li class="serv"><div class="desenhar"><svg class="doodle rabisco serv-ic" viewBox="0 0 232 247" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-estrela-risco"/></svg></div><h3>Materiais digitais e impressos</h3><p>Cardápios, catálogos, manuais e apresentações bonitos, claros e acessíveis.</p><p class="serv-preco">a partir de R$ 150</p><a class="saiba" href="#servico-materiais">Saiba mais<span class="sr-only"> sobre materiais digitais e impressos</span> <span aria-hidden="true">→</span></a></li><li class="serv"><div class="desenhar"><svg class="doodle rabisco serv-ic" viewBox="0 0 79 99" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-espiral"/></svg></div><h3>Planilhas de controle</h3><p>Planilhas prontas e simples para organizar o caixa, o estoque, os pedidos e os preços.</p><p class="serv-preco">a partir de R$ 190</p><a class="saiba" href="#servico-planilhas">Saiba mais<span class="sr-only"> sobre planilhas de controle</span> <span aria-hidden="true">→</span></a></li><li class="serv"><div class="desenhar"><svg class="doodle rabisco serv-ic" viewBox="0 0 74 68" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-trevo"/></svg></div><h3>Manutenção mensal</h3><p>Para quem já tem site ou cardápio comigo e quer alguém cuidando dele todo mês.</p><p class="serv-preco">a partir de R$ 79 por mês</p><a class="saiba" href="#servico-manutencao">Saiba mais<span class="sr-only"> sobre manutenção mensal</span> <span aria-hidden="true">→</span></a></li></ul>
       <div class="carrossel-ctrl"><button type="button" class="sv-ant" aria-controls="servs-trilho"><span class="sr-only">Serviço anterior</span><span aria-hidden="true">←</span></button><button type="button" class="sv-prox" aria-controls="servs-trilho"><span class="sr-only">Próximo serviço</span><span aria-hidden="true">→</span></button></div>
     </div>
     <div class="calc" role="group" aria-labelledby="t-calc">
       <div>
-        <h3 id="t-calc">Em quantos clientes o site se paga?</h3>
-        <p>Faça a conta com o seu negócio.</p>
+        <h3 id="t-calc">Em quantos clientes o serviço se paga?</h3>
+        <p>Escolha o serviço e faça a conta com o seu negócio.</p>
         <div class="campos">
           <label for="ticket">Quanto um cliente gasta, em média, com você (R$)</label>
           <input id="ticket" type="number" inputmode="decimal" min="1" step="1" value="80">
-          <label for="pacote">Pacote</label>
-          <select id="pacote"><option value="690">Essencial (R$ 690)</option><option value="990" selected>Presença (R$ 990)</option><option value="1690">Marca Completa (R$ 1.690)</option></select>
+          <label for="pacote">Serviço</label>
+          <select id="pacote">
+            <optgroup label="Site">
+              <option value="690" data-dom="1">Site Essencial (R$ 690)</option>
+              <option value="990" data-dom="1" selected>Site Presença (R$ 990)</option>
+              <option value="1690" data-dom="1">Site Marca Completa (R$ 1.690)</option>
+            </optgroup>
+            <optgroup label="Outros serviços">
+              <option value="890" data-dom="1">Cardápio com pedido pelo WhatsApp (R$ 890)</option>
+              <option value="290">WhatsApp Business e Google (R$ 290)</option>
+              <option value="150">Cardápio ou tabela de preços em PDF (a partir de R$ 150)</option>
+              <option value="390">Catálogo ou manual (a partir de R$ 390)</option>
+              <option value="190">Uma planilha de controle (R$ 190)</option>
+              <option value="450">Kit com 3 planilhas (R$ 450)</option>
+            </optgroup>
+          </select>
         </div>
       </div>
       <div class="resultado" aria-live="polite">
         <p class="grande-num"><span id="clientes">13</span> <span>clientes novos</span></p>
-        <p>pagam o site inteiro. Depois disso, é lucro.</p>
-        <p class="mes">Em 3 anos, contando o domínio, sai por cerca de <strong id="mes">R$ 31</strong> por mês.</p>
+        <p>pagam o serviço inteiro. Depois disso, é lucro.</p>
+        <p class="mes" id="mes-linha">Em 3 anos, contando o domínio, sai por cerca de <strong id="mes">R$ 31</strong> por mês.</p>
       </div>
     </div>
     <div class="outro-pedido" id="outro-pedido">
@@ -1164,9 +1183,12 @@ html.a-contraste .servs-trilho .serv{background:#fff!important}
     </div>
     <p class="sp-obs">Por que não usar só o catálogo do WhatsApp? Aqui o cardápio tem a sua marca, o seu endereço próprio, é acessível e não cobra taxa por pedido.</p>
     
+    <div class="sp-bloco"><h2 class="sp-h">Quanto custa</h2><div class="sp-planos sp-planos-1">
+<div class="sp-plano destaque"><h3>Cardápio com pedido</h3><p class="sp-preco">R$ 890<small>pagamento único</small></p><ul><li>Tudo do site Essencial</li><li>Até 40 itens com foto e preço</li><li>Carrinho com total na hora</li><li>Pedido pronto no seu WhatsApp</li><li>QR code para imprimir</li></ul></div>
+</div><p class="sp-nota-preco">Valores de referência. O orçamento final, por escrito, depende do tamanho do seu pedido.</p></div>
     <div class="sp-bloco"><h2 class="sp-h">Como funciona</h2><ol class="sp-passos"><li><strong>Conversa</strong>Você me conta o que precisa pelo WhatsApp ou e-mail.</li><li><strong>Proposta</strong>Mando o que está incluído, o preço e o prazo, tudo por escrito.</li><li><strong>Você me envia</strong>Os materiais e informações que eu pedir (textos, fotos, logo ou acessos). O prazo começa a contar quando eu recebo tudo.</li><li><strong>Criação</strong>Faço o trabalho e te mostro para ajustes.</li><li><strong>Entrega</strong>Testado e pronto, com orientação de como usar.</li></ol></div>
   </div>
-  <div class="sp-chamada"><div class="wrap"><h2>Quer saber o preço para o seu caso?</h2><p>O valor depende do tamanho do trabalho. Me conta o que você precisa e eu mando uma proposta sem compromisso. Respondo em até um dia útil.</p>
+  <div class="sp-chamada"><div class="wrap"><h2>Quer saber o preço para o seu caso?</h2><p>Os valores de referência estão acima. Me conta o que você precisa e eu mando uma proposta por escrito, sem compromisso. Respondo em até um dia útil.</p>
     <div class="sp-botoes"><a class="btn" href="https://wa.me/5548996862073?text=Oi%2C%20Let%C3%ADcia%21%20Vi%20no%20seu%20site%20e%20quero%20saber%20mais%20sobre%3A%20Card%C3%A1pio%20ou%20cat%C3%A1logo%20com%20pedido%20pelo%20WhatsApp." target="_blank" rel="noopener">Chamar no WhatsApp<span class="sr-only"> (abre em nova aba)</span></a><a class="btn btn-secundario" href="mailto:leticiabeasouza@gmail.com?subject=Or%C3%A7amento%3A%20Card%C3%A1pio%20ou%20cat%C3%A1logo%20com%20pedido%20pelo%20WhatsApp">Mandar e-mail</a></div>
     <p class="sp-contato">WhatsApp: (48) 99686-2073 · E-mail: leticiabeasouza@gmail.com</p></div></div>
 </article>
@@ -1181,9 +1203,13 @@ html.a-contraste .servs-trilho .serv{background:#fff!important}
     </div>
     
     
+    <div class="sp-bloco"><h2 class="sp-h">Quanto custa</h2><div class="sp-planos sp-planos-2">
+<div class="sp-plano"><h3>Só um dos dois</h3><p class="sp-preco">R$ 180<small>pagamento único</small></p><ul><li>WhatsApp Business ou Perfil no Google</li><li>Guia de uso com prints</li></ul></div>
+<div class="sp-plano destaque"><h3>WhatsApp e Google</h3><p class="sp-preco">R$ 290<small>pagamento único</small></p><ul><li>WhatsApp Business completo</li><li>Perfil de Empresa no Google</li><li>Guia de uso com prints</li></ul></div>
+</div><p class="sp-nota-preco">Valores de referência. O orçamento final, por escrito, depende do tamanho do seu pedido.</p></div>
     <div class="sp-bloco"><h2 class="sp-h">Como funciona</h2><ol class="sp-passos"><li><strong>Conversa</strong>Você me conta o que precisa pelo WhatsApp ou e-mail.</li><li><strong>Proposta</strong>Mando o que está incluído, o preço e o prazo, tudo por escrito.</li><li><strong>Você me envia</strong>Os materiais e informações que eu pedir (textos, fotos, logo ou acessos). O prazo começa a contar quando eu recebo tudo.</li><li><strong>Criação</strong>Faço o trabalho e te mostro para ajustes.</li><li><strong>Entrega</strong>Testado e pronto, com orientação de como usar.</li></ol></div>
   </div>
-  <div class="sp-chamada"><div class="wrap"><h2>Quer saber o preço para o seu caso?</h2><p>O valor depende do tamanho do trabalho. Me conta o que você precisa e eu mando uma proposta sem compromisso. Respondo em até um dia útil.</p>
+  <div class="sp-chamada"><div class="wrap"><h2>Quer saber o preço para o seu caso?</h2><p>Os valores de referência estão acima. Me conta o que você precisa e eu mando uma proposta por escrito, sem compromisso. Respondo em até um dia útil.</p>
     <div class="sp-botoes"><a class="btn" href="https://wa.me/5548996862073?text=Oi%2C%20Let%C3%ADcia%21%20Vi%20no%20seu%20site%20e%20quero%20saber%20mais%20sobre%3A%20Presen%C3%A7a%20digital%3A%20WhatsApp%20Business%20e%20Google." target="_blank" rel="noopener">Chamar no WhatsApp<span class="sr-only"> (abre em nova aba)</span></a><a class="btn btn-secundario" href="mailto:leticiabeasouza@gmail.com?subject=Or%C3%A7amento%3A%20Presen%C3%A7a%20digital%3A%20WhatsApp%20Business%20e%20Google">Mandar e-mail</a></div>
     <p class="sp-contato">WhatsApp: (48) 99686-2073 · E-mail: leticiabeasouza@gmail.com</p></div></div>
 </article>
@@ -1198,9 +1224,13 @@ html.a-contraste .servs-trilho .serv{background:#fff!important}
     </div>
     
     
+    <div class="sp-bloco"><h2 class="sp-h">Quanto custa</h2><div class="sp-planos sp-planos-2">
+<div class="sp-plano"><h3>Cardápio ou tabela</h3><p class="sp-preco">a partir de R$ 150<small>1 ou 2 páginas</small></p><ul><li>Versão para imprimir</li><li>Versão leve para o celular</li><li>PDF acessível</li></ul></div>
+<div class="sp-plano destaque"><h3>Catálogo, manual ou apresentação</h3><p class="sp-preco">a partir de R$ 390<small>até 8 páginas</small></p><ul><li>Diagramação com a sua marca</li><li>Revisão de texto</li><li>PDF acessível</li><li>Página extra: R$ 35</li></ul></div>
+</div><p class="sp-nota-preco">Valores de referência. O orçamento final, por escrito, depende do tamanho do seu pedido.</p></div>
     <div class="sp-bloco"><h2 class="sp-h">Como funciona</h2><ol class="sp-passos"><li><strong>Conversa</strong>Você me conta o que precisa pelo WhatsApp ou e-mail.</li><li><strong>Proposta</strong>Mando o que está incluído, o preço e o prazo, tudo por escrito.</li><li><strong>Você me envia</strong>Os materiais e informações que eu pedir (textos, fotos, logo ou acessos). O prazo começa a contar quando eu recebo tudo.</li><li><strong>Criação</strong>Faço o trabalho e te mostro para ajustes.</li><li><strong>Entrega</strong>Testado e pronto, com orientação de como usar.</li></ol></div>
   </div>
-  <div class="sp-chamada"><div class="wrap"><h2>Quer saber o preço para o seu caso?</h2><p>O valor depende do tamanho do trabalho. Me conta o que você precisa e eu mando uma proposta sem compromisso. Respondo em até um dia útil.</p>
+  <div class="sp-chamada"><div class="wrap"><h2>Quer saber o preço para o seu caso?</h2><p>Os valores de referência estão acima. Me conta o que você precisa e eu mando uma proposta por escrito, sem compromisso. Respondo em até um dia útil.</p>
     <div class="sp-botoes"><a class="btn" href="https://wa.me/5548996862073?text=Oi%2C%20Let%C3%ADcia%21%20Vi%20no%20seu%20site%20e%20quero%20saber%20mais%20sobre%3A%20Materiais%20digitais%20e%20impressos." target="_blank" rel="noopener">Chamar no WhatsApp<span class="sr-only"> (abre em nova aba)</span></a><a class="btn btn-secundario" href="mailto:leticiabeasouza@gmail.com?subject=Or%C3%A7amento%3A%20Materiais%20digitais%20e%20impressos">Mandar e-mail</a></div>
     <p class="sp-contato">WhatsApp: (48) 99686-2073 · E-mail: leticiabeasouza@gmail.com</p></div></div>
 </article>
@@ -1215,9 +1245,13 @@ html.a-contraste .servs-trilho .serv{background:#fff!important}
     </div>
     
     
+    <div class="sp-bloco"><h2 class="sp-h">Quanto custa</h2><div class="sp-planos sp-planos-2">
+<div class="sp-plano"><h3>Uma planilha</h3><p class="sp-preco">R$ 190<small>pagamento único</small></p><ul><li>Caixa, estoque, clientes, pedidos ou preço</li><li>Aba "Como usar"</li><li>Chamada rápida de explicação</li></ul></div>
+<div class="sp-plano destaque"><h3>Kit com 3 planilhas</h3><p class="sp-preco">R$ 450<small>pagamento único</small></p><ul><li>Escolha 3 das planilhas</li><li>Tudo ligado e com o mesmo visual</li><li>Chamada de explicação</li></ul></div>
+</div><p class="sp-nota-preco">Valores de referência. O orçamento final, por escrito, depende do tamanho do seu pedido.</p></div>
     <div class="sp-bloco"><h2 class="sp-h">Como funciona</h2><ol class="sp-passos"><li><strong>Conversa</strong>Você me conta o que precisa pelo WhatsApp ou e-mail.</li><li><strong>Proposta</strong>Mando o que está incluído, o preço e o prazo, tudo por escrito.</li><li><strong>Você me envia</strong>Os materiais e informações que eu pedir (textos, fotos, logo ou acessos). O prazo começa a contar quando eu recebo tudo.</li><li><strong>Criação</strong>Faço o trabalho e te mostro para ajustes.</li><li><strong>Entrega</strong>Testado e pronto, com orientação de como usar.</li></ol></div>
   </div>
-  <div class="sp-chamada"><div class="wrap"><h2>Quer saber o preço para o seu caso?</h2><p>O valor depende do tamanho do trabalho. Me conta o que você precisa e eu mando uma proposta sem compromisso. Respondo em até um dia útil.</p>
+  <div class="sp-chamada"><div class="wrap"><h2>Quer saber o preço para o seu caso?</h2><p>Os valores de referência estão acima. Me conta o que você precisa e eu mando uma proposta por escrito, sem compromisso. Respondo em até um dia útil.</p>
     <div class="sp-botoes"><a class="btn" href="https://wa.me/5548996862073?text=Oi%2C%20Let%C3%ADcia%21%20Vi%20no%20seu%20site%20e%20quero%20saber%20mais%20sobre%3A%20Planilhas%20de%20controle." target="_blank" rel="noopener">Chamar no WhatsApp<span class="sr-only"> (abre em nova aba)</span></a><a class="btn btn-secundario" href="mailto:leticiabeasouza@gmail.com?subject=Or%C3%A7amento%3A%20Planilhas%20de%20controle">Mandar e-mail</a></div>
     <p class="sp-contato">WhatsApp: (48) 99686-2073 · E-mail: leticiabeasouza@gmail.com</p></div></div>
 </article>
@@ -1232,9 +1266,13 @@ html.a-contraste .servs-trilho .serv{background:#fff!important}
     </div>
     <p class="sp-obs">Só para quem fez o site ou o cardápio comigo.</p>
     
+    <div class="sp-bloco"><h2 class="sp-h">Quanto custa</h2><div class="sp-planos sp-planos-2">
+<div class="sp-plano"><h3>Básica</h3><p class="sp-preco">R$ 79<small>por mês</small></p><ul><li>Até 3 alterações no mês</li><li>Verificação mensal do site</li><li>Lembrete do domínio</li></ul></div>
+<div class="sp-plano destaque"><h3>Completa</h3><p class="sp-preco">R$ 129<small>por mês</small></p><ul><li>Até 8 alterações no mês</li><li>Verificação mensal do site</li><li>Lembrete do domínio</li><li>Ajustes de acessibilidade</li></ul></div>
+</div><p class="sp-nota-preco">Valores de referência. O orçamento final, por escrito, depende do tamanho do seu pedido.</p></div>
     <div class="sp-bloco"><h2 class="sp-h">Como funciona</h2><ol class="sp-passos"><li><strong>Conversa</strong>Você me conta o que precisa pelo WhatsApp ou e-mail.</li><li><strong>Proposta</strong>Mando o que está incluído, o preço e o prazo, tudo por escrito.</li><li><strong>Você me envia</strong>Os materiais e informações que eu pedir (textos, fotos, logo ou acessos). O prazo começa a contar quando eu recebo tudo.</li><li><strong>Criação</strong>Faço o trabalho e te mostro para ajustes.</li><li><strong>Entrega</strong>Testado e pronto, com orientação de como usar.</li></ol></div>
   </div>
-  <div class="sp-chamada"><div class="wrap"><h2>Quer saber o preço para o seu caso?</h2><p>O valor depende do tamanho do trabalho. Me conta o que você precisa e eu mando uma proposta sem compromisso. Respondo em até um dia útil.</p>
+  <div class="sp-chamada"><div class="wrap"><h2>Quer saber o preço para o seu caso?</h2><p>Os valores de referência estão acima. Me conta o que você precisa e eu mando uma proposta por escrito, sem compromisso. Respondo em até um dia útil.</p>
     <div class="sp-botoes"><a class="btn" href="https://wa.me/5548996862073?text=Oi%2C%20Let%C3%ADcia%21%20Vi%20no%20seu%20site%20e%20quero%20saber%20mais%20sobre%3A%20Manuten%C3%A7%C3%A3o%20mensal." target="_blank" rel="noopener">Chamar no WhatsApp<span class="sr-only"> (abre em nova aba)</span></a><a class="btn btn-secundario" href="mailto:leticiabeasouza@gmail.com?subject=Or%C3%A7amento%3A%20Manuten%C3%A7%C3%A3o%20mensal">Mandar e-mail</a></div>
     <p class="sp-contato">WhatsApp: (48) 99686-2073 · E-mail: leticiabeasouza@gmail.com</p></div></div>
 </article>
@@ -1386,6 +1424,8 @@ html.a-contraste .servs-trilho .serv{background:#fff!important}
   var tk=document.getElementById('ticket'), pc=document.getElementById('pacote');
   function calc(){ var v=parseFloat(tk.value), p=+pc.value; if(!(v>0)) { document.getElementById('clientes').textContent='–'; return; }
     document.getElementById('clientes').textContent=Math.ceil(p/v);
+    var dom=pc.options[pc.selectedIndex].hasAttribute('data-dom');
+    document.getElementById('mes-linha').hidden=!dom;
     document.getElementById('mes').textContent='R$ '+Math.round((p+40*3)/36); }
   tk.addEventListener('input',calc); pc.addEventListener('change',calc); calc();
   // Liza: passeio pela página com trilha pontilhada
@@ -1454,9 +1494,9 @@ html.a-contraste .servs-trilho .serv{background:#fff!important}
     var fe=document.getElementById('faq-email'), zap='5548996862073', mail='leticiabeasouza@gmail.com';
     var ultima='';
     var faq=[
-      {c:'Quanto custa?',k:['preco','custa','valor','quanto','orcamento','caro','barato','investimento','tabela'],r:'O site tem três pacotes, com pagamento único: Essencial por R$ 690, Presença por R$ 990 e Marca Completa por R$ 1.690. Os outros serviços são orçados conforme o tamanho do trabalho. Na seção Serviços tem uma calculadora que mostra em quantos clientes o site se paga.'},
+      {c:'Quanto custa?',k:['preco','custa','valor','quanto','orcamento','caro','barato','investimento','tabela'],r:'Site: Essencial R$ 690, Presença R$ 990 e Marca Completa R$ 1.690. Cardápio com pedido pelo WhatsApp: R$ 890. WhatsApp Business e Google: R$ 290. Cardápio ou tabela em PDF: a partir de R$ 150. Catálogo ou manual: a partir de R$ 390. Planilha: R$ 190 (kit com 3: R$ 450). Manutenção: a partir de R$ 79 por mês. Na seção Serviços tem uma calculadora que mostra em quantos clientes o serviço se paga.'},
       {c:'Qual o prazo?',k:['prazo','demora','tempo','dias','quando fica','rapido','entrega','pronto','urgente','pressa'],r:'O site fica pronto em até 10 dias úteis depois que eu recebo os seus materiais: os textos, as fotos e a logo, se você tiver. Se for urgente, me conta na conversa que eu vejo o que dá para fazer.'},
-      {c:'Tem mensalidade?',k:['mensalidade','mensal','todo mes','assinatura','custo fixo','pagar todo'],r:'Não tem mensalidade obrigatória: você paga o site uma vez e ele é seu. O único custo fixo é o domínio, cerca de R$ 40 por ano. Se quiser alguém cuidando das alterações, existe a manutenção mensal, que é opcional.'},
+      {c:'Tem mensalidade?',k:['mensalidade','mensal','todo mes','assinatura','custo fixo','pagar todo'],r:'Não tem mensalidade obrigatória: você paga o site uma vez e ele é seu. O único custo fixo é o domínio, cerca de R$ 40 por ano. Se quiser alguém cuidando das alterações, existe a manutenção mensal, opcional, a partir de R$ 79 por mês.'},
       {c:'Que serviços você faz?',k:['servico','servicos','oferece','o que voce faz','trabalha com','faz o que'],r:'Eu faço: site para o seu negócio, cardápio ou catálogo com pedido pelo WhatsApp, configuração do WhatsApp Business e do Google, materiais digitais e impressos (cardápios, catálogos, manuais), planilhas de controle e manutenção mensal. Cada um tem uma página explicando tudo na seção Serviços.'},
       {c:'Como começo?',k:['comecar','contratar','fechar','processo','etapas','passo','como funciona','proximo passo'],r:'É simples: você me conta o que precisa pelo WhatsApp ou e-mail, eu mando uma proposta por escrito com o que está incluído, o preço e o prazo, faço o trabalho, te mostro para ajustes e entrego testado, com orientação de como usar.'},
       {c:'Atende minha cidade?',k:['cidade','atende','longe','distancia','estado','onde voce','brasil','presencial','palhoca','florianopolis','sao jose','santa catarina','a distancia'],r:'Atendo pequenos negócios de todo o Brasil, à distância. A gente combina tudo pelo WhatsApp, e-mail ou chamada de vídeo.'},
