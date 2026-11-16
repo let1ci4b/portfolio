@@ -909,6 +909,9 @@ html.a-fonte .combustivel .nota{font-family:var(--font-sans)!important;transform
 .sp-h-menor{margin-bottom:16px}
 .sp-planos{padding-top:0!important}
 .sp-obs-lado{margin-top:8px}
+html{background:var(--creme);overflow-x:hidden}
+@supports (overflow:clip){html,body{overflow-x:clip}}
+main,section,footer,header{max-width:100vw}
 @media (prefers-reduced-motion:reduce){html.js .desenhar .rabisco{clip-path:none;transition:none}}
 </style>
 </head>
