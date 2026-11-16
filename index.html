@@ -747,7 +747,7 @@ html.vendo-servico #conteudo > :not(.servicos-paginas),html.vendo-servico .trilh
 .sp-preco{font-family:var(--font-display);font-size:38px;margin:8px 0}
 .sp-preco small{display:block;font-family:var(--font-sans);font-size:14px;opacity:.85}
 .sp-plano ul{padding-left:20px;margin:0}
-.sp-chamada{background:var(--bordo);color:var(--creme);padding:56px 0;margin-top:24px}
+.sp-chamada{background:var(--bordo);color:var(--creme);padding:56px 0;margin:24px 0 0}
 .sp-chamada h2{font-family:var(--font-display);font-size:clamp(30px,4vw,44px);margin:0 0 10px}
 .sp-botoes{display:flex;flex-wrap:wrap;gap:14px;margin-top:22px}
 .sp-chamada .btn{border-color:var(--creme);background:var(--creme);color:var(--cereja)}
@@ -759,6 +759,8 @@ html.vendo-servico #conteudo > :not(.servicos-paginas),html.vendo-servico .trilh
 @media (max-width:820px){.sp-colunas,.sp-planos{grid-template-columns:1fr}.sp-passos{grid-template-columns:1fr 1fr}.sp-rabisco{position:static;display:block;margin:0 0 10px auto;width:90px}}
 @media (max-width:460px){.sp-passos{grid-template-columns:1fr}}
 html.a-fonte .sp-hero h1,html.a-fonte .sp-rotulo,html.a-fonte .sp-bilhete h2{font-family:var(--font-sans)!important;font-style:normal!important}
+@media (max-width:860px){.pilula.p2,.pilula.p3{display:inline-block!important;font-size:14px;padding:5px 12px}.pilula.p2{top:46%;right:2%;left:auto}.pilula.p3{top:auto;bottom:22%;left:2%}.pilula.p1{font-size:14px;padding:5px 12px}}
+html.a-enfeites .pilula{display:none!important}
 @media (prefers-reduced-motion:reduce){html.js .desenhar .rabisco{clip-path:none;transition:none}}
 </style>
 </head>
@@ -850,23 +852,7 @@ html.a-fonte .sp-hero h1,html.a-fonte .sp-rotulo,html.a-fonte .sp-bilhete h2{fon
       <li class="num azul"><span class="valor">+8,4%</span><span class="desc">de conversões em lojas quando o site no celular fica só 0,1 segundo mais rápido. Velocidade é o ponto forte do site estático.</span><span class="fonte">Deloitte e Google</span></li>
       <li class="num rosa"><span class="valor">58%</span><span class="desc">das fontes que o ChatGPT usa para indicar negócios locais são sites de empresas. A inteligência artificial também lê o seu site.</span><span class="fonte">BrightLocal (EUA)</span></li>
     </ul>
-    <div class="calc" role="group" aria-labelledby="t-calc">
-      <div>
-        <h3 id="t-calc">Em quantos clientes o site se paga?</h3>
-        <p>Faça a conta com o seu negócio.</p>
-        <div class="campos">
-          <label for="ticket">Quanto um cliente gasta, em média, com você (R$)</label>
-          <input id="ticket" type="number" inputmode="decimal" min="1" step="1" value="80">
-          <label for="pacote">Pacote</label>
-          <select id="pacote"><option value="690">Essencial (R$ 690)</option><option value="990" selected>Presença (R$ 990)</option><option value="1690">Marca Completa (R$ 1.690)</option></select>
-        </div>
-      </div>
-      <div class="resultado" aria-live="polite">
-        <p class="grande-num"><span id="clientes">13</span> <span>clientes novos</span></p>
-        <p>pagam o site inteiro. Depois disso, é lucro.</p>
-        <p class="mes">Em 3 anos, contando o domínio, sai por cerca de <strong id="mes">R$ 31</strong> por mês.</p>
-      </div>
-    </div>
+    
     <p class="fontes-dados">Fontes: <a href="https://www.brightlocal.com/resources/local-seo-statistics/">BrightLocal, estatísticas de busca local 2026</a> · <a href="https://www.shopify.com/br/blog/perfil-da-empresa-no-google">Google, citado pela Shopify</a> · <a href="https://canaltech.com.br/apps/o-que-os-brasileiros-mais-fazem-no-whatsapp-segundo-pesquisa/">Opinion Box, via Canaltech</a> · <a href="https://web.dev/case-studies/milliseconds-make-millions">Deloitte e Google, Milliseconds Make Millions</a>. Os dados da BrightLocal são de consumidores dos EUA.</p>
   </div>
 </section>
@@ -908,6 +894,23 @@ html.a-fonte .sp-hero h1,html.a-fonte .sp-rotulo,html.a-fonte .sp-bilhete h2{fon
     <div class="cabeca"><h2 id="t-servicos">Serviços</h2><div class="desenhar" style="width:70px"><svg class="doodle rabisco r-seta" viewBox="0 0 102 121" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-seta"/></svg></div></div>
     <p class="lead-serv">Do site ao WhatsApp organizado: escolha o que o seu negócio precisa agora. Cada serviço tem uma página explicando tudo o que está incluído.</p>
     <ul class="servs"><li class="serv"><div class="desenhar"><svg class="doodle rabisco serv-ic" viewBox="0 0 196 192" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-vaso"/></svg></div><h3>Site para o seu negócio</h3><p>Um site de uma página, rápido e acessível, para o seu negócio existir na internet.</p><a class="saiba" href="#servico-site-institucional">Saiba mais<span class="sr-only"> sobre site para o seu negócio</span> <span aria-hidden="true">→</span></a></li><li class="serv"><div class="desenhar"><svg class="doodle rabisco serv-ic" viewBox="0 0 309 308" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-cookie"/></svg></div><h3>Cardápio ou catálogo com pedido pelo WhatsApp</h3><p>O cliente escolhe os itens no site e o pedido chega pronto no seu WhatsApp.</p><a class="saiba" href="#servico-cardapio-whatsapp">Saiba mais<span class="sr-only"> sobre cardápio ou catálogo com pedido pelo whatsapp</span> <span aria-hidden="true">→</span></a></li><li class="serv"><div class="desenhar"><svg class="doodle rabisco serv-ic" viewBox="0 0 143 196" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-brilho-a"/></svg></div><h3>Presença digital: WhatsApp Business e Google</h3><p>Deixo o seu WhatsApp Business e o seu perfil no Google organizados e prontos para vender.</p><a class="saiba" href="#servico-presenca-digital">Saiba mais<span class="sr-only"> sobre presença digital: whatsapp business e google</span> <span aria-hidden="true">→</span></a></li><li class="serv"><div class="desenhar"><svg class="doodle rabisco serv-ic" viewBox="0 0 232 247" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-estrela-risco"/></svg></div><h3>Materiais digitais e impressos</h3><p>Cardápios, catálogos, manuais e apresentações bonitos, claros e acessíveis.</p><a class="saiba" href="#servico-materiais">Saiba mais<span class="sr-only"> sobre materiais digitais e impressos</span> <span aria-hidden="true">→</span></a></li><li class="serv"><div class="desenhar"><svg class="doodle rabisco serv-ic" viewBox="0 0 79 99" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-espiral"/></svg></div><h3>Planilhas de controle</h3><p>Planilhas prontas e simples para organizar o caixa, o estoque, os pedidos e os preços.</p><a class="saiba" href="#servico-planilhas">Saiba mais<span class="sr-only"> sobre planilhas de controle</span> <span aria-hidden="true">→</span></a></li><li class="serv"><div class="desenhar"><svg class="doodle rabisco serv-ic" viewBox="0 0 74 68" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-trevo"/></svg></div><h3>Manutenção mensal</h3><p>Para quem já tem site ou cardápio comigo e quer alguém cuidando dele todo mês.</p><a class="saiba" href="#servico-manutencao">Saiba mais<span class="sr-only"> sobre manutenção mensal</span> <span aria-hidden="true">→</span></a></li></ul>
+    <div class="calc" role="group" aria-labelledby="t-calc">
+      <div>
+        <h3 id="t-calc">Em quantos clientes o site se paga?</h3>
+        <p>Faça a conta com o seu negócio.</p>
+        <div class="campos">
+          <label for="ticket">Quanto um cliente gasta, em média, com você (R$)</label>
+          <input id="ticket" type="number" inputmode="decimal" min="1" step="1" value="80">
+          <label for="pacote">Pacote</label>
+          <select id="pacote"><option value="690">Essencial (R$ 690)</option><option value="990" selected>Presença (R$ 990)</option><option value="1690">Marca Completa (R$ 1.690)</option></select>
+        </div>
+      </div>
+      <div class="resultado" aria-live="polite">
+        <p class="grande-num"><span id="clientes">13</span> <span>clientes novos</span></p>
+        <p>pagam o site inteiro. Depois disso, é lucro.</p>
+        <p class="mes">Em 3 anos, contando o domínio, sai por cerca de <strong id="mes">R$ 31</strong> por mês.</p>
+      </div>
+    </div>
     <div class="outro-pedido" id="outro-pedido">
       <div>
         <h3>Precisa de algo que não está na lista?</h3>
@@ -1055,7 +1058,6 @@ html.a-fonte .sp-hero h1,html.a-fonte .sp-rotulo,html.a-fonte .sp-bilhete h2{fon
   <div class="sp-chamada"><div class="wrap"><h2>Quer saber o preço para o seu caso?</h2><p>Os valores dos pacotes estão acima, e o orçamento final depende dos adicionais. Respondo em até um dia útil.</p>
     <div class="sp-botoes"><a class="btn" href="https://wa.me/5548996862073?text=Oi%2C%20Let%C3%ADcia%21%20Vi%20no%20seu%20site%20e%20quero%20saber%20mais%20sobre%3A%20Site%20para%20o%20seu%20neg%C3%B3cio." target="_blank" rel="noopener">Chamar no WhatsApp<span class="sr-only"> (abre em nova aba)</span></a><a class="btn btn-secundario" href="mailto:leticiabeasouza@gmail.com?subject=Or%C3%A7amento%3A%20Site%20para%20o%20seu%20neg%C3%B3cio">Mandar e-mail</a></div>
     <p class="sp-contato">WhatsApp: (48) 99686-2073 · E-mail: leticiabeasouza@gmail.com</p></div></div>
-  <nav class="wrap sp-outros" aria-label="Outros serviços"><h2 class="sp-h sp-h-menor">Outros serviços</h2><ul><li><a href="#servico-cardapio-whatsapp">Cardápio ou catálogo com pedido pelo WhatsApp</a></li><li><a href="#servico-presenca-digital">Presença digital: WhatsApp Business e Google</a></li><li><a href="#servico-materiais">Materiais digitais e impressos</a></li><li><a href="#servico-planilhas">Planilhas de controle</a></li><li><a href="#servico-manutencao">Manutenção mensal</a></li><li><a href="#outro-pedido">Preciso de outra coisa</a></li></ul></nav>
 </article>
 <article class="servico-pagina sp cor-azul" id="servico-cardapio-whatsapp" aria-labelledby="servico-cardapio-whatsapp-t" tabindex="-1">
   <div class="wrap">
@@ -1073,7 +1075,6 @@ html.a-fonte .sp-hero h1,html.a-fonte .sp-rotulo,html.a-fonte .sp-bilhete h2{fon
   <div class="sp-chamada"><div class="wrap"><h2>Quer saber o preço para o seu caso?</h2><p>O valor depende do tamanho do trabalho. Me conta o que você precisa e eu mando uma proposta sem compromisso. Respondo em até um dia útil.</p>
     <div class="sp-botoes"><a class="btn" href="https://wa.me/5548996862073?text=Oi%2C%20Let%C3%ADcia%21%20Vi%20no%20seu%20site%20e%20quero%20saber%20mais%20sobre%3A%20Card%C3%A1pio%20ou%20cat%C3%A1logo%20com%20pedido%20pelo%20WhatsApp." target="_blank" rel="noopener">Chamar no WhatsApp<span class="sr-only"> (abre em nova aba)</span></a><a class="btn btn-secundario" href="mailto:leticiabeasouza@gmail.com?subject=Or%C3%A7amento%3A%20Card%C3%A1pio%20ou%20cat%C3%A1logo%20com%20pedido%20pelo%20WhatsApp">Mandar e-mail</a></div>
     <p class="sp-contato">WhatsApp: (48) 99686-2073 · E-mail: leticiabeasouza@gmail.com</p></div></div>
-  <nav class="wrap sp-outros" aria-label="Outros serviços"><h2 class="sp-h sp-h-menor">Outros serviços</h2><ul><li><a href="#servico-site-institucional">Site para o seu negócio</a></li><li><a href="#servico-presenca-digital">Presença digital: WhatsApp Business e Google</a></li><li><a href="#servico-materiais">Materiais digitais e impressos</a></li><li><a href="#servico-planilhas">Planilhas de controle</a></li><li><a href="#servico-manutencao">Manutenção mensal</a></li><li><a href="#outro-pedido">Preciso de outra coisa</a></li></ul></nav>
 </article>
 <article class="servico-pagina sp cor-rosa" id="servico-presenca-digital" aria-labelledby="servico-presenca-digital-t" tabindex="-1">
   <div class="wrap">
@@ -1091,7 +1092,6 @@ html.a-fonte .sp-hero h1,html.a-fonte .sp-rotulo,html.a-fonte .sp-bilhete h2{fon
   <div class="sp-chamada"><div class="wrap"><h2>Quer saber o preço para o seu caso?</h2><p>O valor depende do tamanho do trabalho. Me conta o que você precisa e eu mando uma proposta sem compromisso. Respondo em até um dia útil.</p>
     <div class="sp-botoes"><a class="btn" href="https://wa.me/5548996862073?text=Oi%2C%20Let%C3%ADcia%21%20Vi%20no%20seu%20site%20e%20quero%20saber%20mais%20sobre%3A%20Presen%C3%A7a%20digital%3A%20WhatsApp%20Business%20e%20Google." target="_blank" rel="noopener">Chamar no WhatsApp<span class="sr-only"> (abre em nova aba)</span></a><a class="btn btn-secundario" href="mailto:leticiabeasouza@gmail.com?subject=Or%C3%A7amento%3A%20Presen%C3%A7a%20digital%3A%20WhatsApp%20Business%20e%20Google">Mandar e-mail</a></div>
     <p class="sp-contato">WhatsApp: (48) 99686-2073 · E-mail: leticiabeasouza@gmail.com</p></div></div>
-  <nav class="wrap sp-outros" aria-label="Outros serviços"><h2 class="sp-h sp-h-menor">Outros serviços</h2><ul><li><a href="#servico-site-institucional">Site para o seu negócio</a></li><li><a href="#servico-cardapio-whatsapp">Cardápio ou catálogo com pedido pelo WhatsApp</a></li><li><a href="#servico-materiais">Materiais digitais e impressos</a></li><li><a href="#servico-planilhas">Planilhas de controle</a></li><li><a href="#servico-manutencao">Manutenção mensal</a></li><li><a href="#outro-pedido">Preciso de outra coisa</a></li></ul></nav>
 </article>
 <article class="servico-pagina sp cor-azul" id="servico-materiais" aria-labelledby="servico-materiais-t" tabindex="-1">
   <div class="wrap">
@@ -1109,7 +1109,6 @@ html.a-fonte .sp-hero h1,html.a-fonte .sp-rotulo,html.a-fonte .sp-bilhete h2{fon
   <div class="sp-chamada"><div class="wrap"><h2>Quer saber o preço para o seu caso?</h2><p>O valor depende do tamanho do trabalho. Me conta o que você precisa e eu mando uma proposta sem compromisso. Respondo em até um dia útil.</p>
     <div class="sp-botoes"><a class="btn" href="https://wa.me/5548996862073?text=Oi%2C%20Let%C3%ADcia%21%20Vi%20no%20seu%20site%20e%20quero%20saber%20mais%20sobre%3A%20Materiais%20digitais%20e%20impressos." target="_blank" rel="noopener">Chamar no WhatsApp<span class="sr-only"> (abre em nova aba)</span></a><a class="btn btn-secundario" href="mailto:leticiabeasouza@gmail.com?subject=Or%C3%A7amento%3A%20Materiais%20digitais%20e%20impressos">Mandar e-mail</a></div>
     <p class="sp-contato">WhatsApp: (48) 99686-2073 · E-mail: leticiabeasouza@gmail.com</p></div></div>
-  <nav class="wrap sp-outros" aria-label="Outros serviços"><h2 class="sp-h sp-h-menor">Outros serviços</h2><ul><li><a href="#servico-site-institucional">Site para o seu negócio</a></li><li><a href="#servico-cardapio-whatsapp">Cardápio ou catálogo com pedido pelo WhatsApp</a></li><li><a href="#servico-presenca-digital">Presença digital: WhatsApp Business e Google</a></li><li><a href="#servico-planilhas">Planilhas de controle</a></li><li><a href="#servico-manutencao">Manutenção mensal</a></li><li><a href="#outro-pedido">Preciso de outra coisa</a></li></ul></nav>
 </article>
 <article class="servico-pagina sp cor-rosa" id="servico-planilhas" aria-labelledby="servico-planilhas-t" tabindex="-1">
   <div class="wrap">
@@ -1127,7 +1126,6 @@ html.a-fonte .sp-hero h1,html.a-fonte .sp-rotulo,html.a-fonte .sp-bilhete h2{fon
   <div class="sp-chamada"><div class="wrap"><h2>Quer saber o preço para o seu caso?</h2><p>O valor depende do tamanho do trabalho. Me conta o que você precisa e eu mando uma proposta sem compromisso. Respondo em até um dia útil.</p>
     <div class="sp-botoes"><a class="btn" href="https://wa.me/5548996862073?text=Oi%2C%20Let%C3%ADcia%21%20Vi%20no%20seu%20site%20e%20quero%20saber%20mais%20sobre%3A%20Planilhas%20de%20controle." target="_blank" rel="noopener">Chamar no WhatsApp<span class="sr-only"> (abre em nova aba)</span></a><a class="btn btn-secundario" href="mailto:leticiabeasouza@gmail.com?subject=Or%C3%A7amento%3A%20Planilhas%20de%20controle">Mandar e-mail</a></div>
     <p class="sp-contato">WhatsApp: (48) 99686-2073 · E-mail: leticiabeasouza@gmail.com</p></div></div>
-  <nav class="wrap sp-outros" aria-label="Outros serviços"><h2 class="sp-h sp-h-menor">Outros serviços</h2><ul><li><a href="#servico-site-institucional">Site para o seu negócio</a></li><li><a href="#servico-cardapio-whatsapp">Cardápio ou catálogo com pedido pelo WhatsApp</a></li><li><a href="#servico-presenca-digital">Presença digital: WhatsApp Business e Google</a></li><li><a href="#servico-materiais">Materiais digitais e impressos</a></li><li><a href="#servico-manutencao">Manutenção mensal</a></li><li><a href="#outro-pedido">Preciso de outra coisa</a></li></ul></nav>
 </article>
 <article class="servico-pagina sp cor-azul" id="servico-manutencao" aria-labelledby="servico-manutencao-t" tabindex="-1">
   <div class="wrap">
@@ -1145,7 +1143,6 @@ html.a-fonte .sp-hero h1,html.a-fonte .sp-rotulo,html.a-fonte .sp-bilhete h2{fon
   <div class="sp-chamada"><div class="wrap"><h2>Quer saber o preço para o seu caso?</h2><p>O valor depende do tamanho do trabalho. Me conta o que você precisa e eu mando uma proposta sem compromisso. Respondo em até um dia útil.</p>
     <div class="sp-botoes"><a class="btn" href="https://wa.me/5548996862073?text=Oi%2C%20Let%C3%ADcia%21%20Vi%20no%20seu%20site%20e%20quero%20saber%20mais%20sobre%3A%20Manuten%C3%A7%C3%A3o%20mensal." target="_blank" rel="noopener">Chamar no WhatsApp<span class="sr-only"> (abre em nova aba)</span></a><a class="btn btn-secundario" href="mailto:leticiabeasouza@gmail.com?subject=Or%C3%A7amento%3A%20Manuten%C3%A7%C3%A3o%20mensal">Mandar e-mail</a></div>
     <p class="sp-contato">WhatsApp: (48) 99686-2073 · E-mail: leticiabeasouza@gmail.com</p></div></div>
-  <nav class="wrap sp-outros" aria-label="Outros serviços"><h2 class="sp-h sp-h-menor">Outros serviços</h2><ul><li><a href="#servico-site-institucional">Site para o seu negócio</a></li><li><a href="#servico-cardapio-whatsapp">Cardápio ou catálogo com pedido pelo WhatsApp</a></li><li><a href="#servico-presenca-digital">Presença digital: WhatsApp Business e Google</a></li><li><a href="#servico-materiais">Materiais digitais e impressos</a></li><li><a href="#servico-planilhas">Planilhas de controle</a></li><li><a href="#outro-pedido">Preciso de outra coisa</a></li></ul></nav>
 </article>
 </div>
 </main>
