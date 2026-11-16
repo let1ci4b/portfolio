@@ -874,6 +874,8 @@ button.btn{font-family:inherit;font-size:17px;font-weight:700;cursor:pointer}
   .faq{width:calc(100vw - 16px);max-height:calc(100vh - 16px);max-height:calc(100dvh - 16px);margin:auto;box-shadow:4px 4px 0 var(--cereja)}
   .faq-topo{padding:10px 12px}.faq-topo img{width:42px;height:42px}.faq-topo h2{font-size:19px}.faq-topo p{display:none}
 }
+.grande-num{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:12px;row-gap:0}
+.grande-num span:last-child{line-height:1.1}
 @media (prefers-reduced-motion:reduce){html.js .desenhar .rabisco{clip-path:none;transition:none}}
 </style>
 </head>
@@ -1041,7 +1043,7 @@ button.btn{font-family:inherit;font-size:17px;font-weight:700;cursor:pointer}
       <div class="resultado" aria-live="polite">
         <p class="grande-num"><span id="clientes">13</span> <span>clientes novos</span></p>
         <p>pagam o serviço inteiro. Depois disso, é lucro.</p>
-        <p class="mes" id="mes-linha">Em 3 anos, contando o domínio, sai por cerca de <strong id="mes">R$ 31</strong> por mês.</p>
+        <p class="mes" id="mes-linha">Em 3 anos, contando o domínio, sai por cerca de <strong id="mes">R$&nbsp;31</strong> por mês.</p>
       </div>
     </div>
     <div class="outro-pedido" id="outro-pedido">
@@ -1459,7 +1461,7 @@ button.btn{font-family:inherit;font-size:17px;font-weight:700;cursor:pointer}
     document.getElementById('clientes').textContent=Math.ceil(p/v);
     var dom=pc.options[pc.selectedIndex].hasAttribute('data-dom');
     document.getElementById('mes-linha').hidden=!dom;
-    document.getElementById('mes').textContent='R$ '+Math.round((p+40*3)/36); }
+    document.getElementById('mes').textContent='R$\u00a0'+Math.round((p+40*3)/36); }
   tk.addEventListener('input',calc); pc.addEventListener('change',calc); calc();
   // Liza: passeio pela página com trilha pontilhada
   (function(){
