@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Letícia Beatriz — sites simples e acessíveis</title>
+<title>Letícia Beatriz — sites, cardápios e materiais acessíveis</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<meta name="description" content="Sites simples, rápidos e acessíveis para pequenos negócios de todo o Brasil.">
+<meta name="description" content="Sites, cardápios com pedido pelo WhatsApp, materiais e planilhas simples e acessíveis para pequenos negócios de todo o Brasil.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Atkinson+Hyperlegible+Next:wght@400;700&family=Caveat:wght@600&display=swap">
@@ -49,7 +49,7 @@ header.topo{position:sticky;top:0;z-index:50;background:rgba(255,246,238,.92);ba
 nav ul{display:flex;gap:var(--espaco-2);list-style:none;margin:0;padding:0;flex-wrap:wrap}
 nav a{display:inline-block;padding:10px 14px;min-height:44px;color:var(--cereja);text-decoration:none;font-weight:400;border-radius:var(--raio-pilula)}
 nav a:hover{background:var(--rosa)}
-@media (max-width:760px){nav .opcional{display:none}}
+@media (max-width:760px){}
 
 /* hero */
 .hero{position:relative;padding:var(--espaco-10) 0 110px}
@@ -674,7 +674,7 @@ footer{padding-top:var(--espaco-6)!important}
 .liza-lanche img{width:100%;height:auto}
 @media (max-width:860px){.liza-extra{position:relative;right:auto;top:auto;margin:0 0 16px auto}.liza-inverno{width:130px}.liza-lanche{width:160px}}
 html.a-enfeites .liza-extra{display:none!important}
-.links-perfil{display:flex;flex-wrap:wrap;gap:12px;margin:var(--espaco-6) 0 0}
+.links-perfil{display:flex;flex-wrap:wrap;gap:12px;margin:36px 0 0}
 .links-perfil a{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:8px 20px;border-radius:var(--raio-pilula);border:3px solid var(--cereja);background:var(--creme);color:var(--cereja);font-weight:700;text-decoration:none;box-shadow:var(--sombra-adesivo);transition:transform .15s}
 .links-perfil a:first-child{background:var(--vinho);color:var(--creme);border-color:var(--vinho)}
 .links-perfil a:hover{transform:translate(-1px,-2px) rotate(-1deg)}
@@ -761,6 +761,66 @@ html.vendo-servico #conteudo > :not(.servicos-paginas),html.vendo-servico .trilh
 html.a-fonte .sp-hero h1,html.a-fonte .sp-rotulo,html.a-fonte .sp-bilhete h2{font-family:var(--font-sans)!important;font-style:normal!important}
 @media (max-width:860px){.pilula.p2,.pilula.p3{display:inline-block!important;font-size:14px;padding:5px 12px}.pilula.p2{top:46%;right:2%;left:auto}.pilula.p3{top:auto;bottom:22%;left:2%}.pilula.p1{font-size:14px;padding:5px 12px}}
 html.a-enfeites .pilula{display:none!important}
+
+/* O que me move: frase grande + valores soltos */
+.move{margin-top:28px}
+.move-frase{font-family:var(--font-display);font-weight:500;font-size:clamp(30px,4.2vw,54px);line-height:1.12;max-width:22ch;margin:0;color:var(--bordo)}
+.move-frase em{font-style:italic;text-decoration:underline wavy var(--morango) 3px;text-underline-offset:8px}
+.move-visao{max-width:44ch;margin:28px 0 0 auto;font-size:19px;position:relative;padding-top:6px}
+.move-visao .nota{position:static;display:block;font-size:28px;transform:rotate(-3deg);margin-bottom:10px}
+.move-valores{list-style:none;padding:0;margin:48px 0 0;display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center}
+.move-valores li{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-display);font-style:italic;font-size:clamp(22px,2.4vw,30px);color:var(--cereja)}
+.move-valores li:nth-child(odd){transform:rotate(-2deg)}.move-valores li:nth-child(even){transform:rotate(1.5deg) translateY(8px)}
+.move-valores .doodle{width:auto;height:30px;color:var(--vinho)}
+@media (max-width:760px){.move-visao{margin-left:0}.move-valores{gap:14px 20px}}
+html.a-fonte .move-frase,html.a-fonte .move-valores li{font-family:var(--font-sans)!important;font-style:normal!important}
+#trabalhos>.wrap{position:relative}
+#trabalhos .liza-lanche{top:-40px;right:0}
+
+/* menu principal com submenu */
+.menu-abrir{display:none}
+.menu-lista{display:flex;gap:4px;list-style:none;margin:0;padding:0;align-items:center}
+.menu-lista>li{position:relative}
+.tem-sub{display:flex;align-items:center}
+.tem-sub>a{padding-right:4px!important}
+.sub-abrir{background:none;border:0;color:var(--cereja);min-width:32px;min-height:44px;cursor:pointer;font-size:16px;border-radius:50%;padding:0}
+.sub-abrir:hover{background:var(--rosa)}
+.submenu{list-style:none;margin:0;padding:10px;position:absolute;top:100%;left:0;min-width:290px;background:var(--creme);border:2px solid var(--cereja);border-radius:22px 18px 26px 16px;box-shadow:5px 5px 0 var(--cereja);display:none;z-index:60}
+.submenu a{display:block;border-radius:14px;font-size:16px}
+.tem-sub:hover .submenu,.tem-sub:focus-within .submenu,.tem-sub.aberto .submenu{display:block}
+.tem-sub.fechado-forca .submenu{display:none}
+.tem-sub[data-x] .sub-abrir span[aria-hidden]{display:inline-block}
+.sub-abrir[aria-expanded="true"] span[aria-hidden]{transform:rotate(180deg)}
+@media (max-width:900px){
+  .menu-abrir{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:8px 16px;background:var(--vinho);color:var(--creme);border:2px solid var(--cereja);border-radius:var(--raio-pilula);font:inherit;font-weight:700;cursor:pointer}
+  .menu-icone,.menu-icone::before,.menu-icone::after{display:block;width:18px;height:2px;background:currentColor;border-radius:2px;position:relative}
+  .menu-icone::before,.menu-icone::after{content:"";position:absolute;left:0}
+  .menu-icone::before{top:-6px}.menu-icone::after{top:6px}
+  .menu-abrir[aria-expanded="true"] .menu-icone{background:transparent}
+  .menu-abrir[aria-expanded="true"] .menu-icone::before{top:0;transform:rotate(45deg)}
+  .menu-abrir[aria-expanded="true"] .menu-icone::after{top:0;transform:rotate(-45deg)}
+  html.js .menu{display:none;position:absolute;left:0;right:0;top:100%;background:var(--creme);border-bottom:2px dashed rgba(107,30,46,.35);max-height:calc(100vh - 70px);overflow:auto;padding:8px 20px 20px}
+  html.js .menu.aberto{display:block}
+  .menu-lista{flex-direction:column;align-items:stretch;gap:0}
+  .menu-lista a{font-size:19px;padding:12px 8px}
+  .tem-sub{flex-wrap:wrap}
+  .tem-sub>a{flex:1}
+  .sub-abrir{display:none}
+  .submenu,.tem-sub:hover .submenu{display:block;position:static;box-shadow:none;border:0;border-left:3px dotted var(--morango);border-radius:0;padding:0 0 6px 12px;margin-left:8px;min-width:0;width:100%;background:none}
+  .submenu a{font-size:17px;padding:9px 8px}
+}
+
+/* dica do menu de acessibilidade para quem chega */
+.a11y-dica{position:fixed;right:16px;bottom:168px;z-index:71;width:min(300px,calc(100vw - 32px));background:var(--creme);color:var(--tinta,#3a1018);border:3px solid var(--cereja);border-radius:24px 20px 6px 24px;box-shadow:5px 5px 0 var(--cereja);padding:16px 18px;font-size:17px;line-height:1.45}
+.a11y-dica::after{content:"";position:absolute;right:22px;bottom:-16px;border:8px solid transparent;border-top-color:var(--cereja)}
+.a11y-dica p{margin:0 0 12px}
+.a11y-dica-acoes{display:flex;gap:10px;flex-wrap:wrap}
+.a11y-dica button{min-height:44px;padding:8px 16px;border-radius:var(--raio-pilula);font:inherit;font-weight:700;cursor:pointer;border:2px solid var(--cereja)}
+#a11y-dica-ver{background:var(--vinho);color:var(--creme)}
+#a11y-dica-ok{background:transparent;color:var(--cereja)}
+.a11y-botao.chamando{animation:chamar 1.2s ease-in-out 3}
+@keyframes chamar{50%{transform:scale(1.15)}}
+@media (prefers-reduced-motion:reduce){.a11y-botao.chamando{animation:none}}
 @media (prefers-reduced-motion:reduce){html.js .desenhar .rabisco{clip-path:none;transition:none}}
 </style>
 </head>
@@ -773,11 +833,14 @@ html.a-enfeites .pilula{display:none!important}
 <header class="topo">
   <div class="wrap">
     <a class="marca" href="#inicio"><svg class="logo-codigo" viewBox="0 0 64 44" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#lapis-fita)"><path d="M17 9.5 4.5 22.4 17.6 34.8"/><path d="M47 9 59.4 22 46.4 35.2"/><path d="M36.8 4.2 27.4 40"/></g><circle cx="58" cy="6" r="2.6" fill="var(--morango)"/><circle cx="52.5" cy="3.2" r="1.6" fill="var(--morango)"/></svg>Letícia Beatriz</a>
-    <nav aria-label="Principal">
-      <ul>
-        <li class="opcional"><a href="#beneficios">Por que ter um site</a></li>
-        <li class="opcional"><a href="#servicos">Serviços</a></li>
-        <li class="opcional"><a href="#sobre">Sobre mim</a></li>
+    <button class="menu-abrir" type="button" aria-expanded="false" aria-controls="menu-principal"><span class="menu-icone" aria-hidden="true"></span>Menu</button>
+    <nav aria-label="Principal" id="menu-principal" class="menu">
+      <ul class="menu-lista">
+        <li class="tem-sub"><a href="#servicos">Serviços</a><button class="sub-abrir" type="button" aria-expanded="false" aria-controls="sub-servicos"><span class="sr-only">Mostrar a lista de serviços</span><span aria-hidden="true">▾</span></button>
+          <ul class="submenu" id="sub-servicos"><li><a href="#servico-site-institucional">Site para o seu negócio</a></li><li><a href="#servico-cardapio-whatsapp">Cardápio com pedido pelo WhatsApp</a></li><li><a href="#servico-presenca-digital">WhatsApp Business e Google</a></li><li><a href="#servico-materiais">Materiais digitais e impressos</a></li><li><a href="#servico-planilhas">Planilhas de controle</a></li><li><a href="#servico-manutencao">Manutenção mensal</a></li><li><a href="#outro-pedido">Outro pedido</a></li></ul></li>
+        <li><a href="#beneficios">Por que ter um site</a></li>
+        <li><a href="#trabalhos">Trabalhos</a></li>
+        <li><a href="#sobre">Sobre mim</a></li>
         <li><a href="#contato">Contato</a></li>
       </ul>
     </nav>
@@ -804,10 +867,10 @@ html.a-enfeites .pilula{display:none!important}
     <div class="hero-texto">
       <h1 id="t-hero">Eu sou a <em>Letícia<svg class="sublinha rabisco" viewBox="0 0 353 62" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-onda"/></svg></em> e faço sites que todo mundo consegue usar.</h1>
       <div>
-        <p class="lead">Crio sites simples, rápidos e acessíveis para pequenos negócios de qualquer lugar do Brasil. Seu cliente encontra você no Google, chama no WhatsApp e pronto.</p>
+        <p class="lead">Ajudo pequenos negócios de qualquer lugar do Brasil a aparecer e a atender melhor: sites, cardápios com pedido pelo WhatsApp, perfil no Google, materiais e planilhas. Tudo simples, rápido e acessível.</p>
         <div class="acoes">
           <a class="btn btn-principal" href="#contato">Pedir orçamento</a>
-          <a class="btn btn-secundario" href="#servicos">Ver pacotes</a>
+          <a class="btn btn-secundario" href="#servicos">Ver serviços</a>
         </div>
       </div>
     </div>
@@ -819,7 +882,7 @@ html.a-enfeites .pilula{display:none!important}
   <div class="wrap">
     <div class="benef-topo">
       <div>
-        <div class="cabeca"><h2 id="t-benef">Um site não é gasto. É investimento.</h2><div class="desenhar cab-rabisco"><svg class="doodle rabisco r-estrelinha" viewBox="0 0 83 77" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-estrelinha"/></svg><span class="enfeitinhos " aria-hidden="true"><svg class="mini" viewBox="0 0 155 203" focusable="false"><use href="img/rabiscos.svg#r-brilho-b"/></svg></span></div></div>
+        <div class="cabeca"><h2 id="t-benef">Estar na internet não é gasto. É investimento.</h2><div class="desenhar cab-rabisco"><svg class="doodle rabisco r-estrelinha" viewBox="0 0 83 77" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-estrelinha"/></svg><span class="enfeitinhos " aria-hidden="true"><svg class="mini" viewBox="0 0 155 203" focusable="false"><use href="img/rabiscos.svg#r-brilho-b"/></svg></span></div></div>
         <p class="lead-sec">Seu cliente já está procurando você no celular. A pergunta é: ele encontra o seu negócio ou o do concorrente?</p>
         <ul class="vantagens">
           <li><strong>Aparece no Google e no Maps</strong> quando alguém procura o que você faz.</li>
@@ -936,35 +999,28 @@ html.a-enfeites .pilula{display:none!important}
       <p class="grande">18,6 milhões</p>
       <h2 id="t-acess">de brasileiros têm alguma deficiência. Quase metade deles tem 60 anos ou mais.</h2>
       <p>Para muitas dessas pessoas, procurar um negócio na internet é difícil: letra miúda, pouco contraste, botões pequenos e sites que não funcionam com leitor de tela. Quem facilita esse caminho sai na frente e conquista um público que a concorrência deixa de fora. E a Lei Brasileira de Inclusão exige acessibilidade nos sites de empresas.</p>
-      <p>Por isso, todo site que eu entrego já sai com contraste certo, navegação por teclado e texto alternativo nas imagens. Este site também: experimente o botão de acessibilidade no canto da tela.</p>
+      <p>Por isso, tudo que eu entrego, do site ao cardápio em PDF, já sai com contraste certo, letra fácil de ler, navegação por teclado e descrição nas imagens. Este site também: experimente o botão de acessibilidade no canto da tela.</p>
       <p class="fonte-acess">Fonte: <a href="https://agenciadenoticias.ibge.gov.br/pt/agencia-noticias/37317-pessoas-com-deficiencia-tem-menor-acesso-a-educacao-ao-trabalho-e-a-renda.html">IBGE (PNAD Contínua 2022)</a>.</p>
     </div>
   </div>
 </section>
 
-<section class="passos-sec" aria-labelledby="t-passos">
-  <div class="wrap">
-    <div class="cabeca"><h2 id="t-passos">Como funciona</h2><div class="desenhar" style="width:120px"><svg class="doodle rabisco r-onda-zig" viewBox="0 0 311 58" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-onda-zig"/></svg></div></div>
-    <div class="passos-abas"><div class="passos-lista" role="tablist" aria-label="Etapas"><button type="button" role="tab" id="passo-tab-1" aria-controls="passo-1" aria-selected="true" tabindex="0"><span class="passo-num">1</span><span class="passo-nome">Conversa</span></button><button type="button" role="tab" id="passo-tab-2" aria-controls="passo-2" aria-selected="false" tabindex="-1"><span class="passo-num">2</span><span class="passo-nome">Proposta</span></button><button type="button" role="tab" id="passo-tab-3" aria-controls="passo-3" aria-selected="false" tabindex="-1"><span class="passo-num">3</span><span class="passo-nome">Criação</span></button><button type="button" role="tab" id="passo-tab-4" aria-controls="passo-4" aria-selected="false" tabindex="-1"><span class="passo-num">4</span><span class="passo-nome">No ar</span></button></div><div class="passo-painel" role="tabpanel" id="passo-1" aria-labelledby="passo-tab-1" tabindex="0"><div class="passo-desenho"><svg class="doodle rabisco r-coracao" viewBox="0 0 54 51" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-coracao"/></svg></div><div><h3>Conversa</h3><p class="passo-texto">Você me conta sobre o seu negócio pelo WhatsApp. Atendo à distância, de qualquer cidade.</p><p class="passo-extra">Respondo em até um dia útil, sem compromisso.</p></div></div><div class="passo-painel" role="tabpanel" id="passo-2" aria-labelledby="passo-tab-2" tabindex="0"><div class="passo-desenho"><svg class="doodle rabisco r-brilho-a" viewBox="0 0 143 196" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-brilho-a"/></svg></div><div><h3>Proposta</h3><p class="passo-texto">Mando o pacote, o preço e o prazo, tudo por escrito.</p><p class="passo-extra">Você lê com calma e só decide depois.</p></div></div><div class="passo-painel" role="tabpanel" id="passo-3" aria-labelledby="passo-tab-3" tabindex="0"><div class="passo-desenho"><svg class="doodle rabisco r-raio" viewBox="0 0 76 154" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-raio"/></svg></div><div><h3>Criação</h3><p class="passo-texto">Em até 10 dias úteis depois de receber seus materiais.</p><p class="passo-extra">Materiais são os textos, as fotos e a logo, se você tiver.</p></div></div><div class="passo-painel" role="tabpanel" id="passo-4" aria-labelledby="passo-tab-4" tabindex="0"><div class="passo-desenho"><svg class="doodle rabisco r-estrela-cadente" viewBox="0 0 326 306" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-estrela-cadente"/></svg></div><div><h3>No ar</h3><p class="passo-texto">Site publicado, testado e com o seu domínio.</p><p class="passo-extra">Você também recebe um guia claro de como cuidar do seu site.</p></div></div></div>
-    <div class="liza-feliz" aria-hidden="true"><img class="foto-liza" src="img/liza-foto-lingua.webp" alt="" width="340" height="288" loading="lazy" decoding="async"><span class="nota">site no ar, Liza feliz</span></div>
-  </div>
-</section>
-
 <section class="toolkit" id="ferramentas" aria-labelledby="t-tool"><div class="ponte fita-3" aria-hidden="true"><svg viewBox="0 0 600 170" focusable="false"><use href="#fita"/></svg></div><div class="ponte grande-espiral" aria-hidden="true"><svg viewBox="0 0 79 99" focusable="false"><use href="img/rabiscos.svg#r-espiral" fill="currentColor"/></svg></div>
   <div class="wrap">
-    <div class="liza-extra liza-inverno" aria-hidden="true"><img class="foto-liza" src="img/liza-foto-coelho.webp" alt="" width="300" height="361" loading="lazy" decoding="async"><span class="nota">a Liza no inverno</span></div>
     <div class="cabeca"><h2 id="t-tool">Caixa de ferramentas</h2><span class="nota">o que eu uso no dia a dia</span><div class="desenhar cab-rabisco"><svg class="doodle rabisco r-estrela-pontos" viewBox="0 0 324 136" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-estrela-pontos"/></svg><span class="enfeitinhos " aria-hidden="true"><svg class="mini" viewBox="0 0 73 64" focusable="false"><use href="img/rabiscos.svg#r-florzinha"/></svg></span></div></div>
     <div class="tool-grade">
       <div class="tool-grupo"><h3>Desenvolvimento</h3><ul class="fitas"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Git e GitHub</li><li>Validador W3C</li></ul></div>
       <div class="tool-grupo"><h3>Acessibilidade</h3><ul class="fitas"><li>WCAG 2.2</li><li>ABNT NBR 17225</li><li>Leitores de tela (NVDA e TalkBack)</li><li>WAVE</li><li>Lei Brasileira de Inclusão</li></ul></div>
-      <div class="tool-grupo"><h3>Publicação e Google</h3><ul class="fitas"><li>Cloudflare</li><li>Registro.br</li><li>Perfil de Empresa no Google</li><li>PageSpeed Insights</li></ul></div>
-      <div class="tool-grupo"><h3>Design</h3><ul class="fitas"><li>Figma</li><li>Canva</li><li>PENUP</li><li>Identidade visual</li></ul></div>
+      <div class="tool-grupo"><h3>Publicação e Google</h3><ul class="fitas"><li>Cloudflare</li><li>Registro.br</li><li>Perfil de Empresa no Google</li><li>WhatsApp Business</li><li>PageSpeed Insights</li></ul></div>
+      <div class="tool-grupo"><h3>Design</h3><ul class="fitas"><li>Figma</li><li>Canva</li><li>PENUP</li><li>Identidade visual</li><li>PDF acessível</li></ul></div>
+        <div class="tool-grupo"><h3>Planilhas</h3><ul class="fitas"><li>Google Planilhas</li><li>Excel</li></ul></div>
     </div>
   </div>
 </section>
 
 <section id="trabalhos" aria-labelledby="t-trabalhos">
   <div class="wrap">
+    <div class="liza-extra liza-lanche" aria-hidden="true"><img class="foto-liza" src="img/liza-foto-lambendo.webp" alt="" width="340" height="250" loading="lazy" decoding="async"><span class="nota">esperando o próximo projeto</span></div>
     <div class="cabeca"><h2 id="t-trabalhos">Trabalhos</h2><span class="nota">saindo do forno</span><div class="desenhar cab-rabisco"><svg class="doodle rabisco r-torrada" viewBox="0 0 142 149" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-torrada"/></svg><span class="enfeitinhos v2" aria-hidden="true"><svg class="mini" viewBox="0 0 143 196" focusable="false"><use href="img/rabiscos.svg#r-brilho-a"/></svg></span></div></div>
     <div class="trabalhos">
       <div class="trabalho"><span class="janela-barra" aria-hidden="true"><i></i><i></i><i></i><span class="endereco">em-breve.com.br</span></span><div class="desenhar" style="width:90px"><svg class="doodle rabisco r-vaso" viewBox="0 0 196 192" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-vaso"/></svg><span class="enfeitinhos v3" aria-hidden="true"><svg class="mini" viewBox="0 0 73 64" focusable="false"><use href="img/rabiscos.svg#r-florzinha"/></svg></span></div><h3>Em breve</h3><p>Primeiro projeto em construção.</p></div>
@@ -985,15 +1041,15 @@ html.a-enfeites .pilula{display:none!important}
     <div>
       <div class="cabeca"><h2 id="t-sobre">Curiosa desde pequena</h2><span class="nota">e não parei mais</span><div class="desenhar cab-rabisco"><svg class="doodle rabisco r-trevo" viewBox="0 0 74 68" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-trevo"/></svg><span class="enfeitinhos v3" aria-hidden="true"><svg class="mini" viewBox="0 0 155 203" focusable="false"><use href="img/rabiscos.svg#r-brilho-b"/></svg></span></div></div>
       <p>Desde criança eu quero saber como as coisas funcionam: desmontar, perguntar, testar de novo. Essa curiosidade virou profissão, e até hoje estou sempre estudando alguma coisa nova.</p>
-      <p>Tenho 21 anos e gosto de transformar o que aprendo em algo útil para as pessoas. Foi assim que cheguei aqui: todo pequeno negócio merece um site bonito, rápido e que <strong>qualquer pessoa</strong> consiga usar, inclusive quem usa leitor de tela ou tem baixa visão.</p>
+      <p>Tenho 21 anos e gosto de transformar o que aprendo em algo útil para as pessoas. Foi assim que cheguei aqui: todo pequeno negócio merece estar bem apresentado, com site, cardápio e materiais bonitos que <strong>qualquer pessoa</strong> consiga usar, inclusive quem usa leitor de tela ou tem baixa visão.</p>
       <div class="caminho-box"><svg class="trilha" viewBox="0 0 36 600" preserveAspectRatio="none" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 12"><path d="M18 0 C4 80 32 160 18 240 C4 320 32 400 18 480 C8 540 24 570 18 600"/></svg><ol class="caminho" id="caminho">
         <li><strong>Técnico no SENAI/SC</strong><span>Desenvolvimento de Sistemas e Programação Back-end.</span></li>
         <li><strong>Primeiros passos na tecnologia</strong><span>Experiência na Intelbras, hackathons e aulas voluntárias de informática para comunidades.</span></li>
         <li><strong>Sistemas de Informação na Unisul</strong><span>No último semestre da graduação.</span></li>
         <li><strong>Pesquisa</strong><span>Acessibilidade digital e realidade estendida no ensino superior.</span></li>
-        <li><strong>Hoje</strong><span>Criando sites acessíveis para pequenos negócios de todo o Brasil.</span></li>
+        <li><strong>Hoje</strong><span>Ajudando pequenos negócios de todo o Brasil com sites, cardápios, materiais e planilhas acessíveis.</span></li>
       </ol></div>
-      <div class="mais-info"><div class="info-grupo"><h3 class="nota">eu ensino, para servidores públicos</h3><ul class="fitas"><li>criação de sites institucionais</li><li>design acessível</li><li>ferramentas digitais e IA</li><li>atendimento ao público</li></ul></div><div class="info-grupo"><h3 class="nota">projetos</h3><ul class="fitas"><li>XR EduTech · realidade estendida, 120 h</li><li>biblioteca acessível (FINEP)</li><li>totens acessíveis</li><li>Expandindo Fronteiras Digitais</li></ul></div><div class="info-grupo"><h3 class="nota">experiência</h3><ul class="fitas"><li>Intelbras</li><li>documentação técnica</li><li>bancas de processos seletivos</li></ul></div><div class="info-grupo"><h3 class="nota">eventos</h3><ul class="fitas"><li>ExpoArqTech 2026</li><li>Hackathon Sinthetica</li></ul></div></div>
+      <div class="mais-info"><div class="info-grupo"><h3 class="nota">eu ensino, para servidores públicos</h3><ul class="fitas"><li>criação de sites institucionais</li><li>design acessível</li><li>ferramentas digitais e IA</li><li>atendimento ao público</li></ul></div><div class="info-grupo"><h3 class="nota">projetos</h3><ul class="fitas"><li>XR EduTech · realidade estendida</li><li>biblioteca acessível (FINEP)</li><li>totens acessíveis</li><li>Expandindo Fronteiras Digitais</li></ul></div><div class="info-grupo"><h3 class="nota">eventos</h3><ul class="fitas"><li>ExpoArqTech 2026</li><li>Hackathon Sinthetica</li></ul></div></div>
       <p class="links-perfil"><a href="https://www.linkedin.com/in/leticia-beatriz015" target="_blank" rel="noopener">Ver meu LinkedIn<svg class="link-seta" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr-only"> (abre em nova aba)</span></a><a href="https://lattes.cnpq.br/2189030331746865" target="_blank" rel="noopener">Ver meu currículo Lattes<svg class="link-seta" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr-only"> (abre em nova aba)</span></a></p>
       
     </div>
@@ -1004,20 +1060,26 @@ html.a-enfeites .pilula{display:none!important}
           <li><span class="anjo-real"><img class="foto-liza" src="img/scooby-rosto.webp" alt="" width="240" height="269" loading="lazy" decoding="async"><svg class="aureola" viewBox="0 0 100 30" aria-hidden="true" focusable="false"><ellipse cx="50" cy="15" rx="40" ry="9" fill="none" stroke="var(--caramelo)" stroke-width="6" filter="url(#lapis-fita)"/><ellipse cx="50" cy="15" rx="40" ry="9" fill="none" stroke="var(--bordo)" stroke-width="1.6" filter="url(#lapis-fita)"/></svg></span><span class="nota">Scooby</span><span class="raca">labrador chocolate</span></li>
           <li><span class="anjo-real"><img class="foto-liza" src="img/fiona-rosto.webp" alt="" width="240" height="399" loading="lazy" decoding="async"><svg class="aureola" viewBox="0 0 100 30" aria-hidden="true" focusable="false"><ellipse cx="50" cy="15" rx="40" ry="9" fill="none" stroke="var(--caramelo)" stroke-width="6" filter="url(#lapis-fita)"/><ellipse cx="50" cy="15" rx="40" ry="9" fill="none" stroke="var(--bordo)" stroke-width="1.6" filter="url(#lapis-fita)"/></svg></span><span class="nota">Fiona</span><span class="raca">pastora alemã</span></li>
         </ul>
-        <div class="liza-segue" aria-hidden="true"><img class="foto-liza" src="img/liza-foto-cama.webp" alt="" width="300" height="300" loading="lazy" decoding="async"><span class="nota">e a Liza segue aqui comigo</span></div>
+        <div class="liza-segue" aria-hidden="true"><img class="foto-liza" src="img/liza-foto-coelho.webp" alt="" width="300" height="361" loading="lazy" decoding="async"><span class="nota">e a Liza segue aqui comigo</span></div>
       </div>
   </div>
 </section>
 
 <section class="mvv" id="proposito" aria-labelledby="t-mvv">
   <div class="wrap">
-    <div class="liza-extra liza-lanche" aria-hidden="true"><img class="foto-liza" src="img/liza-foto-lambendo.webp" alt="" width="340" height="250" loading="lazy" decoding="async"><span class="nota">hora do lanche?</span></div>
     <div class="cabeca"><h2 id="t-mvv">O que me move</h2><span class="nota">missão, visão e valores</span><div class="desenhar cab-rabisco"><svg class="doodle rabisco r-flor" viewBox="0 0 141 130" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-flor"/></svg><span class="enfeitinhos " aria-hidden="true"><svg class="mini" viewBox="0 0 83 77" focusable="false"><use href="img/rabiscos.svg#r-estrelinha"/></svg></span></div></div>
-    <div class="mvv-grade">
-      <article class="mvv-card"><h3 class="selo-oval azul">Missão</h3><p>Ajudar pequenos negócios de todo o Brasil a serem encontrados e entendidos na internet, com sites simples, bonitos e que qualquer pessoa consegue usar.</p></article>
-      <article class="mvv-card"><h3 class="selo-oval rosa">Visão</h3><p>Ser referência em sites acessíveis para pequenos negócios, mostrando que acessibilidade e bom design andam juntos, e não são luxo de empresa grande.</p></article>
-      <article class="mvv-card"><h3 class="selo-oval caramelo">Valores</h3>
-        <ul class="valores"><li>Acessibilidade de verdade</li><li>Preço e prazo claros, por escrito</li><li>Simplicidade</li><li>Cuidado com cada detalhe</li><li>Aprender sempre</li></ul></article>
+    <div class="move">
+      <h3 class="sr-only">Missão</h3>
+      <p class="move-frase">Ajudar pequenos negócios a serem encontrados e entendidos, com sites e materiais que <em>qualquer pessoa</em> consegue usar.</p>
+      <p class="move-visao"><span class="nota">e o sonho?</span> Mostrar que acessibilidade e bom design andam juntos, e não são luxo de empresa grande.</p>
+      <h3 class="sr-only">Valores</h3>
+      <ul class="move-valores">
+        <li><svg class="doodle rabisco " viewBox="0 0 61 65" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-coracao-cheio"/></svg>acessível de verdade</li>
+        <li><svg class="doodle rabisco " viewBox="0 0 83 77" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-estrelinha"/></svg>preço e prazo por escrito</li>
+        <li><svg class="doodle rabisco " viewBox="0 0 155 203" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-brilho-b"/></svg>simples</li>
+        <li><svg class="doodle rabisco " viewBox="0 0 73 64" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-florzinha"/></svg>caprichado</li>
+        <li><svg class="doodle rabisco " viewBox="0 0 90 74" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-notas"/></svg>sempre aprendendo</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -1026,10 +1088,10 @@ html.a-enfeites .pilula{display:none!important}
   <div class="flutua f1"><svg class="doodle rabisco r-coracao" viewBox="0 0 54 51" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-coracao"/></svg></div><div class="flutua f2"><svg class="doodle rabisco r-chocolate" viewBox="0 0 132 165" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-chocolate"/></svg></div><div class="flutua f3"><svg class="doodle rabisco r-estrela" viewBox="0 0 307 240" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-estrela"/></svg></div><div class="flutua f4"><svg class="doodle rabisco r-brilho-a" viewBox="0 0 143 196" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-brilho-a"/></svg></div>
   <div class="wrap contato-grade">
     <div>
-      <h2 id="t-contato">Bora tirar seu site do papel?</h2>
-      <p>Me chama para um orçamento sem compromisso. Respondo em até um dia útil.</p>
+      <h2 id="t-contato">Bora tirar sua ideia do papel?</h2>
+      <p>Me conta o que o seu negócio precisa e eu mando um orçamento sem compromisso. Respondo em até um dia útil.</p>
       <div class="acoes">
-        <a class="btn btn-secundario" href="https://wa.me/5548996862073?text=Oi%2C%20Let%C3%ADcia!%20Quero%20um%20or%C3%A7amento%20de%20site.">Chamar no WhatsApp</a>
+        <a class="btn btn-secundario" href="https://wa.me/5548996862073?text=Oi%2C%20Let%C3%ADcia!%20Quero%20um%20or%C3%A7amento.">Chamar no WhatsApp</a>
         <a class="btn btn-secundario" href="mailto:leticiabeasouza@gmail.com">Mandar e-mail</a>
       </div>
       <p class="contatos-texto">WhatsApp: (48) 99686-2073 · E-mail: leticiabeasouza@gmail.com</p>
@@ -1154,6 +1216,10 @@ html.a-enfeites .pilula{display:none!important}
   </div>
 </footer>
 
+<div class="a11y-dica" id="a11y-dica" role="region" aria-label="Dica de acessibilidade" hidden>
+  <p><strong>Dica:</strong> neste botão você deixa o site do seu jeito: letra maior, mais contraste, mais espaço entre as linhas e sem animações.</p>
+  <div class="a11y-dica-acoes"><button type="button" id="a11y-dica-ver">Mostrar opções</button><button type="button" id="a11y-dica-ok">Entendi</button></div>
+</div>
 <button class="a11y-botao" type="button" id="a11y-abrir" aria-expanded="false" aria-controls="a11y-painel"><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Menu de acessibilidade</span><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"><circle cx="24" cy="10" r="4" fill="currentColor" stroke="none"/><path d="M10 18 C18 21 30 21 38 18 M24 21 V30 M24 30 L17 42 M24 30 L31 42"/></svg></button>
 <div class="a11y-painel" id="a11y-painel" role="dialog" aria-labelledby="a11y-titulo" hidden>
   <h2 id="a11y-titulo">Acessibilidade</h2>
@@ -1356,23 +1422,58 @@ html.a-enfeites .pilula{display:none!important}
     var fe=document.getElementById('faq-email'), zap='5548996862073', mail='leticiabeasouza@gmail.com';
     var ultima='';
     var faq=[
-      {c:'Quanto custa?',k:['preco','custa','valor','quanto','pacote','pacotes','orcamento','caro','barato','pagar','pagamento','parcel'],r:'O site tem três pacotes, com pagamento único: Essencial por R$ 690, Presença por R$ 990 e Marca Completa por R$ 1.690. Os outros serviços (cardápio com pedido pelo WhatsApp, WhatsApp Business e Google, materiais, planilhas e manutenção) são orçados conforme o tamanho do trabalho. Cada um tem uma página na seção Serviços.'},
-      {c:'Qual o prazo?',k:['prazo','demora','tempo','dias','quando','rapido','entrega','pronto'],r:'Fica pronto em até 10 dias úteis depois que eu recebo os seus materiais: os textos, as fotos e a logo, se você tiver.'},
-      {c:'Tem mensalidade?',k:['mensalidade','mensal','todo mes','hospedagem','manter','manutencao','custo fixo','assinatura'],r:'Não tem mensalidade obrigatória: você paga o site uma vez e ele é seu. A hospedagem pode ser gratuita, e o único custo fixo é o domínio, cerca de R$ 40 por ano. Se quiser, existe uma manutenção mensal opcional para alterações.'},
-      {c:'E o domínio?',k:['dominio','com.br','endereco do site','registro','url','link'],r:'O domínio é o endereço do site, tipo seunegocio.com.br. Ele custa cerca de R$ 40 por ano no Registro.br e fica no seu nome. Eu te ajudo a registrar.'},
-      {c:'Atende minha cidade?',k:['cidade','atende','longe','distancia','estado','onde','brasil','presencial','palhoca','florianopolis'],r:'Atendo pequenos negócios de todo o Brasil, à distância. A gente combina tudo pelo WhatsApp.'},
-      {c:'Como começo?',k:['comecar','como funciona','contratar','fechar','processo','etapas','passo'],r:'São 4 passos: a gente conversa pelo WhatsApp, eu mando a proposta por escrito com preço e prazo, crio o site e coloco no ar. Para começar, é só chamar a Letícia.'},
-      {k:['alterar','mudar','editar','atualizar','trocar','depois de pronto','modificar'],r:'Depois de pronto, você pode pedir alterações pela manutenção mensal, que é opcional, ou contratar o painel para você mesmo editar o site.'},
-      {k:['servico','servicos','oferece','faz o que','cardapio','catalogo','planilha','manual','whatsapp business','material'],r:'Eu faço: site para o seu negócio, cardápio ou catálogo com pedido pelo WhatsApp, configuração do WhatsApp Business e do Google, materiais digitais e impressos, planilhas de controle e manutenção mensal. Se o que você precisa não está na lista, use o "Precisa de algo que não está na lista?" na seção Serviços.'},
-      {k:['loja','vender','venda','carrinho','ecommerce','e-commerce','produtos online','pix','cartao'],r:'Eu faço sites de apresentação. Para loja virtual com pagamento, eu indico uma plataforma pronta, como a Nuvemshop.'},
-      {k:['acessibilidade','acessivel','deficiencia','cego','leitor de tela','lei','wcag','idoso'],r:'Todo site que eu entrego já sai com contraste certo, navegação por teclado e texto alternativo nas imagens, seguindo a WCAG e a Lei Brasileira de Inclusão.'},
-      {k:['google','maps','aparecer','busca','seo','pesquisa'],r:'O site é feito para aparecer no Google. No pacote Presença eu também configuro o seu Perfil de Empresa no Google, aquele que aparece no Maps.'},
-      {k:['materiais','mandar','enviar','fotos','texto','textos','logo','preciso'],r:'Eu preciso dos textos sobre o seu negócio, das fotos e da logo, se você tiver. No pacote Presença eu escrevo os textos para você.'},
-      {k:['celular','mobile','smartphone','responsivo'],r:'Sim! Todo site é feito pensando primeiro no celular, porque é por ele que a maioria das pessoas procura um negócio.'},
-      {k:['instagram','redes sociais','facebook','tiktok'],r:'Dá para colocar botões para o seu Instagram e outras redes, e para o WhatsApp também.'}
+      {c:'Quanto custa?',k:['preco','custa','valor','quanto','orcamento','caro','barato','investimento','tabela'],r:'O site tem três pacotes, com pagamento único: Essencial por R$ 690, Presença por R$ 990 e Marca Completa por R$ 1.690. Os outros serviços são orçados conforme o tamanho do trabalho. Na seção Serviços tem uma calculadora que mostra em quantos clientes o site se paga.'},
+      {c:'Qual o prazo?',k:['prazo','demora','tempo','dias','quando fica','rapido','entrega','pronto','urgente','pressa'],r:'O site fica pronto em até 10 dias úteis depois que eu recebo os seus materiais: os textos, as fotos e a logo, se você tiver. Se for urgente, me conta na conversa que eu vejo o que dá para fazer.'},
+      {c:'Tem mensalidade?',k:['mensalidade','mensal','todo mes','assinatura','custo fixo','pagar todo'],r:'Não tem mensalidade obrigatória: você paga o site uma vez e ele é seu. O único custo fixo é o domínio, cerca de R$ 40 por ano. Se quiser alguém cuidando das alterações, existe a manutenção mensal, que é opcional.'},
+      {c:'Que serviços você faz?',k:['servico','servicos','oferece','o que voce faz','trabalha com','faz o que'],r:'Eu faço: site para o seu negócio, cardápio ou catálogo com pedido pelo WhatsApp, configuração do WhatsApp Business e do Google, materiais digitais e impressos (cardápios, catálogos, manuais), planilhas de controle e manutenção mensal. Cada um tem uma página explicando tudo na seção Serviços.'},
+      {c:'Como começo?',k:['comecar','contratar','fechar','processo','etapas','passo','como funciona','proximo passo'],r:'É simples: você me conta o que precisa pelo WhatsApp ou e-mail, eu mando uma proposta por escrito com o que está incluído, o preço e o prazo, faço o trabalho, te mostro para ajustes e entrego testado, com orientação de como usar.'},
+      {c:'Atende minha cidade?',k:['cidade','atende','longe','distancia','estado','onde voce','brasil','presencial','palhoca','florianopolis','sao jose','santa catarina','a distancia'],r:'Atendo pequenos negócios de todo o Brasil, à distância. A gente combina tudo pelo WhatsApp, e-mail ou chamada de vídeo.'},
+      {k:['dominio','com.br','endereco do site','registro.br','url','nome do site'],r:'O domínio é o endereço do site, tipo seunegocio.com.br. Ele fica no seu nome (CPF ou CNPJ) e é pago por você direto no Registro.br, cerca de R$ 40 por ano. Eu te ajudo a registrar e a ativar a renovação automática. Se você já tem um domínio, dá para usar.'},
+      {k:['hospedagem','servidor','fica no ar','sair do ar','hospedar'],r:'A hospedagem é gratuita (uso a Cloudflare Pages), com cadeado de segurança. O site fica no ar enquanto o domínio estiver renovado.'},
+      {k:['pagamento','pagar','pix','cartao','parcela','parcelar','entrada','boleto'],r:'A forma de pagamento e se dá para dividir são combinadas na proposta, antes de começar. Tudo fica por escrito.'},
+      {k:['nota fiscal','nota','emite','emitir','nf','recibo','cnpj','mei','empresa'],r:'Eu trabalho como pessoa física e emito recibo. Se você precisa de nota fiscal, me avise antes de fechar para a gente ver juntos.'},
+      {k:['contrato','garantia','por escrito','seguro','confiar','confianca'],r:'Tudo é combinado por escrito antes de começar: o que está incluído, o preço e o prazo. E antes de entregar eu testo velocidade, acessibilidade e o funcionamento em dois celulares.'},
+      {k:['ajuste','ajustes','revisao','revisoes','mudar depois','nao gostar','nao gostei','refazer'],r:'Depois da primeira versão você tem 1 rodada de ajustes incluída. Mudanças depois da entrega podem ser feitas pela manutenção mensal ou orçadas à parte.'},
+      {k:['alterar','editar','atualizar','trocar preco','trocar foto','eu mesmo','eu mesma','mudar os precos','mudar o preco','sozinha','sozinho','painel','depois de pronto mudar'],r:'Depois de pronto, você pode pedir alterações pela manutenção mensal ou contratar uma área simples para você mesmo trocar textos e preços.'},
+      {k:['dono','dona','propriedade','meu nome','no meu nome','de quem','codigo','e meu'],r:'O site é seu. O domínio fica no seu nome e, se um dia você quiser mudar de profissional, leva tudo junto.'},
+      {k:['materiais','mandar','enviar','o que preciso','informacoes','preciso ter'],r:'Para o site eu preciso das informações sobre o negócio (ou os textos prontos), fotos, logo se você tiver, número do WhatsApp e endereço. No pacote Presença eu escrevo os textos para você.'},
+      {k:['logo','logotipo','marca','identidade visual','cores'],r:'A criação de logo não está no pacote básico. Existe o kit visual (cores, fontes e uma versão simples da logo), que vem no pacote Marca Completa ou como adicional.'},
+      {k:['foto','fotos','fotografia','imagem','imagens'],r:'Eu uso as fotos que você me manda. Não faço sessão de fotos, mas te dou dicas para tirar boas fotos com o celular.'},
+      {k:['texto','textos','escrever','redacao','conteudo'],r:'Você pode mandar os textos prontos ou eu escrevo para você a partir de uma conversa. A escrita está no pacote Presença ou como adicional.'},
+      {k:['pagina','paginas','pagina extra','mais paginas','uma pagina'],r:'O pacote básico é um site de uma página, com rolagem, com até 5 partes. Se precisar, dá para adicionar páginas extras, por exemplo uma para cada serviço.'},
+      {k:['cardapio','delivery','pedido','restaurante','lanchonete','confeitaria','catalogo'],r:'Tenho o cardápio ou catálogo com pedido pelo WhatsApp: o cliente escolhe os itens no site, vê o total e o pedido chega pronto no seu WhatsApp. Não tem taxa por pedido. Os detalhes estão em Serviços.'},
+      {k:['whatsapp business','respostas rapidas','mensagem automatica','catalogo do whatsapp','etiquetas'],r:'Eu configuro o seu WhatsApp Business: perfil completo, catálogo, mensagem de boas-vindas e de ausência, respostas rápidas e etiquetas. Vem junto com o perfil no Google no serviço de Presença digital.'},
+      {k:['google','maps','aparecer','busca','seo','pesquisa','encontrar','avaliacoes','perfil de empresa'],r:'O site é feito para aparecer bem no Google. E no serviço de Presença digital eu configuro o seu Perfil de Empresa no Google, aquele que aparece no Maps, e te ensino a pedir avaliações.'},
+      {k:['planilha','planilhas','excel','estoque','caixa','fluxo','financeiro'],r:'Faço planilhas prontas no Google Planilhas ou no Excel: fluxo de caixa, estoque com aviso de item acabando, cadastro de clientes, controle de pedidos e cálculo de preço. Vem com instruções e uma chamada para explicar.'},
+      {k:['manual','pdf','folheto','apresentacao','cartao de visita','impresso','impressao','tabela de precos'],r:'Faço materiais como cardápio, catálogo, tabela de preços, manual para funcionários, guia para clientes e apresentação da empresa, em PDF acessível e com versão para imprimir. A impressão fica com a gráfica de sua preferência.'},
+      {k:['manutencao','suporte','cuidar','depois de pronto','acompanhamento'],r:'A manutenção mensal é opcional: inclui alterações no mês (textos, preços, fotos, horário), verificação de que o site está funcionando e lembrete da renovação do domínio.'},
+      {k:['loja','loja virtual','loja online','vender online','venda online','carrinho de compra','ecommerce','e-commerce','pagamento online'],r:'Eu não programo loja com pagamento online, porque isso exige cuidados de segurança com dados de quem compra. Para venda online, o mais seguro é uma plataforma pronta, como a Nuvemshop. Se quiser, me conta pelo "Precisa de algo que não está na lista?".'},
+      {k:['login','area do cliente','senha','cadastro de clientes','sistema','banco de dados','aplicativo','app'],r:'Não faço sistemas com login, banco de dados ou aplicativos. Meu foco são sites de apresentação, cardápios, materiais e planilhas, que são mais seguros e baratos de manter.'},
+      {k:['agendamento','agendar','agenda online','marcar horario','reserva'],r:'O site pode ter um botão que leva para o seu WhatsApp ou para um link de agendamento que você já usa (como Google Agenda ou outros apps). Eu não programo sistema de agenda próprio.'},
+      {k:['blog','noticias','posts'],r:'O blog não está incluído no site básico. Se for importante para você, me conta e eu avalio.'},
+      {k:['email profissional','e-mail profissional','email com dominio','contato@'],r:'O e-mail profissional (tipo contato@seunegocio.com.br) não está incluído. Eu posso te indicar como contratar.'},
+      {k:['instagram','redes sociais','facebook','tiktok','post','postagem','social media'],r:'Coloco no site os botões para o seu Instagram e outras redes. Postagens e gestão de redes sociais eu não faço.'},
+      {k:['anuncio','anuncios','trafego','impulsionar','meta ads','google ads','patrocinado'],r:'Ainda não ofereço gestão de anúncios. Por enquanto o foco é deixar o seu negócio bem apresentado no site, no WhatsApp e no Google.'},
+      {k:['chatbot','robo','atendimento automatico','inteligencia artificial'],r:'No WhatsApp Business eu configuro mensagens automáticas e respostas rápidas. Chatbot com inteligência artificial eu ainda não ofereço.'},
+      {k:['site pronto','ja tenho site','ja tenho um site','meu site atual','editar meu site','wix','wordpress','consertar','arruma','arrumar','refazer meu site'],r:'Por enquanto eu faço sites novos. Se você já tem um site e quer mudar algo, me manda o link pelo "Precisa de algo que não está na lista?" que eu avalio.'},
+      {k:['acessibilidade','acessivel','deficiencia','cego','leitor de tela','baixa visao','surdo','idoso','daltonico','wcag'],r:'Todo site que eu entrego já sai com contraste adequado, navegação pelo teclado, descrição das imagens e letras fáceis de ler, seguindo a WCAG. Também dá para contratar a acessibilidade completa, com relatório.'},
+      {k:['lei','obrigatorio','lbi','lei brasileira de inclusao','multa'],r:'A Lei Brasileira de Inclusão diz que os sites de empresas precisam ser acessíveis. Além de cumprir a lei, você atende um público grande que a concorrência costuma deixar de fora.'},
+      {k:['libras','vlibras'],r:'Dá para adicionar o botão VLibras, que traduz o texto do site para Libras.'},
+      {k:['menu de acessibilidade','aumentar letra','aumento a letra','aumentar a letra','letra','letras','zoom','enxergar','ler melhor','contraste','fonte','ajustar o site','preferencias','configurar'],r:'Neste site você pode ajustar o tamanho das letras, o contraste, o espaçamento, parar as animações e mais. É só tocar no botão redondo com o bonequinho, no canto da tela.'},
+      {k:['celular','mobile','smartphone','responsivo','tablet'],r:'Todo site é feito pensando primeiro no celular, porque é por ele que a maioria das pessoas procura um negócio. Testo em dois celulares antes de entregar.'},
+      {k:['idioma','ingles','espanhol','outra lingua','traducao','gringo','turista'],r:'Dá para ter uma versão do site em outro idioma, como inglês ou espanhol. É um adicional.'},
+      {k:['exemplo','exemplos','portfolio','trabalhos','ja fez','clientes'],r:'Estou montando os primeiros exemplos, e eles vão aparecer na seção Trabalhos. Enquanto isso, este próprio site mostra o meu jeito de trabalhar.'},
+      {k:['quem e voce','sobre voce','leticia','formacao','experiencia','estudou'],r:'A Letícia é de Palhoça (SC), está no último semestre de Sistemas de Informação, tem formação técnica em desenvolvimento de sistemas e pesquisa acessibilidade. Tem mais na seção "Curiosa desde pequena", com os links do LinkedIn e do Lattes.'},
+      {k:['liza','cachorro','cachorra','labradora','au'],r:'Sou eu! A Liza, labradora de 15 anos e gerente de qualidade da Letícia. Supervisiono tudo, principalmente os lanches.'},
+      {k:['horario','atendimento','responde','resposta','fim de semana','sabado','domingo'],r:'A Letícia responde em até um dia útil, pelo WhatsApp ou e-mail.'},
+      {k:['desconto','promocao','mais barato','negociar'],r:'Os valores e as condições são combinados na proposta. Me conta o que você precisa e a Letícia vê a melhor opção para o seu caso.'},
+      {k:['seguranca','invadir','hacker','virus','https','cadeado'],r:'Sites estáticos são bem seguros: não têm login nem banco de dados, então quase não há por onde invadir. E todos têm o cadeado de segurança (HTTPS).'},
+      {k:['contato','telefone','numero','email','falar com'],r:'WhatsApp: (48) 99686-2073. E-mail: leticiabeasouza@gmail.com. Ou toque em "Falar com a Letícia".'},
+      {k:['obrigad','valeu','brigad'],r:'De nada! Se surgir outra dúvida, é só perguntar.'},
+      {k:['oi','ola','bom dia','boa tarde','boa noite','tudo bem'],r:'Oi! Pode perguntar sobre preços, prazos, serviços, domínio, acessibilidade ou como começar.'}
     ];
     function norm(t){ return (t||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9.\s-]/g,' '); }
-    function acha(t){ var n=' '+norm(t)+' ', melhor=null, pts=0; faq.forEach(function(f){ var p=0; f.k.forEach(function(k){ if(n.indexOf(k)>-1) p+=k.length>5?2:1; }); if(p>pts){pts=p;melhor=f;} }); return pts?melhor:null; }
+    function acha(t){ var n=' '+norm(t)+' ', melhor=null, pts=0; faq.forEach(function(f){ var p=0; f.k.forEach(function(k){ var kk=norm(k).trim(); var hit = kk.length<=3 ? n.indexOf(' '+kk+' ')>-1 : n.indexOf(kk)>-1; if(hit) p+= kk.length>7?3:(kk.length>4?2:1); }); if(p>pts){pts=p;melhor=f;} }); return pts?melhor:null; }
     function msg(quem,txt,extra){ var d=document.createElement('div'); d.className='faq-msg '+quem; var p=document.createElement('p'); p.textContent=txt; d.appendChild(p); if(extra) d.appendChild(extra); log.appendChild(d); log.scrollTop=log.scrollHeight; }
     function opcoes(){ var w=document.createElement('div'); w.className='faq-opcoes';
       var a=document.createElement('a'); a.href='https://wa.me/'+zap+'?text='+encodeURIComponent('Oi, Letícia! Vim pelo site e tenho uma dúvida: '+(ultima||'')); a.target='_blank'; a.rel='noopener'; a.textContent='Chamar no WhatsApp';
@@ -1414,6 +1515,31 @@ html.a-enfeites .pilula{display:none!important}
       document.body.appendChild(d); setTimeout(function(){ d.remove(); }, 1400);
     });
   }
+})();
+</script>
+
+<script>
+(function(){
+  var b=document.querySelector('.menu-abrir'), m=document.getElementById('menu-principal'), sb=document.querySelector('.sub-abrir'), ts=document.querySelector('.tem-sub');
+  function fecha(){ m.classList.remove('aberto'); b.setAttribute('aria-expanded','false'); }
+  b.addEventListener('click',function(){ var a=m.classList.toggle('aberto'); b.setAttribute('aria-expanded',a?'true':'false'); });
+  sb.addEventListener('click',function(){ var a=ts.classList.toggle('aberto'); sb.setAttribute('aria-expanded',a?'true':'false'); });
+  m.addEventListener('click',function(e){ if(e.target.closest('a')){ fecha(); ts.classList.remove('aberto'); sb.setAttribute('aria-expanded','false'); ts.classList.add('fechado-forca'); setTimeout(function(){ts.classList.remove('fechado-forca')},400); } });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'){ if(m.classList.contains('aberto')){fecha();b.focus();} if(ts.classList.contains('aberto')){ts.classList.remove('aberto');sb.setAttribute('aria-expanded','false');sb.focus();} } });
+  document.addEventListener('click',function(e){ if(!e.target.closest('.topo')){ fecha(); ts.classList.remove('aberto'); sb.setAttribute('aria-expanded','false'); } });
+})();
+</script>
+
+<script>
+(function(){
+  var d=document.getElementById('a11y-dica'), ab=document.getElementById('a11y-abrir'), visto=false;
+  try{ visto=localStorage.getItem('dica-a11y')==='1'; }catch(e){}
+  if(visto||!d) return;
+  function some(){ d.hidden=true; ab.classList.remove('chamando'); try{localStorage.setItem('dica-a11y','1');}catch(e){} }
+  setTimeout(function(){ if(ab.getAttribute('aria-expanded')==='true') return; d.hidden=false; ab.classList.add('chamando'); },1800);
+  document.getElementById('a11y-dica-ok').addEventListener('click',function(){ some(); ab.focus(); });
+  document.getElementById('a11y-dica-ver').addEventListener('click',function(){ some(); ab.click(); });
+  ab.addEventListener('click',some);
 })();
 </script>
 </body>
