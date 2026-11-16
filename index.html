@@ -912,6 +912,14 @@ html.a-fonte .combustivel .nota{font-family:var(--font-sans)!important;transform
 html{background:var(--creme);overflow-x:hidden}
 @supports (overflow:clip){html,body{overflow-x:clip}}
 main,section,footer,header{max-width:100vw}
+
+footer .wrap{flex-wrap:nowrap;justify-content:flex-start;gap:16px}
+.rodape-textos p{margin:0}.rodape-textos p+p{margin-top:4px}
+@media (min-width:1000px){.move-visao{max-width:none;margin-left:0}}
+.combustivel{justify-content:flex-start;margin:4px 0 28px}
+.combustivel .nota{font-size:26px}
+.combustivel-pre{display:block;font-size:.75em;opacity:.85}
+.move .move-visao>.nota{position:static!important;display:block;width:fit-content;margin:0 0 8px;line-height:1.2;transform-origin:left center}
 @media (prefers-reduced-motion:reduce){html.js .desenhar .rabisco{clip-path:none;transition:none}}
 </style>
 </head>
@@ -1150,6 +1158,7 @@ main,section,footer,header{max-width:100vw}
       <div class="cabeca"><h2 id="t-sobre">Curiosa desde pequena</h2><span class="nota">e não parei mais</span><div class="desenhar cab-rabisco"><svg class="doodle rabisco r-trevo" viewBox="0 0 74 68" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-trevo"/></svg><span class="enfeitinhos v3" aria-hidden="true"><svg class="mini" viewBox="0 0 155 203" focusable="false"><use href="img/rabiscos.svg#r-brilho-b"/></svg></span></div></div>
       <p>Desde criança eu quero saber como as coisas funcionam: desmontar, perguntar, testar de novo. Essa curiosidade virou profissão, e até hoje estou sempre estudando alguma coisa nova.</p>
       <p>Tenho 21 anos e gosto de transformar o que aprendo em algo útil para as pessoas. Foi assim que cheguei aqui: todo pequeno negócio merece estar bem apresentado, com site, cardápio e materiais bonitos que <strong>qualquer pessoa</strong> consiga usar, inclusive quem usa leitor de tela ou tem baixa visão.</p>
+      <div class="combustivel"><p class="nota"><span class="combustivel-pre">e um detalhe importante:</span> doces são o meu combustível</p><div class="doces-trio"><svg class="doodle rabisco doce" viewBox="0 0 132 165" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-chocolate"/></svg><svg class="doodle rabisco doce" viewBox="0 0 309 308" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-cookie"/></svg><svg class="doodle rabisco doce" viewBox="0 0 210 139" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-croissant"/></svg></div></div>
       <div class="caminho-box"><svg class="trilha" viewBox="0 0 36 600" preserveAspectRatio="none" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 12"><path d="M18 0 C4 80 32 160 18 240 C4 320 32 400 18 480 C8 540 24 570 18 600"/></svg><ol class="caminho" id="caminho">
         <li><strong>Técnico no SENAI/SC</strong><span>Desenvolvimento de Sistemas e Programação Back-end.</span></li>
         <li><strong>Primeiros passos na tecnologia</strong><span>Experiência na Intelbras, hackathons e aulas voluntárias de informática para comunidades.</span></li>
@@ -1172,7 +1181,6 @@ main,section,footer,header{max-width:100vw}
           <li><span class="anjo-real"><img class="foto-liza" src="img/fiona-rosto.webp" alt="" width="240" height="258" loading="lazy" decoding="async"><svg class="aureola" viewBox="0 0 100 30" aria-hidden="true" focusable="false"><ellipse cx="50" cy="15" rx="40" ry="9" fill="none" stroke="var(--caramelo)" stroke-width="6" filter="url(#lapis-fita)"/><ellipse cx="50" cy="15" rx="40" ry="9" fill="none" stroke="var(--bordo)" stroke-width="1.6" filter="url(#lapis-fita)"/></svg></span><span class="nota">Fiona</span><span class="raca">pastora alemã</span></li>
         </ul>
         <div class="liza-segue" aria-hidden="true"><span class="liza-mancha"><img class="foto-liza" src="img/liza-foto-coelho.webp" alt="" width="300" height="347" loading="lazy" decoding="async"></span><span class="nota">e a Liza segue aqui comigo</span></div>
-        <div class="combustivel"><p class="nota">doces são o meu combustível</p><div class="doces-trio"><svg class="doodle rabisco doce" viewBox="0 0 132 165" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-chocolate"/></svg><svg class="doodle rabisco doce" viewBox="0 0 309 308" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-cookie"/></svg><svg class="doodle rabisco doce" viewBox="0 0 210 139" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-croissant"/></svg></div></div>
       </div>
   </div>
 </section>
@@ -1342,8 +1350,7 @@ main,section,footer,header{max-width:100vw}
 
 <footer>
   <div class="wrap">
-    <img class="liza-sono foto-liza" src="img/liza-foto-enrolada.webp" alt="" width="340" height="166" loading="lazy" decoding="async"><span>Feito à mão por Letícia Beatriz, com supervisão da Liza. De Palhoça (SC) para todo o Brasil.</span>
-    <span>Este site segue as diretrizes de acessibilidade WCAG 2.2.</span>
+    <img class="liza-sono foto-liza" src="img/liza-foto-enrolada.webp" alt="" width="340" height="166" loading="lazy" decoding="async"><div class="rodape-textos"><p>Feito à mão por Letícia Beatriz, com supervisão da Liza. De Palhoça (SC) para todo o Brasil.</p><p>Este site segue as diretrizes de acessibilidade WCAG 2.2.</p></div>
   </div>
 </footer>
 
