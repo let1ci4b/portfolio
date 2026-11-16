@@ -947,6 +947,12 @@ footer .wrap{flex-wrap:nowrap;justify-content:flex-start;gap:16px}
 .combustivel-lado{flex-direction:column;align-items:center;margin:40px 0 0;gap:10px;text-align:center}
 .combustivel-lado .nota{font-size:32px;transform:rotate(-4deg)}
 .combustivel-lado .doces-trio .doce{height:72px}.combustivel-lado .doces-trio .doce:nth-child(2){height:62px}.combustivel-lado .doces-trio .doce:nth-child(3){height:58px}
+
+/* a Liza do topo encolhe e vira a Liza que passeia */
+html.liza-andando #cao-hero{transform-origin:50% 100%;transition:opacity .25s}
+html.liza-andando #cao-hero.virou-passeio{opacity:0;pointer-events:none}
+html.liza-andando .passeio{transition:opacity .25s}
+html.liza-andando .passeio.esperando{opacity:0;pointer-events:none}
 @media (prefers-reduced-motion:reduce){html.js .desenhar .rabisco{clip-path:none;transition:none}}
 </style>
 </head>
@@ -1405,7 +1411,7 @@ footer .wrap{flex-wrap:nowrap;justify-content:flex-start;gap:16px}
 <div class="guia-leitura" id="guia" aria-hidden="true"></div>
 <aside aria-label="Ajuda">
 <svg class="trilha-liza" id="trilha-liza" aria-hidden="true" focusable="false"><defs><mask id="trilha-mascara" maskUnits="userSpaceOnUse"><path id="trilha-revela" fill="none" stroke="#fff" stroke-width="16" stroke-linecap="round"/></mask></defs><path id="trilha-caminho" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="0 15" mask="url(#trilha-mascara)"/></svg>
-<button type="button" class="passeio" id="passeio" aria-haspopup="dialog" aria-controls="faq"><span class="ajuda" aria-hidden="true">precisa de ajuda?</span><span class="sr-only">Precisa de ajuda? Abrir perguntas frequentes</span><span class="trote"><img class="cao-svg foto-liza" src="img/liza-foto-moletom.webp" alt="" width="220" height="267"></span></button>
+<button type="button" class="passeio" id="passeio" aria-haspopup="dialog" aria-controls="faq"><span class="ajuda" aria-hidden="true">precisa de ajuda?</span><span class="sr-only">Precisa de ajuda? Abrir perguntas frequentes</span><span class="trote"><img class="cao-svg foto-liza" src="img/cao-moletom-recorte-480.webp" alt="" width="480" height="584"></span></button>
 <button type="button" class="ajuda-fixa" id="ajuda-fixa" aria-haspopup="dialog" aria-controls="faq"><img src="img/liza-foto-rosto.webp" alt="" width="260" height="304"><span>Dúvidas?</span></button>
 <dialog class="faq" id="faq" aria-labelledby="faq-titulo">
   <div class="faq-topo"><img src="img/liza-foto-rosto.webp" alt="" width="260" height="304"><div><h2 id="faq-titulo">Perguntas frequentes</h2><p>Respostas prontas sobre os sites da Letícia</p></div><button type="button" class="faq-fechar" id="faq-fechar" aria-label="Fechar perguntas frequentes">×</button></div>
@@ -1542,20 +1548,23 @@ footer .wrap{flex-wrap:nowrap;justify-content:flex-start;gap:16px}
     var cam=document.getElementById('trilha-caminho'), rev=document.getElementById('trilha-revela');
     var grande=matchMedia('(min-width:1280px)');
     var amostras=[], paradas=[], total=0, atual=0, alvo=0, andou=0, ativo=false, raf=null, ultX=null;
+    var cao=document.getElementById('cao-hero'), escala=1;
     function monta(){
       ativo = grande.matches && !reduz && !document.documentElement.classList.contains('a-parar');
       document.documentElement.classList.toggle('liza-andando', ativo);
-      if(!ativo){ return; }
+      if(!ativo){ if(cao){ cao.style.scale=''; cao.classList.remove('virou-passeio'); } return; }
       var doc=document.documentElement, H=doc.scrollHeight, W=doc.clientWidth;
       svg.setAttribute('width',W); svg.setAttribute('height',H); svg.setAttribute('viewBox','0 0 '+W+' '+H);
       var margem=Math.max(40,(W-1160)/2), xE=margem*0.5, xD=W-margem*0.5;
-      var secs=[].slice.call(document.querySelectorAll('main > section'));
+      var secs=[].slice.call(document.querySelectorAll('main > section')).filter(function(x){ return x.id!=='inicio'; });
       var pts=[]; paradas=[];
+      cao.style.scale=''; var rc=cao.getBoundingClientRect(); var cx=rc.left+rc.width/2, cy=rc.top+scrollY+rc.height-6;
+      escala=Math.min(1, pas.offsetWidth/rc.width);
       secs.forEach(function(sec,k){ var r=sec.getBoundingClientRect(), top=r.top+scrollY, fim=top+r.height; var x=k%2?xE:xD; pts.push({x:x,y:top+150,fim:fim-80}); });
       if(!pts.length) return;
-      var d='M'+pts[0].x+' '+(pts[0].y-60);
+      var d='M'+cx+' '+cy+' C'+(cx+60)+' '+(cy+10)+' '+pts[0].x+' '+(cy-10)+' '+pts[0].x+' '+(cy+70)+' L'+pts[0].x+' '+pts[0].y;
       pts.forEach(function(p,k){
-        d+=' L'+p.x+' '+p.y; paradas.push(p.y);
+        if(k) d+=' L'+p.x+' '+p.y; paradas.push(p.y);
         var prox=pts[k+1]; if(!prox) { d+=' L'+p.x+' '+p.fim; return; }
         var y1=Math.max(p.y+40,p.fim), y2=prox.y; var meio=(y1+y2)/2;
         d+=' L'+p.x+' '+y1+' C'+p.x+' '+meio+' '+prox.x+' '+meio+' '+prox.x+' '+(y2-30)+' L'+prox.x+' '+y2;
@@ -1567,8 +1576,17 @@ footer .wrap{flex-wrap:nowrap;justify-content:flex-start;gap:16px}
       calcAlvo(); if(!atual){ atual=alvo; } desenha();
     }
     function compAltura(y){ var lo=0,hi=amostras.length-1; while(lo<hi){ var m=(lo+hi)>>1; if(amostras[m].y<y) lo=m+1; else hi=m; } return amostras[lo]; }
+    function encolhe(){
+      var pr=Math.max(0,Math.min(1,scrollY/380));
+      cao.style.scale = ativo ? String(1-(1-escala)*pr) : '';
+      var chegou = !ativo || pr>=1;
+      cao.classList.toggle('virou-passeio', ativo && chegou);
+      pas.classList.toggle('esperando', ativo && !chegou);
+      return chegou;
+    }
     function calcAlvo(){
       if(!amostras.length) return;
+      if(!encolhe()){ alvo=0; return; }
       var y=scrollY+innerHeight*0.5;
       for(var k=0;k<paradas.length;k++){ if(Math.abs(y-paradas[k])<170){ y=paradas[k]; break; } }
       var p=compAltura(y); alvo=p?p.l:0;
