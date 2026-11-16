@@ -861,6 +861,7 @@ button.btn{font-family:inherit;font-size:17px;font-weight:700;cursor:pointer}
 .campos input,.campos select{width:100%;max-width:100%;min-width:0;box-sizing:border-box}
 @media (max-width:420px){.marca{font-size:20px;white-space:nowrap;gap:6px}.marca .logo-codigo{width:32px}.menu-abrir{padding:8px 12px}}
 .marca{white-space:nowrap}
+.outro-erro{color:var(--cereja);font-weight:700;margin:8px 0 0;min-height:0}.outro-erro:empty{display:none}
 @media (prefers-reduced-motion:reduce){html.js .desenhar .rabisco{clip-path:none;transition:none}}
 </style>
 </head>
@@ -1041,7 +1042,8 @@ button.btn{font-family:inherit;font-size:17px;font-weight:700;cursor:pointer}
         <input id="op-nome" type="text" autocomplete="name" required>
         <label for="op-pedido">O que você precisa?</label>
         <textarea id="op-pedido" rows="4" required placeholder="Ex.: quero um site para o meu salão com agendamento"></textarea>
-        <div class="outro-botoes"><button type="submit" class="btn btn-principal" data-via="zap">Enviar pelo WhatsApp</button><button type="submit" class="btn btn-secundario" data-via="mail">Enviar por e-mail</button></div>
+        <p class="outro-erro" id="outro-erro" aria-live="assertive"></p>
+        <div class="outro-botoes"><a class="btn btn-principal" id="op-zap" href="https://wa.me/5548996862073" target="_blank" rel="noopener">Enviar pelo WhatsApp<span class="sr-only"> (abre em nova aba)</span></a><a class="btn btn-secundario" id="op-mail" href="mailto:leticiabeasouza@gmail.com">Enviar por e-mail</a></div>
         <p class="outro-aviso">O envio abre o seu WhatsApp ou o seu e-mail com a mensagem pronta. Nada fica salvo neste site.</p>
       </form>
     </div>
@@ -1365,16 +1367,29 @@ button.btn{font-family:inherit;font-size:17px;font-weight:700;cursor:pointer}
     p.addEventListener('click',function(){ tr.scrollBy({left:passo(),behavior:reduz?'auto':'smooth'}); });
     tr.addEventListener('scroll',estado,{passive:true}); addEventListener('resize',estado); estado();
   })();
-  // pedido fora da lista
+  // pedido fora da lista: links de verdade, atualizados enquanto a pessoa digita
   (function(){
-    var f=document.getElementById('outro-form'); if(!f) return; var via='zap';
-    f.querySelectorAll('button[data-via]').forEach(function(b){ b.addEventListener('click',function(){ via=b.getAttribute('data-via'); }); });
-    f.addEventListener('submit',function(e){ e.preventDefault();
-      var n=document.getElementById('op-nome').value.trim(), p=document.getElementById('op-pedido').value.trim();
-      var txt='Oi, Letícia! Meu nome é '+n+'. Tenho um pedido que não está na lista de serviços: '+p;
-      if(via==='zap') window.open('https://wa.me/5548996862073?text='+encodeURIComponent(txt),'_blank','noopener');
-      else location.href='mailto:leticiabeasouza@gmail.com?subject='+encodeURIComponent('Pedido pelo site - '+n)+'&body='+encodeURIComponent(txt);
-    });
+    var f=document.getElementById('outro-form'); if(!f) return;
+    var nome=document.getElementById('op-nome'), ped=document.getElementById('op-pedido');
+    var zap=document.getElementById('op-zap'), mail=document.getElementById('op-mail'), erro=document.getElementById('outro-erro');
+    function atualiza(){
+      var n=nome.value.trim(), p=ped.value.trim();
+      var txt='Oi, Letícia! '+(n?'Meu nome é '+n+'. ':'')+'Tenho um pedido que não está na lista de serviços: '+p;
+      zap.href='https://wa.me/5548996862073?text='+encodeURIComponent(txt);
+      mail.href='mailto:leticiabeasouza@gmail.com?subject='+encodeURIComponent('Pedido pelo site'+(n?' - '+n:''))+'&body='+encodeURIComponent(txt);
+      if(n&&p) erro.textContent='';
+    }
+    function confere(e){
+      if(!nome.value.trim()||!ped.value.trim()){
+        e.preventDefault();
+        erro.textContent='Preencha o seu nome e o que você precisa antes de enviar.';
+        (nome.value.trim()?ped:nome).focus();
+      }
+    }
+    nome.addEventListener('input',atualiza); ped.addEventListener('input',atualiza);
+    zap.addEventListener('click',confere); mail.addEventListener('click',confere);
+    f.addEventListener('submit',function(e){ e.preventDefault(); });
+    atualiza();
   })();
   // páginas de serviço: aparecem no lugar da página inicial quando o endereço termina com #servico-...
   (function(){
