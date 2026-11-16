@@ -934,6 +934,15 @@ footer .wrap{flex-wrap:nowrap;justify-content:flex-start;gap:16px}
 .combustivel .nota{font-size:26px}
 .combustivel-pre{display:block;font-size:.75em;opacity:.85}
 .move .move-visao>.nota{position:static!important;display:block;width:fit-content;margin:0 0 8px;line-height:1.2;transform-origin:left center}
+
+/* números: mancha pequena só atrás do número */
+.num{background:none!important;transform:none!important;padding:8px 0 0;position:relative}
+.num .valor{position:relative;z-index:0;display:inline-block;align-self:flex-start;padding:6px 10px 4px 4px}
+.num .valor::before{content:"";position:absolute;z-index:-1;left:-14px;top:-8px;width:calc(100% + 26px);height:calc(100% + 14px);border-radius:58% 42% 55% 45%/52% 46% 54% 48%;background:var(--mancha,var(--rosa));transform:rotate(-4deg)}
+.num.azul{--mancha:var(--azul)}.num.rosa{--mancha:var(--rosa)}.num.creme{--mancha:#f3dcc0}.num.caramelo{--mancha:#f3dcc0}
+.num:nth-child(even) .valor::before{transform:rotate(5deg)}
+.num .desc{max-width:30ch}
+.numeros{row-gap:48px}
 @media (prefers-reduced-motion:reduce){html.js .desenhar .rabisco{clip-path:none;transition:none}}
 </style>
 </head>
