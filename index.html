@@ -768,6 +768,22 @@ html.vendo-servico #conteudo > :not(.servicos-paginas),html.vendo-servico .trilh
 .sp-botoes{display:flex;flex-wrap:wrap;gap:14px;margin-top:22px}
 .sp-chamada .btn{border-color:var(--creme);background:var(--creme);color:var(--cereja)}
 .sp-contato{margin-top:18px;font-size:16px}
+/* pedir proposta: formulário do Tally num bilhete de papel */
+.pp-grade{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);grid-template-areas:"cabeca folha" "como folha";grid-template-rows:auto 1fr;column-gap:56px;align-items:start;padding:12px 0 64px}
+.pp-cabeca{grid-area:cabeca}.pp-como{grid-area:como}.pp-folha{grid-area:folha}
+.pp-passos{list-style:none;padding:0;margin:28px 0 0;counter-reset:pp}
+.pp-passos li{counter-increment:pp;position:relative;padding:4px 0 18px 64px;font-size:18px}
+.pp-passos li::before{content:counter(pp);position:absolute;left:0;top:0;display:grid;place-items:center;width:46px;height:46px;border-radius:50%;border:3px solid var(--cereja);background:var(--rosa);font-family:var(--font-display);font-size:22px;font-weight:600}
+.pp-passos li:nth-child(even)::before{background:var(--azul)}
+.pp-passos strong{display:block;font-family:var(--font-display);font-size:21px}
+.pp-conversa{margin-top:20px;font-size:17px}
+.pp-conversa a{color:var(--vinho);font-weight:700}
+.pp-folha{background:#fff;padding:40px 28px 24px;box-shadow:0 14px 30px rgba(74,20,32,.14);position:relative;border-radius:4px 8px 6px 10px}
+.pp-folha::before{content:"";position:absolute;top:-14px;left:40%;width:110px;height:28px;background:rgba(199,223,236,.9);transform:rotate(-4deg)}
+.pp-folha iframe{display:block;width:100%;min-height:640px;border:0}
+.pp-abrir{margin:14px 0 0;font-size:16px}
+.pp-abrir a{color:var(--vinho);font-weight:700}
+@media (max-width:860px){.pp-grade{grid-template-columns:1fr;grid-template-areas:"cabeca" "folha" "como";row-gap:36px}.pp-folha{padding:32px 14px 18px;margin:0 -8px}}
 .sp-outros{padding:44px 24px 56px}
 .sp-outros ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:12px}
 .sp-outros a{display:inline-flex;align-items:center;min-height:44px;padding:6px 18px;border-radius:var(--raio-pilula);background:var(--azul);color:var(--cereja);font-weight:700;text-decoration:none}
@@ -1003,7 +1019,7 @@ html.liza-andando .passeio.esperando{opacity:0;pointer-events:none}
       <div>
         <p class="lead">Ajudo pequenos negócios de qualquer lugar do Brasil a aparecer e a atender melhor: sites, cardápios com pedido pelo WhatsApp, perfil no Google, materiais e planilhas. Tudo simples, rápido e acessível.</p>
         <div class="acoes">
-          <a class="btn btn-principal" href="#contato">Pedir orçamento</a>
+          <a class="btn btn-principal" href="#pedir-proposta">Pedir proposta</a>
           <a class="btn btn-secundario" href="#servicos">Ver serviços</a>
         </div>
       </div>
@@ -1244,8 +1260,9 @@ html.liza-andando .passeio.esperando{opacity:0;pointer-events:none}
   <div class="wrap contato-grade">
     <div>
       <h2 id="t-contato">Bora tirar sua ideia do papel?</h2>
-      <p>Me conta o que o seu negócio precisa e eu mando um orçamento sem compromisso. Respondo em até um dia útil.</p>
+      <p>Me conta o que o seu negócio precisa e eu mando uma proposta sem compromisso, pelo formulário, pelo WhatsApp ou por e-mail.</p>
       <div class="acoes">
+        <a class="btn btn-secundario" href="#pedir-proposta">Pedir proposta</a>
         <a class="btn btn-secundario" href="https://wa.me/5548996862073?text=Oi%2C%20Let%C3%ADcia!%20Quero%20um%20or%C3%A7amento.">Chamar no WhatsApp</a>
         <a class="btn btn-secundario" href="mailto:leticiabeasouza@gmail.com">Mandar e-mail</a>
       </div>
@@ -1270,10 +1287,10 @@ html.liza-andando .passeio.esperando{opacity:0;pointer-events:none}
 <div class="sp-plano destaque"><h3>Presença</h3><p class="sp-preco">R$&nbsp;990<small>pagamento único</small></p><ul><li>Tudo do Essencial</li><li>Textos escritos por mim</li><li>Perfil de Empresa no Google</li><li>Artes para divulgar o site</li></ul></div>
 <div class="sp-plano"><h3>Marca Completa</h3><p class="sp-preco">R$&nbsp;1.690<small>pagamento único</small></p><ul><li>Tudo do Presença</li><li>Kit visual (logo, cores, fontes)</li><li>Acessibilidade avançada com relatório</li><li>Uma página extra</li></ul></div>
 </div></div>
-    <div class="sp-bloco"><h2 class="sp-h">Como funciona</h2><ol class="sp-passos"><li><strong>Conversa</strong>Você me conta o que precisa pelo WhatsApp ou e-mail.</li><li><strong>Proposta</strong>Mando o que está incluído, o preço e o prazo, tudo por escrito.</li><li><strong>Você me envia</strong>Os materiais e informações que eu pedir (textos, fotos, logo ou acessos). O prazo começa a contar quando eu recebo tudo.</li><li><strong>Criação</strong>Faço o trabalho e te mostro para ajustes.</li><li><strong>Entrega</strong>Testado e pronto, com orientação de como usar.</li></ol></div>
+    <div class="sp-bloco"><h2 class="sp-h">Como funciona</h2><ol class="sp-passos"><li><strong>Conversa</strong>Você me conta o que precisa pelo formulário, pelo WhatsApp ou por e-mail.</li><li><strong>Proposta</strong>Mando o que está incluído, o preço e o prazo, tudo por escrito.</li><li><strong>Você me envia</strong>Os materiais e informações que eu pedir (textos, fotos, logo ou acessos). O prazo começa a contar quando eu recebo tudo.</li><li><strong>Criação</strong>Faço o trabalho e te mostro para ajustes.</li><li><strong>Entrega</strong>Testado e pronto, com orientação de como usar.</li></ol></div>
   </div>
   <div class="sp-chamada"><div class="wrap"><h2>Quer saber o preço para o seu caso?</h2><p>Os valores dos pacotes estão acima, e o orçamento final depende dos adicionais. Respondo em até um dia útil.</p>
-    <div class="sp-botoes"><a class="btn" href="https://wa.me/5548996862073?text=Oi%2C%20Let%C3%ADcia%21%20Vi%20no%20seu%20site%20e%20quero%20saber%20mais%20sobre%3A%20Site%20para%20o%20seu%20neg%C3%B3cio." target="_blank" rel="noopener">Chamar no WhatsApp<span class="sr-only"> (abre em nova aba)</span></a><a class="btn btn-secundario" href="mailto:leticiabeasouza@gmail.com?subject=Or%C3%A7amento%3A%20Site%20para%20o%20seu%20neg%C3%B3cio">Mandar e-mail</a></div>
+    <div class="sp-botoes"><a class="btn" href="#pedir-proposta">Pedir proposta</a><a class="btn btn-secundario" href="https://wa.me/5548996862073?text=Oi%2C%20Let%C3%ADcia%21%20Vi%20no%20seu%20site%20e%20quero%20saber%20mais%20sobre%3A%20Site%20para%20o%20seu%20neg%C3%B3cio." target="_blank" rel="noopener">Chamar no WhatsApp<span class="sr-only"> (abre em nova aba)</span></a><a class="btn btn-secundario" href="mailto:leticiabeasouza@gmail.com?subject=Or%C3%A7amento%3A%20Site%20para%20o%20seu%20neg%C3%B3cio">Mandar e-mail</a></div>
     <p class="sp-contato">WhatsApp: (48) 99686-2073 · E-mail: leticiabeasouza@gmail.com</p></div></div>
 </article>
 <article class="servico-pagina sp cor-azul" id="servico-cardapio-whatsapp" aria-labelledby="servico-cardapio-whatsapp-t" tabindex="-1">
@@ -1290,10 +1307,10 @@ html.liza-andando .passeio.esperando{opacity:0;pointer-events:none}
     <div class="sp-bloco"><h2 class="sp-h">Quanto custa</h2><div class="sp-planos sp-planos-1">
 <div class="sp-plano destaque"><h3>Cardápio com pedido</h3><p class="sp-preco">R$&nbsp;890<small>pagamento único</small></p><ul><li>Tudo do site Essencial</li><li>Até 40 itens com foto e preço</li><li>Carrinho com total na hora</li><li>Pedido pronto no seu WhatsApp</li><li>QR code para imprimir</li></ul></div>
 </div><p class="sp-nota-preco">Valores de referência. O orçamento final, por escrito, depende do tamanho do seu pedido.</p></div>
-    <div class="sp-bloco"><h2 class="sp-h">Como funciona</h2><ol class="sp-passos"><li><strong>Conversa</strong>Você me conta o que precisa pelo WhatsApp ou e-mail.</li><li><strong>Proposta</strong>Mando o que está incluído, o preço e o prazo, tudo por escrito.</li><li><strong>Você me envia</strong>Os materiais e informações que eu pedir (textos, fotos, logo ou acessos). O prazo começa a contar quando eu recebo tudo.</li><li><strong>Criação</strong>Faço o trabalho e te mostro para ajustes.</li><li><strong>Entrega</strong>Testado e pronto, com orientação de como usar.</li></ol></div>
+    <div class="sp-bloco"><h2 class="sp-h">Como funciona</h2><ol class="sp-passos"><li><strong>Conversa</strong>Você me conta o que precisa pelo formulário, pelo WhatsApp ou por e-mail.</li><li><strong>Proposta</strong>Mando o que está incluído, o preço e o prazo, tudo por escrito.</li><li><strong>Você me envia</strong>Os materiais e informações que eu pedir (textos, fotos, logo ou acessos). O prazo começa a contar quando eu recebo tudo.</li><li><strong>Criação</strong>Faço o trabalho e te mostro para ajustes.</li><li><strong>Entrega</strong>Testado e pronto, com orientação de como usar.</li></ol></div>
   </div>
   <div class="sp-chamada"><div class="wrap"><h2>Quer saber o preço para o seu caso?</h2><p>Os valores de referência estão acima. Me conta o que você precisa e eu mando uma proposta por escrito, sem compromisso. Respondo em até um dia útil.</p>
-    <div class="sp-botoes"><a class="btn" href="https://wa.me/5548996862073?text=Oi%2C%20Let%C3%ADcia%21%20Vi%20no%20seu%20site%20e%20quero%20saber%20mais%20sobre%3A%20Card%C3%A1pio%20ou%20cat%C3%A1logo%20com%20pedido%20pelo%20WhatsApp." target="_blank" rel="noopener">Chamar no WhatsApp<span class="sr-only"> (abre em nova aba)</span></a><a class="btn btn-secundario" href="mailto:leticiabeasouza@gmail.com?subject=Or%C3%A7amento%3A%20Card%C3%A1pio%20ou%20cat%C3%A1logo%20com%20pedido%20pelo%20WhatsApp">Mandar e-mail</a></div>
+    <div class="sp-botoes"><a class="btn" href="#pedir-proposta">Pedir proposta</a><a class="btn btn-secundario" href="https://wa.me/5548996862073?text=Oi%2C%20Let%C3%ADcia%21%20Vi%20no%20seu%20site%20e%20quero%20saber%20mais%20sobre%3A%20Card%C3%A1pio%20ou%20cat%C3%A1logo%20com%20pedido%20pelo%20WhatsApp." target="_blank" rel="noopener">Chamar no WhatsApp<span class="sr-only"> (abre em nova aba)</span></a><a class="btn btn-secundario" href="mailto:leticiabeasouza@gmail.com?subject=Or%C3%A7amento%3A%20Card%C3%A1pio%20ou%20cat%C3%A1logo%20com%20pedido%20pelo%20WhatsApp">Mandar e-mail</a></div>
     <p class="sp-contato">WhatsApp: (48) 99686-2073 · E-mail: leticiabeasouza@gmail.com</p></div></div>
 </article>
 <article class="servico-pagina sp cor-rosa" id="servico-presenca-digital" aria-labelledby="servico-presenca-digital-t" tabindex="-1">
@@ -1311,10 +1328,10 @@ html.liza-andando .passeio.esperando{opacity:0;pointer-events:none}
 <div class="sp-plano"><h3>Só um dos dois</h3><p class="sp-preco">R$&nbsp;180<small>pagamento único</small></p><ul><li>WhatsApp Business ou Perfil no Google</li><li>Guia de uso com prints</li></ul></div>
 <div class="sp-plano destaque"><h3>WhatsApp e Google</h3><p class="sp-preco">R$&nbsp;290<small>pagamento único</small></p><ul><li>WhatsApp Business completo</li><li>Perfil de Empresa no Google</li><li>Guia de uso com prints</li></ul></div>
 </div><p class="sp-nota-preco">Valores de referência. O orçamento final, por escrito, depende do tamanho do seu pedido.</p></div>
-    <div class="sp-bloco"><h2 class="sp-h">Como funciona</h2><ol class="sp-passos"><li><strong>Conversa</strong>Você me conta o que precisa pelo WhatsApp ou e-mail.</li><li><strong>Proposta</strong>Mando o que está incluído, o preço e o prazo, tudo por escrito.</li><li><strong>Você me envia</strong>Os materiais e informações que eu pedir (textos, fotos, logo ou acessos). O prazo começa a contar quando eu recebo tudo.</li><li><strong>Criação</strong>Faço o trabalho e te mostro para ajustes.</li><li><strong>Entrega</strong>Testado e pronto, com orientação de como usar.</li></ol></div>
+    <div class="sp-bloco"><h2 class="sp-h">Como funciona</h2><ol class="sp-passos"><li><strong>Conversa</strong>Você me conta o que precisa pelo formulário, pelo WhatsApp ou por e-mail.</li><li><strong>Proposta</strong>Mando o que está incluído, o preço e o prazo, tudo por escrito.</li><li><strong>Você me envia</strong>Os materiais e informações que eu pedir (textos, fotos, logo ou acessos). O prazo começa a contar quando eu recebo tudo.</li><li><strong>Criação</strong>Faço o trabalho e te mostro para ajustes.</li><li><strong>Entrega</strong>Testado e pronto, com orientação de como usar.</li></ol></div>
   </div>
   <div class="sp-chamada"><div class="wrap"><h2>Quer saber o preço para o seu caso?</h2><p>Os valores de referência estão acima. Me conta o que você precisa e eu mando uma proposta por escrito, sem compromisso. Respondo em até um dia útil.</p>
-    <div class="sp-botoes"><a class="btn" href="https://wa.me/5548996862073?text=Oi%2C%20Let%C3%ADcia%21%20Vi%20no%20seu%20site%20e%20quero%20saber%20mais%20sobre%3A%20Presen%C3%A7a%20digital%3A%20WhatsApp%20Business%20e%20Google." target="_blank" rel="noopener">Chamar no WhatsApp<span class="sr-only"> (abre em nova aba)</span></a><a class="btn btn-secundario" href="mailto:leticiabeasouza@gmail.com?subject=Or%C3%A7amento%3A%20Presen%C3%A7a%20digital%3A%20WhatsApp%20Business%20e%20Google">Mandar e-mail</a></div>
+    <div class="sp-botoes"><a class="btn" href="#pedir-proposta">Pedir proposta</a><a class="btn btn-secundario" href="https://wa.me/5548996862073?text=Oi%2C%20Let%C3%ADcia%21%20Vi%20no%20seu%20site%20e%20quero%20saber%20mais%20sobre%3A%20Presen%C3%A7a%20digital%3A%20WhatsApp%20Business%20e%20Google." target="_blank" rel="noopener">Chamar no WhatsApp<span class="sr-only"> (abre em nova aba)</span></a><a class="btn btn-secundario" href="mailto:leticiabeasouza@gmail.com?subject=Or%C3%A7amento%3A%20Presen%C3%A7a%20digital%3A%20WhatsApp%20Business%20e%20Google">Mandar e-mail</a></div>
     <p class="sp-contato">WhatsApp: (48) 99686-2073 · E-mail: leticiabeasouza@gmail.com</p></div></div>
 </article>
 <article class="servico-pagina sp cor-azul" id="servico-materiais" aria-labelledby="servico-materiais-t" tabindex="-1">
@@ -1332,10 +1349,10 @@ html.liza-andando .passeio.esperando{opacity:0;pointer-events:none}
 <div class="sp-plano"><h3>Cardápio ou tabela</h3><p class="sp-preco"><span class="sp-apartir">a partir de</span>R$&nbsp;150<small>1 ou 2 páginas</small></p><ul><li>Versão para imprimir</li><li>Versão leve para o celular</li><li>PDF acessível</li></ul></div>
 <div class="sp-plano destaque"><h3>Catálogo, manual ou apresentação</h3><p class="sp-preco"><span class="sp-apartir">a partir de</span>R$&nbsp;390<small>até 8 páginas</small></p><ul><li>Diagramação com a sua marca</li><li>Revisão de texto</li><li>PDF acessível</li><li>Página extra: R$ 35</li></ul></div>
 </div><p class="sp-nota-preco">Valores de referência. O orçamento final, por escrito, depende do tamanho do seu pedido.</p></div>
-    <div class="sp-bloco"><h2 class="sp-h">Como funciona</h2><ol class="sp-passos"><li><strong>Conversa</strong>Você me conta o que precisa pelo WhatsApp ou e-mail.</li><li><strong>Proposta</strong>Mando o que está incluído, o preço e o prazo, tudo por escrito.</li><li><strong>Você me envia</strong>Os materiais e informações que eu pedir (textos, fotos, logo ou acessos). O prazo começa a contar quando eu recebo tudo.</li><li><strong>Criação</strong>Faço o trabalho e te mostro para ajustes.</li><li><strong>Entrega</strong>Testado e pronto, com orientação de como usar.</li></ol></div>
+    <div class="sp-bloco"><h2 class="sp-h">Como funciona</h2><ol class="sp-passos"><li><strong>Conversa</strong>Você me conta o que precisa pelo formulário, pelo WhatsApp ou por e-mail.</li><li><strong>Proposta</strong>Mando o que está incluído, o preço e o prazo, tudo por escrito.</li><li><strong>Você me envia</strong>Os materiais e informações que eu pedir (textos, fotos, logo ou acessos). O prazo começa a contar quando eu recebo tudo.</li><li><strong>Criação</strong>Faço o trabalho e te mostro para ajustes.</li><li><strong>Entrega</strong>Testado e pronto, com orientação de como usar.</li></ol></div>
   </div>
   <div class="sp-chamada"><div class="wrap"><h2>Quer saber o preço para o seu caso?</h2><p>Os valores de referência estão acima. Me conta o que você precisa e eu mando uma proposta por escrito, sem compromisso. Respondo em até um dia útil.</p>
-    <div class="sp-botoes"><a class="btn" href="https://wa.me/5548996862073?text=Oi%2C%20Let%C3%ADcia%21%20Vi%20no%20seu%20site%20e%20quero%20saber%20mais%20sobre%3A%20Materiais%20digitais%20e%20impressos." target="_blank" rel="noopener">Chamar no WhatsApp<span class="sr-only"> (abre em nova aba)</span></a><a class="btn btn-secundario" href="mailto:leticiabeasouza@gmail.com?subject=Or%C3%A7amento%3A%20Materiais%20digitais%20e%20impressos">Mandar e-mail</a></div>
+    <div class="sp-botoes"><a class="btn" href="#pedir-proposta">Pedir proposta</a><a class="btn btn-secundario" href="https://wa.me/5548996862073?text=Oi%2C%20Let%C3%ADcia%21%20Vi%20no%20seu%20site%20e%20quero%20saber%20mais%20sobre%3A%20Materiais%20digitais%20e%20impressos." target="_blank" rel="noopener">Chamar no WhatsApp<span class="sr-only"> (abre em nova aba)</span></a><a class="btn btn-secundario" href="mailto:leticiabeasouza@gmail.com?subject=Or%C3%A7amento%3A%20Materiais%20digitais%20e%20impressos">Mandar e-mail</a></div>
     <p class="sp-contato">WhatsApp: (48) 99686-2073 · E-mail: leticiabeasouza@gmail.com</p></div></div>
 </article>
 <article class="servico-pagina sp cor-rosa" id="servico-planilhas" aria-labelledby="servico-planilhas-t" tabindex="-1">
@@ -1353,10 +1370,10 @@ html.liza-andando .passeio.esperando{opacity:0;pointer-events:none}
 <div class="sp-plano"><h3>Uma planilha</h3><p class="sp-preco">R$&nbsp;190<small>pagamento único</small></p><ul><li>Caixa, estoque, clientes, pedidos ou preço</li><li>Aba "Como usar"</li><li>Chamada rápida de explicação</li></ul></div>
 <div class="sp-plano destaque"><h3>Kit com 3 planilhas</h3><p class="sp-preco">R$&nbsp;450<small>pagamento único</small></p><ul><li>Escolha 3 das planilhas</li><li>Tudo ligado e com o mesmo visual</li><li>Chamada de explicação</li></ul></div>
 </div><p class="sp-nota-preco">Valores de referência. O orçamento final, por escrito, depende do tamanho do seu pedido.</p></div>
-    <div class="sp-bloco"><h2 class="sp-h">Como funciona</h2><ol class="sp-passos"><li><strong>Conversa</strong>Você me conta o que precisa pelo WhatsApp ou e-mail.</li><li><strong>Proposta</strong>Mando o que está incluído, o preço e o prazo, tudo por escrito.</li><li><strong>Você me envia</strong>Os materiais e informações que eu pedir (textos, fotos, logo ou acessos). O prazo começa a contar quando eu recebo tudo.</li><li><strong>Criação</strong>Faço o trabalho e te mostro para ajustes.</li><li><strong>Entrega</strong>Testado e pronto, com orientação de como usar.</li></ol></div>
+    <div class="sp-bloco"><h2 class="sp-h">Como funciona</h2><ol class="sp-passos"><li><strong>Conversa</strong>Você me conta o que precisa pelo formulário, pelo WhatsApp ou por e-mail.</li><li><strong>Proposta</strong>Mando o que está incluído, o preço e o prazo, tudo por escrito.</li><li><strong>Você me envia</strong>Os materiais e informações que eu pedir (textos, fotos, logo ou acessos). O prazo começa a contar quando eu recebo tudo.</li><li><strong>Criação</strong>Faço o trabalho e te mostro para ajustes.</li><li><strong>Entrega</strong>Testado e pronto, com orientação de como usar.</li></ol></div>
   </div>
   <div class="sp-chamada"><div class="wrap"><h2>Quer saber o preço para o seu caso?</h2><p>Os valores de referência estão acima. Me conta o que você precisa e eu mando uma proposta por escrito, sem compromisso. Respondo em até um dia útil.</p>
-    <div class="sp-botoes"><a class="btn" href="https://wa.me/5548996862073?text=Oi%2C%20Let%C3%ADcia%21%20Vi%20no%20seu%20site%20e%20quero%20saber%20mais%20sobre%3A%20Planilhas%20de%20controle." target="_blank" rel="noopener">Chamar no WhatsApp<span class="sr-only"> (abre em nova aba)</span></a><a class="btn btn-secundario" href="mailto:leticiabeasouza@gmail.com?subject=Or%C3%A7amento%3A%20Planilhas%20de%20controle">Mandar e-mail</a></div>
+    <div class="sp-botoes"><a class="btn" href="#pedir-proposta">Pedir proposta</a><a class="btn btn-secundario" href="https://wa.me/5548996862073?text=Oi%2C%20Let%C3%ADcia%21%20Vi%20no%20seu%20site%20e%20quero%20saber%20mais%20sobre%3A%20Planilhas%20de%20controle." target="_blank" rel="noopener">Chamar no WhatsApp<span class="sr-only"> (abre em nova aba)</span></a><a class="btn btn-secundario" href="mailto:leticiabeasouza@gmail.com?subject=Or%C3%A7amento%3A%20Planilhas%20de%20controle">Mandar e-mail</a></div>
     <p class="sp-contato">WhatsApp: (48) 99686-2073 · E-mail: leticiabeasouza@gmail.com</p></div></div>
 </article>
 <article class="servico-pagina sp cor-azul" id="servico-manutencao" aria-labelledby="servico-manutencao-t" tabindex="-1">
@@ -1374,11 +1391,31 @@ html.liza-andando .passeio.esperando{opacity:0;pointer-events:none}
 <div class="sp-plano"><h3>Básica</h3><p class="sp-preco">R$&nbsp;79<small>por mês</small></p><ul><li>Até 3 alterações no mês</li><li>Verificação mensal do site</li><li>Lembrete do domínio</li></ul></div>
 <div class="sp-plano destaque"><h3>Completa</h3><p class="sp-preco">R$&nbsp;129<small>por mês</small></p><ul><li>Até 8 alterações no mês</li><li>Verificação mensal do site</li><li>Lembrete do domínio</li><li>Ajustes de acessibilidade</li></ul></div>
 </div><p class="sp-nota-preco">Valores de referência. O orçamento final, por escrito, depende do tamanho do seu pedido.</p></div>
-    <div class="sp-bloco"><h2 class="sp-h">Como funciona</h2><ol class="sp-passos"><li><strong>Conversa</strong>Você me conta o que precisa pelo WhatsApp ou e-mail.</li><li><strong>Proposta</strong>Mando o que está incluído, o preço e o prazo, tudo por escrito.</li><li><strong>Você me envia</strong>Os materiais e informações que eu pedir (textos, fotos, logo ou acessos). O prazo começa a contar quando eu recebo tudo.</li><li><strong>Criação</strong>Faço o trabalho e te mostro para ajustes.</li><li><strong>Entrega</strong>Testado e pronto, com orientação de como usar.</li></ol></div>
+    <div class="sp-bloco"><h2 class="sp-h">Como funciona</h2><ol class="sp-passos"><li><strong>Conversa</strong>Você me conta o que precisa pelo formulário, pelo WhatsApp ou por e-mail.</li><li><strong>Proposta</strong>Mando o que está incluído, o preço e o prazo, tudo por escrito.</li><li><strong>Você me envia</strong>Os materiais e informações que eu pedir (textos, fotos, logo ou acessos). O prazo começa a contar quando eu recebo tudo.</li><li><strong>Criação</strong>Faço o trabalho e te mostro para ajustes.</li><li><strong>Entrega</strong>Testado e pronto, com orientação de como usar.</li></ol></div>
   </div>
   <div class="sp-chamada"><div class="wrap"><h2>Quer saber o preço para o seu caso?</h2><p>Os valores de referência estão acima. Me conta o que você precisa e eu mando uma proposta por escrito, sem compromisso. Respondo em até um dia útil.</p>
-    <div class="sp-botoes"><a class="btn" href="https://wa.me/5548996862073?text=Oi%2C%20Let%C3%ADcia%21%20Vi%20no%20seu%20site%20e%20quero%20saber%20mais%20sobre%3A%20Manuten%C3%A7%C3%A3o%20mensal." target="_blank" rel="noopener">Chamar no WhatsApp<span class="sr-only"> (abre em nova aba)</span></a><a class="btn btn-secundario" href="mailto:leticiabeasouza@gmail.com?subject=Or%C3%A7amento%3A%20Manuten%C3%A7%C3%A3o%20mensal">Mandar e-mail</a></div>
+    <div class="sp-botoes"><a class="btn" href="#pedir-proposta">Pedir proposta</a><a class="btn btn-secundario" href="https://wa.me/5548996862073?text=Oi%2C%20Let%C3%ADcia%21%20Vi%20no%20seu%20site%20e%20quero%20saber%20mais%20sobre%3A%20Manuten%C3%A7%C3%A3o%20mensal." target="_blank" rel="noopener">Chamar no WhatsApp<span class="sr-only"> (abre em nova aba)</span></a><a class="btn btn-secundario" href="mailto:leticiabeasouza@gmail.com?subject=Or%C3%A7amento%3A%20Manuten%C3%A7%C3%A3o%20mensal">Mandar e-mail</a></div>
     <p class="sp-contato">WhatsApp: (48) 99686-2073 · E-mail: leticiabeasouza@gmail.com</p></div></div>
+</article>
+<article class="servico-pagina sp cor-rosa" id="pedir-proposta" aria-labelledby="pedir-proposta-t" tabindex="-1">
+  <div class="wrap">
+    <a class="sp-voltar" href="#contato">← Voltar para o site</a>
+    <div class="pp-grade">
+        <header class="sp-hero pp-cabeca"><p class="sp-rotulo">sem compromisso</p><h1 id="pedir-proposta-t">Pedir uma proposta</h1><p class="sp-intro">Responda algumas perguntas rápidas sobre o seu negócio. Leva uns 2 minutos e não obriga você a nada.</p></header>
+      <div class="pp-folha">
+        <iframe id="pp-form" data-tally-src="https://tally.so/embed/bZerg0?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1" loading="lazy" height="640" title="Formulário de pedido de proposta"></iframe>
+        <p class="pp-abrir">O formulário não apareceu? <a href="https://tally.so/r/bZerg0" target="_blank" rel="noopener">Abra numa nova aba<span class="sr-only"> (abre em nova aba)</span></a>.</p>
+      </div>
+      <div class="pp-como">
+        <ol class="pp-passos">
+          <li><strong>Você responde</strong>Nome, WhatsApp, o que o negócio faz e o que você gostaria de ter.</li>
+          <li><strong>Eu analiso</strong>Olho o seu negócio com calma e penso na solução mais simples que resolve.</li>
+          <li><strong>Você recebe a proposta</strong>Pelo WhatsApp, em até 3 dias úteis, com opções e preços por escrito.</li>
+        </ol>
+        <p class="pp-conversa">Prefere conversar? <a href="https://wa.me/5548996862073?text=Oi%2C%20Let%C3%ADcia!%20Quero%20uma%20proposta." target="_blank" rel="noopener">Me chame no WhatsApp<span class="sr-only"> (abre em nova aba)</span></a>.</p>
+      </div>
+    </div>
+  </div>
 </article>
 </div>
 </main>
@@ -1507,6 +1544,18 @@ html.liza-andando .passeio.esperando{opacity:0;pointer-events:none}
       }
     }
     addEventListener('hashchange',rota); rota();
+  })();
+  // formulário do Tally: só carrega quando a pessoa abre "Pedir proposta"
+  (function(){
+    var f=document.getElementById('pp-form'); if(!f) return; var carregado=false;
+    function carrega(){
+      if(carregado || location.hash!=='#pedir-proposta') return; carregado=true;
+      var sc=document.createElement('script'); sc.src='https://tally.so/widgets/embed.js'; sc.async=true;
+      sc.onload=function(){ if(window.Tally) window.Tally.loadEmbeds(); else f.src=f.dataset.tallySrc; };
+      sc.onerror=function(){ f.src=f.dataset.tallySrc; };
+      document.body.appendChild(sc);
+    }
+    addEventListener('hashchange',carrega); carrega();
   })();
   // linha do tempo
   var itens = document.querySelectorAll('#caminho li');
