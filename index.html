@@ -972,6 +972,53 @@ html.liza-andando #cao-hero.virou-passeio{opacity:0;pointer-events:none}
 html.liza-andando .passeio{transition:opacity .25s}
 html.liza-andando .passeio.esperando{opacity:0;pointer-events:none}
 @media (prefers-reduced-motion:reduce){html.js .desenhar .rabisco{clip-path:none;transition:none}}
+/* Trabalhos: carrossel em leque (20/11/2026) */
+.vitrine{--vit-w:clamp(240px,30vw,340px);margin-top:var(--espaco-6)}
+.vit-palco{position:relative;height:calc(var(--vit-w) * 1.25 + 96px);perspective:1400px;overflow:hidden;touch-action:pan-y}
+.vit-lista{list-style:none;margin:0;padding:0;position:absolute;inset:0}
+.vit-card{position:absolute;left:50%;top:24px;width:var(--vit-w);aspect-ratio:4/5;margin:0 0 0 calc(var(--vit-w) / -2);padding:0;transition:transform .75s cubic-bezier(.22,.8,.24,1),filter .75s,opacity .75s;will-change:transform}
+.vit-card::before{content:"";position:absolute;inset:0;border:2.5px solid var(--bordo);border-radius:22px;transform:rotate(1.4deg) translate(5px,5px);pointer-events:none}
+.vit-moldura{position:relative;height:100%;border:2.5px solid var(--bordo);border-radius:22px;overflow:hidden;background:var(--bordo);box-shadow:0 18px 40px rgba(74,20,32,.22)}
+.vit-moldura img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.22,.8,.24,1)}
+.vit-card[data-pos="0"]{transform:rotate(-1.2deg);z-index:3}
+.vit-card[data-pos="-1"]{transform:translateX(-60%) translateZ(-160px) rotateY(26deg) rotate(-3deg);z-index:2;filter:brightness(.78) saturate(.8);cursor:pointer}
+.vit-card[data-pos="1"]{transform:translateX(60%) translateZ(-160px) rotateY(-26deg) rotate(3deg);z-index:2;filter:brightness(.78) saturate(.8);cursor:pointer}
+.vit-card[data-pos="-2"]{transform:translateX(-110%) translateZ(-320px) rotateY(30deg);opacity:0;visibility:hidden}
+.vit-card[data-pos="2"]{transform:translateX(110%) translateZ(-320px) rotateY(-30deg);opacity:0;visibility:hidden}
+.vit-card[data-pos="0"]:hover .vit-moldura img{transform:scale(1.04)}
+.vit-info{position:absolute;left:0;right:0;bottom:0;padding:64px 22px 22px;color:#fff;background:linear-gradient(to bottom,rgba(40,10,18,0),rgba(40,10,18,.9) 52%)}
+.vit-info h3{margin:0 0 6px;font-family:var(--font-display);font-size:clamp(1.45rem,2.2vw,1.8rem);line-height:1.1;color:#fff}
+.vit-info p{margin:0;font-size:15px;line-height:1.45;max-width:30ch}
+.vit-link{color:inherit;text-decoration:none}
+.vit-link::after{content:"";position:absolute;inset:0;z-index:1}
+.vit-acoes{display:flex;align-items:center;gap:16px;margin-top:14px!important}
+.vit-pilula{display:inline-block;padding:9px 18px;border-radius:999px;background:var(--creme);color:var(--bordo);font-weight:600;font-size:15px}
+.vit-codigo{position:relative;z-index:2;color:#fff;font-size:15px;text-underline-offset:3px;padding:10px 2px}
+.vit-card:focus-within .vit-moldura{outline:3px solid var(--bordo);outline-offset:5px}
+.vit-link:focus-visible,.vit-codigo:focus-visible{outline:3px solid #fff;outline-offset:3px;border-radius:4px}
+.vit-card--seu .vit-moldura{background:var(--rosa)}
+.vit-card--seu .vit-info{position:absolute;inset:auto 0 0;color:var(--bordo);background:none}
+.vit-card--seu .vit-info h3{color:var(--bordo)}
+.vit-card--seu .vit-pilula{background:var(--bordo);color:var(--creme)}
+.vit-seu-rabisco{position:absolute;top:13%;left:50%;width:46%;transform:translateX(-50%) rotate(-6deg);color:var(--bordo)}
+.vit-seu-rabisco svg{width:100%;height:auto;display:block}
+.vit-controles{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:22px}
+.vit-btn{width:48px;height:48px;border-radius:50%;border:2.5px solid var(--bordo);background:var(--creme);color:var(--bordo);display:grid;place-items:center;cursor:pointer;padding:0}
+.vit-btn:hover{background:var(--rosa)}
+.vit-btn svg{width:20px;height:20px}
+.vit-pontos{display:flex;gap:0;margin:0 4px}
+.vit-ponto{width:44px;height:44px;border:0;background:none;display:grid;place-items:center;cursor:pointer;padding:0}
+.vit-ponto::before{content:"";width:12px;height:12px;border-radius:8px;border:2px solid var(--bordo);transition:width .35s}
+.vit-ponto[aria-current="true"]::before{width:30px;background:var(--bordo)}
+.vit-pausa[hidden]{display:none}
+.vit-pausa .i-play{display:none}.vit-pausa[aria-pressed="true"] .i-play{display:block}.vit-pausa[aria-pressed="true"] .i-pausa{display:none}
+html:not(.js) .vit-palco{height:auto;overflow:visible;perspective:none}
+html:not(.js) .vit-lista{position:static;display:flex;flex-wrap:wrap;gap:40px;justify-content:center}
+html:not(.js) .vit-card{position:relative;left:auto;top:auto;margin:0}
+html:not(.js) .vit-controles{display:none}
+@media (max-width:600px){.vitrine{--vit-w:64vw}.vit-palco{margin-inline:calc(50% - 50vw)}.vit-card[data-pos="-1"]{transform:translateX(-50%) translateZ(-160px) rotateY(26deg) rotate(-3deg)}.vit-card[data-pos="1"]{transform:translateX(50%) translateZ(-160px) rotateY(-26deg) rotate(3deg)}.vit-info{padding:56px 16px 16px}.vit-info p{font-size:14px}}
+@media (prefers-reduced-motion:reduce){.vit-card,.vit-moldura img,.vit-ponto::before{transition:none}}
+
 </style>
 </head>
 <body>
@@ -1189,10 +1236,52 @@ html.liza-andando .passeio.esperando{opacity:0;pointer-events:none}
 <section id="trabalhos" aria-labelledby="t-trabalhos">
   <div class="wrap">
     <div class="cabeca"><h2 id="t-trabalhos">Trabalhos</h2><span class="nota">saindo do forno</span><div class="desenhar cab-rabisco"><svg class="doodle rabisco r-torrada" viewBox="0 0 142 149" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-torrada"/></svg><span class="enfeitinhos v2" aria-hidden="true"><svg class="mini" viewBox="0 0 143 196" focusable="false"><use href="img/rabiscos.svg#r-brilho-a"/></svg></span></div><div class="liza-extra liza-lanche" aria-hidden="true"><img class="foto-liza" src="img/liza-foto-lambendo.webp" alt="" width="340" height="250" loading="lazy" decoding="async"><span class="nota">esperando o próximo projeto</span></div></div>
-    <div class="trabalhos">
-      <div class="trabalho trabalho--real"><span class="janela-barra" aria-hidden="true"><i></i><i></i><i></i><span class="endereco">cafevagar.pages.dev</span></span><img class="trabalho-capa" src="img/trabalho-cafe-vagar.webp" alt="Abertura do site Café Vagar: o interior de uma cafeteria à meia-luz, com uma luminária acesa e a frase O tempo passa, o café fica." width="720" height="405" loading="lazy" decoding="async"><h3>Café Vagar</h3><p>Site demonstrativo de uma cafeteria fictícia, contado como um filme: a rolagem leva da calçada para dentro do café. Com menu de acessibilidade.</p><p class="trabalho-links"><a href="https://cafevagar.pages.dev/" target="_blank" rel="noopener">Ver o site<span class="sr-only"> do Café Vagar (abre em nova aba)</span></a><a href="https://github.com/let1ci4b/cafeVagar" target="_blank" rel="noopener">Ver o código<span class="sr-only"> do Café Vagar no GitHub (abre em nova aba)</span></a></p></div>
-      <div class="trabalho"><span class="janela-barra" aria-hidden="true"><i></i><i></i><i></i><span class="endereco">em-breve.com.br</span></span><div class="desenhar" style="width:90px"><svg class="doodle rabisco r-tulipa" viewBox="0 0 93 147" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-tulipa"/></svg><span class="enfeitinhos " aria-hidden="true"><svg class="mini" viewBox="0 0 143 196" focusable="false"><use href="img/rabiscos.svg#r-brilho-a"/></svg></span></div><h3>Em breve</h3><p>Próximo projeto em construção.</p></div>
-      <div class="trabalho"><span class="janela-barra" aria-hidden="true"><i></i><i></i><i></i><span class="endereco">seunegocio.com.br</span></span><div class="desenhar" style="width:90px"><svg class="doodle rabisco r-estrela-cadente" viewBox="0 0 326 306" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-estrela-cadente"/></svg><span class="enfeitinhos v2" aria-hidden="true"><svg class="mini" viewBox="0 0 155 203" focusable="false"><use href="img/rabiscos.svg#r-brilho-b"/></svg></span></div><h3>Pode ser o seu</h3><p><a href="#contato">Vamos conversar?</a></p></div>
+    <div class="vitrine" role="region" aria-roledescription="carrossel" aria-label="Trabalhos">
+      <div class="vit-palco">
+        <ul class="vit-lista">
+          <li class="vit-card" aria-roledescription="slide" aria-label="1 de 3">
+            <div class="vit-moldura">
+              <img src="img/trabalho-cafe-vagar.webp" srcset="img/trabalho-cafe-vagar-440.webp 440w, img/trabalho-cafe-vagar.webp 720w" sizes="(max-width:600px) 64vw, 340px" alt="" width="720" height="900" loading="lazy" decoding="async">
+              <div class="vit-info">
+                <h3><a class="vit-link" href="https://cafevagar.pages.dev/" target="_blank" rel="noopener">Café Vagar<span class="sr-only">: ver o site (abre em nova aba)</span></a></h3>
+                <p>Uma cafeteria contada como um filme: a rolagem leva da calçada para dentro do café.</p>
+                <p class="vit-acoes"><span class="vit-pilula" aria-hidden="true">Ver o site</span><a class="vit-codigo" href="https://github.com/let1ci4b/cafeVagar" target="_blank" rel="noopener">Código<span class="sr-only"> do Café Vagar no GitHub (abre em nova aba)</span></a></p>
+              </div>
+            </div>
+          </li>
+          <li class="vit-card" aria-roledescription="slide" aria-label="2 de 3">
+            <div class="vit-moldura">
+              <img src="img/trabalho-jambo.webp" srcset="img/trabalho-jambo-440.webp 440w, img/trabalho-jambo.webp 720w" sizes="(max-width:600px) 64vw, 340px" alt="" width="720" height="900" loading="lazy" decoding="async">
+              <div class="vit-info">
+                <h3><a class="vit-link" href="https://jambo-3cc.pages.dev/" target="_blank" rel="noopener">JAMBO Açaí &amp; Gelato<span class="sr-only">: ver o site (abre em nova aba)</span></a></h3>
+                <p>Cardápio com montador de copo: o cliente escolhe tudo e o pedido chega pronto no WhatsApp.</p>
+                <p class="vit-acoes"><span class="vit-pilula" aria-hidden="true">Ver o site</span><a class="vit-codigo" href="https://github.com/let1ci4b/jambo" target="_blank" rel="noopener">Código<span class="sr-only"> do JAMBO no GitHub (abre em nova aba)</span></a></p>
+              </div>
+            </div>
+          </li>
+          <li class="vit-card vit-card--seu" aria-roledescription="slide" aria-label="3 de 3">
+            <div class="vit-moldura">
+              <span class="vit-seu-rabisco" aria-hidden="true"><svg class="doodle rabisco r-estrela-cadente" viewBox="0 0 326 306" focusable="false"><use href="img/rabiscos.svg#r-estrela-cadente"/></svg></span>
+              <div class="vit-info">
+                <h3><a class="vit-link" href="#pedir-proposta">Pode ser o seu</a></h3>
+                <p>Me conta do seu negócio e eu mando uma proposta por escrito.</p>
+                <p class="vit-acoes"><span class="vit-pilula" aria-hidden="true">Pedir proposta</span></p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="vit-controles">
+        <button type="button" class="vit-btn vit-ant" aria-label="Trabalho anterior"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="vit-pontos">
+          <button type="button" class="vit-ponto" aria-label="Mostrar Café Vagar"></button>
+          <button type="button" class="vit-ponto" aria-label="Mostrar JAMBO"></button>
+          <button type="button" class="vit-ponto" aria-label="Mostrar Pode ser o seu"></button>
+        </div>
+        <button type="button" class="vit-btn vit-prox" aria-label="Próximo trabalho"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button type="button" class="vit-btn vit-pausa" aria-pressed="false" aria-label="Pausar o carrossel" hidden><svg class="i-pausa" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5v14M16 5v14" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5l11 7-11 7z" fill="currentColor"/></svg></button>
+      </div>
+      <p class="sr-only vit-status" aria-live="polite"></p>
     </div>
   </div>
 </section>
@@ -1710,7 +1799,7 @@ html.liza-andando .passeio.esperando{opacity:0;pointer-events:none}
       {k:['menu de acessibilidade','aumentar letra','aumento a letra','aumentar a letra','letra','letras','zoom','enxergar','ler melhor','contraste','fonte','ajustar o site','preferencias','configurar'],r:'Neste site você pode ajustar o tamanho das letras, o contraste, o espaçamento, parar as animações e mais. É só tocar no botão redondo com o bonequinho, no canto da tela.'},
       {k:['celular','mobile','smartphone','responsivo','tablet'],r:'Todo site é feito pensando primeiro no celular, porque é por ele que a maioria das pessoas procura um negócio. Testo em dois celulares antes de entregar.'},
       {k:['idioma','ingles','espanhol','outra lingua','traducao','gringo','turista'],r:'Dá para ter uma versão do site em outro idioma, como inglês ou espanhol. É um adicional.'},
-      {k:['exemplo','exemplos','portfolio','trabalhos','ja fez','clientes'],r:'O primeiro exemplo já está na seção Trabalhos: o Café Vagar, um site demonstrativo de cafeteria em que a rolagem conta uma história. Este próprio site também mostra o meu jeito de trabalhar.'},
+      {k:['exemplo','exemplos','portfolio','trabalhos','ja fez','clientes'],r:'Estão na seção Trabalhos: o Café Vagar, um site de cafeteria em que a rolagem conta uma história, e o JAMBO, um cardápio de açaí com montador de copo e pedido pelo WhatsApp. Este próprio site também mostra o meu jeito de trabalhar.'},
       {k:['quem e voce','sobre voce','leticia','formacao','experiencia','estudou'],r:'A Letícia é de Palhoça (SC), está no último semestre de Sistemas de Informação, tem formação técnica em desenvolvimento de sistemas e pesquisa acessibilidade. Tem mais na seção "Curiosa desde pequena", com os links do LinkedIn e do Lattes.'},
       {k:['liza','cachorro','cachorra','labradora','au'],r:'Sou eu! A Liza, labradora de 15 anos e gerente de qualidade da Letícia. Supervisiono tudo, principalmente os lanches.'},
       {k:['horario','atendimento','responde','resposta','fim de semana','sabado','domingo'],r:'A Letícia responde em até um dia útil, pelo WhatsApp ou e-mail.'},
@@ -1802,6 +1891,47 @@ html.liza-andando .passeio.esperando{opacity:0;pointer-events:none}
   a.addEventListener('click',function(){ tr.scrollBy({left:-passo(),behavior:reduz?'auto':'smooth'}); });
   p.addEventListener('click',function(){ tr.scrollBy({left:passo(),behavior:reduz?'auto':'smooth'}); });
   tr.addEventListener('scroll',estado,{passive:true}); addEventListener('resize',estado); estado();
+})();
+</script>
+<script>
+/* Carrossel dos trabalhos */
+(function(){
+  var v=document.querySelector('.vitrine');if(!v)return;
+  var cards=[].slice.call(v.querySelectorAll('.vit-card')),n=cards.length,atual=0;
+  var pontos=[].slice.call(v.querySelectorAll('.vit-ponto')),status=v.querySelector('.vit-status'),bPausa=v.querySelector('.vit-pausa'),palco=v.querySelector('.vit-palco');
+  var rm=window.matchMedia('(prefers-reduced-motion: reduce)');
+  var pausadoPorVoce=false,visivel=false,mexendo=false,arrastou=false;
+  function semMovimento(){return rm.matches||document.documentElement.classList.contains('a-parar')}
+  function nome(c){return c.querySelector('.vit-link').firstChild.textContent}
+  function pos(i){var d=(i-atual+n)%n;if(d>n/2)d-=n;return d}
+  function mostrar(anunciar){
+    cards.forEach(function(c,i){var p=pos(i),ativo=p===0;c.setAttribute('data-pos',p);c.setAttribute('aria-hidden',ativo?'false':'true');
+      [].forEach.call(c.querySelectorAll('a'),function(a){if(ativo)a.removeAttribute('tabindex');else a.setAttribute('tabindex','-1')})});
+    pontos.forEach(function(b,i){b.setAttribute('aria-current',i===atual?'true':'false')});
+    if(anunciar)status.textContent=(atual+1)+' de '+n+': '+nome(cards[atual]);
+  }
+  function ir(i,anunciar){atual=(i+n)%n;mostrar(anunciar)}
+  v.querySelector('.vit-ant').addEventListener('click',function(){ir(atual-1,true)});
+  v.querySelector('.vit-prox').addEventListener('click',function(){ir(atual+1,true)});
+  pontos.forEach(function(b,i){b.addEventListener('click',function(){ir(i,true)})});
+  /* tocar num card de lado traz ele para o centro (não abre o site) */
+  v.addEventListener('click',function(e){var c=e.target.closest('.vit-card');if(!c)return;
+    if(arrastou||c.getAttribute('data-pos')!=='0'){e.preventDefault();e.stopPropagation();if(!arrastou)ir(cards.indexOf(c),true)}arrastou=false},true);
+  v.addEventListener('keydown',function(e){if(e.key==='ArrowLeft'){ir(atual-1,true);e.preventDefault()}else if(e.key==='ArrowRight'){ir(atual+1,true);e.preventDefault()}});
+  /* deslizar com o dedo */
+  var x0=null;
+  palco.addEventListener('pointerdown',function(e){x0=e.clientX;arrastou=false});
+  palco.addEventListener('pointerup',function(e){if(x0===null)return;var dx=e.clientX-x0;x0=null;if(Math.abs(dx)>45){arrastou=true;ir(atual+(dx<0?1:-1),true)}});
+  palco.addEventListener('pointercancel',function(){x0=null});
+  /* passa sozinho a cada 5,5 s, só quando está na tela; para com mouse em cima, com foco dentro ou com o botão */
+  v.addEventListener('mouseenter',function(){mexendo=true});v.addEventListener('mouseleave',function(){mexendo=false});
+  v.addEventListener('focusin',function(){mexendo=true});v.addEventListener('focusout',function(e){if(!v.contains(e.relatedTarget))mexendo=false});
+  function atualizaPausa(){bPausa.hidden=semMovimento();bPausa.setAttribute('aria-pressed',pausadoPorVoce?'true':'false');bPausa.setAttribute('aria-label',pausadoPorVoce?'Continuar o carrossel':'Pausar o carrossel')}
+  bPausa.addEventListener('click',function(){pausadoPorVoce=!pausadoPorVoce;atualizaPausa()});
+  if('IntersectionObserver' in window){new IntersectionObserver(function(es){visivel=es[0].isIntersecting},{threshold:.4}).observe(palco)}
+  setInterval(function(){if(semMovimento()){atualizaPausa();return}if(!pausadoPorVoce&&visivel&&!mexendo&&!document.hidden)ir(atual+1,false)},5500);
+  if(rm.addEventListener)rm.addEventListener('change',atualizaPausa);
+  atualizaPausa();mostrar(false);
 })();
 </script>
 </body>
