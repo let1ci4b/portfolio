@@ -1,92 +1,143 @@
-# Portfólio · Letícia Beatriz
+<div align="center">
 
-Site pessoal e vitrine do meu trabalho: sites, cardápios com pedido pelo WhatsApp, materiais e planilhas **simples e acessíveis** para pequenos negócios de todo o Brasil.
+<img src="img/compartilhar.jpg" alt="Card do site: à esquerda, 'oi, prazer! Letícia Beatriz — Sites, cardápios e materiais acessíveis para pequenos negócios' e o selo 'atendo todo o Brasil'; à direita, foto da Letícia de blazer preto sobre um círculo rosa." width="100%">
 
-🔗 **No ar (endereço provisório):** https://portfolio-85x.pages.dev/
+# Letícia Beatriz · portfólio
 
----
+**Site da minha marca: sites, cardápios com pedido pelo WhatsApp, materiais e planilhas simples e acessíveis para pequenos negócios de todo o Brasil**
 
-## Como o site é feito
+[**Ver o site**](https://portfolio-85x.pages.dev/)
 
-- **HTML, CSS e um pouco de JavaScript**, tudo escrito à mão.
-- **Sem dependências e sem etapa de build**: o que está no repositório é exatamente o que vai para o ar.
-- **Uma página só (`index.html`)**. As páginas de cada serviço ficam dentro dela e abrem por endereço com âncora (`#servico-...`). Isso funciona bem no celular e no botão "voltar".
-- **Fontes:** Fraunces (títulos), Atkinson Hyperlegible Next (texto, feita para ser fácil de ler) e Caveat (anotações à mão), todas do Google Fonts.
-- **Desenhos:** feitos à mão por mim e vetorizados em `img/rabiscos.svg`.
-- **Fotos:** recortes das minhas fotos e dos meus cachorros, em `.webp` para carregar rápido.
+![Status](https://img.shields.io/badge/status-em_construção-F6DCDD?style=flat-square&labelColor=6B1E2E)
+![WCAG 2.2 AA](https://img.shields.io/badge/WCAG_2.2-AA-6B1E2E?style=flat-square)
+![Acessibilidade](https://img.shields.io/badge/Lighthouse_acessibilidade-100-6B1E2E?style=flat-square)
+![HTML, CSS e JS](https://img.shields.io/badge/HTML_CSS_JS-sem_framework-C7DFEC?style=flat-square&labelColor=6B1E2E)
 
-### O que tem na página
+</div>
 
-| Parte | O que faz |
+> [!NOTE]
+> **Endereço provisório.** O site ainda não foi divulgado. O domínio próprio (.com.br) entra perto do lançamento.
+
+<br>
+
+<p align="center">
+  <img src="docs/vitrine.webp" alt="O site no computador e no celular: a palavra 'portfólio' em letras grandes cor de vinho, uma foto recortada da Letícia, a labradora Liza de moletom rosa e etiquetas como 'acessibilidade', 'sites simples' e 'atendo todo o Brasil'." width="100%">
+</p>
+
+## Sobre o projeto
+
+| | |
 |---|---|
-| Topo | Apresentação com colagem de fotos. A Liza encolhe com a rolagem e vira a Liza que passeia pela página (só em telas grandes). |
-| Serviços | Carrossel com os 6 serviços. Cada um tem uma página com o que inclui, o preço, o que o cliente envia e como funciona. |
-| Calculadora | Mostra em quantos clientes o serviço se paga. |
-| Pedido fora da lista | Monta uma mensagem pronta para WhatsApp ou e-mail. Nada fica salvo. |
-| Perguntas frequentes | Chat com a Liza com respostas prontas sobre cerca de 50 assuntos (sem inteligência artificial e sem coletar dados). |
-| Menu de acessibilidade | Aumenta a letra, aumenta o contraste, troca a fonte, para as animações e esconde os enfeites. As escolhas ficam salvas no navegador. |
+| **Cliente** | Letícia Beatriz (marca própria) |
+| **Tipo** | Site de página única, com uma tela para cada serviço |
+| **Público** | Donos de pequenos negócios de todo o Brasil que querem ser encontrados no Google e receber clientes pelo WhatsApp |
+| **Versão** | novembro de 2026 |
+| **Feito por** | [Letícia Beatriz](https://github.com/let1ci4b) |
 
----
+## Destaques
 
-## Acessibilidade
+- **Colagem feita à mão.** Fotos recortadas, rabiscos desenhados por mim e anotações em letra cursiva. A Liza, minha labradora, aparece pela página toda.
+- **Uma tela para cada serviço.** Cada um dos 6 serviços tem a sua página, com o que inclui, o preço, o que o cliente envia e como funciona. As telas abrem por âncora (`#servico-...`), e o botão "voltar" do celular funciona.
+- **Pedir proposta sem sair do site.** O formulário do Tally fica embutido numa tela própria (`#pedir-proposta`) e só carrega quando a pessoa abre essa tela.
+- **Trabalhos em carrossel.** Os projetos aparecem em leque e cada foto abre o site no ar. O carrossel passa sozinho, tem botão de pausa e fica parado para quem pede menos movimento.
+- **Perguntas frequentes com a Liza.** Respostas prontas sobre cerca de 50 assuntos, sem inteligência artificial e sem coletar dados.
+- **Menu de acessibilidade.** Tamanho do texto, alto contraste, fonte mais legível, mais espaço entre linhas, destaque de links e parar animações. As escolhas ficam salvas no navegador.
+- **Card de compartilhamento e ícone.** O link aparece com foto, título e descrição no WhatsApp e nas redes. A aba do navegador mostra o logo "</>".
 
-O site segue a **WCAG 2.2, nível AA**:
+<table>
+  <tr>
+    <td width="50%"><img src="docs/servicos.webp" alt="Seção Serviços: cartões coloridos em rosa, azul e bege, inclinados como papéis, com título, frase curta, preço e o link 'Saiba mais'."></td>
+    <td width="50%"><img src="docs/trabalhos.webp" alt="Seção Trabalhos: três cartões em leque. No centro, o Café Vagar com a foto de um salão de café iluminado e o botão 'Ver o site'; dos lados, o JAMBO e o cartão 'Pode ser o seu'."></td>
+  </tr>
+  <tr>
+    <td align="center"><sub>Serviços</sub></td>
+    <td align="center"><sub>Trabalhos</sub></td>
+  </tr>
+</table>
 
-- contraste adequado em todas as cores;
-- navegação completa pelo teclado, com foco visível;
-- textos alternativos nas imagens (enfeites são ignorados pelo leitor de tela);
-- títulos em ordem e regiões marcadas (cabeçalho, conteúdo, rodapé);
-- respeita quem pede menos movimento no sistema (`prefers-reduced-motion`);
-- funciona de 320 px de largura até telas grandes.
+## Qualidade
 
----
+Testes feitos em 23/11/2026, no computador, com a página servida localmente.
 
-## Checklist antes de publicar uma mudança
+| Teste | Resultado |
+|---|---|
+| **axe-core** (WCAG 2.2 AA) | Nenhuma violação em 360, 375 e 1440 px |
+| **html-validate** (regras recomendadas) | Nenhum erro |
+| **Validador W3C** (vnu) | Nenhum erro |
+| **Lighthouse no celular** | Acessibilidade 100 · Boas práticas 100 · SEO 100 · Desempenho 70 (medido sem a compressão do Cloudflare; o número que vale é o do [PageSpeed](https://pagespeed.web.dev/) no endereço publicado) |
+| **Peso da primeira carga** | Cerca de 870 KB |
+| **Texto ampliado** | O menu vai até 150%. A página não rola para o lado, mas em celulares de 375 px a palavra "portfólio" e o botão Menu ficam cortados (a corrigir) |
+| **Teclado e leitor de tela** | Foco visível em todos os controles e nomes acessíveis conferidos pelo axe. Os cards de lado do carrossel ficam fora do Tab. Teste manual com leitor de tela: pendente |
+| **Movimento reduzido** | Com "reduzir movimento" no aparelho ou "Parar animações" no menu, a Liza não passeia e o carrossel não passa sozinho |
 
-1. **Validador W3C**: https://validator.w3.org/ (0 erros)
-2. **WAVE**: https://wave.webaim.org/ (0 erros de acessibilidade)
-3. **PageSpeed Insights**: https://pagespeed.web.dev/ (celular e computador)
-4. **Teste em 2 celulares** de verdade: menu, carrossel, calculadora, perguntas e botões de WhatsApp.
+## Tecnologias
 
----
+| | |
+|---|---|
+| **Base** | HTML, CSS e JavaScript escritos à mão, sem framework e sem etapa de montagem: o que está no repositório é o que vai para o ar |
+| **Animações** | CSS e JavaScript próprios (carrossel, Liza que passeia, rabiscos que se desenham) |
+| **Conteúdo** | Tudo no `index.html`. Fontes do Google Fonts: Fraunces (títulos), Atkinson Hyperlegible Next (texto) e Caveat (anotações) |
+| **Formulário** | [Tally](https://tally.so), embutido na tela "Pedir proposta" |
+| **Hospedagem** | [Cloudflare Pages](https://pages.cloudflare.com), publicado a cada envio para a branch `main` |
+| **Métricas** | Cloudflare Web Analytics, que não usa cookies (ligar no painel do Cloudflare, se ainda não estiver ligado) |
 
-## Estrutura dos arquivos
+## Rodar no computador
+
+1. Instale o [Node.js 22](https://nodejs.org).
+2. Abra o terminal na pasta do projeto.
+3. Rode:
+   ```bash
+   npx http-server -c-1
+   ```
+4. Abra http://localhost:8080.
+
+Não precisa instalar nada além disso: o site não tem dependências.
+
+## O que muda e onde
+
+| O quê | Arquivo |
+|---|---|
+| Textos, preços e serviços | `index.html` (cada serviço é um `<article class="servico-pagina">`) |
+| Trabalhos do carrossel | `index.html`, seção `#trabalhos`: copie um `<div class="vit-card">`, ajuste o "x de n" nos `aria-label` e crie mais um botão `.vit-ponto`. Foto em `img/trabalho-<nome>.webp` (720 × 900, com versão `-440`) |
+| Perguntas da Liza | `index.html`, lista de perguntas no script das dúvidas (palavras-chave e resposta) |
+| WhatsApp e e-mail | `index.html` (procure `wa.me/` e `mailto:`) e a ficha do Google (`application/ld+json`) |
+| Desenhos | `img/rabiscos.svg` (cada desenho é um símbolo `r-<nome>`) |
+| Card de compartilhamento | `img/compartilhar.jpg` (1200 × 630) e as tags `og:` e `twitter:` no `<head>` do `index.html` |
+| Ícones | `favicon.svg` |
+| Endereço do site | `index.html` (`canonical`, `og:url`, `og:image` e `application/ld+json`), `sitemap.xml` e `robots.txt` |
+| Cache das imagens | `_headers` |
+
+## Estrutura
 
 ```
-index.html     a página inteira (HTML, CSS e JavaScript)
-404.html       página de "não encontrado"
-img/           fotos, recortes, desenhos (rabiscos.svg) e imagem de compartilhamento
+index.html     a página inteira: HTML, CSS e JavaScript
+404.html       página de "não encontrado", com a Liza
+img/           fotos, recortes, desenhos (rabiscos.svg), fotos dos trabalhos e card de compartilhamento
+docs/          imagens deste README (vitrine e prints)
 favicon.svg    ícone da aba
-_headers       cache das imagens na Cloudflare
-robots.txt     regras para buscadores
+_headers       cache das imagens no Cloudflare
+robots.txt     regras para os buscadores
 sitemap.xml    lista de páginas para o Google
 ```
 
----
+## Publicar
 
-## Publicação (Cloudflare Pages)
+**Cloudflare Pages (oficial):** cada envio para a branch `main` publica o site em https://portfolio-85x.pages.dev/ em cerca de 1 minuto.
 
-O site publica sozinho: **toda alteração enviada para a branch `main` vai para o ar em cerca de 1 minuto.**
+Para refazer o projeto no Cloudflare:
 
-Configuração do projeto na Cloudflare, para refazer se precisar:
+1. **Workers & Pages** → Create → Pages → **Connect to Git** e escolha o repositório `portfolio`.
+2. Framework preset: **None**. Build command: vazio. Build output directory: `/`.
+3. **Save and Deploy**.
+4. Para contar visitas sem cookies: no projeto, **Metrics** → **Enable** em Web Analytics.
 
-1. Cloudflare → **Workers & Pages** → Create → Pages → **Connect to Git**.
-2. Escolha o repositório `portfolio`.
-3. Framework preset: **None**. Build command: deixe vazio. Output directory: `/`.
-4. **Save and Deploy**.
+## Créditos
 
-Para contar visitas sem cookies: no projeto, vá em **Metrics** e clique em **Enable** em Web Analytics.
+- **Design, código e conteúdo:** Letícia Beatriz.
+- **Fotos e desenhos:** meus. Não podem ser reutilizados sem autorização.
+- **Fontes:** Fraunces, Atkinson Hyperlegible Next e Caveat, pelo Google Fonts, sob a licença SIL Open Font License.
+- **Formulário:** Tally.
 
-### Ao trocar o endereço do site
+<br>
 
-Atualize o endereço novo nestes lugares:
-- `index.html`: `<link rel="canonical">`, as tags `og:url` e `og:image` e a ficha do Google (`application/ld+json`);
-- `sitemap.xml` e `robots.txt`.
-
----
-
-## Direitos
-
-O código pode servir de inspiração. **As fotos, os desenhos e os textos são meus** e não podem ser reutilizados sem autorização.
-
-Feito à mão por Letícia Beatriz, com supervisão da Liza. 🐾
+<p align="center"><sub>Feito à mão por Letícia Beatriz, com supervisão da Liza.</sub></p>
