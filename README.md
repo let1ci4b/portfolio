@@ -6,7 +6,7 @@
 
 **Site da minha marca: sites, cardápios com pedido pelo WhatsApp, materiais e planilhas simples e acessíveis para pequenos negócios de todo o Brasil**
 
-[**Ver o site**](https://portfolio-85x.pages.dev/)
+[**Ver o site**](https://portfolio-85x.pages.dev/) &nbsp;·&nbsp; [Declaração de acessibilidade](https://portfolio-85x.pages.dev/#acessibilidade-declaracao) &nbsp;·&nbsp; [Privacidade](https://portfolio-85x.pages.dev/#privacidade)
 
 ![Status](https://img.shields.io/badge/status-em_construção-F6DCDD?style=flat-square&labelColor=6B1E2E)
 ![WCAG 2.2 AA](https://img.shields.io/badge/WCAG_2.2-AA-6B1E2E?style=flat-square)
@@ -38,11 +38,12 @@
 
 - **Colagem feita à mão.** Fotos recortadas, rabiscos desenhados por mim e anotações em letra cursiva. A Liza, minha labradora, aparece pela página toda.
 - **Uma tela para cada serviço.** Cada um dos 6 serviços tem a sua página, com o que inclui, o preço, o que o cliente envia e como funciona. As telas abrem por âncora (`#servico-...`), e o botão "voltar" do celular funciona.
-- **Pedir proposta sem sair do site.** O formulário do Tally fica embutido numa tela própria (`#pedir-proposta`) e só carrega quando a pessoa abre essa tela.
+- **Pedir proposta sem sair do site.** O formulário do Tally fica embutido numa tela própria (`#pedir-proposta`), só carrega quando a pessoa abre essa tela e traz um aviso curto com link para a Política de privacidade.
 - **Trabalhos em carrossel.** Os projetos aparecem em leque e cada foto abre o site no ar. O carrossel passa sozinho, tem botão de pausa e fica parado para quem pede menos movimento.
 - **Perguntas frequentes com a Liza.** Respostas prontas sobre cerca de 50 assuntos, sem inteligência artificial e sem coletar dados.
-- **Menu de acessibilidade.** Tamanho do texto, alto contraste, fonte mais legível, mais espaço entre linhas, destaque de links e parar animações. As escolhas ficam salvas no navegador.
-- **Card de compartilhamento e ícone.** O link aparece com foto, título e descrição no WhatsApp e nas redes. A aba do navegador mostra o logo "</>".
+- **Menu de acessibilidade.** Texto de 90% a 160%, alto contraste, fonte mais legível, mais espaço entre linhas, destaque de links e parar animações. As escolhas ficam salvas no navegador e são aplicadas antes de a página aparecer. Com texto grande em tela estreita, o carrossel vira uma lista simples.
+- **Declaração de acessibilidade e Política de privacidade.** Duas telas próprias, com link no rodapé: o que o site cumpre e como foi testado, e quais dados o formulário recebe, para quê, por quanto tempo e como pedir para apagar (LGPD).
+- **Card de compartilhamento e ícones.** O link aparece com foto, título e descrição no WhatsApp e nas redes. O logo "</>" aparece na aba do navegador, na tela inicial do iPhone e do Android.
 
 <table>
   <tr>
@@ -61,13 +62,13 @@ Testes feitos em 23/11/2026, no computador, com a página servida localmente.
 
 | Teste | Resultado |
 |---|---|
-| **axe-core** (WCAG 2.2 AA) | Nenhuma violação em 360, 375 e 1440 px |
+| **axe-core** (WCAG 2.2 AA) | Nenhuma violação em 360, 375 e 1440 px, na página inicial (com texto a 100% e a 160%), na Declaração de acessibilidade, na Política de privacidade e em "Pedir proposta" |
 | **html-validate** (regras recomendadas) | Nenhum erro |
 | **Validador W3C** (vnu) | Nenhum erro |
-| **Lighthouse no celular** | Acessibilidade 100 · Boas práticas 100 · SEO 100 · Desempenho 70 (medido sem a compressão do Cloudflare; o número que vale é o do [PageSpeed](https://pagespeed.web.dev/) no endereço publicado) |
-| **Peso da primeira carga** | Cerca de 870 KB |
-| **Texto ampliado** | O menu vai até 150%. A página não rola para o lado, mas em celulares de 375 px a palavra "portfólio" e o botão Menu ficam cortados (a corrigir) |
-| **Teclado e leitor de tela** | Foco visível em todos os controles e nomes acessíveis conferidos pelo axe. Os cards de lado do carrossel ficam fora do Tab. Teste manual com leitor de tela: pendente |
+| **Lighthouse no celular** | Acessibilidade 100 · Boas práticas 100 · SEO 100 · Desempenho 69 (medido sem a compressão do Cloudflare; o número que vale é o do [PageSpeed](https://pagespeed.web.dev/) no endereço publicado) |
+| **Peso da primeira carga** | Cerca de 885 KB |
+| **Texto ampliado** | Com o menu em 160%, nada fica cortado e a página não rola para o lado em 320, 375 e 1280 px |
+| **Teclado e leitor de tela** | Percurso completo com a tecla Tab: todos os controles mostram o foco. Nomes acessíveis conferidos pelo axe; os cards de lado do carrossel ficam fora do Tab. Teste manual com leitor de tela: pendente |
 | **Movimento reduzido** | Com "reduzir movimento" no aparelho ou "Parar animações" no menu, a Liza não passeia e o carrossel não passa sozinho |
 
 ## Tecnologias
@@ -98,12 +99,15 @@ Não precisa instalar nada além disso: o site não tem dependências.
 | O quê | Arquivo |
 |---|---|
 | Textos, preços e serviços | `index.html` (cada serviço é um `<article class="servico-pagina">`) |
+| Declaração de acessibilidade | `index.html`, tela `#acessibilidade-declaracao` (atualize a data do teste a cada mudança) |
+| Política de privacidade | `index.html`, tela `#privacidade` (atualize a data se mudar algo) e o aviso `.pp-aviso` junto ao formulário |
+| Menu de acessibilidade | `index.html`: lista `zooms` no script do menu e o script curto no `<head>` que aplica as escolhas salvas |
 | Trabalhos do carrossel | `index.html`, seção `#trabalhos`: copie um `<div class="vit-card">`, ajuste o "x de n" nos `aria-label` e crie mais um botão `.vit-ponto`. Foto em `img/trabalho-<nome>.webp` (720 × 900, com versão `-440`) |
 | Perguntas da Liza | `index.html`, lista de perguntas no script das dúvidas (palavras-chave e resposta) |
 | WhatsApp e e-mail | `index.html` (procure `wa.me/` e `mailto:`) e a ficha do Google (`application/ld+json`) |
 | Desenhos | `img/rabiscos.svg` (cada desenho é um símbolo `r-<nome>`) |
 | Card de compartilhamento | `img/compartilhar.jpg` (1200 × 630) e as tags `og:` e `twitter:` no `<head>` do `index.html` |
-| Ícones | `favicon.svg` |
+| Ícones | `favicon.svg`, `favicon.ico`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`, `icon-maskable-512.png` e `site.webmanifest` (gerados a partir do logo "</>") |
 | Endereço do site | `index.html` (`canonical`, `og:url`, `og:image` e `application/ld+json`), `sitemap.xml` e `robots.txt` |
 | Cache das imagens | `_headers` |
 
@@ -114,7 +118,9 @@ index.html     a página inteira: HTML, CSS e JavaScript
 404.html       página de "não encontrado", com a Liza
 img/           fotos, recortes, desenhos (rabiscos.svg), fotos dos trabalhos e card de compartilhamento
 docs/          imagens deste README (vitrine e prints)
-favicon.svg    ícone da aba
+favicon.svg    ícone da aba (e favicon.ico para navegadores antigos)
+apple-touch-icon.png, icon-*.png   ícones da tela inicial (iPhone e Android)
+site.webmanifest   nome, cores e ícones do site
 _headers       cache das imagens no Cloudflare
 robots.txt     regras para os buscadores
 sitemap.xml    lista de páginas para o Google
