@@ -829,6 +829,8 @@ html.a-fonte .move-frase,html.a-fonte .move-valores li{font-family:var(--font-sa
 .entrega-paginas img{display:block;width:100%;height:auto;background:#fff;border:3px solid var(--cereja);border-radius:var(--raio-sm);box-shadow:var(--sombra-adesivo)}
 .entrega-paginas li:nth-child(odd){transform:rotate(-2deg)}
 .entrega-paginas li:nth-child(even){transform:rotate(2deg) translateY(24px)}
+.entrega-uma{grid-template-columns:minmax(0,380px);justify-content:center}
+.sp-exemplo .entrega-texto>p:first-child{margin-top:0}
 @media (max-width:860px){.entrega-grade{grid-template-columns:1fr;gap:40px}.entrega-paginas{max-width:520px}}
 #trabalhos>.wrap{position:relative}
 #trabalhos .liza-lanche{position:relative;top:auto;right:auto;margin-left:auto;width:auto;display:flex;flex-direction:row-reverse;align-items:center;gap:6px}#trabalhos .liza-lanche img{width:130px}#trabalhos .liza-lanche .nota{position:static;transform:rotate(-4deg);max-width:12ch;text-align:right}
@@ -1437,6 +1439,17 @@ html:not(.js) .vit-controles{display:none}
     </div>
 
 
+    <section class="sp-bloco sp-exemplo" aria-labelledby="ex-cardapio"><h2 class="sp-h" id="ex-cardapio">Exemplo: o site do JAMBO</h2>
+      <div class="entrega-grade">
+        <div class="entrega-texto">
+          <p>Cardápio com pedido pelo WhatsApp de uma loja de açaí e gelato. É o mesmo trabalho que aparece em Trabalhos; dá para abrir e fazer um pedido de teste.</p>
+          <ul class="sp-lista ok"><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>O cliente monta o açaí escolhendo base, tamanho e toppings, e vê o preço mudar na hora</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Carrinho com o total e envio do pedido pelo WhatsApp, com a mensagem pronta</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>O pedido também cai numa planilha, onde a loja aceita ou recusa e avisa o cliente</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>O dono muda preços, fotos e itens esgotados sozinho, por um editor simples</li></ul>
+          <p class="entrega-obs">Exemplo de portfólio com marca fictícia: nenhum pedido é preparado ou cobrado. O JAMBO mostra também extras que não estão no preço de referência abaixo (montador de açaí, editor do cardápio e planilha de pedidos); eles entram no orçamento à parte.</p>
+          <p><a class="btn btn-principal" href="https://jambo-3cc.pages.dev/" target="_blank" rel="noopener">Ver o site do JAMBO<span class="sr-only"> (abre em nova aba)</span></a> <a class="btn btn-secundario" href="docs/cardapio-jambo-exemplo.pdf" target="_blank" rel="noopener">Ver o cardápio impresso<span class="sr-only"> (PDF, abre em nova aba)</span></a></p>
+        </div>
+        <ul class="entrega-paginas entrega-uma"><li><img src="img/trabalho-jambo.webp" srcset="img/trabalho-jambo-440.webp 440w, img/trabalho-jambo.webp 720w" sizes="(max-width:860px) 80vw, 380px" alt="Foto de um bowl de açaí do JAMBO com banana, morango e granola." width="720" height="900" loading="lazy" decoding="async"></li></ul>
+      </div>
+    </section>
     <div class="sp-bloco"><h2 class="sp-h">Quanto custa</h2><div class="sp-planos sp-planos-1">
 <div class="sp-plano destaque"><h3>Cardápio com pedido</h3><p class="sp-preco">R$&nbsp;1.060<small>pagamento único</small></p><ul><li>Tudo do site Essencial, com o Perfil no Google de bônus</li><li>Até 20 itens com foto e preço (mais itens, no orçamento)</li><li>Carrinho com total na hora</li><li>Pedido pronto no seu WhatsApp</li><li>QR code para imprimir</li></ul></div>
 </div><p class="sp-nota-preco">Valores de referência. O orçamento final, por escrito, depende do tamanho do seu pedido.</p></div>
@@ -1459,6 +1472,17 @@ html:not(.js) .vit-controles{display:none}
     </div>
 
 
+    <section class="sp-bloco sp-exemplo" aria-labelledby="ex-presenca"><h2 class="sp-h" id="ex-presenca">Exemplo: o kit do JAMBO</h2>
+      <div class="entrega-grade">
+        <div class="entrega-texto">
+          <p>É o manual que o dono do JAMBO recebe para configurar o WhatsApp Business e o Perfil de Empresa no Google. Tudo o que dá trabalho pensar e escrever já vem pronto; o dono só copia, cola e confirma.</p>
+          <ul class="sp-lista ok"><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Por que as contas ficam no nome do dono</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Textos do perfil, mensagens automáticas e respostas rápidas prontos para colar</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Catálogo organizado com nomes, preços e descrições</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Textos do Google, verificação, avaliações e checklist final</li></ul>
+          <p class="entrega-obs">Exemplo de portfólio com marca fictícia. Só traz informações conferidas nas páginas de ajuda do WhatsApp e do Google em novembro de 2026.</p>
+          <p><a class="btn btn-principal" href="docs/kit-whatsapp-google-exemplo.pdf" target="_blank" rel="noopener">Ver o kit de exemplo<span class="sr-only"> (abre em nova aba)</span></a> <span class="entrega-arquivo">PDF · 10 páginas · 0,5 MB</span></p>
+        </div>
+        <ul class="entrega-paginas"><li><img src="img/kit-p1.webp" alt="Capa do kit WhatsApp Business e Google do JAMBO." width="480" height="680" loading="lazy" decoding="async"></li><li><img src="img/kit-p2.webp" alt="Página Como funciona este kit, que explica por que o dono configura as próprias contas." width="480" height="680" loading="lazy" decoding="async"></li><li><img src="img/kit-p3.webp" alt="Página do perfil da loja no WhatsApp Business, com os textos para colar." width="480" height="680" loading="lazy" decoding="async"></li><li><img src="img/kit-p4.webp" alt="Página das mensagens automáticas do WhatsApp Business, com a saudação pronta para colar." width="480" height="680" loading="lazy" decoding="async"></li></ul>
+      </div>
+    </section>
     <div class="sp-bloco"><h2 class="sp-h">Quanto custa</h2><div class="sp-planos sp-planos-1">
 <div class="sp-plano destaque"><h3>WhatsApp Business, com o Google de bônus</h3><p class="sp-preco">R$&nbsp;320<small>pagamento único</small></p><ul><li>Guia de configuração do WhatsApp Business</li><li>Bônus: textos do Perfil de Empresa no Google</li><li>Acompanhamento e conferência final</li></ul></div>
 </div><p class="sp-nota-preco">Já tem site ou cardápio comigo? Aí o Perfil no Google já veio junto, e o WhatsApp Business sai por R$ 180. O Perfil no Google é um bônus dos meus serviços e não é vendido sozinho.</p></div>
@@ -1479,6 +1503,17 @@ html:not(.js) .vit-controles{display:none}
     </div>
 
 
+    <section class="sp-bloco sp-exemplo" aria-labelledby="ex-materiais"><h2 class="sp-h" id="ex-materiais">Exemplo: o cardápio do JAMBO</h2>
+      <div class="entrega-grade">
+        <div class="entrega-texto">
+          <p>Cardápio para imprimir feito para o JAMBO, a loja de açaí que aparece nos trabalhos. Usa as cores, as letras e as fotos do site, e os preços vêm da mesma lista que o site usa.</p>
+          <ul class="sp-lista ok"><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Capa, açaí da casa, monte o seu, combos, gelato, milkshakes e bebidas</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Ícones desenhados para cada topping</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Código QR que abre o cardápio no site</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF acessível: títulos, listas e textos marcados, em português</li></ul>
+          <p class="entrega-obs">Exemplo de portfólio com marca fictícia. Este tem 5 páginas; o preço muda conforme o número de páginas.</p>
+          <p><a class="btn btn-principal" href="docs/cardapio-jambo-exemplo.pdf" target="_blank" rel="noopener">Ver o cardápio de exemplo<span class="sr-only"> (abre em nova aba)</span></a> <span class="entrega-arquivo">PDF · 5 páginas · 1,2 MB</span></p>
+        </div>
+        <ul class="entrega-paginas"><li><img src="img/cardapio-p1.webp" alt="Capa do cardápio do JAMBO, com foto de frutas e o título Seu verão, do seu jeito." width="480" height="680" loading="lazy" decoding="async"></li><li><img src="img/cardapio-p2.webp" alt="Página Açaí da casa, com seis bowls em fotos, ingredientes e preços." width="480" height="680" loading="lazy" decoding="async"></li><li><img src="img/cardapio-p4.webp" alt="Página dos combos, com foto e três cartões com o que vem em cada combo e o preço." width="480" height="680" loading="lazy" decoding="async"></li><li><img src="img/cardapio-p5.webp" alt="Página de gelato, milkshakes e bebidas, com o rodapé de pedidos e o código QR." width="480" height="680" loading="lazy" decoding="async"></li></ul>
+      </div>
+    </section>
     <div class="sp-bloco"><h2 class="sp-h">Quanto custa</h2><div class="sp-planos sp-planos-2">
 <div class="sp-plano"><h3>Cardápio ou tabela</h3><p class="sp-preco"><span class="sp-apartir">a partir de</span>R$&nbsp;175<small>1 página · com 2 páginas, R$ 210</small></p><ul><li>Versão para imprimir</li><li>Versão leve para o celular</li><li>PDF acessível</li></ul></div>
 <div class="sp-plano destaque"><h3>Catálogo, manual ou apresentação</h3><p class="sp-preco"><span class="sp-apartir">exemplo com 8 páginas</span>R$&nbsp;420<small>R$ 140 de base + R$ 35 por página</small></p><ul><li>Diagramação com a sua marca</li><li>Revisão de texto</li><li>PDF acessível</li><li>Cada página: R$ 35 (da 11ª em diante, R$ 25)</li></ul></div>
