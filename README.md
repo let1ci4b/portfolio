@@ -39,16 +39,16 @@
 - **Colagem feita à mão.** Fotos recortadas, rabiscos desenhados por mim e anotações em letra cursiva. A Liza, minha labradora, aparece pela página toda.
 - **Uma tela para cada serviço.** Cada um dos 6 serviços tem a sua página, com o que inclui, o preço, o que o cliente envia e como funciona. As telas abrem por âncora (`#servico-...`), e o botão "voltar" do celular funciona.
 - **Pedir proposta sem sair do site.** O formulário do Tally fica embutido numa tela própria (`#pedir-proposta`), só carrega quando a pessoa abre essa tela e traz um aviso curto com link para a Política de privacidade.
-- **Trabalhos em carrossel.** Os projetos aparecem em leque e cada foto abre o site no ar. O carrossel passa sozinho, tem botão de pausa e fica parado para quem pede menos movimento.
+- **Galeria de trabalhos.** Cada trabalho aparece como a tela do site, com os PDFs entregues atrás. Passar o mouse toca a abertura do site (no celular, toca uma vez quando aparece). Clicar abre a tela do projeto com tudo o que foi entregue: site, manuais, cardápio, planilhas e kit, cada um com o PDF.
 - **Perguntas frequentes com a Liza.** Respostas prontas sobre cerca de 50 assuntos, sem inteligência artificial e sem coletar dados.
-- **Menu de acessibilidade.** Texto de 90% a 160%, alto contraste, fonte mais legível, mais espaço entre linhas, destaque de links e parar animações. As escolhas ficam salvas no navegador e são aplicadas antes de a página aparecer. Com texto grande em tela estreita, o carrossel vira uma lista simples.
+- **Menu de acessibilidade.** Texto de 90% a 160%, alto contraste, fonte mais legível, mais espaço entre linhas, destaque de links e parar animações. As escolhas ficam salvas no navegador e são aplicadas antes de a página aparecer. Com texto grande, a galeria vira uma coluna só.
 - **Declaração de acessibilidade e Política de privacidade.** Duas telas próprias, com link no rodapé: o que o site cumpre e como foi testado, e quais dados o formulário recebe, para quê, por quanto tempo e como pedir para apagar (LGPD).
 - **Card de compartilhamento e ícones.** O link aparece com foto, título e descrição no WhatsApp e nas redes. O logo "</>" aparece na aba do navegador, na tela inicial do iPhone e do Android.
 
 <table>
   <tr>
     <td width="50%"><img src="docs/servicos.webp" alt="Seção Serviços: cartões coloridos em rosa, azul e bege, inclinados como papéis, com título, frase curta, preço e o link 'Saiba mais'."></td>
-    <td width="50%"><img src="docs/trabalhos.webp" alt="Seção Trabalhos: três cartões em leque. No centro, o Café Vagar com a foto de um salão de café iluminado e o botão 'Ver o site'; dos lados, o JAMBO e o cartão 'Pode ser o seu'."></td>
+    <td width="50%"><img src="docs/trabalhos.webp" alt="Seção Trabalhos: o JAMBO e o Café Vagar como telas de navegador, com as páginas dos manuais atrás; o Café Vagar está tocando a abertura, com a xícara e a frase O tempo passa. O café fica."></td>
   </tr>
   <tr>
     <td align="center"><sub>Serviços</sub></td>
@@ -68,15 +68,15 @@ Testes feitos em 23/11/2026, no computador, com a página servida localmente.
 | **Lighthouse no celular** | Acessibilidade 100 · Boas práticas 100 · SEO 100 · Desempenho 69 (medido sem a compressão do Cloudflare; o número que vale é o do [PageSpeed](https://pagespeed.web.dev/) no endereço publicado) |
 | **Peso da primeira carga** | Cerca de 885 KB |
 | **Texto ampliado** | Com o menu em 160%, nada fica cortado e a página não rola para o lado em 320, 375 e 1280 px |
-| **Teclado e leitor de tela** | Percurso completo com a tecla Tab: todos os controles mostram o foco. Nomes acessíveis conferidos pelo axe; os cards de lado do carrossel ficam fora do Tab. Teste manual com leitor de tela: pendente |
-| **Movimento reduzido** | Com "reduzir movimento" no aparelho ou "Parar animações" no menu, a Liza não passeia e o carrossel não passa sozinho |
+| **Teclado e leitor de tela** | Percurso completo com a tecla Tab: todos os controles mostram o foco. Nomes acessíveis conferidos pelo axe; as prévias em vídeo ficam fora do Tab e do leitor de tela (cada trabalho é um link só). Teste manual com leitor de tela: pendente |
+| **Movimento reduzido** | Com "reduzir movimento" no aparelho ou "Parar animações" no menu, a Liza não passeia e as aberturas dos trabalhos não tocam |
 
 ## Tecnologias
 
 | | |
 |---|---|
 | **Base** | HTML, CSS e JavaScript escritos à mão, sem framework e sem etapa de montagem: o que está no repositório é o que vai para o ar |
-| **Animações** | CSS e JavaScript próprios (carrossel, Liza que passeia, rabiscos que se desenham) |
+| **Animações** | CSS e JavaScript próprios (prévias dos trabalhos, Liza que passeia, rabiscos que se desenham) |
 | **Conteúdo** | Tudo no `index.html`. Fontes do Google Fonts: Fraunces (títulos), Atkinson Hyperlegible Next (texto) e Caveat (anotações) |
 | **Formulário** | [Tally](https://tally.so), embutido na tela "Pedir proposta" |
 | **Hospedagem** | [Cloudflare Pages](https://pages.cloudflare.com), publicado a cada envio para a branch `main` |
@@ -102,7 +102,7 @@ Não precisa instalar nada além disso: o site não tem dependências.
 | Declaração de acessibilidade | `index.html`, tela `#acessibilidade-declaracao` (atualize a data do teste a cada mudança) |
 | Política de privacidade | `index.html`, tela `#privacidade` (atualize a data se mudar algo) e o aviso `.pp-aviso` junto ao formulário |
 | Menu de acessibilidade | `index.html`: lista `zooms` no script do menu e o script curto no `<head>` que aplica as escolhas salvas |
-| Trabalhos do carrossel | `index.html`, seção `#trabalhos`: copie um `<div class="vit-card">`, ajuste o "x de n" nos `aria-label` e crie mais um botão `.vit-ponto`. Foto em `img/trabalho-<nome>.webp` (720 × 900, com versão `-440`) |
+| Trabalhos da galeria | `index.html`, seção `#trabalhos`: copie um `<article class="proj">` (vídeo em `data-video`, prévia `img/abertura-<nome>.webp` e `.mp4`, 960 × 600) e crie a tela do projeto copiando um `<article id="trabalho-...">`. PDFs em `docs/` |
 | Perguntas da Liza | `index.html`, lista de perguntas no script das dúvidas (palavras-chave e resposta) |
 | WhatsApp e e-mail | `index.html` (procure `wa.me/` e `mailto:`) e a ficha do Google (`application/ld+json`) |
 | Desenhos | `img/rabiscos.svg` (cada desenho é um símbolo `r-<nome>`) |
