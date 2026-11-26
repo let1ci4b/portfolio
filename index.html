@@ -212,6 +212,7 @@ section{padding:96px 0}
 .contato .flutua{position:absolute;width:110px;opacity:.9}
 .contato .f1{left:auto;right:42%;top:8%;width:70px}.contato .f3{display:none}.contato .f4{right:4%;top:10%;bottom:auto;width:70px}
 .contatos-texto{font-size:16px;margin-top:var(--espaco-6)}
+.contatos-texto a{color:inherit;text-decoration:underline;text-underline-offset:3px}
 @media (max-width:760px){.contato .flutua{width:64px;opacity:.5}}
 footer{padding:var(--espaco-6) 0;font-size:15px;color:var(--texto-suave)}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:var(--espaco-4)}
@@ -1255,11 +1256,14 @@ html:not(.js) .vit-controles{display:none}
   <div class="wrap">
     <div class="cabeca"><h2 id="t-tool">Caixa de ferramentas</h2><span class="nota">o que eu uso no dia a dia</span><div class="desenhar cab-rabisco"><svg class="doodle rabisco r-estrela-pontos" viewBox="0 0 324 136" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-estrela-pontos"/></svg></div></div>
     <div class="tool-grade">
-      <div class="tool-grupo"><h3>Desenvolvimento</h3><ul class="fitas"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Git e GitHub</li><li>Validador W3C</li></ul></div>
-      <div class="tool-grupo"><h3>Acessibilidade</h3><ul class="fitas"><li>WCAG 2.2</li><li>ABNT NBR 17225</li><li>Leitores de tela (NVDA e TalkBack)</li><li>WAVE</li><li>Lei Brasileira de Inclusão</li></ul></div>
-      <div class="tool-grupo"><h3>Publicação e Google</h3><ul class="fitas"><li>Cloudflare</li><li>Registro.br</li><li>Perfil de Empresa no Google</li><li>WhatsApp Business</li><li>PageSpeed Insights</li></ul></div>
-      <div class="tool-grupo"><h3>Design</h3><ul class="fitas"><li>Figma</li><li>Canva</li><li>PENUP</li><li>Identidade visual</li><li>PDF acessível</li></ul></div>
-        <div class="tool-grupo"><h3>Planilhas</h3><ul class="fitas"><li>Google Planilhas</li><li>Excel</li></ul></div>
+      <div class="tool-grupo"><h3>Desenvolvimento</h3><ul class="fitas"><li>HTML</li><li>CSS Grid</li><li>JavaScript</li><li>Vite</li><li>Node.js e npm</li><li>Git e GitHub</li></ul></div>
+      <div class="tool-grupo"><h3>Acessibilidade</h3><ul class="fitas"><li>WCAG 2.2</li><li>ABNT NBR 17225</li><li>Lei Brasileira de Inclusão</li><li>Leitores de tela (NVDA e TalkBack)</li><li>PDF acessível</li></ul></div>
+      <div class="tool-grupo"><h3>Testes de qualidade</h3><ul class="fitas"><li>Validador W3C</li><li>html-validate</li><li>axe</li><li>WAVE</li><li>Lighthouse</li><li>PageSpeed Insights</li></ul></div>
+      <div class="tool-grupo"><h3>Publicação</h3><ul class="fitas"><li>Cloudflare Pages</li><li>Cloudflare Web Analytics</li><li>Registro.br</li><li>Pages CMS (edição pelo cliente)</li></ul></div>
+      <div class="tool-grupo"><h3>Google, WhatsApp e redes</h3><ul class="fitas"><li>Perfil de Empresa no Google</li><li>WhatsApp Business</li><li>Instagram</li><li>Metricool</li></ul></div>
+      <div class="tool-grupo"><h3>Design e imagens</h3><ul class="fitas"><li>Figma</li><li>Canva</li><li>PENUP</li><li>Gemini (imagens com IA)</li><li>Veo (vídeo com IA)</li><li>ffmpeg</li></ul></div>
+      <div class="tool-grupo"><h3>Planilhas e automação</h3><ul class="fitas"><li>Google Planilhas</li><li>Google Apps Script</li><li>Excel</li></ul></div>
+      <div class="tool-grupo"><h3>Organização e atendimento</h3><ul class="fitas"><li>Claude e Claude Code</li><li>Notion</li><li>Tally (formulários)</li><li>Google Drive</li></ul></div>
     </div>
   </div>
 </section>
@@ -1275,7 +1279,7 @@ html:not(.js) .vit-controles{display:none}
               <img src="img/trabalho-cafe-vagar.webp" srcset="img/trabalho-cafe-vagar-440.webp 440w, img/trabalho-cafe-vagar.webp 720w" sizes="(max-width:600px) 64vw, 340px" alt="" width="720" height="900" loading="lazy" decoding="async">
               <div class="vit-info">
                 <h3><a class="vit-link" href="https://cafevagar.pages.dev/" target="_blank" rel="noopener">Café Vagar<span class="sr-only">: ver o site (abre em nova aba)</span></a></h3>
-                <p>Uma cafeteria contada como um filme: a rolagem leva da calçada para dentro do café.</p>
+                <p>Uma cafeteria contada como um filme: ao rolar, a xícara vira relógio e o tempo passa.</p>
                 <p class="vit-acoes"><span class="vit-pilula" aria-hidden="true">Ver o site</span></p>
               </div>
             </div>
@@ -1478,9 +1482,9 @@ html:not(.js) .vit-controles{display:none}
           <p>É o manual que o dono do JAMBO recebe para configurar o WhatsApp Business e o Perfil de Empresa no Google. Tudo o que dá trabalho pensar e escrever já vem pronto; o dono só copia, cola e confirma.</p>
           <ul class="sp-lista ok"><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Por que as contas ficam no nome do dono</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Textos do perfil, mensagens automáticas e respostas rápidas prontos para colar</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Catálogo organizado com nomes, preços e descrições</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Textos do Google, verificação, avaliações e checklist final</li></ul>
           <p class="entrega-obs">Exemplo de portfólio com marca fictícia. Só traz informações conferidas nas páginas de ajuda do WhatsApp e do Google em novembro de 2026.</p>
-          <p><a class="btn btn-principal" href="docs/kit-whatsapp-google-exemplo.pdf" target="_blank" rel="noopener">Ver o kit de exemplo<span class="sr-only"> (abre em nova aba)</span></a> <span class="entrega-arquivo">PDF · 10 páginas · 0,5 MB</span></p>
+          <p><a class="btn btn-principal" href="docs/kit-whatsapp-google-exemplo.pdf" target="_blank" rel="noopener">Ver o kit de exemplo<span class="sr-only"> (abre em nova aba)</span></a> <span class="entrega-arquivo">PDF · 12 páginas · 1 MB</span></p>
         </div>
-        <ul class="entrega-paginas"><li><img src="img/kit-p1.webp" alt="Capa do kit WhatsApp Business e Google do JAMBO." width="480" height="680" loading="lazy" decoding="async"></li><li><img src="img/kit-p2.webp" alt="Página Como funciona este kit, que explica por que o dono configura as próprias contas." width="480" height="680" loading="lazy" decoding="async"></li><li><img src="img/kit-p3.webp" alt="Página do perfil da loja no WhatsApp Business, com os textos para colar." width="480" height="680" loading="lazy" decoding="async"></li><li><img src="img/kit-p4.webp" alt="Página das mensagens automáticas do WhatsApp Business, com a saudação pronta para colar." width="480" height="680" loading="lazy" decoding="async"></li></ul>
+        <ul class="entrega-paginas"><li><img src="img/kit-p1.webp" alt="Capa do kit WhatsApp e Google do JAMBO, com o desenho de uma conversa no WhatsApp da loja." width="480" height="680" loading="lazy" decoding="async"></li><li><img src="img/kit-p2.webp" alt="Página O perfil da loja, com os textos para colar no WhatsApp Business." width="480" height="680" loading="lazy" decoding="async"></li><li><img src="img/kit-p3.webp" alt="Página Respostas rápidas, com os atalhos e as mensagens prontas." width="480" height="680" loading="lazy" decoding="async"></li><li><img src="img/kit-p4.webp" alt="Página Aparecer no Google e no Maps, com os textos do Perfil de Empresa e a descrição pronta." width="480" height="680" loading="lazy" decoding="async"></li></ul>
       </div>
     </section>
     <div class="sp-bloco"><h2 class="sp-h">Quanto custa</h2><div class="sp-planos sp-planos-1">
@@ -1535,15 +1539,16 @@ html:not(.js) .vit-controles{display:none}
     </div>
 
 
+    <div class="sp-bloco"><h2 class="sp-h">Antes de escolher planilha</h2><p class="sp-obs"><strong>Planilha não é banco de dados.</strong> É uma solução simples e barata para quem ainda controla tudo à mão ou não quer um sistema próprio agora. Mas ela depende de quem mexe nela: uma fórmula apagada ou uma linha colada no lugar errado pode mudar os números, e o arquivo fica lento com muitos meses de dados. Por isso os números servem de apoio e os importantes (caixa, estoque, impostos) precisam ser conferidos. Não me responsabilizo por prejuízos causados pelo uso da planilha para gerir o negócio, e isso também fica no contrato. Quando o negócio crescer, o caminho certo é um sistema com banco de dados.</p></div>
     <section class="sp-bloco sp-exemplo" aria-labelledby="ex-planilhas"><h2 class="sp-h" id="ex-planilhas">Exemplo: as planilhas do JAMBO</h2>
       <div class="entrega-grade">
         <div class="entrega-texto">
           <p>Duas planilhas ligadas no Google Planilhas para a loja de açaí dos trabalhos: a do funcionário, onde os pedidos do site chegam sozinhos, e a do dono, com o painel de vendas, estoque e lucro.</p>
           <ul class="sp-lista ok"><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Pedidos do site e do balcão chegando sozinhos, com status coloridos e aviso pronto no WhatsApp</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Estoque que baixa sozinho e lista do que comprar</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Painel do dono com vendas, lucro, gráficos e comparação com o mês anterior</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Fórmulas protegidas, pedido finalizado travado e cópia de segurança diária</li></ul>
           <p class="entrega-obs">Exemplo de portfólio com marca fictícia e números de exemplo. Este é um projeto maior que o kit de 3 planilhas: o preço depende do que você precisa.</p>
-          <p><a class="btn btn-principal" href="docs/planilhas-jambo-manual-exemplo.pdf" target="_blank" rel="noopener">Ver o manual de exemplo<span class="sr-only"> (abre em nova aba)</span></a> <span class="entrega-arquivo">PDF · 9 páginas · 1,7 MB</span></p>
+          <p><a class="btn btn-principal" href="docs/planilhas-jambo-manual-exemplo.pdf" target="_blank" rel="noopener">Ver o manual de exemplo<span class="sr-only"> (abre em nova aba)</span></a> <span class="entrega-arquivo">PDF · 12 páginas · 1,5 MB</span></p>
         </div>
-        <ul class="entrega-paginas"><li><img src="img/planilhas-p1.webp" alt="Capa do manual das planilhas do JAMBO, com o painel do dono mostrando vendas, pedidos, lucro e o gráfico de vendas por dia." width="480" height="680" loading="lazy" decoding="async"></li><li><img src="img/planilhas-p2.webp" alt="Página O dia a dia no balcão, com a Visão rápida dos pedidos, os três passos e o que cada status quer dizer." width="480" height="680" loading="lazy" decoding="async"></li><li><img src="img/planilhas-p3.webp" alt="Página Pedidos e itens, com a aba de pedidos, o pedido no balcão e o que fazer quando o cliente pede uma mudança." width="480" height="680" loading="lazy" decoding="async"></li><li><img src="img/planilhas-p4.webp" alt="Página O painel do dono, com o painel completo e a explicação de cada parte." width="480" height="680" loading="lazy" decoding="async"></li></ul>
+        <ul class="entrega-paginas"><li><img src="img/planilhas-p1.webp" alt="Capa do manual das planilhas do JAMBO, com o painel do dono em destaque." width="480" height="680" loading="lazy" decoding="async"></li><li><img src="img/planilhas-p2.webp" alt="Página O dia a dia no balcão, com a Visão rápida dos pedidos, os três passos e o que cada status quer dizer." width="480" height="680" loading="lazy" decoding="async"></li><li><img src="img/planilhas-p3.webp" alt="Página Pedidos e itens, com a aba de pedidos, o pedido no balcão e o que fazer quando o cliente pede uma mudança." width="480" height="680" loading="lazy" decoding="async"></li><li><img src="img/planilhas-p4.webp" alt="Página O painel do dono, com o painel completo e a explicação de cada parte." width="480" height="680" loading="lazy" decoding="async"></li></ul>
       </div>
     </section>
     <div class="sp-bloco"><h2 class="sp-h">Quanto custa</h2><div class="sp-planos sp-planos-2">
