@@ -68,7 +68,7 @@ Testes feitos em 23/11/2026, no computador, com a página servida localmente.
 | **Lighthouse no celular** | Acessibilidade 100 · Boas práticas 100 · SEO 100 · Desempenho 69 (medido sem a compressão do Cloudflare; o número que vale é o do [PageSpeed](https://pagespeed.web.dev/) no endereço publicado) |
 | **Peso da primeira carga** | Cerca de 885 KB |
 | **Texto ampliado** | Com o menu em 160%, nada fica cortado e a página não rola para o lado em 320, 375 e 1280 px |
-| **Teclado e leitor de tela** | Percurso completo com a tecla Tab: todos os controles mostram o foco. Nomes acessíveis conferidos pelo axe; as prévias em vídeo ficam fora do Tab e do leitor de tela (cada trabalho é um link só). Teste manual com leitor de tela: pendente |
+| **Teclado** | Percurso completo com a tecla Tab: todos os controles mostram o foco. Nomes acessíveis conferidos pelo axe; as prévias em vídeo ficam fora do Tab (cada trabalho é um link só) |
 | **Movimento reduzido** | Com "reduzir movimento" no aparelho ou "Parar animações" no menu, a Liza não passeia e as aberturas dos trabalhos não tocam |
 
 ## Tecnologias
