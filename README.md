@@ -48,7 +48,7 @@
 <table>
   <tr>
     <td width="50%"><img src="docs/servicos.webp" alt="Seção Serviços: cartões coloridos em rosa, azul e bege, inclinados como papéis, com título, frase curta, preço e o link 'Saiba mais'."></td>
-    <td width="50%"><img src="docs/trabalhos.webp" alt="Seção Trabalhos: o JAMBO, o Café Vagar e o fio como telas de navegador, com as páginas dos manuais atrás, e o cartão Pode ser o seu."></td>
+    <td width="50%"><img src="docs/trabalhos.webp" alt="Seção Trabalhos: o JAMBO, o Café Vagar, o fio e a Black Garage como telas de navegador, com as páginas dos manuais atrás, e o cartão Pode ser o seu."></td>
   </tr>
   <tr>
     <td align="center"><sub>Serviços</sub></td>

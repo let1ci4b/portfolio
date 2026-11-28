@@ -1013,8 +1013,9 @@ html.liza-andando .passeio.esperando{opacity:0;pointer-events:none}
 .proj{position:relative;display:grid;gap:26px}
 .proj--jambo{grid-column:1 / 8}
 .proj--cafe{grid-column:8 / 13;margin-top:120px}
-.proj--fio{grid-column:2 / 9}
-.proj--seu{grid-column:9 / 13;align-self:center;grid-template-columns:minmax(0,1fr);gap:16px;background:var(--rosa);border:3px solid var(--cereja);border-radius:var(--raio-blob);padding:28px 32px;box-shadow:8px 8px 0 var(--cereja)}
+.proj--fio{grid-column:1 / 8}
+.proj--bg{grid-column:8 / 13;margin-top:120px}
+.proj--seu{grid-column:4 / 10;align-self:center;grid-template-columns:minmax(0,1fr);gap:16px;background:var(--rosa);border:3px solid var(--cereja);border-radius:var(--raio-blob);padding:28px 32px;box-shadow:8px 8px 0 var(--cereja)}
 .proj--seu .proj-seu-rabisco{width:110px}
 .proj-figura{position:relative;isolation:isolate;padding-top:76px}
 .proj-papeis{position:absolute;top:0;right:-1%;width:42%;height:70%;z-index:-1;pointer-events:none}
@@ -1028,6 +1029,7 @@ html.liza-andando .passeio.esperando{opacity:0;pointer-events:none}
 .proj--jambo .proj-tela{transform:rotate(-1.2deg)}
 .proj--cafe .proj-tela{transform:rotate(1.4deg)}
 .proj--fio .proj-tela{transform:rotate(-.8deg)}
+.proj--bg .proj-tela{transform:rotate(1.1deg)}
 .proj-barra{display:flex;align-items:center;gap:12px;height:32px;padding:0 12px;background:var(--creme)}
 .proj-bolinhas{display:flex;gap:6px}
 .proj-bolinhas i{width:10px;height:10px;border-radius:50%;border:2px solid var(--cereja)}
@@ -1061,7 +1063,7 @@ html.liza-andando .passeio.esperando{opacity:0;pointer-events:none}
 .proj--seu .proj-texto>p{margin-bottom:16px}
 @media (max-width:900px){
   .galeria{grid-template-columns:minmax(0,1fr);gap:64px;margin-top:40px}
-  .proj--jambo,.proj--cafe,.proj--fio,.proj--seu{grid-column:1 / -1;margin-top:0}
+  .proj--jambo,.proj--cafe,.proj--fio,.proj--bg,.proj--seu{grid-column:1 / -1;margin-top:0}
   .proj--seu{grid-template-columns:minmax(0,96px) minmax(0,1fr);padding:24px;gap:20px}
 }
 @media (max-width:480px){
@@ -1378,6 +1380,25 @@ html.a-contraste .proj-url,html.a-contraste .proj-selo{background:#fff!important
           <h3><a class="proj-link" href="#trabalho-fio">fio · estúdio de sobrancelhas<span class="sr-only">: ver o projeto e os materiais</span></a></h3>
           <p>Um estúdio que mede antes de desenhar: ao rolar, os três pontos da sobrancelha aparecem e a foto vira um quadro em arco.</p>
           <ul class="fitas proj-fitas" aria-label="O que foi entregue"><li>Site de uma página</li><li>Manual do site</li><li>Relatório de acessibilidade</li></ul>
+          <span class="proj-abrir" aria-hidden="true">Ver o projeto</span>
+        </div>
+      </article>
+      <article class="proj proj--bg" data-video="img/abertura-black-garage.mp4">
+        <div class="proj-figura">
+          <span class="proj-papeis" aria-hidden="true"><img src="img/bg-relatorio-p1.webp" alt="" width="480" height="680" loading="lazy" decoding="async"><img src="img/bg-manual-p2.webp" alt="" width="480" height="680" loading="lazy" decoding="async"><img src="img/bg-manual-p1.webp" alt="" width="480" height="680" loading="lazy" decoding="async"></span>
+          <div class="proj-tela" aria-hidden="true">
+            <span class="proj-barra"><span class="proj-bolinhas"><i></i><i></i><i></i></span><span class="proj-url">black-garage.pages.dev</span></span>
+            <span class="proj-quadro">
+              <video class="proj-video" muted playsinline preload="none" width="960" height="600" tabindex="-1"></video>
+              <img class="proj-poster" src="img/abertura-black-garage.webp" alt="" width="960" height="600" loading="lazy" decoding="async">
+              <span class="proj-selo"><svg viewBox="0 0 24 24" focusable="false"><path d="M8 5l11 7-11 7z" fill="currentColor"/></svg>abertura animada</span>
+            </span>
+          </div>
+        </div>
+        <div class="proj-texto">
+          <h3><a class="proj-link" href="#trabalho-black-garage">Black Garage · estética automotiva<span class="sr-only">: ver o projeto e os materiais</span></a></h3>
+          <p>Um site cinematográfico: ao rolar, o carro gira, abre o capô e as portas, e cada parte mostra o serviço que cuida dela.</p>
+          <ul class="fitas proj-fitas" aria-label="O que foi entregue"><li>Site cinematográfico</li><li>Manual do site</li><li>Relatório de acessibilidade</li></ul>
           <span class="proj-abrir" aria-hidden="true">Ver o projeto</span>
         </div>
       </article>
@@ -1710,7 +1731,7 @@ html.a-contraste .proj-url,html.a-contraste .proj-selo{background:#fff!important
       <div><h2 class="sp-h">O que o site faz</h2><ul class="sp-lista ok"><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Monta o copo tocando ou arrastando os ingredientes, e soma o total com a regra dos toppings inclusos</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Mostra se a loja está aberta e o que está esgotado no dia</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Promoções e cupons com data para acabar, que somem sozinhos</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Editor com travas: se o dono salvar algo errado, a mudança não vai ao ar e o site continua funcionando</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Menu de acessibilidade e navegação pelo teclado</li></ul></div>
       <div><div class="sp-bilhete"><h2>Como eu testei</h2><ul class="sp-lista ok"><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Teste automático de acessibilidade (axe, WCAG 2.2 AA) no celular e no computador, sem problemas</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Validador de HTML sem erros</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>21 edições simuladas no editor: as 14 com erro foram bloqueadas e as 7 certas foram publicadas</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Manuais em PDF marcado e acessível</li></ul></div></div>
     </div>
-    <p class="tr-outro">Veja também o <a href="#trabalho-cafe-vagar">Café Vagar</a>, um site cinematográfico, e o <a href="#trabalho-fio">fio</a>, um estúdio de sobrancelhas.</p>
+    <p class="tr-outro">Veja também o <a href="#trabalho-cafe-vagar">Café Vagar</a>, um site cinematográfico, o <a href="#trabalho-fio">fio</a>, um estúdio de sobrancelhas, e a <a href="#trabalho-black-garage">Black Garage</a>, em que o carro se abre na rolagem.</p>
   </div>
   <div class="sp-chamada"><div class="wrap"><h2>Quer um assim para o seu negócio?</h2><p>Me conta o que você precisa e eu mando uma proposta por escrito, sem compromisso. Respondo em até um dia útil.</p>
     <div class="sp-botoes"><a class="btn" href="#pedir-proposta">Pedir proposta</a><a class="btn btn-secundario" href="https://wa.me/5548984395620?text=Oi%2C%20Let%C3%ADcia%21%20Vi%20o%20trabalho%20JAMBO%20Açaí%20%26%20Gelato%20no%20seu%20portf%C3%B3lio%20e%20quero%20um%20site%20assim." target="_blank" rel="noopener">Chamar no WhatsApp<span class="sr-only"> (abre em nova aba)</span></a></div>
@@ -1755,7 +1776,7 @@ html.a-contraste .proj-url,html.a-contraste .proj-selo{background:#fff!important
       <div><h2 class="sp-h">O que o site faz</h2><ul class="sp-lista ok"><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>A abertura acompanha a rolagem, no ritmo de quem está lendo</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Para quem pede menos movimento, a página aparece parada e completa, e o vídeo do ritual nem é baixado</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Link Pular para o conteúdo, menu de acessibilidade e navegação pelo teclado</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Imagem bonita quando o link é compartilhado no WhatsApp</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Botão Como chegar, que abre o mapa</li></ul></div>
       <div><div class="sp-bilhete"><h2>Como eu testei</h2><ul class="sp-lista ok"><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Teste automático de acessibilidade (axe, WCAG 2.2 AA) no celular e no computador, com e sem movimento, sem problemas</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Validadores de HTML sem erros</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Teste do Google (Lighthouse) no celular: desempenho de 93 a 96 e acessibilidade 100</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Texto a 160% no celular sem nada passar da tela</li></ul></div></div>
     </div>
-    <p class="tr-outro">Veja também o <a href="#trabalho-jambo">JAMBO</a>, um cardápio com montador de copo, e o <a href="#trabalho-fio">fio</a>, um estúdio de sobrancelhas.</p>
+    <p class="tr-outro">Veja também o <a href="#trabalho-jambo">JAMBO</a>, um cardápio com montador de copo, o <a href="#trabalho-fio">fio</a>, um estúdio de sobrancelhas, e a <a href="#trabalho-black-garage">Black Garage</a>, em que o carro se abre na rolagem.</p>
   </div>
   <div class="sp-chamada"><div class="wrap"><h2>Quer um assim para o seu negócio?</h2><p>Me conta o que você precisa e eu mando uma proposta por escrito, sem compromisso. Respondo em até um dia útil.</p>
     <div class="sp-botoes"><a class="btn" href="#pedir-proposta">Pedir proposta</a><a class="btn btn-secundario" href="https://wa.me/5548984395620?text=Oi%2C%20Let%C3%ADcia%21%20Vi%20o%20trabalho%20Café%20Vagar%20no%20seu%20portf%C3%B3lio%20e%20quero%20um%20site%20assim." target="_blank" rel="noopener">Chamar no WhatsApp<span class="sr-only"> (abre em nova aba)</span></a></div>
@@ -1806,10 +1827,61 @@ html.a-contraste .proj-url,html.a-contraste .proj-selo{background:#fff!important
       <div><h2 class="sp-h">O que o site faz</h2><ul class="sp-lista ok"><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>A abertura acompanha a rolagem: desenha os pontos da sobrancelha e leva a foto para um quadro em arco</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Serviços com nome, tempo e preço na mesma linha, fáceis de comparar</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Botão Agendar que abre o WhatsApp com a mensagem pronta</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Para quem pede menos movimento, a página aparece parada e completa</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Menu de acessibilidade, link Pular para o conteúdo e navegação pelo teclado</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Pronto para o Google: dados do estúdio, dos serviços e das dúvidas</li></ul></div>
       <div><div class="sp-bilhete"><h2>Como eu testei</h2><ul class="sp-lista ok"><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Teste automático de acessibilidade (axe, WCAG 2.2 AA) no celular e no computador, com e sem movimento, sem problemas</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Validadores de HTML sem erros</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>PageSpeed do Google com o site no ar: desempenho 98 no celular e 99 no computador, e 100 em acessibilidade, boas práticas e SEO</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Texto a 160% e zoom de 200% sem nada passar da tela</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Conferido em dois celulares de verdade</li></ul></div></div>
     </div>
-    <p class="tr-outro">Veja também o <a href="#trabalho-jambo">JAMBO</a>, um cardápio com montador de copo, e o <a href="#trabalho-cafe-vagar">Café Vagar</a>, um site cinematográfico.</p>
+    <p class="tr-outro">Veja também o <a href="#trabalho-jambo">JAMBO</a>, um cardápio com montador de copo, o <a href="#trabalho-cafe-vagar">Café Vagar</a>, um site cinematográfico, e a <a href="#trabalho-black-garage">Black Garage</a>, em que o carro se abre na rolagem.</p>
   </div>
   <div class="sp-chamada"><div class="wrap"><h2>Quer um assim para o seu negócio?</h2><p>Me conta o que você precisa e eu mando uma proposta por escrito, sem compromisso. Respondo em até um dia útil.</p>
     <div class="sp-botoes"><a class="btn" href="#pedir-proposta">Pedir proposta</a><a class="btn btn-secundario" href="https://wa.me/5548984395620?text=Oi%2C%20Let%C3%ADcia%21%20Vi%20o%20trabalho%20fio%20no%20seu%20portf%C3%B3lio%20e%20quero%20um%20site%20assim." target="_blank" rel="noopener">Chamar no WhatsApp<span class="sr-only"> (abre em nova aba)</span></a></div>
+    <p class="sp-contato">WhatsApp: (48) 98439-5620 · E-mail: leticiabeasouza@gmail.com</p></div></div>
+</article>
+
+<article class="servico-pagina sp cor-azul trabalho-pagina" id="trabalho-black-garage" aria-labelledby="trabalho-black-garage-t" tabindex="-1">
+  <div class="wrap">
+    <a class="sp-voltar" href="#trabalhos">← Voltar para os trabalhos</a>
+    <header class="sp-hero"><svg class="sp-rabisco" viewBox="0 0 79 99" aria-hidden="true" focusable="false"><use href="img/rabiscos.svg#r-espiral"/></svg><p class="sp-rotulo">trabalho</p><h1 id="trabalho-black-garage-t">Black Garage · estética automotiva</h1><p class="sp-intro">Um site cinematográfico de uma página para um estúdio de estética automotiva: a rolagem conduz um vídeo em que o carro gira e se abre, e seis etiquetas ligam cada parte ao serviço, com tempo e preço logo abaixo.</p><p class="sp-para"><strong>Marca fictícia.</strong> O endereço, os horários e os preços são inventados, e as imagens e o vídeo foram gerados com inteligência artificial e retocados para apagar marcas de carro. O trabalho é de verdade.</p></header>
+    <div class="tr-palco">
+      <figure class="tr-figura">
+        <div class="proj-tela tr-tela">
+          <span class="proj-barra" aria-hidden="true"><span class="proj-bolinhas"><i></i><i></i><i></i></span><span class="proj-url">black-garage.pages.dev</span></span>
+          <span class="proj-quadro"><video class="tr-video" id="trabalho-black-garage-video" muted playsinline preload="none" width="960" height="600" poster="img/abertura-black-garage.webp" aria-describedby="trabalho-black-garage-leg"><source src="img/abertura-black-garage.mp4" type="video/mp4"></video></span>
+        </div>
+        <figcaption id="trabalho-black-garage-leg">A abertura do site no computador: o carro preto no estúdio escuro gira, abre o capô e as portas, e as etiquetas de teto, para-choque, motor e interior aparecem ligadas ao carro por linhas finas.</figcaption>
+      </figure>
+      <div class="tr-acoes">
+        <button class="btn btn-secundario tr-play" type="button" aria-pressed="false" aria-controls="trabalho-black-garage-video"><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5l11 7-11 7z" fill="currentColor"/></svg><svg class="i-pausa" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5v14M16 5v14" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg><span class="tr-play-txt">Ver a abertura</span></button>
+        <a class="btn btn-principal" href="https://black-garage.pages.dev/" target="_blank" rel="noopener">Abrir o site no ar<span class="sr-only"> (abre em nova aba)</span></a>
+        <p class="tr-nota">O vídeo tem uns 6 segundos e não tem som. No site, o carro abre e fecha junto com a rolagem.</p>
+      </div>
+    </div>
+    <div class="sp-bloco"><h2 class="sp-h" id="trabalho-black-garage-mat">Tudo o que foi entregue</h2>
+      <ul class="tr-materiais">
+        <li class="mat">
+          <span class="mat-folha"><img src="img/trabalho-black-garage-440.webp" alt="" width="480" height="680" loading="lazy" decoding="async"></span>
+          <h3><a class="mat-link" href="https://black-garage.pages.dev/" target="_blank" rel="noopener">O site<span class="sr-only">: Abrir o site (abre em nova aba)</span></a></h3>
+          <p>Uma página com a abertura do carro, serviços com tempo e preço, como trabalhamos, a história da marca, dúvidas e agendamento pelo WhatsApp.</p>
+          <p class="mat-meta"><span>Site no ar</span><span class="mat-acao" aria-hidden="true">Abrir o site</span></p>
+        </li>
+        <li class="mat">
+          <span class="mat-folha"><img src="img/bg-manual-p1.webp" alt="" width="480" height="680" loading="lazy" decoding="async"></span>
+          <h3><a class="mat-link" href="docs/manual-do-site-black-garage-exemplo.pdf" target="_blank" rel="noopener">Manual do site<span class="sr-only">: Abrir o PDF (abre em nova aba)</span></a></h3>
+          <p>Como o site e a abertura funcionam, como aparecer no Google, como ver as visitas, como pedir mudanças e a garantia de 30 dias.</p>
+          <p class="mat-meta"><span>PDF · 17 páginas · 1,7 MB</span><span class="mat-acao" aria-hidden="true">Abrir o PDF</span></p>
+        </li>
+        <li class="mat">
+          <span class="mat-folha"><img src="img/bg-relatorio-p1.webp" alt="" width="480" height="680" loading="lazy" decoding="async"></span>
+          <h3><a class="mat-link" href="docs/relatorio-acessibilidade-black-garage-exemplo.pdf" target="_blank" rel="noopener">Relatório de acessibilidade<span class="sr-only">: Abrir o PDF (abre em nova aba)</span></a></h3>
+          <p>O que o site cumpre da WCAG 2.2 nível AA, critério por critério, incluindo a abertura animada, como eu testei e os limites.</p>
+          <p class="mat-meta"><span>PDF · 10 páginas · 1,1 MB</span><span class="mat-acao" aria-hidden="true">Abrir o PDF</span></p>
+        </li>
+      </ul>
+    </div>
+    <div class="sp-bloco sp-colunas">
+      <div><h2 class="sp-h">O que o site faz</h2><ul class="sp-lista ok"><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>A rolagem conduz o vídeo: o carro gira, abre o capô e as portas, e volta quando a pessoa rola para cima</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Seis etiquetas ligam cada parte do carro ao serviço que cuida dela</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Serviços com tempo e preço "a partir de", e cada um abre o WhatsApp com o nome do serviço</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Para quem pede menos movimento, o carro aparece aberto e parado, com marcadores e uma ficha técnica</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Em internet lenta ou com economia de dados, a abertura também fica parada</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Menu de acessibilidade, link Pular a abertura e navegação pelo teclado</li></ul></div>
+      <div><div class="sp-bilhete"><h2>Como eu testei</h2><ul class="sp-lista ok"><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Teste automático de acessibilidade (axe, WCAG 2.2 AA) nas 4 páginas, no celular e no computador, com e sem movimento, sem problemas</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>WAVE e validadores de HTML sem erros, com o site no ar</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>PageSpeed do Google com o site no ar: desempenho 99 no celular e 100 no computador, e 100 em acessibilidade e boas práticas</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Contraste do texto medido sobre o quadro mais claro do vídeo: no mínimo 7,1 para 1</li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 13.2 9.4 19 20.8 4.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Texto a 160%, zoom de 200% e espaçamento de texto aumentado sem nada passar da tela</li></ul></div></div>
+    </div>
+    <p class="tr-outro">Veja também o <a href="#trabalho-jambo">JAMBO</a>, um cardápio com montador de copo, o <a href="#trabalho-cafe-vagar">Café Vagar</a>, uma cafeteria em que a rolagem conta uma história, e o <a href="#trabalho-fio">fio</a>, um estúdio de sobrancelhas.</p>
+  </div>
+  <div class="sp-chamada"><div class="wrap"><h2>Quer um assim para o seu negócio?</h2><p>Me conta o que você precisa e eu mando uma proposta por escrito, sem compromisso. Respondo em até um dia útil.</p>
+    <div class="sp-botoes"><a class="btn" href="#pedir-proposta">Pedir proposta</a><a class="btn btn-secundario" href="https://wa.me/5548984395620?text=Oi%2C%20Let%C3%ADcia%21%20Vi%20o%20trabalho%20Black%20Garage%20no%20seu%20portf%C3%B3lio%20e%20quero%20um%20site%20assim." target="_blank" rel="noopener">Chamar no WhatsApp<span class="sr-only"> (abre em nova aba)</span></a></div>
     <p class="sp-contato">WhatsApp: (48) 98439-5620 · E-mail: leticiabeasouza@gmail.com</p></div></div>
 </article>
 
@@ -2196,7 +2268,7 @@ html.a-contraste .proj-url,html.a-contraste .proj-selo{background:#fff!important
       {k:['menu de acessibilidade','aumentar letra','aumento a letra','aumentar a letra','letra','letras','zoom','enxergar','ler melhor','contraste','fonte','ajustar o site','preferencias','configurar'],r:'Neste site você pode ajustar o tamanho das letras, o contraste, o espaçamento, parar as animações e mais. É só tocar no botão redondo com o bonequinho, no canto da tela.'},
       {k:['celular','mobile','smartphone','responsivo','tablet'],r:'Todo site é feito pensando primeiro no celular, porque é por ele que a maioria das pessoas procura um negócio. Testo em dois celulares antes de entregar.'},
       {k:['idioma','ingles','espanhol','outra lingua','traducao','gringo','turista'],r:'Dá para ter uma versão do site em outro idioma, como inglês ou espanhol. É um adicional.'},
-      {k:['exemplo','exemplos','portfolio','trabalhos','ja fez','clientes'],r:'Estão na seção Trabalhos: o Café Vagar, um site de cafeteria em que a rolagem conta uma história, o JAMBO, um cardápio de açaí com montador de copo e pedido pelo WhatsApp, e o fio, um estúdio de sobrancelhas com agendamento pelo WhatsApp. Este próprio site também mostra o meu jeito de trabalhar.'},
+      {k:['exemplo','exemplos','portfolio','trabalhos','ja fez','clientes'],r:'Estão na seção Trabalhos: o Café Vagar, um site de cafeteria em que a rolagem conta uma história, o JAMBO, um cardápio de açaí com montador de copo e pedido pelo WhatsApp, o fio, um estúdio de sobrancelhas com agendamento pelo WhatsApp, e a Black Garage, uma estética automotiva em que o carro se abre na rolagem. Este próprio site também mostra o meu jeito de trabalhar.'},
       {k:['quem e voce','sobre voce','leticia','formacao','experiencia','estudou'],r:'A Letícia é de Palhoça (SC), está no último semestre de Sistemas de Informação, tem formação técnica em desenvolvimento de sistemas e pesquisa acessibilidade. Tem mais na seção "Curiosa desde pequena", com os links do LinkedIn e do Lattes.'},
       {k:['liza','cachorro','cachorra','labradora','au'],r:'Sou eu! A Liza, labradora de 15 anos e gerente de qualidade da Letícia. Supervisiono tudo, principalmente os lanches.'},
       {k:['horario','atendimento','responde','resposta','fim de semana','sabado','domingo'],r:'A Letícia responde em até um dia útil, pelo WhatsApp ou e-mail.'},
